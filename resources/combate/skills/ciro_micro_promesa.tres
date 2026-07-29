@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="Skill" format=3]
+
+[ext_resource type="Script" uid="uid://kyffs4we46du" path="res://addons/godot_jrpg/resources/skills/skill.gd" id="1_skill"]
+[ext_resource type="Script" uid="uid://b0ddfb3bie0e8" path="res://addons/godot_jrpg/resources/effects/effect.gd" id="2_effect"]
+[ext_resource type="Script" uid="uid://dt05mo88hqdmw" path="res://addons/godot_jrpg/resources/effects/effect_list.gd" id="3_effect_list"]
+[ext_resource type="Texture2D" uid="uid://bcl8shu3g6vfo" path="res://addons/godot_jrpg/assets/sprites/skills/skill-song.png" id="4_icon_song"]
+[ext_resource type="Script" uid="uid://dp281065k4vlo" path="res://addons/godot_jrpg/resources/effects/effect_stat_modifier.gd" id="5_eff_statmod"]
+[ext_resource type="Script" uid="uid://b4bobc0pjnhrd" path="res://addons/godot_jrpg/resources/actors/battlers/target/target.gd" id="6_target"]
+
+[sub_resource type="Resource" id="Mod_atk"]
+script = ExtResource("5_eff_statmod")
+stat_name = "attack"
+effect_id = &"micro_promesa_atk"
+value_multiply = 1.5
+duration = 3
+metadata/_custom_type_script = "uid://dp281065k4vlo"
+
+[sub_resource type="Resource" id="Mod_def"]
+script = ExtResource("5_eff_statmod")
+stat_name = "defense"
+effect_id = &"micro_promesa_def"
+value_multiply = 0.75
+duration = 3
+metadata/_custom_type_script = "uid://dp281065k4vlo"
+
+[sub_resource type="Resource" id="Effects"]
+script = ExtResource("3_effect_list")
+entries = Array[ExtResource("2_effect")]([SubResource("Mod_atk"), SubResource("Mod_def")])
+metadata/_custom_type_script = "uid://dt05mo88hqdmw"
+
+[sub_resource type="Resource" id="Target"]
+script = ExtResource("6_target")
+side = 3
+metadata/_custom_type_script = "uid://b4bobc0pjnhrd"
+
+[resource]
+script = ExtResource("1_skill")
+display_name = "Micro-promesa"
+description = "Ciro empeña su guardia por un rato de ímpetu: promete no cubrirse y el sello le presta fuerza. Sube el Ataque y baja la Defensa por 3 turnos. (Prototipo: la mecánica real de promesas llega en F2b.)"
+used_on = 1
+effects = SubResource("Effects")
+targets = SubResource("Target")
+message = "usó"
+icon = ExtResource("4_icon_song")
+mp_cost = 4
+metadata/_custom_type_script = "uid://kyffs4we46du"

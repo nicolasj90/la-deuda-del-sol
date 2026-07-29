@@ -10,9 +10,14 @@
 [ext_resource type="SpriteFrames" uid="uid://dtoylirwywk0j" path="res://scenes/game_elements/characters/components/sprite_frames/storyweaver_blue.tres" id="8_frames"]
 [ext_resource type="PackedScene" uid="uid://covsdqqsd6rsy" path="res://scenes/game_elements/props/sign/sign.tscn" id="9_sign"]
 [ext_resource type="Script" uid="uid://0enyu5v4ra34" path="res://scenes/game_elements/props/spawn_point/components/spawn_point.gd" id="10_spawn"]
+[ext_resource type="PackedScene" uid="uid://bencareascn001" path="res://scenes/game_elements/props/encounter_area/encounter_area.tscn" id="11_encarea"]
+[ext_resource type="Resource" uid="uid://bencdiezmo0001" path="res://resources/combate/encuentros/camino_del_diezmo_encuentro.tres" id="12_encset"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tele"]
 size = Vector2(32, 448)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enc"]
+size = Vector2(96, 448)
 
 [node name="CaminoDelDiezmo" type="Node2D"]
 editor_description = "Mapa stub del Acto 1 de La Deuda del Sol. Tilemap placeholder copiado de mythical_meadows (quest_004); pendiente de arte y contenido propios."
@@ -62,6 +67,23 @@ spawn_point_path = NodePath("OnTheGround/SpawnOeste")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporters/TeleporterEste"]
 shape = SubResource("RectangleShape2D_tele")
+
+[node name="Encuentros" type="Node2D" parent="."]
+
+[node name="EncuentroOeste" parent="Encuentros" instance=ExtResource("11_encarea")]
+position = Vector2(1088, 352)
+battle_settings = ExtResource("12_encset")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Encuentros/EncuentroOeste"]
+shape = SubResource("RectangleShape2D_enc")
+
+[node name="EncuentroEste" parent="Encuentros" instance=ExtResource("11_encarea")]
+position = Vector2(1664, 352)
+battle_settings = ExtResource("12_encset")
+encounter_chance = 0.6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Encuentros/EncuentroEste"]
+shape = SubResource("RectangleShape2D_enc")
 
 [node name="OnTheGround" type="Node2D" parent="."]
 y_sort_enabled = true

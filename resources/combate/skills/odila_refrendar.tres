@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Skill" format=3]
+
+[ext_resource type="Script" uid="uid://kyffs4we46du" path="res://addons/godot_jrpg/resources/skills/skill.gd" id="1_skill"]
+[ext_resource type="Script" uid="uid://b0ddfb3bie0e8" path="res://addons/godot_jrpg/resources/effects/effect.gd" id="2_effect"]
+[ext_resource type="Script" uid="uid://dt05mo88hqdmw" path="res://addons/godot_jrpg/resources/effects/effect_list.gd" id="3_effect_list"]
+[ext_resource type="Texture2D" uid="uid://boydya8pklxd8" path="res://addons/godot_jrpg/assets/sprites/skills/skill-heal.png" id="4_icon_heal"]
+[ext_resource type="Script" uid="uid://0tfjrmoovjpd" path="res://addons/godot_jrpg/resources/effects/effect_status_cure.gd" id="5_eff_cure"]
+[ext_resource type="Resource" uid="uid://bhccddi8p1iq3" path="res://addons/godot_jrpg/resources/status/dead.tres" id="6_dead"]
+[ext_resource type="Script" uid="uid://bqnn8fctbndnr" path="res://addons/godot_jrpg/resources/effects/effect_heal.gd" id="7_eff_heal"]
+[ext_resource type="Script" uid="uid://b4bobc0pjnhrd" path="res://addons/godot_jrpg/resources/actors/battlers/target/target.gd" id="8_target"]
+
+[sub_resource type="Resource" id="Revivir"]
+script = ExtResource("5_eff_cure")
+status = ExtResource("6_dead")
+metadata/_custom_type_script = "uid://0tfjrmoovjpd"
+
+[sub_resource type="Resource" id="Cura"]
+script = ExtResource("7_eff_heal")
+amount = 40
+metadata/_custom_type_script = "uid://bqnn8fctbndnr"
+
+[sub_resource type="Resource" id="Effects"]
+script = ExtResource("3_effect_list")
+entries = Array[ExtResource("2_effect")]([SubResource("Revivir"), SubResource("Cura")])
+metadata/_custom_type_script = "uid://dt05mo88hqdmw"
+
+[sub_resource type="Resource" id="Target"]
+script = ExtResource("8_target")
+side = 1
+include_dead = true
+metadata/_custom_type_script = "uid://b4bobc0pjnhrd"
+
+[resource]
+script = ExtResource("1_skill")
+display_name = "Refrendar"
+description = "Acta de vuelta a la vida, con firma, sello y aclaración. Revive a un aliado caído con 40 PV."
+used_on = 2
+effects = SubResource("Effects")
+targets = SubResource("Target")
+message = "usó"
+icon = ExtResource("4_icon_heal")
+mp_cost = 14
+metadata/_custom_type_script = "uid://kyffs4we46du"

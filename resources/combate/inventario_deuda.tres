@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Inventory" format=3]
+
+[ext_resource type="Script" uid="uid://cyifi6o5fq4vo" path="res://addons/godot_jrpg/resources/stuff/inventory.gd" id="1_inventory"]
+[ext_resource type="Script" uid="uid://crcoj8pbh7ouk" path="res://addons/godot_jrpg/resources/stuff/items/item.gd" id="2_item"]
+[ext_resource type="Resource" path="res://resources/combate/items/tonico_de_tinta.tres" id="3_tonico"]
+[ext_resource type="Resource" path="res://resources/combate/items/pagare_en_blanco.tres" id="4_pagare"]
+[ext_resource type="Resource" path="res://resources/combate/items/sello_de_urgencia.tres" id="5_sello"]
+
+[resource]
+script = ExtResource("1_inventory")
+items = Dictionary[ExtResource("2_item"), int]({
+ExtResource("3_tonico"): 3,
+ExtResource("4_pagare"): 1,
+ExtResource("5_sello"): 1
+})
+metadata/_custom_type_script = "uid://cyifi6o5fq4vo"

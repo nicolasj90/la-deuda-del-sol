@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="BattleSettings" load_steps=7 format=3 uid="uid://bencdiezmo0001"]
+
+[ext_resource type="Script" uid="uid://dwf8a545xaiwc" path="res://addons/godot_jrpg/resources/battle/settings/enemy_settings.gd" id="1_es"]
+[ext_resource type="Script" uid="uid://bslf8ke3u3ub5" path="res://addons/godot_jrpg/resources/battle/settings/battle_settings.gd" id="2_bs"]
+[ext_resource type="Texture2D" uid="uid://wvlansnbbrhq" path="res://addons/godot_jrpg/assets/sprites/battle/backgrounds/battleback10.png" id="3_bg"]
+[ext_resource type="Resource" uid="uid://boliaxia5nxax" path="res://addons/godot_jrpg/tests/actors/battlers/enemies/test_enemy_1/test_enemy_1.tres" id="4_enemy"]
+
+[sub_resource type="Resource" id="Resource_encdiezmo1"]
+script = ExtResource("1_es")
+enemy = ExtResource("4_enemy")
+position = Vector2(100, 120)
+size = Vector2(300, 300)
+metadata/_custom_type_script = "uid://dwf8a545xaiwc"
+
+[sub_resource type="Resource" id="Resource_encdiezmo2"]
+script = ExtResource("1_es")
+enemy = ExtResource("4_enemy")
+position = Vector2(640, 120)
+size = Vector2(300, 300)
+metadata/_custom_type_script = "uid://dwf8a545xaiwc"
+
+[resource]
+script = ExtResource("2_bs")
+background = ExtResource("3_bg")
+background_size = Vector2(1281, 732)
+enemies = Array[ExtResource("1_es")]([SubResource("Resource_encdiezmo1"), SubResource("Resource_encdiezmo2")])
+metadata/_custom_type_script = "uid://bslf8ke3u3ub5"

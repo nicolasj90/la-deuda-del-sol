@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="Skill" format=3]
+
+[ext_resource type="Script" uid="uid://kyffs4we46du" path="res://addons/godot_jrpg/resources/skills/skill.gd" id="1_skill"]
+[ext_resource type="Script" uid="uid://b0ddfb3bie0e8" path="res://addons/godot_jrpg/resources/effects/effect.gd" id="2_effect"]
+[ext_resource type="Script" uid="uid://dt05mo88hqdmw" path="res://addons/godot_jrpg/resources/effects/effect_list.gd" id="3_effect_list"]
+[ext_resource type="Texture2D" uid="uid://de6mckk44t2v8" path="res://addons/godot_jrpg/assets/sprites/skills/skill-chemistry.png" id="4_icon_chem"]
+[ext_resource type="Script" uid="uid://be5bac0p75k8g" path="res://addons/godot_jrpg/resources/effects/effect_damage.gd" id="5_eff_damage"]
+[ext_resource type="Script" uid="uid://dsabjlwc355ao" path="res://addons/godot_jrpg/resources/formulas/effect_chance/formula_effect_chance_never_miss.gd" id="6_never_miss"]
+[ext_resource type="Script" path="res://resources/combate/scripts/formula_effect_damage_deuda.gd" id="7_formula_deuda"]
+[ext_resource type="Script" uid="uid://dp281065k4vlo" path="res://addons/godot_jrpg/resources/effects/effect_stat_modifier.gd" id="8_eff_statmod"]
+[ext_resource type="Script" uid="uid://b4bobc0pjnhrd" path="res://addons/godot_jrpg/resources/actors/battlers/target/target.gd" id="9_target"]
+
+[sub_resource type="Resource" id="Danio_formula"]
+script = ExtResource("7_formula_deuda")
+base_damage = 4
+attack_scale = 2.0
+defense_scale = 1.0
+
+[sub_resource type="Resource" id="Danio_nunca_falla"]
+script = ExtResource("6_never_miss")
+metadata/_custom_type_script = "uid://dsabjlwc355ao"
+
+[sub_resource type="Resource" id="Danio"]
+script = ExtResource("5_eff_damage")
+damage_formula = SubResource("Danio_formula")
+chance_formula = SubResource("Danio_nunca_falla")
+metadata/_custom_type_script = "uid://be5bac0p75k8g"
+
+[sub_resource type="Resource" id="Mod_def"]
+script = ExtResource("8_eff_statmod")
+stat_name = "defense"
+effect_id = &"embargo_def"
+value_multiply = 0.7
+duration = 3
+metadata/_custom_type_script = "uid://dp281065k4vlo"
+
+[sub_resource type="Resource" id="Effects"]
+script = ExtResource("3_effect_list")
+entries = Array[ExtResource("2_effect")]([SubResource("Danio"), SubResource("Mod_def")])
+metadata/_custom_type_script = "uid://dt05mo88hqdmw"
+
+[sub_resource type="Resource" id="Target"]
+script = ExtResource("9_target")
+metadata/_custom_type_script = "uid://b4bobc0pjnhrd"
+
+[resource]
+script = ExtResource("1_skill")
+display_name = "Embargo preventivo"
+description = "Salu traba los bienes del enemigo con un cautelar de aire: daño leve y Defensa reducida por 3 turnos."
+used_on = 1
+effects = SubResource("Effects")
+targets = SubResource("Target")
+message = "usó"
+icon = ExtResource("4_icon_chem")
+mp_cost = 6
+metadata/_custom_type_script = "uid://kyffs4we46du"

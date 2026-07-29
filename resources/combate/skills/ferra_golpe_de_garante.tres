@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Skill" format=3]
+
+[ext_resource type="Script" uid="uid://kyffs4we46du" path="res://addons/godot_jrpg/resources/skills/skill.gd" id="1_skill"]
+[ext_resource type="Script" uid="uid://b0ddfb3bie0e8" path="res://addons/godot_jrpg/resources/effects/effect.gd" id="2_effect"]
+[ext_resource type="Script" uid="uid://dt05mo88hqdmw" path="res://addons/godot_jrpg/resources/effects/effect_list.gd" id="3_effect_list"]
+[ext_resource type="Texture2D" uid="uid://brts0pejjblwh" path="res://addons/godot_jrpg/assets/sprites/skills/skill-fireball.png" id="4_icon_fireball"]
+[ext_resource type="Script" uid="uid://be5bac0p75k8g" path="res://addons/godot_jrpg/resources/effects/effect_damage.gd" id="5_eff_damage"]
+[ext_resource type="Script" uid="uid://dsabjlwc355ao" path="res://addons/godot_jrpg/resources/formulas/effect_chance/formula_effect_chance_never_miss.gd" id="6_never_miss"]
+[ext_resource type="Script" path="res://resources/combate/scripts/formula_effect_damage_deuda.gd" id="7_formula_deuda"]
+[ext_resource type="Script" uid="uid://b4bobc0pjnhrd" path="res://addons/godot_jrpg/resources/actors/battlers/target/target.gd" id="8_target"]
+
+[sub_resource type="Resource" id="Danio_formula"]
+script = ExtResource("7_formula_deuda")
+base_damage = 6
+attack_stat = &"attack"
+defense_stat = &"defense"
+
+[sub_resource type="Resource" id="Danio_nunca_falla"]
+script = ExtResource("6_never_miss")
+metadata/_custom_type_script = "uid://dsabjlwc355ao"
+
+[sub_resource type="Resource" id="Danio"]
+script = ExtResource("5_eff_damage")
+damage_formula = SubResource("Danio_formula")
+chance_formula = SubResource("Danio_nunca_falla")
+metadata/_custom_type_script = "uid://be5bac0p75k8g"
+
+[sub_resource type="Resource" id="Effects"]
+script = ExtResource("3_effect_list")
+entries = Array[ExtResource("2_effect")]([SubResource("Danio")])
+metadata/_custom_type_script = "uid://dt05mo88hqdmw"
+
+[sub_resource type="Resource" id="Target"]
+script = ExtResource("8_target")
+metadata/_custom_type_script = "uid://b4bobc0pjnhrd"
+
+[resource]
+script = ExtResource("1_skill")
+display_name = "Golpe de garante"
+description = "Lanzazo con todo el peso del escudo detrás. Daño físico alto a un enemigo."
+used_on = 1
+effects = SubResource("Effects")
+targets = SubResource("Target")
+message = "usó"
+icon = ExtResource("4_icon_fireball")
+mp_cost = 5
+metadata/_custom_type_script = "uid://kyffs4we46du"

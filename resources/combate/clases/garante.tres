@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="PlayerClass" format=3]
+
+[ext_resource type="Script" uid="uid://coq8anpgbky31" path="res://addons/godot_jrpg/resources/formulas/stats/formula_stat_growth_pokemon.gd" id="1_growth_pkm"]
+[ext_resource type="Script" uid="uid://dacbahk8dn11p" path="res://addons/godot_jrpg/resources/actors/battlers/classes/player_class.gd" id="2_pclass"]
+
+[sub_resource type="Resource" id="G_hp"]
+script = ExtResource("1_growth_pkm")
+metadata/_custom_type_script = "uid://coq8anpgbky31"
+
+[sub_resource type="Resource" id="G_mp"]
+script = ExtResource("1_growth_pkm")
+metadata/_custom_type_script = "uid://coq8anpgbky31"
+
+[sub_resource type="Resource" id="G_attack"]
+script = ExtResource("1_growth_pkm")
+metadata/_custom_type_script = "uid://coq8anpgbky31"
+
+[sub_resource type="Resource" id="G_defense"]
+script = ExtResource("1_growth_pkm")
+metadata/_custom_type_script = "uid://coq8anpgbky31"
+
+[sub_resource type="Resource" id="G_intelligence"]
+script = ExtResource("1_growth_pkm")
+metadata/_custom_type_script = "uid://coq8anpgbky31"
+
+[sub_resource type="Resource" id="G_speed"]
+script = ExtResource("1_growth_pkm")
+metadata/_custom_type_script = "uid://coq8anpgbky31"
+
+[sub_resource type="Resource" id="G_accuracy"]
+script = ExtResource("1_growth_pkm")
+metadata/_custom_type_script = "uid://coq8anpgbky31"
+
+[sub_resource type="Resource" id="G_evasion"]
+script = ExtResource("1_growth_pkm")
+metadata/_custom_type_script = "uid://coq8anpgbky31"
+
+[sub_resource type="Resource" id="G_luck"]
+script = ExtResource("1_growth_pkm")
+metadata/_custom_type_script = "uid://coq8anpgbky31"
+
+[resource]
+script = ExtResource("2_pclass")
+name = "Garante"
+description = "Tanque de lanza y escudo. Sale de fiador de todo el grupo: provoca, absorbe y aguanta."
+hp_growth = SubResource("G_hp")
+mp_growth = SubResource("G_mp")
+attack_growth = SubResource("G_attack")
+defense_growth = SubResource("G_defense")
+intelligence_growth = SubResource("G_intelligence")
+speed_growth = SubResource("G_speed")
+accuracy_growth = SubResource("G_accuracy")
+evasion_growth = SubResource("G_evasion")
+luck_growth = SubResource("G_luck")
+metadata/_custom_type_script = "uid://dacbahk8dn11p"

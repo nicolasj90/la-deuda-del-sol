@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bencareascn001"]
+
+[ext_resource type="Script" uid="uid://dencareagd0001" path="res://scenes/game_elements/props/encounter_area/encounter_area.gd" id="1_encarea"]
+
+[node name="EncounterArea" type="Area2D"]
+editor_description = "El jugador que entra a esta área puede disparar una batalla del core JRPG (según Encounter Chance). Agregarle un CollisionShape2D y asignarle Battle Settings (grupo enemigo de la zona)."
+collision_layer = 0
+collision_mask = 1
+monitorable = false
+script = ExtResource("1_encarea")

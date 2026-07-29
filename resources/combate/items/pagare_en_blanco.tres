@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Item" format=3]
+
+[ext_resource type="Script" uid="uid://crcoj8pbh7ouk" path="res://addons/godot_jrpg/resources/stuff/items/item.gd" id="1_item"]
+[ext_resource type="Script" uid="uid://b0ddfb3bie0e8" path="res://addons/godot_jrpg/resources/effects/effect.gd" id="2_effect"]
+[ext_resource type="Script" uid="uid://dt05mo88hqdmw" path="res://addons/godot_jrpg/resources/effects/effect_list.gd" id="3_effect_list"]
+[ext_resource type="Texture2D" uid="uid://cbvkiyfrfedmb" path="res://addons/godot_jrpg/assets/sprites/stuff/items/item-antidote.png" id="4_icon_antidote"]
+[ext_resource type="Script" uid="uid://dp281065k4vlo" path="res://addons/godot_jrpg/resources/effects/effect_stat_modifier.gd" id="5_eff_statmod"]
+[ext_resource type="Script" uid="uid://b4bobc0pjnhrd" path="res://addons/godot_jrpg/resources/actors/battlers/target/target.gd" id="6_target"]
+
+[sub_resource type="Resource" id="Mod_atk"]
+script = ExtResource("5_eff_statmod")
+stat_name = "attack"
+effect_id = &"pagare_atk"
+value_multiply = 1.3
+duration = 3
+metadata/_custom_type_script = "uid://dp281065k4vlo"
+
+[sub_resource type="Resource" id="Effects"]
+script = ExtResource("3_effect_list")
+entries = Array[ExtResource("2_effect")]([SubResource("Mod_atk")])
+metadata/_custom_type_script = "uid://dt05mo88hqdmw"
+
+[sub_resource type="Resource" id="Target"]
+script = ExtResource("6_target")
+side = 1
+metadata/_custom_type_script = "uid://b4bobc0pjnhrd"
+
+[resource]
+script = ExtResource("1_item")
+used_on = 1
+effects = SubResource("Effects")
+targets = SubResource("Target")
+display_name = "Pagaré en blanco"
+description = "Un pagaré sin monto: quien lo empuña pega con la furia de deber quién sabe cuánto. Sube el Ataque por 3 turnos."
+icon = ExtResource("4_icon_antidote")
+price = 25
+metadata/_custom_type_script = "uid://crcoj8pbh7ouk"

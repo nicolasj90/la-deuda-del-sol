@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Item" format=3]
+
+[ext_resource type="Script" uid="uid://crcoj8pbh7ouk" path="res://addons/godot_jrpg/resources/stuff/items/item.gd" id="1_item"]
+[ext_resource type="Script" uid="uid://b0ddfb3bie0e8" path="res://addons/godot_jrpg/resources/effects/effect.gd" id="2_effect"]
+[ext_resource type="Script" uid="uid://dt05mo88hqdmw" path="res://addons/godot_jrpg/resources/effects/effect_list.gd" id="3_effect_list"]
+[ext_resource type="Texture2D" uid="uid://df2df35wr46s8" path="res://addons/godot_jrpg/assets/sprites/stuff/items/item-potion.png" id="4_icon_potion"]
+[ext_resource type="Script" uid="uid://bqnn8fctbndnr" path="res://addons/godot_jrpg/resources/effects/effect_heal.gd" id="5_eff_heal"]
+[ext_resource type="Script" uid="uid://b4bobc0pjnhrd" path="res://addons/godot_jrpg/resources/actors/battlers/target/target.gd" id="6_target"]
+
+[sub_resource type="Resource" id="Cura"]
+script = ExtResource("5_eff_heal")
+amount = 45
+metadata/_custom_type_script = "uid://bqnn8fctbndnr"
+
+[sub_resource type="Resource" id="Effects"]
+script = ExtResource("3_effect_list")
+entries = Array[ExtResource("2_effect")]([SubResource("Cura")])
+metadata/_custom_type_script = "uid://dt05mo88hqdmw"
+
+[sub_resource type="Resource" id="Target"]
+script = ExtResource("6_target")
+side = 1
+metadata/_custom_type_script = "uid://b4bobc0pjnhrd"
+
+[resource]
+script = ExtResource("1_item")
+used_on = 2
+effects = SubResource("Effects")
+targets = SubResource("Target")
+display_name = "Tónico de tinta"
+description = "Tinta notarial reconstituyente: cierra heridas y deja los dientes negros un rato. Restaura 45 PV."
+icon = ExtResource("4_icon_potion")
+price = 15
+metadata/_custom_type_script = "uid://crcoj8pbh7ouk"

@@ -1,0 +1,210 @@
+[gd_resource type="Resource" script_class="BattlerPlayer" format=3]
+
+[ext_resource type="Script" uid="uid://dtd4ygp60xnpt" path="res://addons/godot_jrpg/resources/actors/battlers/players/player.gd" id="1_player"]
+[ext_resource type="Script" uid="uid://ds4qg0x2vjt4y" path="res://addons/godot_jrpg/resources/formulas/xp/formula_xp_pokemon.gd" id="2_xp_pokemon"]
+[ext_resource type="Script" uid="uid://cwt6qegyo50wf" path="res://addons/godot_jrpg/resources/actors/battlers/controllers/player_manual_controller.gd" id="3_manual_ctrl"]
+[ext_resource type="Texture2D" uid="uid://bu02dmnnugcti" path="res://addons/godot_jrpg/assets/sprites/actors/players/faces/face-player-2.png" id="4_face_ferra"]
+[ext_resource type="Resource" path="res://resources/combate/clases/garante.tres" id="5_clase"]
+[ext_resource type="Script" uid="uid://kyffs4we46du" path="res://addons/godot_jrpg/resources/skills/skill.gd" id="6_skill"]
+[ext_resource type="Script" uid="uid://ceb6xqp5odndy" path="res://addons/godot_jrpg/resources/skills/grimoire.gd" id="7_grimoire"]
+[ext_resource type="Script" uid="uid://c00chyv6jtl7b" path="res://addons/godot_jrpg/resources/stuff/equippable/slots/equipment_slots.gd" id="8_equip_slots"]
+[ext_resource type="Script" uid="uid://lxtk6udhgpkx" path="res://addons/godot_jrpg/resources/stuff/equippable/slots/accessory_slot.gd" id="9_slot_acc"]
+[ext_resource type="Script" uid="uid://jwdpbp37yjue" path="res://addons/godot_jrpg/resources/stuff/equippable/slots/armor_slot.gd" id="10_slot_armor"]
+[ext_resource type="Script" uid="uid://pdcs5gv200d5" path="res://addons/godot_jrpg/resources/stuff/equippable/slots/head_slot.gd" id="11_slot_head"]
+[ext_resource type="Script" uid="uid://sty40x7p8w2t" path="res://addons/godot_jrpg/resources/stuff/equippable/slots/shield_slot.gd" id="12_slot_shield"]
+[ext_resource type="Script" uid="uid://dm5t5sv617qda" path="res://addons/godot_jrpg/resources/stuff/equippable/slots/weapon_slot.gd" id="13_slot_weapon"]
+[ext_resource type="Resource" path="res://resources/combate/skills/ferra_fianza_en_carne.tres" id="14_skill1"]
+[ext_resource type="Resource" path="res://resources/combate/skills/ferra_golpe_de_garante.tres" id="15_skill2"]
+[ext_resource type="Script" uid="uid://whk3qgx1yqyp" path="res://addons/godot_jrpg/resources/actors/battlers/stats/stat.gd" id="16_stat"]
+[ext_resource type="Script" uid="uid://bgy4kuc1fk1nh" path="res://addons/godot_jrpg/resources/actors/battlers/stats/stats.gd" id="17_stats"]
+
+[sub_resource type="Resource" id="FormulaXP"]
+script = ExtResource("2_xp_pokemon")
+metadata/_custom_type_script = "uid://ds4qg0x2vjt4y"
+
+[sub_resource type="Resource" id="Controller"]
+script = ExtResource("3_manual_ctrl")
+metadata/_custom_type_script = "uid://cwt6qegyo50wf"
+
+[sub_resource type="Resource" id="Slot_acc"]
+script = ExtResource("9_slot_acc")
+name = "Accesorio"
+metadata/_custom_type_script = "uid://lxtk6udhgpkx"
+
+[sub_resource type="Resource" id="Slot_armor"]
+script = ExtResource("10_slot_armor")
+name = "Armadura"
+metadata/_custom_type_script = "uid://jwdpbp37yjue"
+
+[sub_resource type="Resource" id="Slot_head"]
+script = ExtResource("11_slot_head")
+name = "Cabeza"
+metadata/_custom_type_script = "uid://pdcs5gv200d5"
+
+[sub_resource type="Resource" id="Slot_shield"]
+script = ExtResource("12_slot_shield")
+name = "Escudo"
+metadata/_custom_type_script = "uid://sty40x7p8w2t"
+
+[sub_resource type="Resource" id="Slot_weapon"]
+script = ExtResource("13_slot_weapon")
+name = "Arma"
+metadata/_custom_type_script = "uid://dm5t5sv617qda"
+
+[sub_resource type="Resource" id="Equip"]
+script = ExtResource("8_equip_slots")
+accessory = SubResource("Slot_acc")
+armor = SubResource("Slot_armor")
+head = SubResource("Slot_head")
+shield = SubResource("Slot_shield")
+weapon = SubResource("Slot_weapon")
+metadata/_custom_type_script = "uid://c00chyv6jtl7b"
+
+[sub_resource type="Resource" id="Stat_hp"]
+script = ExtResource("16_stat")
+display_name = "PV"
+base_value = 140
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_mp"]
+script = ExtResource("16_stat")
+display_name = "PM"
+id = 1
+base_value = 20
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_attack"]
+script = ExtResource("16_stat")
+display_name = "Ataque"
+id = 2
+base_value = 11
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_defense"]
+script = ExtResource("16_stat")
+display_name = "Defensa"
+id = 3
+base_value = 14
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_intelligence"]
+script = ExtResource("16_stat")
+display_name = "Inteligencia"
+id = 4
+base_value = 6
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_speed"]
+script = ExtResource("16_stat")
+display_name = "Velocidad"
+id = 5
+base_value = 8
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_accuracy"]
+script = ExtResource("16_stat")
+display_name = "Precisión"
+id = 6
+base_value = 90
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_evasion"]
+script = ExtResource("16_stat")
+display_name = "Evasión"
+id = 7
+base_value = 4
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_luck"]
+script = ExtResource("16_stat")
+display_name = "Suerte"
+id = 8
+base_value = 8
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_hp_regen"]
+script = ExtResource("16_stat")
+display_name = "Regen. PV"
+id = 9
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_mp_regen"]
+script = ExtResource("16_stat")
+display_name = "Regen. PM"
+id = 10
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_critical"]
+script = ExtResource("16_stat")
+display_name = "Crítico"
+id = 11
+base_value = 4
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_critical_dodge"]
+script = ExtResource("16_stat")
+display_name = "Anticrítico"
+id = 12
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_effect_dodge"]
+script = ExtResource("16_stat")
+display_name = "Esquiva de efectos"
+id = 13
+base_value = 8
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_reflection"]
+script = ExtResource("16_stat")
+display_name = "Reflejo"
+id = 14
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_counter_attack"]
+script = ExtResource("16_stat")
+display_name = "Contraataque"
+id = 15
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_stats"]
+script = ExtResource("17_stats")
+hp = SubResource("Stat_hp")
+mp = SubResource("Stat_mp")
+attack = SubResource("Stat_attack")
+defense = SubResource("Stat_defense")
+intelligence = SubResource("Stat_intelligence")
+speed = SubResource("Stat_speed")
+accuracy = SubResource("Stat_accuracy")
+evasion = SubResource("Stat_evasion")
+luck = SubResource("Stat_luck")
+hp_regen = SubResource("Stat_hp_regen")
+mp_regen = SubResource("Stat_mp_regen")
+critical = SubResource("Stat_critical")
+critical_dodge = SubResource("Stat_critical_dodge")
+effect_dodge = SubResource("Stat_effect_dodge")
+reflection = SubResource("Stat_reflection")
+counter_attack = SubResource("Stat_counter_attack")
+metadata/_custom_type_script = "uid://bgy4kuc1fk1nh"
+
+[sub_resource type="Resource" id="Grimorio"]
+script = ExtResource("7_grimoire")
+skills = Array[ExtResource("6_skill")]([ExtResource("14_skill1"), ExtResource("15_skill2")])
+metadata/_custom_type_script = "uid://ceb6xqp5odndy"
+
+[resource]
+script = ExtResource("1_player")
+face = ExtResource("4_face_ferra")
+level = 1
+xp = 0
+player_class = ExtResource("5_clase")
+xp_formula = SubResource("FormulaXP")
+equip = SubResource("Equip")
+stats = SubResource("Stat_stats")
+controller = SubResource("Controller")
+current_hp = 140
+current_mp = 20
+skills = Array[ExtResource("6_skill")]([ExtResource("14_skill1"), ExtResource("15_skill2")])
+grimoire = SubResource("Grimorio")
+name = "Ferra"
+description = "Ferra Cardal (26), mercenaria. Garante: tanque de lanza y escudo que provoca y absorbe. Promete cualquier cosa sin pensar y cobra por adelantado."
+metadata/_custom_type_script = "uid://dtd4ygp60xnpt"
