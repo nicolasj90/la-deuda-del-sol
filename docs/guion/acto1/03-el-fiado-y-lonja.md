@@ -7,11 +7,13 @@
 **Estado del grupo al salir (entrega a E25):** licencia e instrumental de corredor de Salu recuperados; fama del "mazo del Escribano" instalada — y con ella, la vigilancia de la Cámara confirmada (Bravante → Cobradoras → "la Prestamista Mayor", primera mención). Cuarta campanada gastada en E19; la quinta es de E27.
 
 **Notas de continuidad para sala:**
-1. El texto de la Fórmula de Cortesía Plena nace en E08 (bloque 2). Acá se citan fragmentos en E18 y E22 — **verificar contra el texto canónico del bloque 2** y ajustar; lo que importa es la estructura de tres reverencias (siembra enterrada de E09, no subrayar).
-2. Propuesta de este bloque: el lote rematado de Salu incluye, además de la licencia, su **instrumental de corredor** (lo que despliega en E27 para leer el sello). Justifica el retiro por la Lonja (E21) y el visado de Bravante (E23). Si sala prefiere otro motivo de dungeon, solo hay que tocar tres líneas marcadas con (†).
+1. **RESUELTO:** la Fórmula de Cortesía Plena citada acá (E18 abreviada, E22 entera) ya deriva textualmente del canon de E08 (bloque 2): tríada Alba/letra/testigo con sus tres reverencias (profunda-levante, media-anaqueles, breve-estrado). Única variación admisible: el femenino de Odila ("oída/atendida/complacida"). La secuencia de reverencias es la siembra enterrada de E09 (llave del Acto 3) — no subrayar, no volver a tocar sin pasar por sala.
+2. Propuesta de este bloque: el lote rematado de Salu incluye, además de la licencia, su **instrumental de corredor** (lo que despliega en E27 para leer el sello). Justifica el retiro por la Lonja (E21) y el visado de Bravante (E23). Si sala prefiere otro motivo de dungeon, solo hay que tocar tres líneas marcadas con (†): E20, E23, E24.
 3. Lore menor propuesto: en El Fiado, donde la palabra no ata, las deudas se anotan **con tiza en las barandas** de los muelles — de ahí "deber media Baranda". Un solo uso explicativo (E20).
 4. La línea de las Cobradoras "la Prestamista Mayor no necesita firmar" es doble fondo deliberado (en Acto 2 se revela que su firma no ata). No subrayar, no repetir.
 5. El grito "¡Nadie puede mentirle a un hombre que no busca la mentira!" se planta acá (E17, el Cachuzo) y lo recoge la Forastera en la final de la Ronda (muestra del concepto). El canto "¡EL-ES-CRI-BA-NO-NO-MIEN-TE!" también nace en E17.
+6. **Nota de producción (no negociable):** toda línea de Ciro "Aviso que tengo..." (E16, E17, E20, E23) debe coincidir con la mano real repartida en el duelo — manos iniciales fijadas por script, o línea generada desde la mano. Ciro no puede mentir ni por desincronización de gameplay.
+7. "El Amanecer" se siembra acá (E23, paquete premium de Bravante, garantizada): es la legendaria que Ciro anuncia en mano en E25 (bloque 4). No moverla de canal sin avisar al bloque 4.
 
 ---
 
@@ -226,8 +228,8 @@
 *(Exterior. Camino real, primera bruma del alba. Odila — sin máscara, el bolso al hombro — llega al portón de servicio de la Notaría. El SERENO levanta el farol.)*
 
 **SERENO:** ¿Quién vive?
-**ODILA:** Con la venia del que vela. *(una reverencia breve, exacta)*
-**SERENO** *(sonríe; es un rito viejo entre los dos)*: Concedida, señorita. ¿Estudió hasta tarde?
+**ODILA:** Saludo al testigo, que no cierra los ojos. *(una reverencia breve, exacta)*
+**SERENO** *(sonríe; es un rito viejo entre los dos)*: Y el testigo da fe. Pase, señorita. ¿Estudió hasta tarde?
 **ODILA:** Jurisprudencia comparada.
 
 *(Pasa. En la puerta principal, a lo lejos, marcas de tiza de los tasadores sobre el mármol: números, medidas. Odila las mira un segundo de más. Después entra por la puerta chica, con la máscara asomando del bolso.)*
@@ -274,9 +276,9 @@
 **TASADORA** *(quieta)*: ¿Cuántos van?
 **CIRO:** Cuatro mil diecisiete. Hoy también es día de mercado.
 
-*(Silencio. Y entonces la prenda suena — bajito, una sola vez, como una mano que se apoya en un hombro. CUARTA CAMPANADA. Todos la oyen. Nadie se mueve.)*
+*(Silencio. Y entonces la prenda suena — bajito, una sola vez, como una mano que se apoya en un hombro. CUARTA CAMPANADA. Todos la oyen. La Tasadora también: ladea apenas la cabeza — y no la comenta. No la va a comentar jamás.)*
 
-**TASADORA** *(despacio, como quien deja algo frágil sobre la mesa)*: Pesa bien.
+**TASADORA** *(las manos todavía en el aire, pesando la historia — no la campana; despacio, como quien deja algo frágil sobre la mesa)*: Pesa bien.
 **FIEL** *(el hocico contra la rodilla de Ciro)*: No voy a no llorar.
 
 *(La Tasadora se levanta, camina sin dudar entre los hilos, descuelga una carta y se la pone a Ciro en la mano: su propia firma — "Tasadora Ciega".)*
@@ -296,7 +298,7 @@
 **TASADORA** *(las manos en el aire, pesando)*: Esa historia pesa más de donde la cortaste.
 **FERRA:** Está bien tasada así.
 **TASADORA:** Entonces te la dejo anotada. Volvé cuando la termines de contar.
-**FERRA:** Yo... otro día... eventualmente epílogo.
+**FERRA:** Yo... otro día... capaz epílogo.
 
 *(Bajan por la escalera de soga. La tarde se puso naranja sobre los mercados. Fiel camina todo el tiempo pegado a la pierna de Ciro, sin decir nada: consuelo de perro, sin metáfora.)*
 
@@ -319,7 +321,7 @@
 **CIRO:** La licencia de Salustio Vega. Asesor de intenciones.
 **REMATADOR** *(la cadencia se le cae un tono)*: Ah. El Vega. Lote cuarenta y cuatro: licencia de asesor de intenciones, matrícula del puerto, un titular en desgracia. Rematada por deuda: el hombre debe media Baranda.
 **CIRO:** ¿Media... baranda?
-**REMATADOR:** ¿De dónde venís, pibe? Acá la palabra no ata, así que las deudas se anotan con tiza. En las barandas de los muelles. Nombre, cifra, fecha. El Vega tiene anotada la mitad de la baranda del muelle grande. Con las dos letras.
+**REMATADOR:** ¿De dónde venís, pibe? Acá la palabra no ata, así que las deudas se anotan con tiza. En las barandas de los muelles. Nombre, cifra, fecha. El Vega tiene anotada la mitad de la baranda del muelle grande. En letra de molde. Se lee desde el agua.
 **CIRO** *(anota en el glosario)*: "Baranda: registro público de morosos. Material: tiza." ¿Cuánto pide por el lote?
 **REMATADOR:** Sesenta.
 **CIRO:** Es poco.
@@ -336,7 +338,7 @@
 *(Forcejeo administrativo. FERRA, para zanjar, levanta el mostrador entero con lotes y rematador arriba — "para mirar abajo", dice después — buscando el lote 44 con los ojos.)*
 
 **REMATADOR** *(en el aire, aferrado al martillo)*: ¡La casa no responde por la baranda—! ¡Bajame el mostrador, reina!
-**FERRA:** Yo... mostrador... eventualmente suelo.
+**FERRA:** Yo... mostrador... en una de esas, suelo.
 **REMATADOR:** ¡¿Eso es una amenaza o un precio?!
 
 *(Ferra apoya el mostrador. En el intercambio, FIEL ya está sentado arriba del cajón del lote 44, con cara de aduana. Nadie se anima a moverlo.)*
@@ -412,8 +414,9 @@
 
 *(Ciro y Don Teo se miran un segundo de más: dos raros del mismo gremio. Ciro compra el pescado de ayer. Paga precio de hoy. Pide perdón por el vuelto.)*
 
-**DON TEO:** ¿Galpón cuatro? Uh. Eso está del otro lado de las cajas mostrencas. El camino se abre empujando, no preguntando. Y el perro que tenés te sobra: los carteles a él no le cantan.
-**FERRA** *(mirando a Fiel, cayendo en la cuenta)*: La cola. Mirale la cola. Cuando el cartel miente, ni se le mueve. Cuando hay verdad cerca, va como remo.
+**DON TEO:** ¿Galpón cuatro? Uh. Eso está del otro lado de las cajas mostrencas. El camino se abre empujando, no preguntando. Y el perro que tenés te sobra: a él los carteles no le cantan.
+**FERRA:** ¿Y cómo sabemos qué escuchó?
+**DON TEO:** Como con cualquier perro, reina. La cola no sabe mentir.
 **CIRO** *(anotando)*: "Instrumento de medición: perro."
 **FIEL:** No soy un no instrumento.
 
@@ -460,23 +463,33 @@
 
 *(Y entonces, de pie en el pasillo central, frente al estrado vacío del archivo, sola, empapada de hombros, recita.)*
 
-**ODILA:** Con la venia de los presentes...
-**ODILA:** ...de los ausentes con causa...
-**ODILA:** ...y del que lleva el registro.
+**ODILA:** Ante quien da fe... y ante quien la guarda:
+**ODILA:** saludo al Alba, que llega sin ser citada.
 
-*(Primera reverencia. Nadie mira.)*
+*(Reverencia primera: profunda, al levante. Nadie mira.)*
 
-**ODILA:** Doy fe de que pido. Pido sabiendo que debo.
+**ODILA:** Saludo a la letra, que se queda cuando nos vamos.
 
-*(Segunda reverencia. La lámpara del fondo parpadea.)*
+*(Reverencia segunda: media, hacia los estantes donde aprendió a leer. La lámpara del fondo parpadea.)*
 
-**ODILA:** Y saludo al estrado: por lo dicho. Por lo hecho. Por lo que queda pendiente.
+**ODILA:** Saludo al testigo, que no cierra los ojos.
 
-*(Tercera reverencia — la sostiene. La cabeza baja, la lluvia en los vitrales, la Fórmula entera dicha para nadie: la fe pública, sin público. Cuando se endereza, tiene la cara de la Forastera sin máscara.)*
+*(Reverencia tercera: breve, al estrado vacío — la sostiene. La cabeza baja, la lluvia en los vitrales.)*
+
+**ODILA:** Y en la forma en que la forma lo permita...
+**ODILA:** solicito ser oída, que no atendida;
+**ODILA:** atendida, que no complacida;
+**ODILA:** y complacida solo si así consta.
+
+*(Pausa. La Fórmula entera, dicha para nadie: la fe pública, sin público. Y entonces una línea fuera de fórmula — la primera de su vida:)*
+
+**ODILA:** Doy fe de que pido.
+
+*(Cuando se endereza, tiene la cara de la Forastera sin máscara.)*
 
 *(Corte.)*
 
-[GAMEPLAY: sin gameplay — cinemática corta. Nota de sala: el texto de la Fórmula debe coincidir con el canónico de E08 (bloque 2); conservar la estructura de TRES reverencias — siembra enterrada del orden de rotaciones (Acto 3). No subrayar.]
+[GAMEPLAY: sin gameplay — cinemática corta. Nota de sala: texto verificado contra el canónico de E08 (bloque 2) — única variación admisible, el femenino ("oída/atendida/complacida"). Conservar la estructura de TRES reverencias con sus direcciones (levante/estantes/estrado) — siembra enterrada del orden de rotaciones (Acto 3). No subrayar.]
 
 ---
 
@@ -488,7 +501,7 @@
 - **Objetivo narrativo:** duelo obligatorio contra Bravante (mazo de Interés). A mitad de partida queda claro que no vino a ganar: vino a mirar a Ciro de cerca. El colador de la Cámara, operando.
 - **Motor de humor (la risa es de):** el mundo (rival-personalidad) + Ferra (la apuesta en contra — siembra textual). El cierre no es de risa.
 
-*(El reservado: una mesa de juego buena de verdad, dos sillas, luz baja. BRAVANTE — traje claro, sin un pelo fuera de lugar, sonrisa de interés compuesto — ya está sentado. Sobre la mesa, el remito del lote 44: lleno, sellado, listo. Solo le falta la visa.)*
+*(El reservado: una mesa de juego buena de verdad, dos sillas, luz baja. BRAVANTE — traje claro, sin un pelo fuera de lugar, sonrisa de interés compuesto — ya está sentado. Sobre la mesa, el remito del lote 44: lleno, sellado, listo. Solo le falta la visa. (†))*
 
 **BRAVANTE:** Sabía que venías, Escribano. Yo con los nombres soy puntual.
 **CIRO:** Vengo a retirar un lote. Me dijeron que usted visa.
@@ -500,7 +513,7 @@
 **CIRO:** ...¿Ferra?
 **FERRA:** Es estrategia, no deslealtad. Si perdés, comemos. Si ganás, te abrazo. No tenés cómo fallarme.
 
-[GAMEPLAY: duelo obligatorio — Bravante (mazo de Interés: cartas que suben de coste y de ataque cada turno que pasan en la mano — "te apura desde la mano"). Premia cartas que no salen por ningún otro canal.]
+[GAMEPLAY: duelo obligatorio — Bravante (mazo de Interés: cartas que suben de coste y de ataque cada turno que pasan en la mano — "te apura desde la mano"). Premia cartas que no salen por ningún otro canal; en el paquete premium, garantizada: **"El Amanecer"** (la legendaria que Ciro anuncia en mano en E25 — trazabilidad de colección).]
 
 *(La partida. Bravante juega sin mirar casi sus cartas: mira a Ciro.)*
 
@@ -528,9 +541,10 @@
 **CIRO:** Hace tres turnos que tenés letal en la mano y no la bajás. La estás dejando madurar más allá del punto. Nadie hace eso. Estás jugando a otra cosa.
 **BRAVANTE** *(una pausa larga; después, la primera sonrisa sincera — y es peor que las otras)*: ...Estoy jugando a mirar, Escribano. La mesa ya me la pagó otro.
 
-*(Termina la partida sin resistencia. Bravante firma la visa con una rúbrica hermosa, empuja el remito y un paquete de cartas premium a través de la mesa.)*
+*(Termina la partida sin resistencia. Bravante firma la visa con una rúbrica hermosa, empuja el remito y un paquete de cartas premium a través de la mesa. La de arriba viene aparte, boca arriba: una legendaria que arde de dorado — "El Amanecer".)*
 
 **BRAVANTE:** Cobrá: te lo ganaste. Yo también cobré. Todos zafamos en regla.
+**BRAVANTE** *(un dedo sobre la legendaria, empujándola el último tramo)*: La de arriba la soñás desde Lacrevieja, ¿no? Tomala. A mí los amaneceres no me rinden: yo cobro de noche.
 **CIRO:** ¿Qué le vas a decir? Al que paga.
 **BRAVANTE** *(levantándose, acomodándose el traje)*: La verdad. Es lo que mejor cotiza últimamente. Vos sabrás.
 
@@ -618,7 +632,10 @@
 - La Baranda de tiza y la memoria de los acreedores de Salu (E20) — cobra la ruta de contrabando (Acto 2).
 - Don Teo, el que no sabe mentir (E21) — espejo de Ciro; disponible como NPC recurrente del puerto.
 - Odila roba su propio sello (E22) — imagen exacta de E28; motivación del Acto 2.
-- La Fórmula con tres reverencias, rezada (E22) — refuerza la siembra enterrada de E09 rumbo al Acto 3. Sin subrayar.
+- La Fórmula con tres reverencias, rezada (E22 — texto canónico de E08, en femenino) — refuerza la siembra enterrada de E09 rumbo al Acto 3. Sin subrayar.
+- "Saludo al testigo, que no cierra los ojos" como santo y seña con el sereno (E18) — tercera cita del canon de la Fórmula: refuerza la tríada sin subrayarla.
+- **"El Amanecer" garantizada en el premio de Bravante (E23)** — cobra E25 (Ciro la anuncia en mano) y, sin que nadie lo sepa, la mesa final del juego.
+- "Yo cobro de noche" (E23, Bravante) — disponible como rima oscura para la Ronda (Acto 2).
 - "Al que debe lo persiguen. Al que vale lo esperan." (E24) — rima con la segunda oferta de Nadia (Acto 2).
 
 **Cobradas acá:**

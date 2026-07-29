@@ -13,7 +13,7 @@ Formato: encabezado por escena, acotaciones breves en cursiva, diálogo `NOMBRE:
 - **Personajes:** Ciro (6 y 17); la Madre (solo manos y voz, nunca el rostro).
 - **Objetivo narrativo:** establecer la prenda heredada, la ausencia de la madre, el peso como identidad. Los términos del sello jamás quedan en cámara.
 - **Motor de humor:** Ciro, en sordina (la libreta al despertar).
-- **Siembras:** términos ilegibles (→ E27, Acto 2); "vas a entender el peso" (→ Acto 2); la libreta como objeto-personaje.
+- **Siembras:** términos ilegibles (→ E27, Acto 2); "vas a entender el peso" (→ Acto 2); la libreta como objeto-personaje; **el alba no lo alivia** (siembra enterrada, NO subrayar → E27: "al que cobra no le pagan con alivio").
 
 ---
 
@@ -35,7 +35,7 @@ Formato: encabezado por escena, acotaciones breves en cursiva, diálogo `NOMBRE:
 
 [GAMEPLAY: transición de sueño — el jugador mantiene un botón para "sostener" el peso; al soltarlo, despertar.]
 
-*Cuarto de Ciro, once años después. Amanecer. La primera luz entra por la ventana y algo se afloja en el pecho — el alivio del alba, físico, breve. La casa está en silencio. Hace once años que está en silencio.*
+*Cuarto de Ciro, once años después. Amanecer. La primera luz entra por la ventana. Afuera, dicen, algo se afloja en el pecho de todo el pueblo — el alivio del alba, físico, breve. En esta casa la luz entra y nada más: Ciro despierta igual de cargado que se acostó. La casa está en silencio. Hace once años que está en silencio.*
 
 **CIRO:** Buen día.
 
@@ -75,9 +75,7 @@ Formato: encabezado por escena, acotaciones breves en cursiva, diálogo `NOMBRE:
 
 **ROSAURA:** ¡Ahí está! El hombre del día.
 **CIRO:** Todavía no. La ceremonia es al atardecer. Hasta entonces soy el menor del día.
-**ROSAURA:** Vos siempre tan exacto. Vení, que hay trabajo: las lámparas de la plaza amanecieron frías.
-**CIRO:** ¿Las tres?
-**ROSAURA:** Las tres. Y ya sabés cómo se encienden.
+**ROSAURA:** Vos siempre tan exacto. Vení, que hay trabajo: las tres lámparas de la plaza amanecieron frías. Y ya sabés cómo se encienden.
 **CIRO:** Con palabra cumplida.
 **ROSAURA:** Fresquita y del festejado, como manda la costumbre: tres vecinos, tres promesitas, tres lámparas. Elegí a quién le prometés primero.
 **CIRO:** ¿Puedo prometerles a los tres primero y cumplir después en orden de vencimiento?
@@ -99,15 +97,13 @@ Formato: encabezado por escena, acotaciones breves en cursiva, diálogo `NOMBRE:
 
 *Última brazada. La promesita del cinto tiembla, brilla y se disuelve en una bocanada de calor. En la plaza, la primera lámpara se enciende sola.*
 
-**ROSAURA:** ¿Sentiste el calorcito?
-**CIRO:** Siempre.
-**ROSAURA:** Eso es una palabra volviendo a casa. No hay estufa que le gane.
+**ROSAURA:** Eso que sentiste es una palabra volviendo a casa. No hay estufa que le gane.
 
 ### Promesita 2 — la Maestra
 
 *Cantero norte de la plaza. LA MAESTRA jardinera, pañuelo en la cabeza, señala una fila de macetas.*
 
-**MAESTRA:** Las macetas del cantero norte, Ciro. Con la fiesta hoy no las riega nadie, y el sol no perdona ni en día de Mayoría.
+**MAESTRA:** Las macetas del cantero norte, Ciro. Con la fiesta hoy no las riega nadie.
 **CIRO:** Prometo regar todas las macetas del cantero norte.
 **MAESTRA:** Con "las del cantero" alcanzaba, querido.
 **CIRO:** Dije "todas". Ya está sellado.
@@ -121,7 +117,7 @@ Formato: encabezado por escena, acotaciones breves en cursiva, diálogo `NOMBRE:
 **MAESTRA:** El agua se le va por la rajadura.
 **CIRO:** Adónde va el agua no es problema de los términos.
 
-*La promesita se disuelve. Segunda lámpara encendida. La Maestra se ríe sola un rato largo, regando la risa por todo el cantero.*
+*La promesita se disuelve. Segunda lámpara encendida. La Maestra se ríe sola un rato largo.*
 
 **MAESTRA:** Diecisiete años y ya regás macetas rotas por contrato. Este pueblo no te merece.
 
@@ -133,9 +129,7 @@ Formato: encabezado por escena, acotaciones breves en cursiva, diálogo `NOMBRE:
 **CIRO:** ¿Querés que las lea?
 **COSME:** En voz alta y despacio. Un nombre mal grabado es una deuda con alguien que ya no puede reclamar. Y esas son las peores: no vencen nunca.
 **CIRO:** Prometo leer los nombres nuevos y darte fe de erratas.
-**COSME:** "Fe de erratas." Me gusta. Esa me la anoto para mi propia lápida.
-**CIRO:** ¿Cuál es tu lápida?
-**COSME:** Todavía ninguna. Pero uno va juntando frases. Lo bueno pasa al final, pibe.
+**COSME:** "Fe de erratas." Me gusta. Esa me la anoto para la mía. Uno va juntando frases. Lo bueno pasa al final, pibe.
 
 [GAMEPLAY: leer en voz alta dos lápidas; detectar la errata en la segunda.]
 
@@ -151,9 +145,7 @@ Formato: encabezado por escena, acotaciones breves en cursiva, diálogo `NOMBRE:
 
 *Mediodía. Tres lámparas encendidas a pleno sol, pálidas y orgullosas. Ciro cruza la plaza y las gallinas lo siguen en fila india, como una procesión de plumas.*
 
-**ROSAURA:** Mirá cómo te siguen. La gallina sabe quién cumple.
-**CIRO:** ¿Sabe?
-**ROSAURA:** La gallina de Lacrevieja no le come de la mano a cualquiera. Es el animal más desconfiado del mundo civilizado. Por eso acá las queremos tanto.
+**ROSAURA:** Mirá cómo te siguen. La gallina de Lacrevieja es el animal más desconfiado del mundo civilizado. No le come de la mano a cualquiera: sabe quién cumple.
 **CIRO:** Entonces esto es un certificado.
 **ROSAURA:** Con patas. Vení al horno cuando termines de dar vueltas: te doy de almorzar y te muestro una cosa.
 **CIRO:** ¿Qué cosa?
@@ -168,10 +160,11 @@ Formato: encabezado por escena, acotaciones breves en cursiva, diálogo `NOMBRE:
 - **Objetivo narrativo:** tutorial de «De Palabra» en lacre muerto contra el mazo puro Garante de Rosaura. Ciro anuncia su mano en voz alta; Rosaura lo toma por táctica finísima y pierde igual. Opcional: Cosme y su mazo puro Letra chica.
 - **Motor de humor:** rivales-personalidad (mundo) + Ciro (la honestidad como estilo de juego).
 - **Siembras:** costumbre de anunciar la mano (→ E17 fama del "mazo del Escribano"; → final de la Ronda, Acto 2); reglas base + Promesas del TCG; carta Gallina de Lacrevieja; "el único lugar donde prometer no pesa" (→ E16–E17; → la mesa final del juego).
+- **Continuidad de colección:** el duelo se juega con el **mazo prestado de la casa** — la Lámpara de Palabra que Ciro anuncia es de Rosaura y no entra a la colección; la Lámpara propia se obtiene recién en el cofre de E09 (sin duplicado fantasma).
 
 ---
 
-*Horno de Rosaura, mediodía. Olor a pan y a lacre frío. Sobre la mesa enharinada, un mantel bordado con casillas: un Estrado de tela. Rosaura baraja cartas selladas en un lacre gris, apagado, sin brillo.*
+*Horno de Rosaura, mediodía. Olor a pan y a lacre frío. Sobre la mesa enharinada, un mantel bordado con casillas: un Estrado de tela. Rosaura baraja cartas selladas en un lacre gris, apagado, sin brillo. Le desliza a Ciro un mazo de la casa, gastado de manos ajenas: el de enseñar.*
 
 **ROSAURA:** Sentate. ¿Jugaste alguna vez a De Palabra?
 **CIRO:** Lo vi jugar. Nunca entendí por qué la gente grita.
@@ -181,11 +174,11 @@ Formato: encabezado por escena, acotaciones breves en cursiva, diálogo `NOMBRE:
 **CIRO:** ¿Y eso es divertido?
 **ROSAURA:** Es el vértigo de los cumplidores, querido. Probá y después me contás.
 
-[GAMEPLAY: duelo obligatorio tutorial — Rosaura (mazo puro Garante). El diálogo siguiente corre sobre los primeros turnos, enseñando en juego real: Aval, Crédito, Fiadores, Estrado, Garante, Promesas.]
+[GAMEPLAY: duelo obligatorio tutorial — Rosaura (mazo puro Garante); Ciro juega con el mazo prestado de la casa. Los valores exactos (Aval 30, Crédito inicial, tope) viven en el overlay de tutorial — NO en boca de Rosaura. PRODUCCIÓN, no negociable: la mano inicial de Ciro va fijada por script y debe coincidir con la mano que anuncia — Ciro no puede mentir ni por desincronización de gameplay. El diálogo siguiente corre sobre los primeros turnos, enseñando en juego real: Aval, Crédito, Fiadores, Estrado, Garante, Promesas.]
 
-**ROSAURA:** Vos y yo somos Firmas. Treinta de Aval cada una: tu palabra ante el pueblo. Bajás mi Aval a cero, ganaste.
+**ROSAURA:** Vos y yo somos Firmas: mi palabra contra la tuya. La que se queda sin respaldo, perdió.
 **CIRO** *(levantando una carta)*: ¿Y esta señora con el pan?
-**ROSAURA:** Un Fiador. Gente que pone el cuerpo por tu Firma. Se pagan con Crédito: arrancás con uno solo, y cada turno la mesa te fía uno más.
+**ROSAURA:** Un Fiador. Gente que pone el cuerpo por tu Firma. Se pagan con Crédito. La mesa te fía de a uno por turno.
 **CIRO:** ¿Por qué de a uno?
 **ROSAURA:** Porque así se hace la confianza, querido. Despacito y viendo cómo venís pagando.
 **CIRO** *(otra carta)*: Esta gallina brilla.
@@ -201,7 +194,7 @@ Formato: encabezado por escena, acotaciones breves en cursiva, diálogo `NOMBRE:
 **CIRO:** Entiendo. Tu mazo es una fila para comprar pan.
 **ROSAURA:** Mi mazo es un abrazo, querido. Con contragolpe.
 
-*Ciro estudia su mano. Largo. Después la apoya en la mesa, boca arriba no — pero da lo mismo:*
+*Ciro estudia su mano. Largo. La apoya en la mesa sin darla vuelta. Da lo mismo: la canta entera.*
 
 **CIRO:** Tengo dos Gallinas, un Peón de Viña y la Lámpara de Palabra. Pienso jugar la Lámpara y una Gallina bajo promesa.
 **ROSAURA:** ...¿Por qué me decís lo que tenés?
@@ -225,13 +218,13 @@ Formato: encabezado por escena, acotaciones breves en cursiva, diálogo `NOMBRE:
 **CIRO:** ¿Estás enojada?
 **ROSAURA:** Estoy orgullosa, que es peor. Tomá.
 
-*Le empuja por la mesa un mazo atado con piolín de panadería, y una carta suelta encima: la Gallina.*
+*Junta el mazo de la casa — ese enseña y se queda en el horno — y le empuja por la mesa otro, atado con piolín de panadería, y una carta suelta encima: la Gallina.*
 
 **ROSAURA:** Tu primer mazo propio. Y la Gallina va de regalo: es de acá, sabe cumplir. Jugala siempre bajo promesa.
 **CIRO:** Gracias. Me gustó. Es raro: prometí todo el rato y no pesó nada. Debe ser el único lugar del mundo donde la palabra sale gratis.
 **ROSAURA:** Por eso lo jugamos los que pagamos siempre, querido.
 
-[GAMEPLAY: primeras cartas de colección — mazo inicial + Gallina de Lacrevieja.]
+[GAMEPLAY: primeras cartas de colección — mazo inicial + Gallina de Lacrevieja. Trazabilidad: el mazo inicial incluye un «Porteador del Empeñadero» — es el que Ciro anuncia en mano en E17 ("un Porteador que me cuesta caro").]
 
 ### Duelo opcional — Cosme
 
@@ -319,6 +312,7 @@ Formato: encabezado por escena, acotaciones breves en cursiva, diálogo `NOMBRE:
 - **Objetivo narrativo:** la prenda ganó peso durante la noche (se ve: Ciro camina inclinado). Notificación de embargo con papeleo perfecto: el horror es legal. Tutorial de combate y de las micro-promesas del Empeñador.
 - **Motor de humor:** Ciro y el Decano — la literalidad compartida (el error de foliado).
 - **Siembras:** la Cámara del Empeño como antagonista institucional; **"garantía viviente"** (eco exacto en Acto 2 — plantar sin subrayar); Ferra de lejos, callada, esperando un adelanto que no llega (→ E06).
+- **Nota de sala:** «¿Qué comiste anoche vos?» es la única vez en todo el juego que Ciro *hace* un chiste en lugar de *serlo* — está solo, sin testigos; su registro se afloja únicamente así. Recurso de una sola vez: no repetir con público.
 
 ---
 
@@ -396,9 +390,27 @@ Formato: encabezado por escena, acotaciones breves en cursiva, diálogo `NOMBRE:
 
 *El Decano entra al patio con dos alguaciles de refresco. Detrás, Ferra, lanza al hombro, cara de empleada en conflicto gremial. Los alguaciles cierran las salidas. El Decano despliega — clac, clac — un atril portátil. Acomoda papeles. Carraspea.*
 
-**DECANO:** Procedo a dar lectura a la orden de aprehensión de la garantía—
+**DECANO:** Procedo a dar lectura a la orden de aprehensión de la garantía viviente.
 
-*Ferra levanta la mano.*
+*Los alguaciles avanzan. Ferra, un paso atrás, al trote mínimo reglamentario.*
+
+[GAMEPLAY: boss 1, fase 1 — el Tasador Decano y sus alguaciles, con FERRA DEL LADO ENEMIGO: pelea a desgano (llega tarde a las órdenes, pega flojo, jamás remata a Ciro). El atril del Decano es objeto destruible: mientras está en pie, el Decano "lee cláusulas" (debuffs de peso); voltearlo interrumpe la lectura.]
+
+*Barks de la fase 1:*
+
+**DECANO:** ¡Tasación en caliente! ¡Todo lo del embargado pesa doble hasta nueva foja!
+**CIRO:** Empeño palabra: ¡prometo no retroceder este turno!
+
+*La prenda ruge de luz.*
+
+**FERRA** *(bloqueando a Ciro, sin ganas)*: Nada personal, pibe. Todavía.
+**FERRA** *(a un alguacil que la apura)*: Voy. Estoy yendo. Mirá cómo voy.
+
+*A mitad del combate, el Decano levanta la vista de la foja y señala a Ciro con la pluma.*
+
+**DECANO:** Suficiente registro. Escolta: proceda al remate de la garantía.
+
+*Ferra no procede. Ferra levanta la mano.*
 
 **FERRA:** Pregunta administrativa.
 **DECANO:** La escolta no formula preguntas administrativas.
@@ -419,19 +431,17 @@ Formato: encabezado por escena, acotaciones breves en cursiva, diálogo `NOMBRE:
 **CIRO** *(bajo, a Ferra)*: ¿Vos quién sos?
 **FERRA:** Tu problema nuevo. Vos pegá, que aguanto yo.
 
-[GAMEPLAY: boss 1 — el Tasador Decano y sus alguaciles. Ferra entra al grupo a mitad del combate: tutorial de Garante — su provocación obliga a los enemigos a atacarla, liberando a Ciro para empeñar micro-promesas. El atril del Decano es objeto destruible: mientras está en pie, el Decano "lee cláusulas" (debuffs de peso); volterarlo interrumpe la lectura.]
+[GAMEPLAY: boss 1, fase 2 — cambio de bando en caliente: Ferra entra al grupo a mitad del combate. Tutorial de Garante — su provocación obliga a los enemigos a atacarla, liberando a Ciro para empeñar micro-promesas.]
 
-*Barks de combate:*
+*Barks de la fase 2:*
 
 **FERRA:** ¡Eh! ¡Los grises! ¡Acá! ¡El que le pegue al pibe cobra a término, COMO YO!
 
 *Los alguaciles, heridos en lo más hondo del recibo de sueldo, se le van todos encima.*
 
 **DECANO** *(desde el atril)*: Consta que la ex escolta emplea agravios de índole... contable.
-**DECANO:** ¡Tasación en caliente! ¡Todo lo del embargado pesa doble hasta nueva foja!
-**CIRO:** Empeño palabra: ¡prometo no retroceder este turno!
 
-*La prenda ruge de luz. El Decano moja la pluma y empieza otra cláusula:*
+*El Decano moja la pluma y empieza otra cláusula:*
 
 **DECANO:** "Considerando primero: que el peso de la prueba recae en—"
 
@@ -476,7 +486,7 @@ Formato: encabezado por escena, acotaciones breves en cursiva, diálogo `NOMBRE:
 - **Personajes:** Ciro, Ferra.
 - **Objetivo narrativo:** tutorial de campamento y nacimiento de dos gags estructurales: el **farol humano** de Ferra y la sección "Ferra" de la libreta. Cierre grave: la primera promesa **elegida** de Ciro — y la **SEGUNDA CAMPANADA**, que Ferra escucha por primera vez.
 - **Motor de humor:** Ferra (dominante) — farol humano + primer intento de hablar sin verbos comprometedores. Ciro de contrapunto con la libreta.
-- **Siembras:** farol humano (→ E13, E26, mecánica de todo el juego); libreta sección "Ferra" (gag permanente); la promesa elegida "vamos a entender qué sos" (arranque del arco de Ciro); segunda campanada.
+- **Siembras:** farol humano (→ E12, E26, mecánica de todo el juego — cobra de noche, nunca de día); libreta sección "Ferra" (gag permanente); la promesa elegida "vamos a entender qué sos" (arranque del arco de Ciro); segunda campanada.
 
 ---
 
@@ -485,7 +495,10 @@ Formato: encabezado por escena, acotaciones breves en cursiva, diálogo `NOMBRE:
 **FERRA:** Ni un alma. Somos oficialmente fugitivos aburridos.
 **CIRO:** No hay yesca. Y el pedernal quedó en casa. Anotado en "cosas que perdí": pedernal, casa.
 **FERRA:** ¿En ese orden?
-**CIRO:** Orden alfabético. La c va después de... no. Perdón. Al revés. Fue un día largo.
+**CIRO:** De menor a mayor.
+
+*Ferra decide no contestar eso.*
+
 **FERRA:** Dejá el fuego. Comemos frío y listo.
 
 *Ciro intenta leer la libreta a oscuras. Nada. La acerca. Nada. La aleja con dignidad.*
@@ -510,13 +523,17 @@ Formato: encabezado por escena, acotaciones breves en cursiva, diálogo `NOMBRE:
 
 *Ferra bufa. Se saca el escudo. Apoya las palmas. Empieza. Uno. Dos. Tres...*
 
-**FERRA** *(por la mitad, resoplando)*: Esto... no... cuenta... como ayudarte...
-**CIRO:** Noventa y ocho. Noventa y nueve.
-**FERRA:** ¡Ni la mitad hice!
-**CIRO:** Perdón. Contaba para alentar.
-**FERRA:** ¡Contá BIEN, escribano, que si cuento yo me muero en sesenta!
+**FERRA** *(por la mitad, resoplando)*: ¿Cuánto... falta?
+**CIRO:** Cincuenta y tres.
+**FERRA:** ¡Decime "la mitad"!
+**CIRO:** La mitad era en cincuenta. Vas en cuarenta y siete. Faltan cincuenta y tres.
+**FERRA:** ¡ODIO que no redondees!
 
-*...Noventa y nueve. Cien. La promesita del llavero tiembla, se enciende y se disuelve en una lumbre tibia y dorada que queda flotando sobre el campamento, como un farolito sin farol. Las ramitas de Ciro prenden solas.*
+*Sigue. Resopla. Ciro lleva la cuenta en voz alta: exacta, implacable, sin perdonarle una.*
+
+**CIRO:** Noventa y nueve. Cien. Consta.
+
+*La promesita del llavero tiembla, se enciende y se disuelve en una lumbre tibia y dorada que queda flotando sobre el campamento, como un farolito sin farol. Las ramitas de Ciro prenden solas.*
 
 **FERRA** *(de espaldas en el pasto, agitando los brazos)*: ...Mirá vos. Mirá. Vos. Soy una lámpara.
 **CIRO:** Sos un farol humano. Es más luz que lámpara.
@@ -548,7 +565,7 @@ Formato: encabezado por escena, acotaciones breves en cursiva, diálogo `NOMBRE:
 *El fuego baja. Ferra mira la prenda, enorme junto a Ciro, brillando apenas con la lumbre. Se pone seria de golpe. Señala con el mentón.*
 
 **FERRA:** ¿Y eso? ¿Qué debés vos, que te mandan decano y todo?
-**CIRO:** No sé. Está sellada desde que tengo seis años. Los términos no se pueden leer. Y anteayer... venció. Dicen. Desde entonces pesa distinto.
+**CIRO:** No sé. Está sellada desde que tengo seis años. Los términos no se pueden leer. Y ayer... venció. Dicen. Desde entonces pesa distinto.
 **FERRA:** ¿Distinto cuánto?
 **CIRO:** Como si ya no cargara la piedra. Como si empezara a cargar lo que dice adentro.
 **FERRA:** ...¿Y no te da miedo?

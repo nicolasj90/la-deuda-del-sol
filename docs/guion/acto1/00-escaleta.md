@@ -104,7 +104,7 @@ Obligatorios del concepto, verificados: **3 duelos** (Rosaura E03; aduana E16 �
 - **Personajes:** Ciro, Ferra.
 - **Objetivo narrativo:** tutorial de campamento y nacimiento de dos gags estructurales. No hay yesca: "Ferra, cumplí algo, que no veo" — paga una promesita del llavero y el cumplimiento suelta luz: **nace el farol humano**. Ciro abre en la libreta la sección "Ferra".
 - **Motor de humor:** Ferra (dominante) — farol humano + primer intento de hablar sin verbos comprometedores ("yo... escolta... eventualmente destino"). Ciro de contrapunto con la libreta.
-- **Siembras / payoffs:** farol humano (mecánica de campamento recurrente: E13, E26 y todo el juego — chiste, tema y redención en una); libreta sección Ferra (gag Ciro↔Ferra permanente); **SEGUNDA CAMPANADA**: Ciro dice "te prometo que vamos a entender qué es esto" con intención — la prenda suena y Ferra la escucha por primera vez.
+- **Siembras / payoffs:** farol humano (mecánica de campamento recurrente: E12, E26 y todo el juego — cobra de noche, nunca de día; chiste, tema y redención en una); libreta sección Ferra (gag Ciro↔Ferra permanente); **SEGUNDA CAMPANADA**: Ciro dice "te prometo que vamos a entender qué es esto" con intención — la prenda suena y Ferra la escucha por primera vez.
 - **Gameplay:** [GAMEPLAY: tutorial de campamento — descanso, curación, farol humano de Ferra como recurso de luz.]
 - **Línea de Ciro:** fugitivo cumplidor. Formula su primera promesa **elegida** (ni heredada ni de vecino): entender. El arco arranca acá.
 
@@ -234,7 +234,7 @@ Obligatorios del concepto, verificados: **3 duelos** (Rosaura E03; aduana E16 �
 - **Personajes:** Ciro, Ferra, Fiel; rematador.
 - **Objetivo narrativo:** pista de Salu: debe media Baranda y le remataron la licencia de "asesor de intenciones"; hay que recomprarla. Ciro negocia: paga de más dos veces y pide disculpas por regatear. Ferra prueba el método físico (levanta el mostrador "para mirar abajo"). Al final Fiel se sienta sobre el lote y nadie se anima a moverlo.
 - **Motor de humor:** Ciro — incapacidad constitutiva de mentir y regatear (siembra de la dinámica mentor Ciro↔Salu: Salu va a intentar enseñarle en el Acto 2 y va a fracasar con orgullo).
-- **Siembras / payoffs:** la deuda de Salu y sus "viejos acreedores" (cobra en la ruta de contrabando, Acto 2); la licencia como llave de E25.
+- **Siembras / payoffs:** la deuda de Salu y sus "viejos acreedores" (cobra en la ruta de contrabando, Acto 2); el lote 44 — licencia + instrumental de corredor — como llave de E25 (licencia) y E27 (el estuche que Salu desenrolla para leer; propuesta del bloque 3 asumida por el bloque 4, marcada (†)).
 - **Gameplay:** [GAMEPLAY: quest de mercado — juntar la plata con duelos/combates, o ganar la licencia en una mesa; elección del jugador.]
 - **Línea de Ciro:** aprende que en El Fiado la verdad también es una táctica — la suya, la única que tiene.
 
@@ -362,7 +362,7 @@ Nota: E16–E17 son dos comedias seguidas a propósito (llegada a El Fiado — s
 | Cerradura de Testigos (lógica testigo/fe pública) | E09 | Acto 3 (versión completa; explica el final) |
 | Reverencias de la Fórmula = orden de rotaciones | E09 (enterrada, no subrayar) | Acto 3 |
 | Llavero de Ferra | E06 | arco sonoro por actos (tintinea menos) |
-| Farol humano de Ferra | E07 | E13, E26; mecánica de campamento de todo el juego |
+| Farol humano de Ferra | E07 | E12, E26; mecánica de campamento de todo el juego (solo de noche) |
 | Por qué Ferra cobra por adelantado | E06 (conducta) / E19 (herida) | Actos 2–3 |
 | "Garantía viviente" | E05 | Acto 2 (la madre se empeñó a sí misma) |
 | Mazo del Escribano (anunciar la mano) | E03 | E17 (fama); Acto 2 (final de la Ronda) |

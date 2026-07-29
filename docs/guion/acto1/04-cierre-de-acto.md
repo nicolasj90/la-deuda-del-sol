@@ -8,6 +8,10 @@ Guion completo, listo para adaptar a Dialogue Manager. Registro: rioplatense neu
 - Salu NO ve a Fiel en E25 (queda afuera): el descubrimiento del quebranto es de E26, a la luz de la lámpara.
 - La prenda no suena en E25 ni E26 (el silencio se anota a propósito). Quinta campanada: E27. Una más, lejana, sobre el negro del título (E28).
 - Tratamiento: Ciro trata a Salu de *usted* en E25; pasa al *vos* en la charla nocturna de E26 (el camino los ablanda); en E27 Salu lo llama "Ciro" por primera vez — está acotado.
+- El lote 44 (licencia + instrumental de corredor de Salu; rematado en E20, acarreado en carretilla en E24) llega con el grupo a la taberna del Ancla: la licencia se entrega en E25, el estuche queda abajo y se nombra (†); Salu lo desenrolla en E27. La marca (†) sigue la convención del bloque 3: líneas a tocar si sala cambia la premisa del lote.
+- «El Amanecer» entra a la colección en E23 (garantizada en el paquete de Bravante): la mano anunciada de E25 depende de esa siembra.
+- En El Fiado la palabra nueva no ata (E16: «Lo que digas adentro no hace clavo»): las dos promesitas que Ferra cumple en E26 fueron hechas del otro lado del arco, a propósito — está dicho en escena, no en nota.
+- El Fiado se alumbra con faroles ALQUILADOS (concepto; E16/E17/E24): en este bloque no hay lámparas de palabra en pantalla.
 
 ---
 
@@ -15,7 +19,7 @@ Guion completo, listo para adaptar a Dialogue Manager. Registro: rioplatense neu
 
 **Ubicación / momento:** altillo de Salu, sobre la taberna del Ancla, El Fiado — día.
 **Personajes:** Ciro, Ferra, Salu. Fiel espera afuera.
-**Objetivo narrativo:** sumar a Salu al grupo vía duelo narrativo; instalar su motor (condicionales barrocos, el arte de no afirmar); sembrar que reconoce el tipo de sello y calla (cobra E27).
+**Objetivo narrativo:** sumar a Salu al grupo vía duelo narrativo; instalar su motor (condicionales barrocos, el arte de no afirmar); entregar la licencia y anunciar el resto del lote 44 (el estuche cobra E27); sembrar que reconoce el tipo de sello y calla (cobra E27).
 **Motor de humor / de quién es la risa:** Salu, dueño absoluto. Ciro de contrapunto (la libreta en blanco); Ferra en dosis chicas, sin pisar.
 
 ---
@@ -47,6 +51,8 @@ Guion completo, listo para adaptar a Dialogue Manager. Registro: rioplatense neu
 **FERRA:** Nos costó media Lonja, viejo.
 **CIRO:** Pagué de más. Dos veces. Y pedí disculpas.
 **SALU** *(guardándose la licencia, a Ferra)*: ¿Ese es el famoso Escribano? El puerto habla de ustedes. "El que paga de más y pide perdón." Sos una leyenda de terror para el gremio.
+**CIRO:** El resto del lote está abajo, con el tabernero. Un estuche de cuero. Suena a vidrio fino. (†)
+**SALU** *(la primera mirada de verdad en toda la escena)*: ...Me remataron entero, entonces. Y me compraron entero. Qué prolijos.
 
 **CIRO:** Necesitamos que lea un sello. Lacrado. Sin romperlo.
 **SALU:** ¿Y quién les dijo que yo puedo?
@@ -95,6 +101,8 @@ Guion completo, listo para adaptar a Dialogue Manager. Registro: rioplatense neu
 
 [GAMEPLAY: duelo obligatorio narrativo — Salu (control / Letra chica: contratos que drenan, cláusulas que roban turnos). Tutorial diegético del arquetipo desde el lado del rival: cada carta de Salu "miente en vida y confiesa al morir". La IA de Salu juega alrededor de la mano anunciada de Ciro COMO SI FUERA MENTIRA — y por eso pierde.]
 
+[PRODUCCIÓN — no negociable: la mano inicial de Ciro va fijada por script (dos Gallinas de Lacrevieja, Lámpara de Palabra, El Amanecer) para que el anuncio coincida con la mano real repartida. Ciro no puede mentir ni por desincronización de gameplay. Vale para toda línea "aviso/anoto mi mano" del acto.]
+
 *Durante el duelo (disparadores):*
 - **Primera Letra chica que se activa — SALU:** ¿Viste? Muerta, dijo la verdad. Llorala.
 - **Cuando el jugador cumple una Promesa — SALU:** Cumplís al contado. Qué manera de malcriar al universo.
@@ -127,12 +135,12 @@ Guion completo, listo para adaptar a Dialogue Manager. Registro: rioplatense neu
 
 **Ubicación / momento:** posada del Ancla, El Fiado — noche previa a la lectura. Comedor, pasillo, cuartos.
 **Personajes:** Ciro, Ferra, Salu, Fiel; Odila presente por carta.
-**Objetivo narrativo:** Salu descubre que "el perro" es un quebranto (pánico supersticioso; nace el gag de Fiel durmiendo encima — punto de plantación canónico del payoff amargo del Acto 3). Carta de Odila: protocolo perfecto y una línea torcida. Farol humano para la ronda de mate. Última noche antes de que todo cambie.
+**Objetivo narrativo:** Salu descubre que "el perro" es un quebranto (pánico supersticioso; nace el gag de Fiel durmiendo encima — punto de plantación canónico del payoff amargo del Acto 3). Carta de Odila: protocolo perfecto y una línea torcida. Farol humano para la ronda de mate — y el beat de arco: Ferra se endeuda a propósito, del otro lado del arco, para tener con qué alumbrar. Última noche antes de que todo cambie.
 **Motor de humor / de quién es la risa:** Salu + Fiel (la escena es de ellos). Ferra de base (cuerpo, llavero). Gravedad debajo: la carta, y el silencio final de la prenda.
 
 ---
 
-*(Comedor de la posada, noche. Mate en ronda. Fiel entra al trote con su escudilla en la boca y la deja a los pies de Salu, cola contenta. Es la primera vez que Salu lo ve a la luz de la lámpara.)*
+*(Comedor de la posada, noche. Mate en ronda. Fiel entra al trote con su escudilla en la boca y la deja a los pies de Salu, cola contenta. Es la primera vez que Salu lo ve a la luz del farol.)*
 
 **SALU:** ...Ese perro es de tinta.
 **FERRA:** Es... perro... técnicamente.
@@ -143,7 +151,7 @@ Guion completo, listo para adaptar a Dialogue Manager. Registro: rioplatense neu
 **SALU:** ¡Es un llorón! ¡Me sentaron a la mesa con un LLORÓN!
 **CIRO:** Se llama Fiel.
 **SALU:** ¡¿Le pusieron NOMBRE?! ¡A los llorones no se les pone nombre! ¡El nombre es un ancla, pibe! ¡Son deudas caminando, y ustedes lo llevan de mascota!
-**FIEL** *(acercándose, devoto)*: Hola.
+**FIEL** *(acercándose, devoto)*: No nos conocemos.
 **SALU** *(retrocediendo con silla y todo)*: No te acerques.
 **FIEL:** No me voy a no acercar.
 **SALU:** ¡¿Qué dijo?! ¿Qué dijo el papel este?
@@ -185,21 +193,30 @@ Guion completo, listo para adaptar a Dialogue Manager. Registro: rioplatense neu
 
 **CIRO** *(escribiendo)*: "No. No es normal."
 **CIRO:** "Cuando quiera, testigos tiene."
-**FERRA:** Ponele... nosotros... eventualmente puerta.
+**FERRA:** Ponele... nosotros... capaz puerta.
 **CIRO:** Eso mismo, pero con gramática. *(Escribe.)* "Y una puerta."
 **FIEL:** Poné que huele a triste desde acá.
 **CIRO:** Eso no se pone.
 
 *(Pausa. La pone.)*
 
-*(La lámpara del comedor chisporrotea y se apaga. Desde la cocina, la voz del posadero: "¡Se me venció la de barrer! ¡Mañana la cumplo, mañana!")*
+*(El farol del comedor chisporrotea y se apaga. Desde la cocina, la voz del posadero: "¡Se me venció el alquiler del farol! ¡Mañana lo pago, mañana!")*
 
 **CIRO:** Ferra, cumplí algo, que no veo.
 **FERRA:** Un día de estos me voy a hacer rogar.
 
 *(Ferra descuelga el llavero. Tintinea — menos que en Lacrevieja. Revisa, elige una llave.)*
 
-**FERRA** *(poniéndose de pie, solemne, al comedor entero)*: Le prometí a la pescadora de la Lonja repetirle el eslogan a diez desconocidos. *(Carraspea.)* "EL MEJOR PESCADO DEL UNIVERSO. PROBABLEMENTE."
+**FERRA** *(poniéndose de pie, la llave en alto)*: Le prometí a la pescadora de la Lonja repetirle el eslogan a diez desconocidos.
+**CIRO:** ¿Cuándo prometiste eso? Acá la palabra no ata.
+**FERRA:** Del otro lado del arco. Salí, prometí, volví. Veinte pasos por llave.
+**CIRO** *(anotando, despacio)*: "Ferra sale de la ciudad para endeudarse. Para tener con qué alumbrar."
+**FERRA:** No lo escribas así, que suena a algo.
+**CIRO:** Suena a lo que es.
+
+*(Ferra carraspea. Solemne, al comedor entero:)*
+
+**FERRA:** "EL MEJOR PESCADO DEL UNIVERSO. PROBABLEMENTE."
 
 *(La llave tintinea, pero no se disuelve. La luz que suelta es a medias: parpadea.)*
 
@@ -226,7 +243,7 @@ Guion completo, listo para adaptar a Dialogue Manager. Registro: rioplatense neu
 **CIRO:** ¿Mañana lo lee?
 **SALU:** Con la primera luz. Los sellos se leen al alba, pibe: a esa hora el mundo entero está cobrando la promesa más vieja de todas, y los clavos aflojan la lengua.
 **CIRO:** ¿Y si el mío no afloja?
-**SALU:** Aflojan todos. *(Pausa. Toca lacre.)* Lo que me preocuparía, hipotéticamente, es qué diga.
+**SALU:** Todavía no conocí uno que no afloje. *(Pausa. Toca lacre.)* Lo que me preocuparía, hipotéticamente, es qué diga.
 
 *(Más tarde. Pasillo a oscuras. Salu eligió el cuarto del fondo: dos trancas, la silla contra la puerta. Corte: Salu en la cama, rígido, ojos abiertos como platos. Sobre su pecho, enroscado y feliz, Fiel.)*
 
@@ -270,12 +287,12 @@ Guion completo, listo para adaptar a Dialogue Manager. Registro: rioplatense neu
 
 **Ubicación / momento:** trastienda de Salu, El Fiado — del azul de la pre-alba al amanecer. La primera luz entra durante la lectura.
 **Personajes:** Ciro, Ferra, Salu, Fiel.
-**Objetivo narrativo:** la lectura del sello. Ciro no es deudor: es ACREEDOR, y el deudor es "el Alba". Quinta campanada — la primera que oye la calle. Salu afirma en indicativo por primera vez: la medida del terror. Se planta el motor del Acto 2 (el asiento matriz, el Empeñadero, la madre).
+**Objetivo narrativo:** la lectura del sello. Ciro no es deudor: es ACREEDOR, y el deudor es "el Alba". Quinta campanada — la primera que oye la calle. Salu afirma en indicativo por primera vez: la medida del terror — y la caída se oye en pantalla: un condicional que se le muere en la boca antes de «Es la deuda» (el indicativo previo, leyendo, es oficio; no cuenta como afirmación propia). Se planta el motor del Acto 2 (el asiento matriz, el Empeñadero, la madre).
 **Motor de humor / de quién es la risa:** ninguno. Todos los motores callan a la vez por primera vez en el acto — ese silencio es el clímax. No reasignar la risa a nadie.
 
 ---
 
-*(Trastienda. Oscuridad azul. La mesa despejada, un paño negro extendido. Salu desenrolla un estuche de cuero: lentes de relojero, tres agujas de lacre, un cuerno de latón chiquito — oído de corredor — y una copita servida que no toca.)*
+*(Trastienda. Oscuridad azul. La mesa despejada, un paño negro extendido. Salu desenrolla el estuche de cuero del lote 44 (†) — su instrumental, rematado y recomprado: lentes de relojero, tres agujas de lacre, un cuerno de latón chiquito — oído de corredor — y una copita servida que no toca.)*
 
 **SALU:** Reglas. No se habla. No se toca la mesa. Y nadie promete nada acá adentro mientras trabajo. Nada. Ni "ahora vengo".
 **FERRA:** ¿Y la copita?
@@ -336,7 +353,7 @@ Guion completo, listo para adaptar a Dialogue Manager. Registro: rioplatense neu
 
 **SALU:** "El Alba."
 
-*(QUINTA CAMPANADA. Fortísima. Los vasos de la taberna cantan del otro lado de la pared; el paño negro tiembla; la copita de Salu se vuelca. Afuera, todas las lámparas de palabra del puerto parpadean a la vez. Y la calle se para: parroquianos, pescadores, el aduanero — asomados a la puerta y a la ventana de la trastienda, mirando el hombro de Ciro. La misma calle que le coreaba el nombre en las mesas.)*
+*(QUINTA CAMPANADA. Fortísima. Los vasos de la taberna cantan del otro lado de la pared; el paño negro tiembla; la copita de Salu se vuelca. Afuera, todos los faroles alquilados del puerto parpadean a la vez. Y la calle se para: parroquianos, pescadores, el aduanero — asomados a la puerta y a la ventana de la trastienda, mirando el hombro de Ciro. La misma calle que le coreaba el nombre en las mesas.)*
 
 *(Alguien, en la puerta, murmura: "el Escribano...". Nadie corea.)*
 
@@ -348,7 +365,11 @@ Guion completo, listo para adaptar a Dialogue Manager. Registro: rioplatense neu
 
 **CIRO:** Salu. ¿Qué es esto? ¿Qué estuve cargando?
 
-*(Salu — el hombre que no afirma, el de los cuarenta años de "llegado el caso" — endereza la copita volcada. Está vacía. La deja. Y contesta en indicativo, liso, sin una sola vuelta:)*
+*(Salu — el hombre que no afirma, el de los cuarenta años de "llegado el caso" — abre la boca. Le sale el oficio:)*
+
+**SALU:** Yo diría... yo eventualmente consideraría...
+
+*(Se le muere ahí. Endereza la copita volcada. Está vacía. La deja. Y contesta liso, sin una sola vuelta:)*
 
 **SALU:** Pibe. Esto no es una deuda. Es la deuda.
 

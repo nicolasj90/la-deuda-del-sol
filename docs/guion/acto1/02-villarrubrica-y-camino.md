@@ -14,6 +14,7 @@
 **Personajes:** Ciro, Ferra, Odila, ordenanzas; tasadores forasteros al fondo.
 **Objetivo narrativo:** el trámite de lectura del sello es denegado tres veces con sellos preciosos; cameo de Odila; nace la Fórmula de Cortesía Plena.
 **La risa es de:** Odila (dominante); Ferra aporta cuerpo sin pisarle el registro.
+**Nota de sala (CANDADO DE CANON):** la Fórmula que recita Ciro en esta escena es EL texto canónico. Toda cita posterior (la abreviada del sereno en E18, el rezo de E22, la llave del Acto 3) deriva de acá palabra por palabra; única variación admisible: el género de quien recita (*oída/atendida/complacida*). La tríada Alba/letra/testigo con sus tres reverencias (profunda–levante, media–anaqueles, breve–estrado) no se toca.
 
 ---
 
@@ -51,7 +52,7 @@
 **ORDENANZA 2:** Entonces no corresponde.
 **CIRO:** ¿Y qué corresponde?
 **ORDENANZA 2:** Que esté presente. Ver ventanilla uno.
-**FERRA** *(tronándose los dedos)*: Yo... ventanilla... eventualmente palanca.
+**FERRA** *(tronándose los dedos)*: Yo... ventanilla... capaz palanca.
 **CIRO:** No.
 
 *Sello gris, perfecto: SIN CONSTANCIA.*
@@ -178,7 +179,7 @@
 **Personajes:** Ciro, Ferra; Odila ("en calidad de veedora").
 **Objetivo narrativo:** dungeon 1 — Cerradura de Testigos, versión introductoria (una estatua, dos estanterías, primer haz de fe pública). El archivo devuelve lo imposible: NO CONSTA.
 **La risa es de:** Odila (solemnidad con fuga: todo es competencia).
-**Nota de sala:** la rima reverencias→rotaciones queda ENTERRADA. Nadie la comenta. Nadie la mira dos veces.
+**Nota de sala:** la rima reverencias→rotaciones queda ENTERRADA. Nadie la comenta. Nadie la mira dos veces. **CANDADO:** las indicaciones de Odila («Al levante primero... Después la letra... Al final, el estrado») son la siembra de la Cerradura de Testigos del Acto 3 — texto inamovible. Cualquier reescritura futura que «acorte el tutorial» rompe el final del juego.
 
 ---
 
@@ -349,7 +350,7 @@
 
 *Exterior. El camino real serpentea entre viñedos dorados. Cada tanto, un mojón de piedra con un cuenco de lacre en la cima: los mojones del diezmo.*
 
-**CIRO:** Mojón del diezmo. Costumbre vieja: el viajero deja una promesita por viaje. Con eso se alumbran las lámparas del camino.
+**CIRO:** Mojón del diezmo. Manual del Aspirante, capítulo de caminos: "el viajero deja una promesita; el camino devuelve luz".
 **FERRA:** ¿Es obligatorio?
 **CIRO:** Es cortesía.
 **FERRA:** Lo cortés no se cobra pero se debe. Paso.
@@ -382,7 +383,7 @@
 
 *Caminan. Ciro escribe mientras camina, sin tropezarse: años de práctica.*
 
-**CIRO** *(escribiendo)*: "Yo... lobos... eventualmente rodeo." Sujeto, sustantivo, adverbio. Verbo: ninguno. Idioma nuevo. Gramática pendiente.
+**CIRO** *(escribiendo)*: "Yo... lobos... en una de esas rodeo." Sujeto, dos sustantivos, locución adverbial. Verbo: ninguno. Idioma nuevo. Gramática pendiente.
 **FERRA:** ¿Me estás archivando?
 **CIRO:** Te estoy conservando. Es distinto.
 
@@ -453,21 +454,21 @@
 **FIEL:** No voy a no serlo.
 **CIRO** *(transcribiendo)*: "Sí."
 **FERRA:** ¿Quién te contrató a vos?
-**FIEL:** Nadie. No cobro. Espero.
+**FIEL:** Nadie. No cobro. No dejo de esperar.
 **FERRA** *(a Ciro, sombría)*: Peor que gratis. Gratis siempre cobra después.
 
 *El perro se acerca a Ciro, paso a paso, sin sacar los ojos del sello. Apoya la cabeza contra la prenda. Cierra los ojos.*
 
 **FIEL:** Suena como la que yo busco. Pero no es. Todavía no es.
 **CIRO:** ¿La que buscás?
-**FIEL:** Mi promesa. La rota. Si la encuentro, descanso.
+**FIEL:** Mi promesa. La rota. Sin ella no descanso.
 **CIRO:** ¿Qué decía?
 **FIEL:** No me acuerdo. Me acuerdo del peso. Del texto no.
 
 *Ciro se queda muy quieto. Ferra baja la lanza sin darse cuenta.*
 
 **CIRO:** ...Yo también cargo términos que no puedo leer.
-**FIEL:** Ya sé. Por eso vine.
+**FIEL:** Ya sé. No vine por otra cosa.
 **CIRO:** ¿Y ese farol?
 **FIEL:** Acá va el corazón. Está esperando.
 **CIRO:** ¿Qué espera?
@@ -483,10 +484,11 @@
 **CIRO:** Fiel. Como el de la balanza. La aguja que dice dónde está el peso de verdad.
 **FIEL** *(prueba el nombre como quien prueba un hueso)*: Fiel. ...No voy a no responder a ese nombre.
 **FERRA:** ...El bicho... eventualmente queda.
-**CIRO:** Eso fue casi un verbo.
-**FERRA:** Fue un adverbio. Contá bien.
+**CIRO:** Eso fue un verbo.
+**FERRA:** Tercera persona. El que queda es él. Yo no prometí nada.
+**CIRO** *(anotando)*: "Gramática defensiva. Nivel: avanzado."
 
-*Ciro abre la libreta en una página nueva.*
+*Pasa a una página nueva.*
 
 **CIRO** *(escribiendo)*: Sección "Fiel". Entrada uno: no es un perro. Entrada dos: es un perro. Ambas constan.
 
@@ -664,8 +666,8 @@
 
 *La bruma se junta. Toma forma: un hombre que fue ancho, hecho de papel roto y niebla, con una campanilla de cobrador oxidada donde iría la mano. Los términos incumplidos le dan vueltas alrededor como moscas escritas.*
 
-**FERRA:** Ciro. Definí "quebranto". Rápido.
-**CIRO:** Una promesa rota. El sello estalla y esto es lo que queda: los términos, caminando solos.
+**FERRA:** Ciro. Ya sé QUÉ es. Decime qué HACE. Rápido.
+**CIRO:** Lo que dice. Es lo único que le queda: los términos, caminando solos.
 **FERRA:** ¿Y qué quiere?
 **CIRO:** No quiere. Debe.
 
@@ -706,7 +708,7 @@
 *Silencio. La campanilla oxidada cae al piso y no rebota.*
 
 **QUEBRANTO** *(apenas)*: ...al que no tiene...
-**FIEL:** Ya está. Ya lo dijiste todo. Podés parar.
+**FIEL:** Ya está. No quedó nada sin decir. No debés más.
 
 *El Quebranto se apaga. No estalla: se deshilacha, despacio, y los papeles caen planos, mansos, tapizando el hueco del puente partido. Una firma vieja se deshace en el aire, como humo con caligrafía. La bruma, por primera vez en años, empieza a levantar.*
 
@@ -726,7 +728,7 @@
 
 *Fiel cruza primero, probando el papel con las patas.*
 
-**FIEL:** Pisen despacio. Está descansando.
+**FIEL:** Pisen despacio. No lo despierten.
 
 *Cruzan. Del otro lado, el último mojón del diezmo de Valdepalabra, con el cuenco vacío. Ciro deja su promesita sin anunciarla. Ferra se detiene. Mira el puente, la bruma que se va, el papel quieto.*
 
@@ -743,4 +745,6 @@
 - El grupo llega a El Fiado con: **resguardo de ilegibilidad** (E09–E10), **salvoconducto de Odila** (E10 — no vale nada en la aduana: cobrarlo en E16), la orden de buscar a **Salustio Vega** con la advertencia "revísese los bolsillos" (cobra en E25), y **Fiel** recién sumado con su gimmick ya mostrado (E15).
 - Registro: hasta acá, ni una palabra de lunfardo. El cambio es de ustedes y es un chiste en sí mismo.
 - Campanadas usadas: **tercera** (E15, con testigos). E12 fue vibración, no campanada. La cuarta es de E19.
-- Ferra sale del bloque con una promesita **elegida** en el llavero (la flor del puente) — micro-beat del arco sonoro: no la gastaren barato.
+- Ferra sale del bloque con una promesita **elegida** en el llavero (la flor del puente) — micro-beat del arco sonoro: no gastarla barato.
+- La **Fórmula de Cortesía Plena** de E08 es el texto canónico (ver candado en el encabezado de E08): E18 y E22 citan de ahí palabra por palabra. La tríada Alba/letra/testigo con sus reverencias es la llave del Acto 3.
+- **«Eventualmente» es la palabra-firma de Salu** (E25): en este bloque Ferra la usa solo dos veces (E08, en su Fórmula; E12, en el gag del verbo) y ya varía con «capaz» (E08), «en una de esas» (E11) y «algún día» (E15). Racionarla también en el bloque 3, para que el «tiene futuro en el rubro» de Salu sea descubrimiento y no redundancia.
