@@ -14,6 +14,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tele"]
 size = Vector2(32, 448)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_archivo"]
+size = Vector2(96, 64)
+
 [node name="Villarrubrica" type="Node2D"]
 editor_description = "Mapa stub del Acto 1 de La Deuda del Sol. Tilemap placeholder copiado de mythical_meadows (quest_004); pendiente de arte y contenido propios."
 
@@ -63,6 +66,14 @@ spawn_point_path = NodePath("OnTheGround/SpawnOeste")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporters/TeleporterEste"]
 shape = SubResource("RectangleShape2D_tele")
 
+[node name="TeleporterArchivoBajo" parent="Teleporters" instance=ExtResource("6_tele")]
+position = Vector2(1216, 224)
+next_scene = "uid://barchivobajo01"
+spawn_point_path = NodePath("OnTheGround/SpawnEntrada")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporters/TeleporterArchivoBajo"]
+shape = SubResource("RectangleShape2D_archivo")
+
 [node name="OnTheGround" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -90,3 +101,12 @@ metadata/_custom_type_script = "uid://0enyu5v4ra34"
 [node name="Cartel" parent="OnTheGround" instance=ExtResource("9_sign")]
 position = Vector2(768, 344)
 text = "Villarrúbrica — ciudad notarial. La Notaría del Alba solo atiende con Fórmula de Cortesía Plena."
+
+[node name="SpawnArchivoBajo" type="Marker2D" parent="OnTheGround" groups=["spawn_point"]]
+position = Vector2(1216, 352)
+script = ExtResource("10_spawn")
+metadata/_custom_type_script = "uid://0enyu5v4ra34"
+
+[node name="CartelArchivoBajo" parent="OnTheGround" instance=ExtResource("9_sign")]
+position = Vector2(1120, 288)
+text = "Notaría del Alba — escalera al Archivo Bajo. Ventanilla cuatro atiende informada."

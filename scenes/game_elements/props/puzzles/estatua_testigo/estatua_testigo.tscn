@@ -1,0 +1,60 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/game_elements/props/puzzles/estatua_testigo/components/estatua_testigo.gd" id="1_estatua"]
+[ext_resource type="Script" uid="uid://du8wfijr35r35" path="res://scenes/game_elements/props/interact_area/interact_area.gd" id="2_interact"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_base"]
+size = Vector2(48, 48)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_interact"]
+radius = 52.0
+
+[node name="EstatuaTestigo" type="Node2D"]
+script = ExtResource("1_estatua")
+
+[node name="Pedestal" type="Polygon2D" parent="."]
+color = Color(0.24, 0.22, 0.25, 1)
+polygon = PackedVector2Array(-24, -48, 24, -48, 24, 24, -24, 24)
+
+[node name="Mirada" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -24)
+
+[node name="Punta" type="Polygon2D" parent="Mirada"]
+color = Color(0.95, 0.9, 0.78, 1)
+polygon = PackedVector2Array(6, -10, 22, 0, 6, 10)
+
+[node name="Pivote" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -24)
+
+[node name="Haz" type="Line2D" parent="Pivote"]
+unique_name_in_owner = true
+points = PackedVector2Array(0, 0, 0, 0)
+width = 6.0
+default_color = Color(1, 0.85, 0.55, 0.75)
+
+[node name="Rayo" type="RayCast2D" parent="Pivote"]
+unique_name_in_owner = true
+target_position = Vector2(512, 0)
+collide_with_areas = true
+collision_mask = 1040
+
+[node name="Base" type="StaticBody2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 16
+
+[node name="FormaBase" type="CollisionShape2D" parent="Base"]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_base")
+
+[node name="InteractArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("2_interact")
+action = "Rotar"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_interact")

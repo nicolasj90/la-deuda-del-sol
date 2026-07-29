@@ -1,0 +1,215 @@
+[gd_scene format=3 uid="uid://barchivobajo01"]
+
+[ext_resource type="Script" path="res://scenes/quests/story_quests/la_deuda_del_sol/archivo_bajo/components/archivo_bajo.gd" id="1_archivo"]
+[ext_resource type="Script" uid="uid://c8405c212rbn6" path="res://scenes/game_elements/props/background_music/components/background_music.gd" id="2_bgm"]
+[ext_resource type="AudioStream" uid="uid://bbamdm6wtjjcn" path="res://assets/first_party/music/Threadbare_Bed.ogg" id="3_music"]
+[ext_resource type="PackedScene" uid="uid://iu2q66clupc6" path="res://scenes/game_elements/characters/player/player.tscn" id="4_player"]
+[ext_resource type="SpriteFrames" uid="uid://dtoylirwywk0j" path="res://scenes/game_elements/characters/components/sprite_frames/storyweaver_blue.tres" id="5_frames"]
+[ext_resource type="Script" uid="uid://0enyu5v4ra34" path="res://scenes/game_elements/props/spawn_point/components/spawn_point.gd" id="6_spawn"]
+[ext_resource type="PackedScene" uid="uid://0ull24fvmhwk" path="res://scenes/game_elements/props/teleporter/teleporter.tscn" id="7_tele"]
+[ext_resource type="PackedScene" uid="uid://covsdqqsd6rsy" path="res://scenes/game_elements/props/sign/sign.tscn" id="8_sign"]
+[ext_resource type="PackedScene" path="res://scenes/game_elements/props/puzzles/estatua_testigo/estatua_testigo.tscn" id="9_estatua"]
+[ext_resource type="PackedScene" path="res://scenes/game_elements/props/puzzles/bloque_empujable/bloque_empujable.tscn" id="10_bloque"]
+[ext_resource type="PackedScene" path="res://scenes/game_elements/props/puzzles/receptor_de_fe/receptor_de_fe.tscn" id="11_receptor"]
+[ext_resource type="PackedScene" path="res://scenes/game_elements/props/puzzles/puerta_sellada/puerta_sellada.tscn" id="12_puerta"]
+[ext_resource type="PackedScene" uid="uid://bcofredungeon1" path="res://scenes/game_elements/props/puzzles/cofre_de_dungeon/cofre_de_dungeon.tscn" id="13_cofre"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_horizontal"]
+size = Vector2(1664, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vertical"]
+size = Vector2(64, 704)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_muro_norte"]
+size = Vector2(64, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_muro_sur"]
+size = Vector2(64, 320)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_salida"]
+size = Vector2(48, 192)
+
+[node name="ArchivoBajo" type="Node2D"]
+editor_description = "E09 — «El Archivo Bajo». Dungeon 1 del Acto 1: Cerradura de Testigos, versión tutorial (una estatua, dos estanterías, un estrado). Arte placeholder: geometría de puzzle, no de arte final."
+script = ExtResource("1_archivo")
+
+[node name="BackgroundMusic" type="Node" parent="."]
+script = ExtResource("2_bgm")
+stream = ExtResource("3_music")
+metadata/_custom_type_script = "uid://c8405c212rbn6"
+
+[node name="Fondo" type="Node2D" parent="."]
+z_index = -10
+
+[node name="Piedra" type="Polygon2D" parent="Fondo"]
+color = Color(0.16, 0.15, 0.18, 1)
+polygon = PackedVector2Array(256, 384, 1856, 384, 1856, 1024, 256, 1024)
+
+[node name="PasilloDeLaMirada" type="Polygon2D" parent="Fondo"]
+color = Color(0.22, 0.2, 0.24, 1)
+polygon = PackedVector2Array(256, 640, 1856, 640, 1856, 704, 256, 704)
+
+[node name="AnaquelesNorte" type="Polygon2D" parent="Fondo"]
+color = Color(0.13, 0.12, 0.15, 1)
+polygon = PackedVector2Array(320, 416, 1536, 416, 1536, 480, 320, 480)
+
+[node name="AnaquelesSur" type="Polygon2D" parent="Fondo"]
+color = Color(0.13, 0.12, 0.15, 1)
+polygon = PackedVector2Array(320, 928, 1536, 928, 1536, 992, 320, 992)
+
+[node name="PolvoDeLacre" type="Polygon2D" parent="Fondo"]
+color = Color(0.42, 0.14, 0.14, 0.16)
+polygon = PackedVector2Array(256, 384, 1856, 384, 1856, 1024, 256, 1024)
+
+[node name="EstradoDePiedra" type="Polygon2D" parent="Fondo"]
+color = Color(0.27, 0.25, 0.29, 1)
+polygon = PackedVector2Array(1280, 624, 1408, 624, 1408, 736, 1280, 736)
+
+[node name="ArchivoProfundo" type="Polygon2D" parent="Fondo"]
+color = Color(0.1, 0.09, 0.12, 1)
+polygon = PackedVector2Array(1632, 384, 1856, 384, 1856, 1024, 1632, 1024)
+
+[node name="Paredes" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="Norte" type="CollisionShape2D" parent="Paredes"]
+position = Vector2(1056, 352)
+shape = SubResource("RectangleShape2D_horizontal")
+
+[node name="Sur" type="CollisionShape2D" parent="Paredes"]
+position = Vector2(1056, 1056)
+shape = SubResource("RectangleShape2D_horizontal")
+
+[node name="Oeste" type="CollisionShape2D" parent="Paredes"]
+position = Vector2(224, 704)
+shape = SubResource("RectangleShape2D_vertical")
+
+[node name="Este" type="CollisionShape2D" parent="Paredes"]
+position = Vector2(1888, 704)
+shape = SubResource("RectangleShape2D_vertical")
+
+[node name="MuroDelArchivoNorte" type="CollisionShape2D" parent="Paredes"]
+position = Vector2(1600, 512)
+shape = SubResource("RectangleShape2D_muro_norte")
+
+[node name="MuroDelArchivoSur" type="CollisionShape2D" parent="Paredes"]
+position = Vector2(1600, 864)
+shape = SubResource("RectangleShape2D_muro_sur")
+
+[node name="Teleporters" type="Node2D" parent="."]
+
+[node name="SalidaOeste" parent="Teleporters" instance=ExtResource("7_tele")]
+position = Vector2(288, 672)
+next_scene = "uid://bvillarubrica"
+spawn_point_path = NodePath("OnTheGround/SpawnArchivoBajo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporters/SalidaOeste"]
+shape = SubResource("RectangleShape2D_salida")
+
+[node name="SalidaEste" parent="Teleporters" instance=ExtResource("7_tele")]
+position = Vector2(1792, 672)
+next_scene = "uid://bvillarubrica"
+spawn_point_path = NodePath("OnTheGround/SpawnArchivoBajo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporters/SalidaEste"]
+shape = SubResource("RectangleShape2D_salida")
+
+[node name="OnTheGround" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="OnTheGround" instance=ExtResource("4_player")]
+position = Vector2(384, 672)
+player_name = "Ciro"
+sprite_frames = ExtResource("5_frames")
+
+[node name="Camera2D" type="Camera2D" parent="OnTheGround/Player"]
+limit_left = 192
+limit_top = 320
+limit_right = 1920
+limit_bottom = 1088
+
+[node name="SpawnEntrada" type="Marker2D" parent="OnTheGround" groups=["spawn_point"]]
+position = Vector2(384, 672)
+script = ExtResource("6_spawn")
+metadata/_custom_type_script = "uid://0enyu5v4ra34"
+
+[node name="PrimerRubrica" parent="OnTheGround" instance=ExtResource("9_estatua")]
+unique_name_in_owner = true
+position = Vector2(512, 704)
+direccion = 2
+alcance = 1024.0
+accion = "Girar el interruptor de tinta"
+
+[node name="EstanteriaPrimera" parent="OnTheGround" instance=ExtResource("10_bloque")]
+unique_name_in_owner = true
+position = Vector2(768, 672)
+
+[node name="EstanteriaSegunda" parent="OnTheGround" instance=ExtResource("10_bloque")]
+unique_name_in_owner = true
+position = Vector2(1024, 672)
+
+[node name="Estrado" parent="OnTheGround" instance=ExtResource("11_receptor")]
+unique_name_in_owner = true
+position = Vector2(1344, 680)
+permanente = true
+
+[node name="PuertaFinal" parent="OnTheGround" node_paths=PackedStringArray("fuentes") instance=ExtResource("12_puerta")]
+unique_name_in_owner = true
+position = Vector2(1600, 704)
+requiere_n = 1
+fuentes = [NodePath("../Estrado")]
+permanente = true
+
+[node name="ActaMayor" parent="OnTheGround" instance=ExtResource("13_cofre")]
+unique_name_in_owner = true
+position = Vector2(1728, 672)
+recompensa = "el resguardo («el sello es ilegible por vía oficial») y la carta «Lámpara de Palabra»"
+
+[node name="NoConsta" type="Label" parent="OnTheGround"]
+unique_name_in_owner = true
+visible = false
+offset_left = 1216.0
+offset_top = 552.0
+offset_right = 1472.0
+offset_bottom = 600.0
+theme_override_colors/font_color = Color(0.92, 0.9, 0.86, 1)
+theme_override_colors/font_outline_color = Color(0.08, 0.06, 0.05, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 22
+text = "NO CONSTA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CartelRegla" parent="OnTheGround" instance=ExtResource("8_sign")]
+position = Vector2(384, 864)
+text = "ODILA: Regla primera del Archivo Bajo: nada vale sin testigo. Las puertas de esta casa no se abren. Se convencen."
+
+[node name="CartelLevante" parent="OnTheGround" instance=ExtResource("8_sign")]
+position = Vector2(640, 864)
+text = "ODILA: Al levante primero. Siempre primero al levante. Profundo."
+
+[node name="CartelLetra" parent="OnTheGround" instance=ExtResource("8_sign")]
+position = Vector2(960, 864)
+text = "ODILA: Después la letra: corra los anaqueles, que la mirada pase entre ellos sin tocarlos."
+
+[node name="CartelEstrado" parent="OnTheGround" instance=ExtResource("8_sign")]
+position = Vector2(1280, 864)
+text = "ODILA: Al final, el estrado. Todo en esta casa termina en el estrado."
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Estado" type="Label" parent="HUD"]
+unique_name_in_owner = true
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 16.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.93, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.08, 0.06, 0.05, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 16
+text = "El Primer Rúbrica mira al piso. Los anaqueles tapan la mirada: sí"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,29 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/game_elements/props/puzzles/receptor_de_fe/components/receptor_de_fe.gd" id="1_receptor"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_receptor"]
+radius = 26.0
+
+[node name="ReceptorDeFe" type="Area2D"]
+collision_layer = 1024
+collision_mask = 0
+script = ExtResource("1_receptor")
+
+[node name="Base" type="Polygon2D" parent="."]
+color = Color(0.13, 0.11, 0.14, 1)
+polygon = PackedVector2Array(-28, 0, 0, -16, 28, 0, 0, 16)
+
+[node name="Brasa" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+color = Color(0.28, 0.24, 0.3, 1)
+polygon = PackedVector2Array(-14, 0, 0, -8, 14, 0, 0, 8)
+
+[node name="Halo" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+visible = false
+color = Color(1, 0.93, 0.68, 0.28)
+polygon = PackedVector2Array(-30, 0, 0, -18, 30, 0, 0, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_receptor")

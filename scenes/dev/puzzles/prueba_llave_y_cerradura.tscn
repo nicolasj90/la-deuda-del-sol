@@ -1,0 +1,84 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" uid="uid://iu2q66clupc6" path="res://scenes/game_elements/characters/player/player.tscn" id="1_player"]
+[ext_resource type="SpriteFrames" uid="uid://cxjwwgm86d6it" path="res://scenes/game_elements/characters/components/sprite_frames/storyweaver_red.tres" id="2_frames"]
+[ext_resource type="PackedScene" path="res://scenes/game_elements/props/puzzles/llave/llave.tscn" id="3_llave"]
+[ext_resource type="PackedScene" path="res://scenes/game_elements/props/puzzles/puerta_con_cerradura/puerta_con_cerradura.tscn" id="4_cerradura"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_horizontal"]
+size = Vector2(1024, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vertical"]
+size = Vector2(64, 640)
+
+[node name="PruebaLlaveYCerradura" type="Node2D"]
+
+[node name="Piso" type="Polygon2D" parent="."]
+color = Color(0.16, 0.14, 0.13, 1)
+polygon = PackedVector2Array(0, 0, 896, 0, 896, 512, 0, 512)
+
+[node name="Muros" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="Arriba" type="CollisionShape2D" parent="Muros"]
+position = Vector2(448, -32)
+shape = SubResource("RectangleShape2D_horizontal")
+
+[node name="Abajo" type="CollisionShape2D" parent="Muros"]
+position = Vector2(448, 544)
+shape = SubResource("RectangleShape2D_horizontal")
+
+[node name="Izquierda" type="CollisionShape2D" parent="Muros"]
+position = Vector2(-32, 256)
+shape = SubResource("RectangleShape2D_vertical")
+
+[node name="Derecha" type="CollisionShape2D" parent="Muros"]
+position = Vector2(928, 256)
+shape = SubResource("RectangleShape2D_vertical")
+
+[node name="Camara" type="Camera2D" parent="."]
+position = Vector2(448, 256)
+zoom = Vector2(0.8, 0.8)
+
+[node name="Ayuda" type="CanvasLayer" parent="."]
+
+[node name="Texto" type="Label" parent="Ayuda"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 1264.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(1, 0.95, 0.82, 1)
+theme_override_colors/font_outline_color = Color(0.06, 0.05, 0.04, 1)
+theme_override_constants/outline_size = 8
+text = "llave_y_cerradura: las llaves se recogen al tocarlas y quedan en un llavero local (grupo de escena). Cada cerradura consume la suya; la de la derecha no la gasta. Probá abrir con la llave equivocada."
+autowrap_mode = 2
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+position = Vector2(96, 288)
+sprite_frames = ExtResource("2_frames")
+
+[node name="LlaveDeLacre" parent="." instance=ExtResource("3_llave")]
+position = Vector2(224, 160)
+tipo = &"lacre"
+
+[node name="LlaveDeBronce" parent="." instance=ExtResource("3_llave")]
+position = Vector2(224, 416)
+tipo = &"bronce"
+etiqueta = "Llave de bronce"
+color = Color(0.72, 0.45, 0.2, 1)
+
+[node name="PuertaDeLacre" parent="." instance=ExtResource("4_cerradura")]
+position = Vector2(544, 160)
+tipo_llave = &"lacre"
+mensaje_sin_llave = "Cerrada. Falta la llave de lacre."
+
+[node name="PuertaDeBronce" parent="." instance=ExtResource("4_cerradura")]
+position = Vector2(544, 416)
+tipo_llave = &"bronce"
+mensaje_sin_llave = "Cerrada. Falta la llave de bronce."
+
+[node name="PuertaQueNoGasta" parent="." instance=ExtResource("4_cerradura")]
+position = Vector2(736, 288)
+tipo_llave = &"bronce"
+consume_llave = false

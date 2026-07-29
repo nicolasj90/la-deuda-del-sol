@@ -1,0 +1,85 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" uid="uid://iu2q66clupc6" path="res://scenes/game_elements/characters/player/player.tscn" id="1_player"]
+[ext_resource type="SpriteFrames" uid="uid://cxjwwgm86d6it" path="res://scenes/game_elements/characters/components/sprite_frames/storyweaver_red.tres" id="2_frames"]
+[ext_resource type="PackedScene" path="res://scenes/game_elements/props/puzzles/placa_presion/placa_presion.tscn" id="3_placa"]
+[ext_resource type="PackedScene" path="res://scenes/game_elements/props/puzzles/palanca/palanca.tscn" id="4_palanca"]
+[ext_resource type="PackedScene" path="res://scenes/game_elements/props/puzzles/bloque_empujable/bloque_empujable.tscn" id="5_bloque"]
+[ext_resource type="PackedScene" path="res://scenes/game_elements/props/puzzles/puerta_sellada/puerta_sellada.tscn" id="6_puerta"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_horizontal"]
+size = Vector2(1024, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vertical"]
+size = Vector2(64, 640)
+
+[node name="PruebaPuertaSellada" type="Node2D"]
+
+[node name="Piso" type="Polygon2D" parent="."]
+color = Color(0.16, 0.14, 0.13, 1)
+polygon = PackedVector2Array(0, 0, 896, 0, 896, 512, 0, 512)
+
+[node name="Muros" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="Arriba" type="CollisionShape2D" parent="Muros"]
+position = Vector2(448, -32)
+shape = SubResource("RectangleShape2D_horizontal")
+
+[node name="Abajo" type="CollisionShape2D" parent="Muros"]
+position = Vector2(448, 544)
+shape = SubResource("RectangleShape2D_horizontal")
+
+[node name="Izquierda" type="CollisionShape2D" parent="Muros"]
+position = Vector2(-32, 256)
+shape = SubResource("RectangleShape2D_vertical")
+
+[node name="Derecha" type="CollisionShape2D" parent="Muros"]
+position = Vector2(928, 256)
+shape = SubResource("RectangleShape2D_vertical")
+
+[node name="Camara" type="Camera2D" parent="."]
+position = Vector2(448, 256)
+zoom = Vector2(0.8, 0.8)
+
+[node name="Ayuda" type="CanvasLayer" parent="."]
+
+[node name="Texto" type="Label" parent="Ayuda"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 1264.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(1, 0.95, 0.82, 1)
+theme_override_colors/font_outline_color = Color(0.06, 0.05, 0.04, 1)
+theme_override_constants/outline_size = 8
+text = "puerta_sellada: requiere_n = 3. Hacen falta las dos placas (una la pisás, la otra la tapás con el bloque) más la palanca. La puerta de arriba está invertida: la palanca la cierra."
+autowrap_mode = 2
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+position = Vector2(96, 288)
+sprite_frames = ExtResource("2_frames")
+
+[node name="PlacaA" parent="." instance=ExtResource("3_placa")]
+position = Vector2(160, 160)
+
+[node name="PlacaB" parent="." instance=ExtResource("3_placa")]
+position = Vector2(160, 416)
+
+[node name="Palanca" parent="." instance=ExtResource("4_palanca")]
+position = Vector2(352, 416)
+
+[node name="Bloque" parent="." instance=ExtResource("5_bloque")]
+position = Vector2(160, 288)
+
+[node name="PuertaSellada" parent="." instance=ExtResource("6_puerta") node_paths=PackedStringArray("fuentes")]
+position = Vector2(736, 288)
+requiere_n = 3
+fuentes = [NodePath("../PlacaA"), NodePath("../PlacaB"), NodePath("../Palanca")]
+
+[node name="PuertaInvertida" parent="." instance=ExtResource("6_puerta") node_paths=PackedStringArray("fuentes")]
+position = Vector2(736, 96)
+requiere_n = 1
+invertir = true
+abierta = true
+fuentes = [NodePath("../Palanca")]

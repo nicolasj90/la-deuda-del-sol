@@ -1,0 +1,251 @@
+[gd_scene format=3 uid="uid://bvinedoprenda1"]
+
+[ext_resource type="Script" path="res://scenes/quests/story_quests/la_deuda_del_sol/vinedo_en_prenda/components/vinedo_en_prenda.gd" id="1_vinedo"]
+[ext_resource type="Script" uid="uid://c8405c212rbn6" path="res://scenes/game_elements/props/background_music/components/background_music.gd" id="2_bgm"]
+[ext_resource type="AudioStream" uid="uid://bbamdm6wtjjcn" path="res://assets/first_party/music/Threadbare_Bed.ogg" id="3_music"]
+[ext_resource type="PackedScene" uid="uid://iu2q66clupc6" path="res://scenes/game_elements/characters/player/player.tscn" id="4_player"]
+[ext_resource type="SpriteFrames" uid="uid://dtoylirwywk0j" path="res://scenes/game_elements/characters/components/sprite_frames/storyweaver_blue.tres" id="5_frames"]
+[ext_resource type="Script" uid="uid://0enyu5v4ra34" path="res://scenes/game_elements/props/spawn_point/components/spawn_point.gd" id="6_spawn"]
+[ext_resource type="PackedScene" uid="uid://0ull24fvmhwk" path="res://scenes/game_elements/props/teleporter/teleporter.tscn" id="7_tele"]
+[ext_resource type="PackedScene" uid="uid://covsdqqsd6rsy" path="res://scenes/game_elements/props/sign/sign.tscn" id="8_sign"]
+[ext_resource type="PackedScene" path="res://scenes/game_elements/props/puzzles/bloque_en_mora/bloque_en_mora.tscn" id="9_mora"]
+[ext_resource type="PackedScene" path="res://scenes/game_elements/props/puzzles/bloque_empujable/bloque_empujable.tscn" id="10_bloque"]
+[ext_resource type="PackedScene" path="res://scenes/game_elements/props/puzzles/placa_presion/placa_presion.tscn" id="11_placa"]
+[ext_resource type="PackedScene" path="res://scenes/game_elements/props/puzzles/puerta_sellada/puerta_sellada.tscn" id="12_puerta"]
+[ext_resource type="PackedScene" uid="uid://baljibedsol01" path="res://scenes/game_elements/props/puzzles/aljibe/aljibe.tscn" id="13_aljibe"]
+[ext_resource type="PackedScene" uid="uid://bparraseca001" path="res://scenes/game_elements/props/puzzles/parra_seca/parra_seca.tscn" id="14_parra"]
+[ext_resource type="PackedScene" uid="uid://bcofredungeon1" path="res://scenes/game_elements/props/puzzles/cofre_de_dungeon/cofre_de_dungeon.tscn" id="15_cofre"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_horizontal"]
+size = Vector2(1664, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vertical"]
+size = Vector2(64, 704)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_muro_norte"]
+size = Vector2(64, 224)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_muro_sur"]
+size = Vector2(64, 352)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_salida"]
+size = Vector2(48, 192)
+
+[node name="VinedoEnPrenda" type="Node2D"]
+editor_description = "E13 — «El Viñedo en Prenda». Mini-dungeon 2 del Acto 1: dos bloques en mora (regar la parra, devolver la tranquera). Arte placeholder: geometría de puzzle, no de arte final."
+script = ExtResource("1_vinedo")
+
+[node name="BackgroundMusic" type="Node" parent="."]
+script = ExtResource("2_bgm")
+stream = ExtResource("3_music")
+metadata/_custom_type_script = "uid://c8405c212rbn6"
+
+[node name="Fondo" type="Node2D" parent="."]
+z_index = -10
+
+[node name="Tierra" type="Polygon2D" parent="Fondo"]
+color = Color(0.31, 0.25, 0.18, 1)
+polygon = PackedVector2Array(256, 384, 1856, 384, 1856, 1024, 256, 1024)
+
+[node name="Sendero" type="Polygon2D" parent="Fondo"]
+color = Color(0.45, 0.38, 0.27, 1)
+polygon = PackedVector2Array(256, 608, 1856, 608, 1856, 672, 256, 672)
+
+[node name="HileraUno" type="Polygon2D" parent="Fondo"]
+color = Color(0.26, 0.3, 0.2, 1)
+polygon = PackedVector2Array(320, 768, 1536, 768, 1536, 792, 320, 792)
+
+[node name="HileraDos" type="Polygon2D" parent="Fondo"]
+color = Color(0.26, 0.3, 0.2, 1)
+polygon = PackedVector2Array(320, 864, 1536, 864, 1536, 888, 320, 888)
+
+[node name="HileraTres" type="Polygon2D" parent="Fondo"]
+color = Color(0.26, 0.3, 0.2, 1)
+polygon = PackedVector2Array(320, 976, 1536, 976, 1536, 1000, 320, 1000)
+
+[node name="CasaVacia" type="Polygon2D" parent="Fondo"]
+color = Color(0.22, 0.19, 0.18, 1)
+polygon = PackedVector2Array(1152, 400, 1408, 400, 1408, 512, 1152, 512)
+
+[node name="Porche" type="Polygon2D" parent="Fondo"]
+color = Color(0.3, 0.25, 0.21, 1)
+polygon = PackedVector2Array(1152, 512, 1408, 512, 1408, 544, 1152, 544)
+
+[node name="ArchivoDelFondo" type="Polygon2D" parent="Fondo"]
+color = Color(0.24, 0.2, 0.16, 1)
+polygon = PackedVector2Array(1632, 384, 1856, 384, 1856, 1024, 1632, 1024)
+
+[node name="Paredes" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="Norte" type="CollisionShape2D" parent="Paredes"]
+position = Vector2(1056, 352)
+shape = SubResource("RectangleShape2D_horizontal")
+
+[node name="Sur" type="CollisionShape2D" parent="Paredes"]
+position = Vector2(1056, 1056)
+shape = SubResource("RectangleShape2D_horizontal")
+
+[node name="Oeste" type="CollisionShape2D" parent="Paredes"]
+position = Vector2(224, 704)
+shape = SubResource("RectangleShape2D_vertical")
+
+[node name="Este" type="CollisionShape2D" parent="Paredes"]
+position = Vector2(1888, 704)
+shape = SubResource("RectangleShape2D_vertical")
+
+[node name="MuroDelFondoNorte" type="CollisionShape2D" parent="Paredes"]
+position = Vector2(1600, 496)
+shape = SubResource("RectangleShape2D_muro_norte")
+
+[node name="MuroDelFondoSur" type="CollisionShape2D" parent="Paredes"]
+position = Vector2(1600, 848)
+shape = SubResource("RectangleShape2D_muro_sur")
+
+[node name="Teleporters" type="Node2D" parent="."]
+
+[node name="SalidaOeste" parent="Teleporters" instance=ExtResource("7_tele")]
+position = Vector2(288, 640)
+next_scene = "uid://bcaminodiezmo"
+spawn_point_path = NodePath("OnTheGround/SpawnVinedo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporters/SalidaOeste"]
+shape = SubResource("RectangleShape2D_salida")
+
+[node name="SalidaEste" parent="Teleporters" instance=ExtResource("7_tele")]
+position = Vector2(1792, 640)
+next_scene = "uid://bcaminodiezmo"
+spawn_point_path = NodePath("OnTheGround/SpawnVinedo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporters/SalidaEste"]
+shape = SubResource("RectangleShape2D_salida")
+
+[node name="OnTheGround" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="OnTheGround" instance=ExtResource("4_player")]
+position = Vector2(384, 640)
+player_name = "Ciro"
+sprite_frames = ExtResource("5_frames")
+
+[node name="Camera2D" type="Camera2D" parent="OnTheGround/Player"]
+limit_left = 192
+limit_top = 320
+limit_right = 1920
+limit_bottom = 1088
+
+[node name="SpawnEntrada" type="Marker2D" parent="OnTheGround" groups=["spawn_point"]]
+position = Vector2(384, 640)
+script = ExtResource("6_spawn")
+metadata/_custom_type_script = "uid://0enyu5v4ra34"
+
+[node name="Aljibe" parent="OnTheGround" instance=ExtResource("13_aljibe")]
+unique_name_in_owner = true
+position = Vector2(512, 480)
+etiqueta = "Aljibe de Vidal"
+
+[node name="Parra" parent="OnTheGround" node_paths=PackedStringArray("fuente_de_agua") instance=ExtResource("14_parra")]
+unique_name_in_owner = true
+position = Vector2(768, 928)
+tarea = "regar la parra del cerco sur"
+fuente_de_agua = NodePath("../Aljibe")
+baldes_necesarios = 2
+mensaje_sin_agua = "El balde está seco. El aljibe de Vidal está en el patio, al norte."
+
+[node name="Tranquera" parent="OnTheGround" instance=ExtResource("10_bloque")]
+unique_name_in_owner = true
+position = Vector2(1152, 928)
+
+[node name="MarcoTranquera" parent="OnTheGround" instance=ExtResource("11_placa")]
+unique_name_in_owner = true
+position = Vector2(1344, 928)
+acepta_jugador = false
+permanente = true
+
+[node name="BloqueParra" parent="OnTheGround" node_paths=PackedStringArray("disparador") instance=ExtResource("9_mora")]
+unique_name_in_owner = true
+position = Vector2(896, 640)
+en_mora = true
+tarea = "regar la parra del cerco sur"
+disparador = NodePath("../Parra")
+senal_disparador = &"regada"
+
+[node name="BloqueTranquera" parent="OnTheGround" node_paths=PackedStringArray("disparador") instance=ExtResource("9_mora")]
+unique_name_in_owner = true
+position = Vector2(1088, 640)
+en_mora = true
+tarea = "devolver la tranquera al tercer poste"
+disparador = NodePath("../MarcoTranquera")
+senal_disparador = &"pressed"
+
+[node name="SelloParra" parent="OnTheGround" instance=ExtResource("11_placa")]
+unique_name_in_owner = true
+position = Vector2(896, 576)
+acepta_jugador = false
+
+[node name="SelloTranquera" parent="OnTheGround" instance=ExtResource("11_placa")]
+unique_name_in_owner = true
+position = Vector2(1088, 576)
+acepta_jugador = false
+
+[node name="PuertaFinal" parent="OnTheGround" node_paths=PackedStringArray("fuentes") instance=ExtResource("12_puerta")]
+unique_name_in_owner = true
+position = Vector2(1600, 672)
+requiere_n = 2
+fuentes = [NodePath("../SelloParra"), NodePath("../SelloTranquera")]
+permanente = true
+
+[node name="Cofre" parent="OnTheGround" instance=ExtResource("15_cofre")]
+unique_name_in_owner = true
+position = Vector2(1728, 640)
+recompensa = "cartas de familia rural y una «Gallina de Lacrevieja» de más"
+
+[node name="LamparaDePalabra" type="Node2D" parent="OnTheGround"]
+position = Vector2(1216, 544)
+
+[node name="Poste" type="Polygon2D" parent="OnTheGround/LamparaDePalabra"]
+color = Color(0.19, 0.16, 0.15, 1)
+polygon = PackedVector2Array(-4, -64, 4, -64, 4, 0, -4, 0)
+
+[node name="Farol" type="Polygon2D" parent="OnTheGround/LamparaDePalabra"]
+color = Color(0.28, 0.24, 0.22, 1)
+polygon = PackedVector2Array(-12, -84, 12, -84, 12, -60, -12, -60)
+
+[node name="LuzLampara" type="Polygon2D" parent="OnTheGround/LamparaDePalabra"]
+unique_name_in_owner = true
+visible = false
+color = Color(1, 0.9, 0.6, 0.55)
+polygon = PackedVector2Array(-40, -100, 40, -100, 40, -44, -40, -44)
+
+[node name="CartelSello" parent="OnTheGround" instance=ExtResource("8_sign")]
+position = Vector2(448, 800)
+text = "CIRO: Son términos: «regar la parra del cerco sur». Titular: Vidal, viñatero. El lacre está gris. Difunto.
+No se pasa: se cumple. La promesa incumplida es lo que pesa; cumplila y el bloque se alivia."
+
+[node name="CartelTranquera" parent="OnTheGround" instance=ExtResource("8_sign")]
+position = Vector2(1216, 800)
+text = "FERRA: Tranquera de Vidal. La caída. Esa.
+[La tranquera se empuja hasta el tercer poste y se calza en su marco.]"
+
+[node name="CartelAljibe" parent="OnTheGround" instance=ExtResource("8_sign")]
+position = Vector2(640, 480)
+text = "FIEL: Huele a tarde. A muy tarde.
+[El balde pierde: hay que ir dos veces al aljibe.]"
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Estado" type="Label" parent="HUD"]
+unique_name_in_owner = true
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 16.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.93, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.08, 0.06, 0.05, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 16
+text = "Bloques en mora aliviados: 0 de 2 — baldosas-sello cubiertas: 0 de 2"
+horizontal_alignment = 1
+vertical_alignment = 1

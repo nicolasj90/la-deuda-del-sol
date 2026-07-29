@@ -1,0 +1,55 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/game_elements/props/puzzles/bloque_empujable/components/bloque_empujable.gd" id="1_bloque"]
+[ext_resource type="Texture2D" uid="uid://c7oht7wudd8wa" path="res://assets/first_party/tiles/Cliff_Tiles.png" id="2_cliff"]
+[ext_resource type="Script" uid="uid://dunsvrhq42214" path="res://scenes/game_elements/fx/shaker/shaker.gd" id="3_shaker"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bloque"]
+atlas = ExtResource("2_cliff")
+region = Rect2(192, 256, 64, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cuerpo"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_detector"]
+size = Vector2(48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_empuje"]
+size = Vector2(128, 128)
+
+[node name="BloqueEmpujable" type="AnimatableBody2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_bloque")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -32)
+texture = SubResource("AtlasTexture_bloque")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cuerpo")
+
+[node name="Detector" type="ShapeCast2D" parent="."]
+unique_name_in_owner = true
+enabled = false
+shape = SubResource("RectangleShape2D_detector")
+target_position = Vector2(64, 0)
+max_results = 4
+collision_mask = 530
+
+[node name="AreaEmpuje" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEmpuje"]
+shape = SubResource("RectangleShape2D_empuje")
+
+[node name="Sacudidor" type="Node2D" parent="." node_paths=PackedStringArray("target")]
+unique_name_in_owner = true
+script = ExtResource("3_shaker")
+target = NodePath("../Sprite")
+shake_intensity = 6.0
+duration = 0.25
+frequency = 30.0

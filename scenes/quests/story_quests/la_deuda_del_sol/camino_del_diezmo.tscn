@@ -19,6 +19,9 @@ size = Vector2(32, 448)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enc"]
 size = Vector2(96, 448)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vinedo"]
+size = Vector2(96, 64)
+
 [node name="CaminoDelDiezmo" type="Node2D"]
 editor_description = "Mapa stub del Acto 1 de La Deuda del Sol. Tilemap placeholder copiado de mythical_meadows (quest_004); pendiente de arte y contenido propios."
 
@@ -68,6 +71,14 @@ spawn_point_path = NodePath("OnTheGround/SpawnOeste")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporters/TeleporterEste"]
 shape = SubResource("RectangleShape2D_tele")
 
+[node name="TeleporterVinedo" parent="Teleporters" instance=ExtResource("6_tele")]
+position = Vector2(1408, 224)
+next_scene = "uid://bvinedoprenda1"
+spawn_point_path = NodePath("OnTheGround/SpawnEntrada")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporters/TeleporterVinedo"]
+shape = SubResource("RectangleShape2D_vinedo")
+
 [node name="Encuentros" type="Node2D" parent="."]
 
 [node name="EncuentroOeste" parent="Encuentros" instance=ExtResource("11_encarea")]
@@ -112,3 +123,12 @@ metadata/_custom_type_script = "uid://0enyu5v4ra34"
 [node name="Cartel" parent="OnTheGround" instance=ExtResource("9_sign")]
 position = Vector2(768, 344)
 text = "Camino del Diezmo — ruta de peaje hacia El Fiado. De noche rondan los quebrantos."
+
+[node name="SpawnVinedo" type="Marker2D" parent="OnTheGround" groups=["spawn_point"]]
+position = Vector2(1408, 352)
+script = ExtResource("10_spawn")
+metadata/_custom_type_script = "uid://0enyu5v4ra34"
+
+[node name="CartelVinedo" parent="OnTheGround" instance=ExtResource("9_sign")]
+position = Vector2(1312, 288)
+text = "Viñedo en Prenda — propiedad de Vidal, viñatero. Embargada por promesa incumplida. No se pasa: se cumple."

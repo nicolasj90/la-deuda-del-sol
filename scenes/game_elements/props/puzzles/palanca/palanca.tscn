@@ -1,0 +1,37 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/game_elements/props/puzzles/palanca/components/palanca.gd" id="1_palanca"]
+[ext_resource type="Texture2D" uid="uid://uy2acspf6apo" path="res://scenes/game_elements/props/lever/components/Lever.png" id="2_lever"]
+[ext_resource type="Script" uid="uid://du8wfijr35r35" path="res://scenes/game_elements/props/interact_area/interact_area.gd" id="3_interact"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_palanca"]
+radius = 48.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_palanca"]
+size = Vector2(20, 48)
+
+[node name="Palanca" type="Node2D"]
+script = ExtResource("1_palanca")
+
+[node name="SpritePalanca" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -8)
+texture = ExtResource("2_lever")
+hframes = 2
+
+[node name="InteractArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("3_interact")
+action = "Accionar"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+shape = SubResource("CircleShape2D_palanca")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_palanca")
