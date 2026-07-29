@@ -7,8 +7,6 @@ var player_interaction: PlayerInteraction
 var player_repel: PlayerRepel
 var player_hook: PlayerHook
 
-var sokoban_ruleset: RuleEngine
-
 var displaying_dialogue: bool
 
 @onready var normal_controls := %NormalControls
@@ -16,9 +14,6 @@ var displaying_dialogue: bool
 @onready var aim_input_hint := %AimInputHint
 @onready var throw_input_hint := %ThrowInputHint
 @onready var repel_input_hint := %RepelInputHint
-
-@onready var sokoban_controls := %SokobanControls
-@onready var skip_input_hint := %SkipInputHint
 
 
 func _ready() -> void:
@@ -33,14 +28,12 @@ func _ready() -> void:
 	# ready before the player. Defer the initial setup so that we can assume the
 	# whole scene (and in particular the player) is ready in
 	# _on_scene_changed(). This does not occur in normal gameplay because the
-	# main scene does not have a player (or sokoban ruleset), but is harmless in
-	# that case.
+	# main scene does not have a player, but is harmless in that case.
 	_on_scene_changed.call_deferred()
 
 
 func _on_scene_changed() -> void:
 	player = get_tree().get_first_node_in_group("player") as CharacterBody2D
-	sokoban_ruleset = get_tree().get_first_node_in_group("sokoban_ruleset")
 
 	_update_visibility()
 
@@ -60,10 +53,6 @@ func _on_scene_changed() -> void:
 			player_hook.visibility_changed.connect(_update_player_state)
 
 		_update_player_state()
-	elif sokoban_ruleset:
-		sokoban_controls.visible = true
-		skip_input_hint.visible = false
-		sokoban_ruleset.skip_enabled.connect(_display_skip)
 
 
 func _update_visibility() -> void:
@@ -72,7 +61,7 @@ func _update_visibility() -> void:
 		and not get_tree().paused
 		and not Transitions.is_running()
 		and not displaying_dialogue
-		and (player or sokoban_ruleset)
+		and player != null
 	)
 
 
@@ -104,10 +93,6 @@ func _on_dialogue_started(_resource: DialogueResource) -> void:
 func _on_dialogue_ended(_resource: DialogueResource) -> void:
 	displaying_dialogue = false
 	_update_visibility()
-
-
-func _display_skip() -> void:
-	skip_input_hint.visible = true
 
 
 ## Public function to force a refresh of input hints

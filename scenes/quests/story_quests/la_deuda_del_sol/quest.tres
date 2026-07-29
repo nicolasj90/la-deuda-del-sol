@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="StoryQuest" format=3 uid="uid://ddsol1quest01"]
+
+[ext_resource type="Script" uid="uid://dnso5a8iq3s1w" path="res://scenes/menus/storybook/components/story_quest.gd" id="1_dsol"]
+
+[resource]
+script = ExtResource("1_dsol")
+status = 0
+title = "La Deuda del Sol — Acto 1: El vencimiento"
+description = "Esqueleto jugable del Acto 1: Lacrevieja, Villarrúbrica, el Camino del Diezmo y El Fiado, encadenados por transiciones. Mapas placeholder, pendientes de arte y contenido."
+authors = Array[String](["Nicolás"])
+first_scene = "uid://blacrevieja01"
+threads_to_collect = 0
+metadata/_custom_type_script = "uid://dts1hwdy3phin"

@@ -7,9 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b2r2pvcppbl4v" path="res://scenes/ui_elements/input_hints/interact_input_hint.tscn" id="4_ae80x"]
 [ext_resource type="PackedScene" uid="uid://badjtfhkj7gbt" path="res://scenes/ui_elements/input_hints/run_input_hint.tscn" id="4_i3pcn"]
 [ext_resource type="PackedScene" uid="uid://cdwf2nmeqns31" path="res://scenes/ui_elements/input_hints/throw_input_hint.tscn" id="5_ke286"]
-[ext_resource type="PackedScene" uid="uid://bl3pt0n5r8tm5" path="res://scenes/ui_elements/input_hints/undo_input_hint.tscn" id="7_ke286"]
-[ext_resource type="PackedScene" uid="uid://cjg3rptgsh0lf" path="res://scenes/ui_elements/input_hints/reset_input_hint.tscn" id="8_ae80x"]
-[ext_resource type="PackedScene" uid="uid://b50dfpi7c1sdw" path="res://scenes/ui_elements/input_hints/skip_input_hint.tscn" id="9_ofrnu"]
 
 [node name="InputHud" type="CanvasLayer" unique_id=203487218]
 layer = 36
@@ -64,29 +61,4 @@ layout_mode = 2
 
 [node name="RepelInputHint" parent="MarginContainer/TabContainer/NormalControls" unique_id=1938432601 instance=ExtResource("3_xu7en")]
 unique_name_in_owner = true
-layout_mode = 2
-
-[node name="SokobanControls" type="HBoxContainer" parent="MarginContainer/TabContainer" unique_id=1543053795]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-metadata/_tab_index = 1
-
-[node name="MovementInputHints" parent="MarginContainer/TabContainer/SokobanControls" unique_id=1797965313 instance=ExtResource("2_bewlk")]
-layout_mode = 2
-
-[node name="Spacer" type="Control" parent="MarginContainer/TabContainer/SokobanControls" unique_id=1667129251]
-editor_description = "This empty control expands to fill the center of the hbox, pushing any controls packed after it to the right margin."
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="SkipInputHint" parent="MarginContainer/TabContainer/SokobanControls" unique_id=2102034377 instance=ExtResource("9_ofrnu")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="ResetInputHint" parent="MarginContainer/TabContainer/SokobanControls" unique_id=1042096726 instance=ExtResource("8_ae80x")]
-layout_mode = 2
-
-[node name="UndoInputHint" parent="MarginContainer/TabContainer/SokobanControls" unique_id=1063563018 instance=ExtResource("7_ke286")]
 layout_mode = 2
