@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PerfilIA" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/ia/perfil_ia.gd" id="1_p4jlg"]
+
+[resource]
+resource_name = "de_palabra"
+script = ExtResource("1_p4jlg")
+id = "de_palabra"
+nombre = "archivista jubilada (E10)"
+peso_tempo = 1.2
+peso_cara = 0.8
+peso_tabla = 1.2
+peso_mano = 1.2
+sesgo_desconfianza = 0.3
+keywords_prioritarias = Array[String](["de_palabra"])

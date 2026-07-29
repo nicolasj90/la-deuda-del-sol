@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PerfilIA" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/ia/perfil_ia.gd" id="1_8v8rm"]
+
+[resource]
+resource_name = "letra_chica"
+script = ExtResource("1_8v8rm")
+id = "letra_chica"
+nombre = "Cosme (E03)"
+peso_tempo = 1.2
+sesgo_desconfianza = 0.3
+umbral_trade = 0.1
+keywords_prioritarias = Array[String](["letra_chica"])

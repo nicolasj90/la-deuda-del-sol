@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_6lk7j"]
+
+[resource]
+resource_name = "maestra_jardinera"
+script = ExtResource("1_6lk7j")
+id = "maestra_jardinera"
+nombre = "Maestra Jardinera"
+texto = "De palabra: +1/+1 a otro Fiador aliado."
+arquetipo = "de_palabra"
+coste_base = 2
+ataque_base = 1
+aguante_base = 3
+keywords = Array[String](["de_palabra"])
+efectos = Array[Dictionary]([{
+"aguante": 1,
+"ataque": 1,
+"objetivo": "elegido",
+"op": "buff",
+"trigger": "de_palabra"
+}])
+objetivos = Array[String](["otro_fiador_aliado"])

@@ -1,0 +1,582 @@
+{
+	"_nota": "Fuente de verdad de las 42 caras de «De Palabra» (diseño § 5). Pipeline: este archivo -> scenes/card_game/tools/generar_cartas.gd -> data/cartas/tres/*.tres. No editar los .tres a mano.",
+	"_tipos": "0 = Fiador, 1 = Soporte, 2 = Cláusula",
+	"_lore": "El campo `lore` solo se llena donde la biblia habla (concepto-definitivo.md § «Diez cartas de muestra»), palabra por palabra. Las demás cartas quedan sin lore a propósito: inventarlo sería escribir biblia por la ventana.",
+	"_arquetipos": "neutral (§ 5.1) · garante (§ 5.2) · letra_chica (§ 5.3) · interes (§ 5.4) · de_palabra (§ 5.5) · al_contado (§ 5.6) · palabra_rota (§ 5.7) · postgame (§ 5.8) · token (§ 5.9)",
+	"cartas": [
+		{
+			"id": "gallina_lacrevieja",
+			"nombre": "Gallina de Lacrevieja",
+			"arquetipo": "neutral",
+			"tipo": 0,
+			"coste_base": 1,
+			"ataque_base": 1,
+			"aguante_base": 1,
+			"texto": "Promesa opcional (2 turnos): «no atacar». Cumplida: se vuelve Gallina Cumplidora, 2/3 con Sello.",
+			"lore": "las gallinas del pueblo natal, a las que Ferra les hace reverencias por protocolo.",
+			"promesas": [
+				{
+					"tipo": "no_atacar",
+					"plazo": 2,
+					"bonus": [{ "op": "transformar", "objetivo": "elegido", "carta": "gallina_cumplidora" }]
+				}
+			]
+		},
+		{
+			"id": "peon_de_vina",
+			"nombre": "Peón de Viña",
+			"arquetipo": "neutral",
+			"tipo": 0,
+			"coste_base": 2,
+			"ataque_base": 2,
+			"aguante_base": 2,
+			"texto": ""
+		},
+		{
+			"id": "mula_de_reparto",
+			"nombre": "Mula de Reparto",
+			"arquetipo": "neutral",
+			"tipo": 0,
+			"coste_base": 3,
+			"ataque_base": 3,
+			"aguante_base": 3,
+			"texto": ""
+		},
+		{
+			"id": "colmillo_del_diezmo",
+			"nombre": "Colmillo del Diezmo",
+			"arquetipo": "neutral",
+			"tipo": 0,
+			"coste_base": 2,
+			"ataque_base": 3,
+			"aguante_base": 2,
+			"texto": ""
+		},
+		{
+			"id": "lampara_de_palabra",
+			"nombre": "Lámpara de Palabra",
+			"arquetipo": "neutral",
+			"tipo": 1,
+			"coste_base": 2,
+			"ataque_base": 0,
+			"aguante_base": 3,
+			"texto": "Cada vez que cumplís una Promesa, robá 1. Máximo 2 por turno.",
+			"lore": "los pueblos se alumbran con cumplimientos; tu mazo también.",
+			"efectos": [
+				{ "trigger": "promesa_cumplida", "op": "robar", "n": 1, "max_por_turno": 2 }
+			]
+		},
+		{
+			"id": "fe_de_erratas",
+			"nombre": "Fe de Erratas",
+			"arquetipo": "neutral",
+			"tipo": 2,
+			"coste_base": 2,
+			"texto": "Devolvé a tu mano un Fiador aliado; su coste baja 1.",
+			"objetivos": ["fiador_aliado"],
+			"efectos": [
+				{ "trigger": "clausula", "op": "devolver_a_mano", "objetivo": "elegido", "mod_coste": -1 }
+			]
+		},
+		{
+			"id": "tranquera_cerrada",
+			"nombre": "Tranquera Cerrada",
+			"arquetipo": "garante",
+			"tipo": 1,
+			"coste_base": 1,
+			"ataque_base": 0,
+			"aguante_base": 4,
+			"keywords": ["garante"],
+			"texto": "Garante."
+		},
+		{
+			"id": "hornera_de_rosaura",
+			"nombre": "Hornera de Rosaura",
+			"arquetipo": "garante",
+			"tipo": 0,
+			"coste_base": 2,
+			"ataque_base": 1,
+			"aguante_base": 4,
+			"keywords": ["garante"],
+			"texto": "Garante."
+		},
+		{
+			"id": "sereno_del_archivo",
+			"nombre": "Sereno del Archivo",
+			"arquetipo": "garante",
+			"tipo": 0,
+			"coste_base": 3,
+			"ataque_base": 2,
+			"aguante_base": 4,
+			"keywords": ["garante", "sello"],
+			"texto": "Garante. Sello."
+		},
+		{
+			"id": "porteador_empenadero",
+			"nombre": "Porteador del Empeñadero",
+			"arquetipo": "garante",
+			"tipo": 0,
+			"coste_base": 4,
+			"ataque_base": 2,
+			"aguante_base": 5,
+			"keywords": ["garante"],
+			"texto": "Garante. +1/+1 por carta en tu Empeñadero, hasta +3/+3.",
+			"lore": "los monjes que se hacen fuertes cargando lo que otros no pueden.",
+			"bono_dinamico": { "fuente": "empenadero", "ataque": 1, "aguante": 1, "tope": 3 }
+		},
+		{
+			"id": "de_mi_mesa_nadie",
+			"nombre": "«De mi mesa nadie se levanta con hambre»",
+			"arquetipo": "garante",
+			"tipo": 2,
+			"coste_base": 3,
+			"texto": "Dale Garante y +0/+2 a todos tus Fiadores.",
+			"efectos": [
+				{
+					"trigger": "clausula",
+					"op": "buff",
+					"objetivo": "todos_fiadores_propios",
+					"ataque": 0,
+					"aguante": 2,
+					"keyword": "garante"
+				}
+			]
+		},
+		{
+			"id": "deudo_del_difunto",
+			"nombre": "Deudo del Difunto",
+			"arquetipo": "letra_chica",
+			"tipo": 0,
+			"coste_base": 1,
+			"ataque_base": 1,
+			"aguante_base": 1,
+			"keywords": ["letra_chica"],
+			"texto": "Letra chica: robá 1.",
+			"efectos": [{ "trigger": "letra_chica", "op": "robar", "n": 1 }]
+		},
+		{
+			"id": "clausula_al_dorso",
+			"nombre": "Cláusula al Dorso",
+			"arquetipo": "letra_chica",
+			"tipo": 2,
+			"coste_base": 2,
+			"texto": "Dale a un Fiador aliado «Letra chica: el rival descarta 1».",
+			"objetivos": ["fiador_aliado"],
+			"efectos": [
+				{
+					"trigger": "clausula",
+					"op": "otorgar_efecto",
+					"objetivo": "elegido",
+					"keyword": "letra_chica",
+					"efecto": { "trigger": "letra_chica", "op": "descartar", "lado": "rival", "n": 1 }
+				}
+			]
+		},
+		{
+			"id": "sepulturero_cosme",
+			"nombre": "Sepulturero Cosme",
+			"arquetipo": "letra_chica",
+			"tipo": 0,
+			"coste_base": 3,
+			"ataque_base": 2,
+			"aguante_base": 2,
+			"keywords": ["letra_chica"],
+			"texto": "Letra chica: invocá dos Deudos 1/1.",
+			"efectos": [{ "trigger": "letra_chica", "op": "invocar", "carta": "deudo", "n": 2 }]
+		},
+		{
+			"id": "contrato_que_drena",
+			"nombre": "Contrato que Drena",
+			"arquetipo": "letra_chica",
+			"tipo": 1,
+			"coste_base": 3,
+			"ataque_base": 0,
+			"aguante_base": 2,
+			"keywords": ["letra_chica"],
+			"texto": "Al final de cada turno rival su Firma pierde 1 Aval. Letra chica: pierde 2.",
+			"efectos": [
+				{ "trigger": "fin_turno_rival", "op": "aval", "lado": "rival", "n": -1 },
+				{ "trigger": "letra_chica", "op": "aval", "lado": "rival", "n": -2 }
+			]
+		},
+		{
+			"id": "testamento_apurado",
+			"nombre": "Testamento Apurado",
+			"arquetipo": "letra_chica",
+			"tipo": 2,
+			"coste_base": 4,
+			"texto": "Destruí un Fiador aliado; robá 2 y +1 Crédito este turno.",
+			"objetivos": ["fiador_aliado"],
+			"efectos": [
+				{ "trigger": "clausula", "op": "destruir", "objetivo": "elegido" },
+				{ "trigger": "clausula", "op": "robar", "n": 2 },
+				{ "trigger": "clausula", "op": "credito", "n": 1 }
+			]
+		},
+		{
+			"id": "quebranto_del_peaje",
+			"nombre": "El Quebranto del Peaje",
+			"arquetipo": "letra_chica",
+			"tipo": 0,
+			"coste_base": 5,
+			"ataque_base": 4,
+			"aguante_base": 4,
+			"keywords": ["letra_chica"],
+			"texto": "Letra chica: nace un Quebranto 2/2 del lado rival (le pega a la Firma rival).",
+			"efectos": [{ "trigger": "letra_chica", "op": "nace_quebranto", "lado": "rival" }]
+		},
+		{
+			"id": "cobrador_de_la_camara",
+			"nombre": "Cobrador de la Cámara",
+			"arquetipo": "interes",
+			"tipo": 0,
+			"coste_base": 2,
+			"ataque_base": 2,
+			"aguante_base": 1,
+			"keywords": ["interes"],
+			"texto": "Interés.",
+			"lore": "la deuda que crece si la postergás — la carta te apura desde la mano."
+		},
+		{
+			"id": "pagare_a_la_vista",
+			"nombre": "Pagaré a la Vista",
+			"arquetipo": "interes",
+			"tipo": 2,
+			"coste_base": 1,
+			"dano_base": 2,
+			"keywords": ["interes"],
+			"texto": "Interés. Hacé 2 de daño (hasta 7 con Interés).",
+			"objetivos": ["enemigo_o_firma"],
+			"efectos": [
+				{ "trigger": "clausula", "op": "dano", "objetivo": "elegido", "usa_dano_base": true }
+			]
+		},
+		{
+			"id": "lo_suyo_madura",
+			"nombre": "«Lo suyo madura»",
+			"arquetipo": "interes",
+			"tipo": 2,
+			"coste_base": 2,
+			"texto": "Dale Interés a 2 cartas de tu mano; robá 1.",
+			"efectos": [
+				{ "trigger": "clausula", "op": "dar_interes_en_mano", "n": 2 },
+				{ "trigger": "clausula", "op": "robar", "n": 1 }
+			]
+		},
+		{
+			"id": "bravante_el_corredor",
+			"nombre": "Bravante, el Corredor",
+			"arquetipo": "interes",
+			"tipo": 0,
+			"coste_base": 5,
+			"ataque_base": 4,
+			"aguante_base": 4,
+			"texto": "Al empezar tu turno, una carta al azar de tu mano gana Interés.",
+			"efectos": [
+				{ "trigger": "inicio_turno_propio", "op": "interes_al_azar_en_mano", "n": 1 }
+			]
+		},
+		{
+			"id": "tasador_decano",
+			"nombre": "el Tasador Decano",
+			"arquetipo": "interes",
+			"tipo": 0,
+			"coste_base": 6,
+			"ataque_base": 5,
+			"aguante_base": 5,
+			"keywords": ["de_palabra"],
+			"texto": "De palabra: hasta 2 cartas con Interés de tu mano cuestan 0 este turno.",
+			"efectos": [{ "trigger": "de_palabra", "op": "coste_cero_interes", "max": 2 }]
+		},
+		{
+			"id": "maestra_jardinera",
+			"nombre": "Maestra Jardinera",
+			"arquetipo": "de_palabra",
+			"tipo": 0,
+			"coste_base": 2,
+			"ataque_base": 1,
+			"aguante_base": 3,
+			"keywords": ["de_palabra"],
+			"texto": "De palabra: +1/+1 a otro Fiador aliado.",
+			"objetivos": ["otro_fiador_aliado"],
+			"efectos": [
+				{ "trigger": "de_palabra", "op": "buff", "objetivo": "elegido", "ataque": 1, "aguante": 1 }
+			]
+		},
+		{
+			"id": "tasadora_ciega",
+			"nombre": "Tasadora Ciega",
+			"arquetipo": "de_palabra",
+			"tipo": 0,
+			"coste_base": 3,
+			"ataque_base": 2,
+			"aguante_base": 2,
+			"keywords": ["de_palabra"],
+			"texto": "De palabra: revelá una carta de tu mano → copiá a tu mano una carta al azar del mazo rival.",
+			"lore": "paga rarezas con historias ciertas.",
+			"efectos": [
+				{ "trigger": "de_palabra", "op": "copiar_del_mazo_rival", "n": 1, "revelar": true }
+			]
+		},
+		{
+			"id": "archivista_jubilada",
+			"nombre": "Archivista Jubilada",
+			"arquetipo": "de_palabra",
+			"tipo": 0,
+			"coste_base": 4,
+			"ataque_base": 3,
+			"aguante_base": 3,
+			"keywords": ["de_palabra"],
+			"texto": "De palabra: robá 1 por Fiador aliado con De palabra en el Estrado, hasta 3.",
+			"efectos": [{ "trigger": "de_palabra", "op": "robar_por_de_palabra", "max": 3 }]
+		},
+		{
+			"id": "pregon_de_ventanilla",
+			"nombre": "Pregón de Ventanilla",
+			"arquetipo": "de_palabra",
+			"tipo": 2,
+			"coste_base": 4,
+			"texto": "Repetí los De palabra de tus Fiadores en el Estrado, hasta 3.",
+			"efectos": [{ "trigger": "clausula", "op": "repetir_de_palabra", "max": 3 }]
+		},
+		{
+			"id": "odila_la_forastera",
+			"nombre": "Odila, la Forastera",
+			"arquetipo": "de_palabra",
+			"tipo": 0,
+			"coste_base": 4,
+			"ataque_base": 2,
+			"aguante_base": 4,
+			"es_legendaria": true,
+			"keywords": ["de_palabra", "letra_chica"],
+			"texto": "De palabra: refrendá — devolvé al Estrado con Sello el último Fiador aliado caído. Letra chica: vuelve a tu mano como la Forastera (4/2, Al contado, sin Letra chica).",
+			"lore": "la heredera solemne y su doble vida. Dos cartas, una persona, ningún acta.",
+			"efectos": [
+				{ "trigger": "de_palabra", "op": "refrendar" },
+				{ "trigger": "letra_chica", "op": "transformar_a_mano", "carta": "la_forastera" }
+			]
+		},
+		{
+			"id": "changuito_del_muelle",
+			"nombre": "Changuito del Muelle",
+			"arquetipo": "al_contado",
+			"tipo": 0,
+			"coste_base": 1,
+			"ataque_base": 2,
+			"aguante_base": 1,
+			"keywords": ["al_contado"],
+			"texto": "Al contado."
+		},
+		{
+			"id": "tallador_de_la_puerta",
+			"nombre": "el Tallador de la Puerta",
+			"arquetipo": "al_contado",
+			"tipo": 0,
+			"coste_base": 3,
+			"ataque_base": 3,
+			"aguante_base": 2,
+			"keywords": ["al_contado"],
+			"texto": "Al contado."
+		},
+		{
+			"id": "cobradoras_gemelas",
+			"nombre": "Las Cobradoras Gemelas",
+			"arquetipo": "al_contado",
+			"tipo": 0,
+			"coste_base": 5,
+			"ataque_base": 3,
+			"aguante_base": 3,
+			"es_legendaria": true,
+			"keywords": ["al_contado", "de_palabra", "letra_chica"],
+			"texto": "Al contado. Invocá una copia espejo 3/3 con Al contado (token, sin este efecto). Cuando una muere, la otra pierde Al contado y gana +2/+2.",
+			"efectos": [
+				{ "trigger": "de_palabra", "op": "invocar", "carta": "copia_espejo", "n": 1 },
+				{
+					"trigger": "letra_chica",
+					"op": "gemela_cae",
+					"ataque": 2,
+					"aguante": 2,
+					"ids": ["cobradoras_gemelas", "copia_espejo"]
+				}
+			]
+		},
+		{
+			"id": "primera_mentira_gratis",
+			"nombre": "«Primera mentira gratis»",
+			"arquetipo": "al_contado",
+			"tipo": 2,
+			"coste_base": 2,
+			"modulo": "al_fiado",
+			"texto": "Jugá una carta al fiado sin costo de viaje: se revela al final de tu turno.",
+			"objetivos": ["carta_mano_propia"],
+			"efectos": [
+				{ "trigger": "clausula", "op": "jugar_al_fiado_gratis", "objetivo": "elegido" }
+			]
+		},
+		{
+			"id": "lloron_del_puerto",
+			"nombre": "el Llorón del Puerto",
+			"arquetipo": "palabra_rota",
+			"tipo": 0,
+			"coste_base": 2,
+			"ataque_base": 2,
+			"aguante_base": 2,
+			"texto": "Gana +1/+1 cada vez que rompés una Promesa.",
+			"efectos": [
+				{ "trigger": "promesa_rota", "op": "buff", "objetivo": "propio", "ataque": 1, "aguante": 1 }
+			]
+		},
+		{
+			"id": "palabra_rota",
+			"nombre": "Palabra Rota",
+			"arquetipo": "palabra_rota",
+			"tipo": 2,
+			"coste_base": 3,
+			"texto": "Rompé una Promesa pendiente tuya: el Quebranto nace de tu lado, con Al contado.",
+			"lore": "el pecado hecho arquetipo. Los teólogos tampoco comentan esta carta.",
+			"objetivos": ["promesa_propia"],
+			"efectos": [
+				{
+					"trigger": "clausula",
+					"op": "romper_promesa",
+					"keywords_quebranto": ["al_contado"]
+				}
+			]
+		},
+		{
+			"id": "fiel_el_que_espera",
+			"nombre": "Fiel, el que Espera",
+			"arquetipo": "palabra_rota",
+			"tipo": 0,
+			"coste_base": 4,
+			"ataque_base": 3,
+			"aguante_base": 3,
+			"es_legendaria": true,
+			"texto": "La primera vez por turno que sería destruido, no lo es: consumís un plazo de una Promesa pendiente (espera con vos). Al cumplir una Promesa (1 vez por turno): +2/+2 permanente.",
+			"lore": "el quebranto que busca su promesa.",
+			"efectos": [
+				{
+					"trigger": "seria_destruido",
+					"op": "evitar_destruccion_consumiendo_plazo",
+					"una_vez_por_turno": true
+				},
+				{
+					"trigger": "promesa_cumplida",
+					"op": "buff",
+					"objetivo": "propio",
+					"ataque": 2,
+					"aguante": 2,
+					"una_vez_por_turno": true
+				}
+			]
+		},
+		{
+			"id": "el_amanecer",
+			"nombre": "El Amanecer",
+			"arquetipo": "palabra_rota",
+			"tipo": 2,
+			"coste_base": 10,
+			"es_legendaria": true,
+			"texto": "Cumplí todas tus Promesas pendientes (con sus bonus); disolvé todos los Quebrantos del Estrado y de la Mora; +1 Aval por cada uno.",
+			"lore": "cada alba es un cumplimiento. La carta con la que sueña todo cumplidor — y el mazo entero de Ciro existe para rematarla.",
+			"efectos": [
+				{ "trigger": "clausula", "op": "cumplir_todas_las_promesas" },
+				{ "trigger": "clausula", "op": "disolver_quebrantos", "aval_por_cada": 1 }
+			]
+		},
+		{
+			"id": "nadia_la_impalabra",
+			"nombre": "Nadia, la Impalabra",
+			"arquetipo": "postgame",
+			"tipo": 0,
+			"coste_base": 9,
+			"ataque_base": 7,
+			"aguante_base": 7,
+			"es_legendaria": true,
+			"bloqueada": true,
+			"puede_prometer": false,
+			"keywords": ["de_palabra"],
+			"texto": "No puede hacer Promesas. De palabra: llevá a tu mano, gratis, todas las cartas del Empeñadero rival.",
+			"lore": "la mujer sin palabra, que compra la ajena.",
+			"efectos": [{ "trigger": "de_palabra", "op": "robar_empenadero_rival" }]
+		},
+		{
+			"id": "gallina_cumplidora",
+			"nombre": "Gallina Cumplidora",
+			"arquetipo": "token",
+			"tipo": 0,
+			"coste_base": 1,
+			"ataque_base": 2,
+			"aguante_base": 3,
+			"es_token": true,
+			"keywords": ["sello"],
+			"texto": "Sello."
+		},
+		{
+			"id": "deudo",
+			"nombre": "Deudo",
+			"arquetipo": "token",
+			"tipo": 0,
+			"coste_base": 1,
+			"ataque_base": 1,
+			"aguante_base": 1,
+			"es_token": true,
+			"texto": ""
+		},
+		{
+			"id": "quebranto",
+			"nombre": "Quebranto",
+			"arquetipo": "token",
+			"tipo": 0,
+			"coste_base": 0,
+			"ataque_base": 2,
+			"aguante_base": 2,
+			"es_token": true,
+			"puede_prometer": false,
+			"texto": "Ataca automáticamente a la Firma de quien rompió la promesa. No puede llevar Promesas."
+		},
+		{
+			"id": "copia_espejo",
+			"nombre": "Copia Espejo",
+			"arquetipo": "token",
+			"tipo": 0,
+			"coste_base": 5,
+			"ataque_base": 3,
+			"aguante_base": 3,
+			"es_token": true,
+			"keywords": ["al_contado", "letra_chica"],
+			"texto": "Al contado. Cuando una muere, la otra pierde Al contado y gana +2/+2.",
+			"efectos": [
+				{
+					"trigger": "letra_chica",
+					"op": "gemela_cae",
+					"ataque": 2,
+					"aguante": 2,
+					"ids": ["cobradoras_gemelas", "copia_espejo"]
+				}
+			]
+		},
+		{
+			"id": "la_forastera",
+			"nombre": "la Forastera",
+			"arquetipo": "token",
+			"tipo": 0,
+			"coste_base": 4,
+			"ataque_base": 4,
+			"aguante_base": 2,
+			"es_token": true,
+			"keywords": ["al_contado"],
+			"texto": "Al contado. (Sin Letra chica.)"
+		},
+		{
+			"id": "la_vuelta",
+			"nombre": "La Vuelta",
+			"arquetipo": "token",
+			"tipo": 2,
+			"coste_base": 0,
+			"es_token": true,
+			"texto": "+1 Crédito este turno.",
+			"efectos": [{ "trigger": "clausula", "op": "credito", "n": 1 }]
+		}
+	]
+}

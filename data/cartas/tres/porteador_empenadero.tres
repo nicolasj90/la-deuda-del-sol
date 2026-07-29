@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_gtp54"]
+
+[resource]
+resource_name = "porteador_empenadero"
+script = ExtResource("1_gtp54")
+id = "porteador_empenadero"
+nombre = "Porteador del Empeñadero"
+texto = "Garante. +1/+1 por carta en tu Empeñadero, hasta +3/+3."
+lore = "los monjes que se hacen fuertes cargando lo que otros no pueden."
+arquetipo = "garante"
+coste_base = 4
+ataque_base = 2
+aguante_base = 5
+keywords = Array[String](["garante"])
+bono_dinamico = {
+"aguante": 1,
+"ataque": 1,
+"fuente": "empenadero",
+"tope": 3
+}

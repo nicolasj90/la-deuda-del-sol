@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_o7ld2"]
+
+[resource]
+resource_name = "tasador_decano"
+script = ExtResource("1_o7ld2")
+id = "tasador_decano"
+nombre = "el Tasador Decano"
+texto = "De palabra: hasta 2 cartas con Interés de tu mano cuestan 0 este turno."
+arquetipo = "interes"
+coste_base = 6
+ataque_base = 5
+aguante_base = 5
+keywords = Array[String](["de_palabra"])
+efectos = Array[Dictionary]([{
+"max": 2,
+"op": "coste_cero_interes",
+"trigger": "de_palabra"
+}])

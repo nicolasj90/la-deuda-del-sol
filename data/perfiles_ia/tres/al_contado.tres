@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PerfilIA" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/ia/perfil_ia.gd" id="1_b42ub"]
+
+[resource]
+resource_name = "al_contado"
+script = ExtResource("1_b42ub")
+id = "al_contado"
+nombre = "Tallador de la Puerta (E16)"
+peso_tempo = 1.5
+peso_cara = 2.0
+peso_tabla = 0.3
+peso_mano = 0.6
+sesgo_promesa = 0.3
+sesgo_desconfianza = 0.5
+umbral_trade = 0.1
+keywords_prioritarias = Array[String](["al_contado"])

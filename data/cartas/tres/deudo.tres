@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_iass8"]
+
+[resource]
+resource_name = "deudo"
+script = ExtResource("1_iass8")
+id = "deudo"
+nombre = "Deudo"
+arquetipo = "token"
+coste_base = 1
+ataque_base = 1
+aguante_base = 1
+es_token = true

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_l7xe8"]
+
+[resource]
+resource_name = "archivista_jubilada"
+script = ExtResource("1_l7xe8")
+id = "archivista_jubilada"
+nombre = "Archivista Jubilada"
+texto = "De palabra: robá 1 por Fiador aliado con De palabra en el Estrado, hasta 3."
+arquetipo = "de_palabra"
+coste_base = 4
+ataque_base = 3
+aguante_base = 3
+keywords = Array[String](["de_palabra"])
+efectos = Array[Dictionary]([{
+"max": 3,
+"op": "robar_por_de_palabra",
+"trigger": "de_palabra"
+}])

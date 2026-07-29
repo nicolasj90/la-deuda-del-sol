@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_dixmv"]
+
+[resource]
+resource_name = "pagare_a_la_vista"
+script = ExtResource("1_dixmv")
+id = "pagare_a_la_vista"
+nombre = "Pagaré a la Vista"
+texto = "Interés. Hacé 2 de daño (hasta 7 con Interés)."
+arquetipo = "interes"
+tipo = 2
+coste_base = 1
+dano_base = 2
+keywords = Array[String](["interes"])
+efectos = Array[Dictionary]([{
+"objetivo": "elegido",
+"op": "dano",
+"trigger": "clausula",
+"usa_dano_base": true
+}])
+objetivos = Array[String](["enemigo_o_firma"])

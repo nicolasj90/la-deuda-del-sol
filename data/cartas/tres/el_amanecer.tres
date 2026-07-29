@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_u7jdt"]
+
+[resource]
+resource_name = "el_amanecer"
+script = ExtResource("1_u7jdt")
+id = "el_amanecer"
+nombre = "El Amanecer"
+texto = "Cumplí todas tus Promesas pendientes (con sus bonus); disolvé todos los Quebrantos del Estrado y de la Mora; +1 Aval por cada uno."
+lore = "cada alba es un cumplimiento. La carta con la que sueña todo cumplidor — y el mazo entero de Ciro existe para rematarla."
+arquetipo = "palabra_rota"
+tipo = 2
+coste_base = 10
+efectos = Array[Dictionary]([{
+"op": "cumplir_todas_las_promesas",
+"trigger": "clausula"
+}, {
+"aval_por_cada": 1,
+"op": "disolver_quebrantos",
+"trigger": "clausula"
+}])
+es_legendaria = true

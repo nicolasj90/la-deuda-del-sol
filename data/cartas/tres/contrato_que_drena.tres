@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_pmkoc"]
+
+[resource]
+resource_name = "contrato_que_drena"
+script = ExtResource("1_pmkoc")
+id = "contrato_que_drena"
+nombre = "Contrato que Drena"
+texto = "Al final de cada turno rival su Firma pierde 1 Aval. Letra chica: pierde 2."
+arquetipo = "letra_chica"
+tipo = 1
+coste_base = 3
+aguante_base = 2
+keywords = Array[String](["letra_chica"])
+efectos = Array[Dictionary]([{
+"lado": "rival",
+"n": -1,
+"op": "aval",
+"trigger": "fin_turno_rival"
+}, {
+"lado": "rival",
+"n": -2,
+"op": "aval",
+"trigger": "letra_chica"
+}])

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_l063q"]
+
+[resource]
+resource_name = "de_mi_mesa_nadie"
+script = ExtResource("1_l063q")
+id = "de_mi_mesa_nadie"
+nombre = "«De mi mesa nadie se levanta con hambre»"
+texto = "Dale Garante y +0/+2 a todos tus Fiadores."
+arquetipo = "garante"
+tipo = 2
+coste_base = 3
+efectos = Array[Dictionary]([{
+"aguante": 2,
+"ataque": 0,
+"keyword": "garante",
+"objetivo": "todos_fiadores_propios",
+"op": "buff",
+"trigger": "clausula"
+}])

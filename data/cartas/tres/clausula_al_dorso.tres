@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_8eld5"]
+
+[resource]
+resource_name = "clausula_al_dorso"
+script = ExtResource("1_8eld5")
+id = "clausula_al_dorso"
+nombre = "Cláusula al Dorso"
+texto = "Dale a un Fiador aliado «Letra chica: el rival descarta 1»."
+arquetipo = "letra_chica"
+tipo = 2
+coste_base = 2
+efectos = Array[Dictionary]([{
+"efecto": {
+"lado": "rival",
+"n": 1,
+"op": "descartar",
+"trigger": "letra_chica"
+},
+"keyword": "letra_chica",
+"objetivo": "elegido",
+"op": "otorgar_efecto",
+"trigger": "clausula"
+}])
+objetivos = Array[String](["fiador_aliado"])

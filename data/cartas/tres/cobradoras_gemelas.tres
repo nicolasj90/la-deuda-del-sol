@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_32cwk"]
+
+[resource]
+resource_name = "cobradoras_gemelas"
+script = ExtResource("1_32cwk")
+id = "cobradoras_gemelas"
+nombre = "Las Cobradoras Gemelas"
+texto = "Al contado. Invocá una copia espejo 3/3 con Al contado (token, sin este efecto). Cuando una muere, la otra pierde Al contado y gana +2/+2."
+arquetipo = "al_contado"
+coste_base = 5
+ataque_base = 3
+aguante_base = 3
+keywords = Array[String](["al_contado", "de_palabra", "letra_chica"])
+efectos = Array[Dictionary]([{
+"carta": "copia_espejo",
+"n": 1,
+"op": "invocar",
+"trigger": "de_palabra"
+}, {
+"aguante": 2,
+"ataque": 2,
+"ids": ["cobradoras_gemelas", "copia_espejo"],
+"op": "gemela_cae",
+"trigger": "letra_chica"
+}])
+es_legendaria = true

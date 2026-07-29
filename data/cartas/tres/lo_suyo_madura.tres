@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_x4h4e"]
+
+[resource]
+resource_name = "lo_suyo_madura"
+script = ExtResource("1_x4h4e")
+id = "lo_suyo_madura"
+nombre = "«Lo suyo madura»"
+texto = "Dale Interés a 2 cartas de tu mano; robá 1."
+arquetipo = "interes"
+tipo = 2
+coste_base = 2
+efectos = Array[Dictionary]([{
+"n": 2,
+"op": "dar_interes_en_mano",
+"trigger": "clausula"
+}, {
+"n": 1,
+"op": "robar",
+"trigger": "clausula"
+}])

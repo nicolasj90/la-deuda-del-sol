@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_65ljk"]
+
+[resource]
+resource_name = "hornera_de_rosaura"
+script = ExtResource("1_65ljk")
+id = "hornera_de_rosaura"
+nombre = "Hornera de Rosaura"
+texto = "Garante."
+arquetipo = "garante"
+coste_base = 2
+ataque_base = 1
+aguante_base = 4
+keywords = Array[String](["garante"])

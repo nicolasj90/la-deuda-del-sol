@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_v2taq"]
+
+[resource]
+resource_name = "fiel_el_que_espera"
+script = ExtResource("1_v2taq")
+id = "fiel_el_que_espera"
+nombre = "Fiel, el que Espera"
+texto = "La primera vez por turno que sería destruido, no lo es: consumís un plazo de una Promesa pendiente (espera con vos). Al cumplir una Promesa (1 vez por turno): +2/+2 permanente."
+lore = "el quebranto que busca su promesa."
+arquetipo = "palabra_rota"
+coste_base = 4
+ataque_base = 3
+aguante_base = 3
+efectos = Array[Dictionary]([{
+"op": "evitar_destruccion_consumiendo_plazo",
+"trigger": "seria_destruido",
+"una_vez_por_turno": true
+}, {
+"aguante": 2,
+"ataque": 2,
+"objetivo": "propio",
+"op": "buff",
+"trigger": "promesa_cumplida",
+"una_vez_por_turno": true
+}])
+es_legendaria = true

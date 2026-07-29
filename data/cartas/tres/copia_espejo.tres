@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_f8vfa"]
+
+[resource]
+resource_name = "copia_espejo"
+script = ExtResource("1_f8vfa")
+id = "copia_espejo"
+nombre = "Copia Espejo"
+texto = "Al contado. Cuando una muere, la otra pierde Al contado y gana +2/+2."
+arquetipo = "token"
+coste_base = 5
+ataque_base = 3
+aguante_base = 3
+keywords = Array[String](["al_contado", "letra_chica"])
+efectos = Array[Dictionary]([{
+"aguante": 2,
+"ataque": 2,
+"ids": ["cobradoras_gemelas", "copia_espejo"],
+"op": "gemela_cae",
+"trigger": "letra_chica"
+}])
+es_token = true

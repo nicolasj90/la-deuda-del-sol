@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_tvwvp"]
+
+[resource]
+resource_name = "lampara_de_palabra"
+script = ExtResource("1_tvwvp")
+id = "lampara_de_palabra"
+nombre = "Lámpara de Palabra"
+texto = "Cada vez que cumplís una Promesa, robá 1. Máximo 2 por turno."
+lore = "los pueblos se alumbran con cumplimientos; tu mazo también."
+tipo = 1
+coste_base = 2
+aguante_base = 3
+efectos = Array[Dictionary]([{
+"max_por_turno": 2,
+"n": 1,
+"op": "robar",
+"trigger": "promesa_cumplida"
+}])

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_ng47u"]
+
+[resource]
+resource_name = "odila_la_forastera"
+script = ExtResource("1_ng47u")
+id = "odila_la_forastera"
+nombre = "Odila, la Forastera"
+texto = "De palabra: refrendá — devolvé al Estrado con Sello el último Fiador aliado caído. Letra chica: vuelve a tu mano como la Forastera (4/2, Al contado, sin Letra chica)."
+lore = "la heredera solemne y su doble vida. Dos cartas, una persona, ningún acta."
+arquetipo = "de_palabra"
+coste_base = 4
+ataque_base = 2
+aguante_base = 4
+keywords = Array[String](["de_palabra", "letra_chica"])
+efectos = Array[Dictionary]([{
+"op": "refrendar",
+"trigger": "de_palabra"
+}, {
+"carta": "la_forastera",
+"op": "transformar_a_mano",
+"trigger": "letra_chica"
+}])
+es_legendaria = true

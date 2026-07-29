@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/vista/fabrica_de_palabra.gd" id="1_fabrica"]
+[ext_resource type="PackedScene" path="res://scenes/card_game/vista/naipe_de_palabra.tscn" id="2_naipe"]
+
+[node name="FabricaDePalabra" type="Node"]
+script = ExtResource("1_fabrica")
+escena_naipe = ExtResource("2_naipe")

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_d61eo"]
+
+[resource]
+resource_name = "sereno_del_archivo"
+script = ExtResource("1_d61eo")
+id = "sereno_del_archivo"
+nombre = "Sereno del Archivo"
+texto = "Garante. Sello."
+arquetipo = "garante"
+coste_base = 3
+ataque_base = 2
+aguante_base = 4
+keywords = Array[String](["garante", "sello"])

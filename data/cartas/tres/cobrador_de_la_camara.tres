@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_kbqrn"]
+
+[resource]
+resource_name = "cobrador_de_la_camara"
+script = ExtResource("1_kbqrn")
+id = "cobrador_de_la_camara"
+nombre = "Cobrador de la Cámara"
+texto = "Interés."
+lore = "la deuda que crece si la postergás — la carta te apura desde la mano."
+arquetipo = "interes"
+coste_base = 2
+ataque_base = 2
+aguante_base = 1
+keywords = Array[String](["interes"])

@@ -1,0 +1,114 @@
+{
+	"_nota": "Perfiles de IA del Acto 1. Fuente de verdad: docs/cores/diseno-de-palabra.md § 7.1 (campos) y § 7.3 (los 7 perfiles). Ningún valor de acá cambia reglas: son pesos de una heurística. Pipeline: scenes/card_game/tools/generar_perfiles.gd → data/perfiles_ia/tres/*.tres.",
+	"_campos": "peso_tempo/peso_cara/peso_tabla/peso_mano 0-2 · sesgo_promesa/sesgo_desconfianza/umbral_trade 0-1 · curva_preferida 10 costes (turnos propios 1..10) o vacía · keywords_prioritarias = desempate · guion_forzado = pasos de tutorial, solo se usan si son legales · prob_senuelo = § 7.3 perfil senuelos.",
+	"perfiles": [
+		{
+			"id": "casa",
+			"nombre": "la casa (tutorial)",
+			"_ref": "§ 7.3 — el mazo de la casa de E03: la mesa juega derecho, sin marca de arquetipo. Pesos neutros a propósito: es la IA contra la que se aprende.",
+			"peso_tempo": 1.0,
+			"peso_cara": 1.0,
+			"peso_tabla": 1.0,
+			"peso_mano": 1.0,
+			"sesgo_promesa": 0.5,
+			"sesgo_desconfianza": 0.0,
+			"umbral_trade": 0.3
+		},
+		{
+			"id": "garante",
+			"nombre": "Rosaura (E03)",
+			"_ref": "§ 7.3 — peso_tabla 2, peso_cara 0.3, guion_forzado los turnos 1-3 (tutorial).",
+			"peso_tempo": 1.0,
+			"peso_cara": 0.3,
+			"peso_tabla": 2.0,
+			"peso_mano": 0.8,
+			"sesgo_promesa": 0.6,
+			"sesgo_desconfianza": 0.2,
+			"umbral_trade": 0.6,
+			"keywords_prioritarias": ["garante"],
+			"guion_forzado": [
+				{"turno_propio": 1, "tipo": "jugar", "carta": "tranquera_cerrada"},
+				{"turno_propio": 2, "tipo": "jugar", "carta": "hornera_de_rosaura"},
+				{"turno_propio": 3, "tipo": "jugar", "carta": "sereno_del_archivo"}
+			]
+		},
+		{
+			"id": "letra_chica",
+			"nombre": "Cosme (E03)",
+			"_ref": "§ 7.3 — umbral_trade 0.1: trades felices; valora sus propias muertes (por keywords_prioritarias).",
+			"peso_tempo": 1.2,
+			"peso_cara": 1.0,
+			"peso_tabla": 1.0,
+			"peso_mano": 1.0,
+			"sesgo_promesa": 0.5,
+			"sesgo_desconfianza": 0.3,
+			"umbral_trade": 0.1,
+			"keywords_prioritarias": ["letra_chica"]
+		},
+		{
+			"id": "interes",
+			"nombre": "prestamista (E08) / Bravante (E23)",
+			"_ref": "§ 7.3 — curva_preferida sesgada tarde, peso_mano 2.",
+			"peso_tempo": 0.6,
+			"peso_cara": 1.0,
+			"peso_tabla": 1.0,
+			"peso_mano": 2.0,
+			"sesgo_promesa": 0.4,
+			"sesgo_desconfianza": 0.4,
+			"umbral_trade": 0.4,
+			"curva_preferida": [1, 1, 2, 3, 5, 6, 7, 8, 9, 10],
+			"keywords_prioritarias": ["interes"]
+		},
+		{
+			"id": "de_palabra",
+			"nombre": "archivista jubilada (E10)",
+			"_ref": "§ 7.3 — keywords_prioritarias = [de_palabra].",
+			"peso_tempo": 1.2,
+			"peso_cara": 0.8,
+			"peso_tabla": 1.2,
+			"peso_mano": 1.2,
+			"sesgo_promesa": 0.5,
+			"sesgo_desconfianza": 0.3,
+			"umbral_trade": 0.3,
+			"keywords_prioritarias": ["de_palabra"]
+		},
+		{
+			"id": "al_contado",
+			"nombre": "Tallador de la Puerta (E16)",
+			"_ref": "§ 7.3 — peso_cara 2, peso_tabla 0.3.",
+			"peso_tempo": 1.5,
+			"peso_cara": 2.0,
+			"peso_tabla": 0.3,
+			"peso_mano": 0.6,
+			"sesgo_promesa": 0.3,
+			"sesgo_desconfianza": 0.5,
+			"umbral_trade": 0.1,
+			"keywords_prioritarias": ["al_contado"]
+		},
+		{
+			"id": "senuelos",
+			"nombre": "el Cachuzo (E17)",
+			"_ref": "§ 7.3 — usa al fiado con 50 % de señuelos por rng (prob_senuelo).",
+			"peso_tempo": 1.0,
+			"peso_cara": 1.2,
+			"peso_tabla": 0.8,
+			"peso_mano": 1.0,
+			"sesgo_promesa": 0.4,
+			"sesgo_desconfianza": 0.8,
+			"umbral_trade": 0.2,
+			"prob_senuelo": 0.5
+		},
+		{
+			"id": "control",
+			"nombre": "Salu (E25)",
+			"_ref": "§ 7.3 — sesgo_desconfianza = 1.0: descarta por completo el anuncio de Ciro y por eso no juega contra El Amanecer. El defecto de personaje es este número, no un script.",
+			"peso_tempo": 0.8,
+			"peso_cara": 0.5,
+			"peso_tabla": 1.6,
+			"peso_mano": 1.4,
+			"sesgo_promesa": 0.6,
+			"sesgo_desconfianza": 1.0,
+			"umbral_trade": 0.5
+		}
+	]
+}

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_o7dx3"]
+
+[resource]
+resource_name = "bravante_el_corredor"
+script = ExtResource("1_o7dx3")
+id = "bravante_el_corredor"
+nombre = "Bravante, el Corredor"
+texto = "Al empezar tu turno, una carta al azar de tu mano gana Interés."
+arquetipo = "interes"
+coste_base = 5
+ataque_base = 4
+aguante_base = 4
+efectos = Array[Dictionary]([{
+"n": 1,
+"op": "interes_al_azar_en_mano",
+"trigger": "inicio_turno_propio"
+}])

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_3ikyo"]
+
+[resource]
+resource_name = "palabra_rota"
+script = ExtResource("1_3ikyo")
+id = "palabra_rota"
+nombre = "Palabra Rota"
+texto = "Rompé una Promesa pendiente tuya: el Quebranto nace de tu lado, con Al contado."
+lore = "el pecado hecho arquetipo. Los teólogos tampoco comentan esta carta."
+arquetipo = "palabra_rota"
+tipo = 2
+coste_base = 3
+efectos = Array[Dictionary]([{
+"keywords_quebranto": ["al_contado"],
+"op": "romper_promesa",
+"trigger": "clausula"
+}])
+objetivos = Array[String](["promesa_propia"])

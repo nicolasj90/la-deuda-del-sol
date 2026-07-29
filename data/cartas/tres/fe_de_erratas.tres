@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_bbwak"]
+
+[resource]
+resource_name = "fe_de_erratas"
+script = ExtResource("1_bbwak")
+id = "fe_de_erratas"
+nombre = "Fe de Erratas"
+texto = "Devolvé a tu mano un Fiador aliado; su coste baja 1."
+tipo = 2
+coste_base = 2
+efectos = Array[Dictionary]([{
+"mod_coste": -1,
+"objetivo": "elegido",
+"op": "devolver_a_mano",
+"trigger": "clausula"
+}])
+objetivos = Array[String](["fiador_aliado"])

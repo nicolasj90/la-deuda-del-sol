@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_pffvj"]
+
+[resource]
+resource_name = "mula_de_reparto"
+script = ExtResource("1_pffvj")
+id = "mula_de_reparto"
+nombre = "Mula de Reparto"
+coste_base = 3
+ataque_base = 3
+aguante_base = 3

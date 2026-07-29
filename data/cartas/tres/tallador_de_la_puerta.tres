@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_pyuy7"]
+
+[resource]
+resource_name = "tallador_de_la_puerta"
+script = ExtResource("1_pyuy7")
+id = "tallador_de_la_puerta"
+nombre = "el Tallador de la Puerta"
+texto = "Al contado."
+arquetipo = "al_contado"
+coste_base = 3
+ataque_base = 3
+aguante_base = 2
+keywords = Array[String](["al_contado"])

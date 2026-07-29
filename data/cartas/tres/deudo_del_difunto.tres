@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_vfqqx"]
+
+[resource]
+resource_name = "deudo_del_difunto"
+script = ExtResource("1_vfqqx")
+id = "deudo_del_difunto"
+nombre = "Deudo del Difunto"
+texto = "Letra chica: robá 1."
+arquetipo = "letra_chica"
+coste_base = 1
+ataque_base = 1
+aguante_base = 1
+keywords = Array[String](["letra_chica"])
+efectos = Array[Dictionary]([{
+"n": 1,
+"op": "robar",
+"trigger": "letra_chica"
+}])

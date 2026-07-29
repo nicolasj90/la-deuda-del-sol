@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_n1evn"]
+
+[resource]
+resource_name = "la_vuelta"
+script = ExtResource("1_n1evn")
+id = "la_vuelta"
+nombre = "La Vuelta"
+texto = "+1 Crédito este turno."
+arquetipo = "token"
+tipo = 2
+efectos = Array[Dictionary]([{
+"n": 1,
+"op": "credito",
+"trigger": "clausula"
+}])
+es_token = true

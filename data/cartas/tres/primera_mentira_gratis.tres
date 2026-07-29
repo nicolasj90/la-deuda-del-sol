@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_y5eyj"]
+
+[resource]
+resource_name = "primera_mentira_gratis"
+script = ExtResource("1_y5eyj")
+id = "primera_mentira_gratis"
+nombre = "«Primera mentira gratis»"
+texto = "Jugá una carta al fiado sin costo de viaje: se revela al final de tu turno."
+arquetipo = "al_contado"
+tipo = 2
+coste_base = 2
+efectos = Array[Dictionary]([{
+"objetivo": "elegido",
+"op": "jugar_al_fiado_gratis",
+"trigger": "clausula"
+}])
+objetivos = Array[String](["carta_mano_propia"])
+modulo = "al_fiado"

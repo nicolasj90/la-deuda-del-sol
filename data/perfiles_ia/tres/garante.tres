@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="PerfilIA" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/ia/perfil_ia.gd" id="1_6v8rs"]
+
+[resource]
+resource_name = "garante"
+script = ExtResource("1_6v8rs")
+id = "garante"
+nombre = "Rosaura (E03)"
+peso_cara = 0.3
+peso_tabla = 2.0
+peso_mano = 0.8
+sesgo_promesa = 0.6
+sesgo_desconfianza = 0.2
+umbral_trade = 0.6
+keywords_prioritarias = Array[String](["garante"])
+guion_forzado = Array[Dictionary]([{
+"carta": "tranquera_cerrada",
+"tipo": "jugar",
+"turno_propio": 1
+}, {
+"carta": "hornera_de_rosaura",
+"tipo": "jugar",
+"turno_propio": 2
+}, {
+"carta": "sereno_del_archivo",
+"tipo": "jugar",
+"turno_propio": 3
+}])

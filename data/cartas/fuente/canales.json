@@ -1,0 +1,207 @@
+{
+	"_nota": "Contrato de colección del Acto 1. Canales de obtención = diseño § 5.10 (copiado carta por carta, sin agregar nada). Manos anunciadas = INDICE del guion § 4f.1 (regla no negociable: «Ciro no puede mentir ni por desincronización»). Lo consume scenes/card_game/tests/prueba_set_de_cartas.gd.",
+	"_via": "coleccion = queda en la colección del jugador · mazo_de_la_casa = mazo prestado, solo sirve en esa escena · guionado = mazo de guion, no entra a la colección",
+	"canales": [
+		{
+			"escena": "E03",
+			"orden": 3,
+			"via": "mazo_de_la_casa",
+			"obligatorio": true,
+			"nota": "mazo de la casa (Rosaura), prestado para el duelo tutorial",
+			"cartas": {
+				"gallina_lacrevieja": 2,
+				"peon_de_vina": 1,
+				"lampara_de_palabra": 1,
+				"porteador_empenadero": 1,
+				"tranquera_cerrada": 1,
+				"hornera_de_rosaura": 1
+			}
+		},
+		{
+			"escena": "E03",
+			"orden": 3,
+			"via": "coleccion",
+			"obligatorio": true,
+			"nota": "premio: mazo propio (incluye el Porteador, § 4e del INDICE) + Gallina #1 de regalo",
+			"cartas": { "gallina_lacrevieja": 1, "porteador_empenadero": 1 }
+		},
+		{
+			"escena": "E03",
+			"orden": 3,
+			"via": "coleccion",
+			"obligatorio": false,
+			"nota": "duelo opcional contra Cosme",
+			"cartas": { "sepulturero_cosme": 1, "deudo_del_difunto": 1, "testamento_apurado": 1 }
+		},
+		{
+			"escena": "E06",
+			"orden": 6,
+			"via": "coleccion",
+			"obligatorio": true,
+			"nota": "boss 1: firma-carta garantizada",
+			"cartas": { "tasador_decano": 1 }
+		},
+		{
+			"escena": "E08",
+			"orden": 8,
+			"via": "coleccion",
+			"obligatorio": false,
+			"nota": "duelo opcional contra el prestamista de Villarrúbrica",
+			"cartas": { "cobrador_de_la_camara": 1, "lo_suyo_madura": 1 }
+		},
+		{
+			"escena": "E09",
+			"orden": 9,
+			"via": "coleccion",
+			"obligatorio": true,
+			"nota": "cofre del Archivo Bajo: la Lámpara propia de Ciro",
+			"cartas": { "lampara_de_palabra": 1 }
+		},
+		{
+			"escena": "E10",
+			"orden": 10,
+			"via": "coleccion",
+			"obligatorio": false,
+			"nota": "duelo opcional contra la archivista jubilada",
+			"cartas": { "archivista_jubilada": 1, "maestra_jardinera": 1, "pregon_de_ventanilla": 1 }
+		},
+		{
+			"escena": "E11",
+			"orden": 11,
+			"via": "coleccion",
+			"obligatorio": false,
+			"repetible": true,
+			"nota": "drop por familia de los lobos del Diezmo (canal 1, por probabilidad)",
+			"cartas": { "colmillo_del_diezmo": 1 }
+		},
+		{
+			"escena": "E12",
+			"orden": 12,
+			"via": "coleccion",
+			"obligatorio": true,
+			"nota": "Fiel se une: entrega su firma",
+			"cartas": { "fiel_el_que_espera": 1 }
+		},
+		{
+			"escena": "E13",
+			"orden": 13,
+			"via": "coleccion",
+			"obligatorio": true,
+			"nota": "cofre del galpón del Viñedo en Prenda",
+			"cartas": { "gallina_lacrevieja": 1, "mula_de_reparto": 1, "tranquera_cerrada": 1 }
+		},
+		{
+			"escena": "E15",
+			"orden": 15,
+			"via": "coleccion",
+			"obligatorio": true,
+			"nota": "boss 2: firma garantizada + cartas de Letra chica de los restos",
+			"cartas": { "quebranto_del_peaje": 1, "clausula_al_dorso": 1, "contrato_que_drena": 1 }
+		},
+		{
+			"escena": "E16",
+			"orden": 16,
+			"via": "coleccion",
+			"obligatorio": true,
+			"nota": "el Tallador de la Puerta (duelo evitable pagando el peaje, pero la entrega es del hub)",
+			"cartas": { "tallador_de_la_puerta": 1, "changuito_del_muelle": 1 }
+		},
+		{
+			"escena": "E17",
+			"orden": 17,
+			"via": "coleccion",
+			"obligatorio": true,
+			"nota": "el Cachuzo: primera mesa del hub, habilita al fiado y empeñar",
+			"cartas": { "primera_mentira_gratis": 1, "lloron_del_puerto": 1, "palabra_rota": 1 }
+		},
+		{
+			"escena": "E18",
+			"orden": 18,
+			"via": "guionado",
+			"obligatorio": false,
+			"nota": "mazo de refrendo guionado del turno como la Forastera: NO entra a la colección",
+			"cartas": { "odila_la_forastera": 1 }
+		},
+		{
+			"escena": "E19",
+			"orden": 19,
+			"via": "coleccion",
+			"obligatorio": true,
+			"nota": "Tasadora Ciega: primera entrega guiada a cambio de una historia verdadera",
+			"cartas": { "tasadora_ciega": 1 }
+		},
+		{
+			"escena": "E20",
+			"orden": 20,
+			"via": "coleccion",
+			"obligatorio": false,
+			"nota": "duelo opcional contra el Rematador",
+			"cartas": { "fe_de_erratas": 1, "pagare_a_la_vista": 1 }
+		},
+		{
+			"escena": "E23",
+			"orden": 23,
+			"via": "coleccion",
+			"obligatorio": true,
+			"nota": "Bravante: firma + «El Amanecer» garantizada",
+			"cartas": { "bravante_el_corredor": 1, "el_amanecer": 1 }
+		},
+		{
+			"escena": "E24",
+			"orden": 24,
+			"via": "coleccion",
+			"obligatorio": true,
+			"nota": "boss 3: firma garantizada",
+			"cartas": { "cobradoras_gemelas": 1 }
+		}
+	],
+	"manos_anunciadas": [
+		{
+			"escena": "E03",
+			"orden": 3,
+			"vias": ["mazo_de_la_casa", "coleccion"],
+			"cartas": { "gallina_lacrevieja": 2, "peon_de_vina": 1, "lampara_de_palabra": 1 }
+		},
+		{
+			"escena": "E16",
+			"orden": 16,
+			"vias": ["coleccion"],
+			"cartas": { "gallina_lacrevieja": 2, "lampara_de_palabra": 1 }
+		},
+		{
+			"escena": "E17",
+			"orden": 17,
+			"vias": ["coleccion"],
+			"cartas": {
+				"gallina_lacrevieja": 2,
+				"lampara_de_palabra": 1,
+				"porteador_empenadero": 1
+			}
+		},
+		{
+			"escena": "E23",
+			"orden": 23,
+			"vias": ["coleccion"],
+			"cartas": {
+				"gallina_lacrevieja": 2,
+				"lampara_de_palabra": 1,
+				"tasadora_ciega": 1
+			}
+		},
+		{
+			"escena": "E25",
+			"orden": 25,
+			"vias": ["coleccion"],
+			"cartas": { "gallina_lacrevieja": 2, "lampara_de_palabra": 1, "el_amanecer": 1 }
+		}
+	],
+	"_sin_canal": "Hueco real del § 5.10 (ver reporte): el calendario no entrega estas cartas a la colección por ningún canal enumerado del Acto 1. El candidato natural es el «mazo propio» que Rosaura regala en E03, que el § 5.10 no lista carta por carta (solo garantiza el Porteador). NO se inventó ningún canal: la lista queda acá para que el test lo cuide como regresión y sala decida.",
+	"sin_canal_conocido": {
+		"peon_de_vina": "solo en el mazo prestado de la casa (E03); el «mazo propio» del premio no está enumerado",
+		"hornera_de_rosaura": "solo en el mazo prestado de la casa (E03); el «mazo propio» del premio no está enumerado",
+		"sereno_del_archivo": "arquetipo Garante (§ 5.2) sin canal en el § 5.10",
+		"de_mi_mesa_nadie": "arquetipo Garante (§ 5.2) sin canal en el § 5.10",
+		"odila_la_forastera": "por diseño: solo en el mazo guionado de E18, no entra a la colección",
+		"nadia_la_impalabra": "por diseño: bloqueada en el Acto 1, carta de postgame (§ 5.8)"
+	}
+}

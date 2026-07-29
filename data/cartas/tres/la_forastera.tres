@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_4lv5t"]
+
+[resource]
+resource_name = "la_forastera"
+script = ExtResource("1_4lv5t")
+id = "la_forastera"
+nombre = "la Forastera"
+texto = "Al contado. (Sin Letra chica.)"
+arquetipo = "token"
+coste_base = 4
+ataque_base = 4
+aguante_base = 2
+keywords = Array[String](["al_contado"])
+es_token = true

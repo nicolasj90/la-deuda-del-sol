@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_l4kju"]
+
+[resource]
+resource_name = "gallina_cumplidora"
+script = ExtResource("1_l4kju")
+id = "gallina_cumplidora"
+nombre = "Gallina Cumplidora"
+texto = "Sello."
+arquetipo = "token"
+coste_base = 1
+ataque_base = 2
+aguante_base = 3
+keywords = Array[String](["sello"])
+es_token = true

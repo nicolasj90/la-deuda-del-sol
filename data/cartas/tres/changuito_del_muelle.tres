@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_qeh5a"]
+
+[resource]
+resource_name = "changuito_del_muelle"
+script = ExtResource("1_qeh5a")
+id = "changuito_del_muelle"
+nombre = "Changuito del Muelle"
+texto = "Al contado."
+arquetipo = "al_contado"
+coste_base = 1
+ataque_base = 2
+aguante_base = 1
+keywords = Array[String](["al_contado"])

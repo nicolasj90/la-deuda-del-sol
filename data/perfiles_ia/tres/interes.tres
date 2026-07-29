@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PerfilIA" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/ia/perfil_ia.gd" id="1_3fed2"]
+
+[resource]
+resource_name = "interes"
+script = ExtResource("1_3fed2")
+id = "interes"
+nombre = "prestamista (E08) / Bravante (E23)"
+peso_tempo = 0.6
+peso_mano = 2.0
+sesgo_promesa = 0.4
+sesgo_desconfianza = 0.4
+umbral_trade = 0.4
+curva_preferida = Array[int]([1, 1, 2, 3, 5, 6, 7, 8, 9, 10])
+keywords_prioritarias = Array[String](["interes"])

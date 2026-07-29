@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_7tfi1"]
+
+[resource]
+resource_name = "colmillo_del_diezmo"
+script = ExtResource("1_7tfi1")
+id = "colmillo_del_diezmo"
+nombre = "Colmillo del Diezmo"
+coste_base = 2
+ataque_base = 3
+aguante_base = 2

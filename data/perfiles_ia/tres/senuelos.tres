@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PerfilIA" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/ia/perfil_ia.gd" id="1_smcb6"]
+
+[resource]
+resource_name = "senuelos"
+script = ExtResource("1_smcb6")
+id = "senuelos"
+nombre = "el Cachuzo (E17)"
+peso_cara = 1.2
+peso_tabla = 0.8
+sesgo_promesa = 0.4
+sesgo_desconfianza = 0.8
+umbral_trade = 0.2
+prob_senuelo = 0.5

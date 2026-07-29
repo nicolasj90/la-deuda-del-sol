@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_ebobt"]
+
+[resource]
+resource_name = "gallina_lacrevieja"
+script = ExtResource("1_ebobt")
+id = "gallina_lacrevieja"
+nombre = "Gallina de Lacrevieja"
+texto = "Promesa opcional (2 turnos): «no atacar». Cumplida: se vuelve Gallina Cumplidora, 2/3 con Sello."
+lore = "las gallinas del pueblo natal, a las que Ferra les hace reverencias por protocolo."
+coste_base = 1
+ataque_base = 1
+aguante_base = 1
+promesas = Array[Dictionary]([{
+"bonus": [{
+"carta": "gallina_cumplidora",
+"objetivo": "elegido",
+"op": "transformar"
+}],
+"plazo": 2,
+"tipo": "no_atacar"
+}])

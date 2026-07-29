@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_46fpk"]
+
+[resource]
+resource_name = "nadia_la_impalabra"
+script = ExtResource("1_46fpk")
+id = "nadia_la_impalabra"
+nombre = "Nadia, la Impalabra"
+texto = "No puede hacer Promesas. De palabra: llevá a tu mano, gratis, todas las cartas del Empeñadero rival."
+lore = "la mujer sin palabra, que compra la ajena."
+arquetipo = "postgame"
+coste_base = 9
+ataque_base = 7
+aguante_base = 7
+keywords = Array[String](["de_palabra"])
+efectos = Array[Dictionary]([{
+"op": "robar_empenadero_rival",
+"trigger": "de_palabra"
+}])
+es_legendaria = true
+puede_prometer = false
+bloqueada = true

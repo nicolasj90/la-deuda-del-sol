@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PerfilIA" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/ia/perfil_ia.gd" id="1_b7egq"]
+
+[resource]
+resource_name = "casa"
+script = ExtResource("1_b7egq")
+id = "casa"
+nombre = "la casa (tutorial)"

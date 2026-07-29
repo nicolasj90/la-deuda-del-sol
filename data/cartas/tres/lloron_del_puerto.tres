@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_uwn5a"]
+
+[resource]
+resource_name = "lloron_del_puerto"
+script = ExtResource("1_uwn5a")
+id = "lloron_del_puerto"
+nombre = "el Llorón del Puerto"
+texto = "Gana +1/+1 cada vez que rompés una Promesa."
+arquetipo = "palabra_rota"
+coste_base = 2
+ataque_base = 2
+aguante_base = 2
+efectos = Array[Dictionary]([{
+"aguante": 1,
+"ataque": 1,
+"objetivo": "propio",
+"op": "buff",
+"trigger": "promesa_rota"
+}])

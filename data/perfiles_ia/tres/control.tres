@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PerfilIA" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/ia/perfil_ia.gd" id="1_yejco"]
+
+[resource]
+resource_name = "control"
+script = ExtResource("1_yejco")
+id = "control"
+nombre = "Salu (E25)"
+peso_tempo = 0.8
+peso_cara = 0.5
+peso_tabla = 1.6
+peso_mano = 1.4
+sesgo_promesa = 0.6
+sesgo_desconfianza = 1.0
+umbral_trade = 0.5

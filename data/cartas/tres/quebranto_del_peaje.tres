@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_nyslo"]
+
+[resource]
+resource_name = "quebranto_del_peaje"
+script = ExtResource("1_nyslo")
+id = "quebranto_del_peaje"
+nombre = "El Quebranto del Peaje"
+texto = "Letra chica: nace un Quebranto 2/2 del lado rival (le pega a la Firma rival)."
+arquetipo = "letra_chica"
+coste_base = 5
+ataque_base = 4
+aguante_base = 4
+keywords = Array[String](["letra_chica"])
+efectos = Array[Dictionary]([{
+"lado": "rival",
+"op": "nace_quebranto",
+"trigger": "letra_chica"
+}])

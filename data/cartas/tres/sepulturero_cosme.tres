@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_h67ap"]
+
+[resource]
+resource_name = "sepulturero_cosme"
+script = ExtResource("1_h67ap")
+id = "sepulturero_cosme"
+nombre = "Sepulturero Cosme"
+texto = "Letra chica: invocá dos Deudos 1/1."
+arquetipo = "letra_chica"
+coste_base = 3
+ataque_base = 2
+aguante_base = 2
+keywords = Array[String](["letra_chica"])
+efectos = Array[Dictionary]([{
+"carta": "deudo",
+"n": 2,
+"op": "invocar",
+"trigger": "letra_chica"
+}])

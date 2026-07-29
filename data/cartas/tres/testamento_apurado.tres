@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CartaDePalabra" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/motor/carta_de_palabra.gd" id="1_byvii"]
+
+[resource]
+resource_name = "testamento_apurado"
+script = ExtResource("1_byvii")
+id = "testamento_apurado"
+nombre = "Testamento Apurado"
+texto = "Destruí un Fiador aliado; robá 2 y +1 Crédito este turno."
+arquetipo = "letra_chica"
+tipo = 2
+coste_base = 4
+efectos = Array[Dictionary]([{
+"objetivo": "elegido",
+"op": "destruir",
+"trigger": "clausula"
+}, {
+"n": 2,
+"op": "robar",
+"trigger": "clausula"
+}, {
+"n": 1,
+"op": "credito",
+"trigger": "clausula"
+}])
+objetivos = Array[String](["fiador_aliado"])
