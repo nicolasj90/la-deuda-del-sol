@@ -89,4 +89,4 @@ metadata/_custom_type_script = "uid://0enyu5v4ra34"
 
 [node name="Cartel" parent="OnTheGround" instance=ExtResource("9_sign")]
 position = Vector2(768, 344)
-text = "Camino del Diezmo — ruta al puerto"
+text = "Camino del Diezmo — ruta de peaje hacia El Fiado. De noche rondan los quebrantos."

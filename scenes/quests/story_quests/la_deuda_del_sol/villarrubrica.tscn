@@ -89,4 +89,4 @@ metadata/_custom_type_script = "uid://0enyu5v4ra34"
 
 [node name="Cartel" parent="OnTheGround" instance=ExtResource("9_sign")]
 position = Vector2(768, 344)
-text = "Villarrúbrica — Notaría del Alba"
+text = "Villarrúbrica — ciudad notarial. La Notaría del Alba solo atiende con Fórmula de Cortesía Plena."

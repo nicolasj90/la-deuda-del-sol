@@ -81,4 +81,4 @@ metadata/_custom_type_script = "uid://0enyu5v4ra34"
 
 [node name="Cartel" parent="OnTheGround" instance=ExtResource("9_sign")]
 position = Vector2(768, 344)
-text = "El Fiado — acá la palabra no ata"
+text = "El Fiado — ciudad puerto. Acá la palabra no ata: todo se paga, se empeña o se fía."
