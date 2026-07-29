@@ -28,10 +28,25 @@ Referencia de reglas HS con licencia permisiva: hearthbreaker (MIT).
 | vendor/godot_jrpg assets (LPC wulax OGA-BY 3.0, Hyptosis CC-BY 3.0, etc.) | Mixtas | NO shipear: el addon se usa por su código; sprites de batalla propios. |
 | vendor/sokoban assets (dani-maccari, o-lobster, etc., itch.io) | Individuales, no cubiertas por el MIT | NO shipear. `vendor/` tiene `.gdignore` y se excluye del export. |
 
+## Política de assets del proyecto (decisión del 2026-07-29)
+
+El juego es **gratuito y sin monetización** (web + instalador para testers). Por decisión
+del dueño del proyecto, los assets se aceptan en dos niveles:
+
+- **Nivel A — libres** (CC0, CC-BY, OGA-BY, MIT, OFL): preferidos a igual calidad.
+  Sin restricción de futuro.
+- **Nivel B — NonCommercial** (CC BY-NC, BY-NC-SA y equivalentes): **aceptados**, porque
+  la distribución gratuita está permitida. Obligación operativa: cada asset NC se registra
+  en la tabla de este archivo con etiqueta `[NC]`. Si algún día el juego se comercializa,
+  esa lista es exactamente lo que hay que reemplazar antes.
+- **Excluido de builds**: "free for personal use" y similares — publicar el juego (aunque
+  sea gratis) es distribución pública, no uso personal. Solo para maquetas privadas.
+  También excluido: sin licencia explícita, y NoDerivatives (no permite adaptar).
+
 ## Reglas operativas
 
 1. `vendor/` nunca entra en un export preset.
 2. Todo asset nuevo de terceros entra con su archivo `.license` al lado (patrón REUSE que
-   ya usa Threadbare).
+   ya usa Threadbare); los NC además se listan acá con `[NC]`.
 3. Antes de la demo pública: `grep -r "SPDX" --include="*.gd"` para confirmar encabezados
    MPL intactos + auditoría de `assets/third_party/`.
