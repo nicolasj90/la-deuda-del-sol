@@ -1,0 +1,56 @@
+PACK: TCG Templates
+CATEGORIA: UI y cartas — marcos de carta re-renderizables (base del skin papel+lacre+filete dorado)
+AUTOR: KillGorack
+ORIGEN: https://opengameart.org/content/tcg-templates
+FECHA DE VERIFICACION: 2026-07-29 (scouting nivel A, docs/arte/scouting-assets.md, fila 6 de "UI, cartas y fuentes")
+LICENCIA: CC0 1.0 (Creative Commons Zero — dominio publico)
+[NC]: NO — CC0, sin restricciones.
+
+--------------------------------------------------------------------------
+LICENCIA
+--------------------------------------------------------------------------
+
+Declarada en la pagina de OpenGameArt (campo "License(s):"): CC0 1.0
+Universal (Public Domain Dedication).
+
+    El autor dedico la obra al dominio publico renunciando a todos sus
+    derechos en la medida permitida por la ley. Se puede copiar, modificar,
+    distribuir y usar la obra, incluso con fines comerciales, sin pedir
+    permiso ni dar credito.
+
+Texto completo: https://creativecommons.org/publicdomain/zero/1.0/
+
+NOTA DE PROCEDENCIA: el ZIP original de OpenGameArt no traia archivo de
+licencia propio. Este LICENSE.txt lo escribio la corrida de consolidacion
+(2026-07-29) a partir de la licencia declarada en la pagina del asset y
+registrada en el scouting.
+
+--------------------------------------------------------------------------
+ATRIBUCION
+--------------------------------------------------------------------------
+
+No es obligatoria (CC0). Por cortesia, en CREDITS.md:
+
+    TCG Templates — KillGorack — https://opengameart.org/content/tcg-templates — CC0
+
+--------------------------------------------------------------------------
+CONTENIDO VERIFICADO (2026-07-29)
+--------------------------------------------------------------------------
+
+  129 archivos. Estructura:
+    Card_Frame.blend   15,5 MB — fuente Blender del marco (clave: permite
+                       re-renderizar el marco con el skin propio del juego)
+    cropper.py         script de recorte del autor
+    regions.ods        hoja de regiones/coordenadas del marco
+    14 carpetas de color, 9 archivos cada una:
+      black, blue, bone, bronze, copper, gold, green, ice, orange, pink,
+      purple, red, teal, toxic
+      cada una: <color>.png (marco completo 1500x2100), cost.png y las
+      piezas bottom_center / bottom_left / bottom_right / etc.
+
+Formato: PNG RGBA 1500x2100 (carril pintado de alta resolucion). Es la
+fuente de los MARCOS finales de carta; los dorsos y fichas salen del
+Kenney Boardgame Pack (140x190, baja resolucion, solo prototipo/tablero).
+
+Uso previsto: partir de la variante "bone" o "gold" y re-renderizar desde
+el .blend hacia papel envejecido + lacre + filete dorado.

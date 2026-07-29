@@ -1,0 +1,59 @@
+PACK: Tiny Dungeon (v1.0)
+CATEGORIA: Mundo — mazmorra 16px (Empenadero), estilo identico a Tiny Town
+AUTOR: Kenney (Kenney Vleugels) — www.kenney.nl
+ORIGEN: https://kenney.nl/assets/tiny-dungeon
+FECHA DE VERIFICACION: 2026-07-29 (scouting nivel A, docs/arte/scouting-assets.md, fila 3 de "Tilesets y props")
+LICENCIA: CC0 1.0 (Creative Commons Zero — dominio publico)
+[NC]: NO — CC0, sin restricciones.
+
+--------------------------------------------------------------------------
+LICENCIA TEXTUAL VERIFICADA
+--------------------------------------------------------------------------
+
+El pack trae su propio archivo de licencia upstream, `License.txt`, que se
+conserva sin tocar junto a este archivo. Su texto:
+
+    Tiny Dungeon (1.0)
+
+    Created/distributed by Kenney (www.kenney.nl)
+    Creation date: 05-07-2022
+
+            ------------------------------
+
+    License: (Creative Commons Zero, CC0)
+    http://creativecommons.org/publicdomain/zero/1.0/
+
+    This content is free to use in personal, educational and commercial projects.
+    Support us by crediting Kenney or www.kenney.nl (this is not mandatory)
+
+Texto completo CC0: https://creativecommons.org/publicdomain/zero/1.0/
+
+`License.txt` (upstream) es la fuente de verdad; este LICENSE.txt es el
+resumen operativo del proyecto y unifica el nombre de archivo en todos los
+packs de vendor/assets-adoptados.
+
+--------------------------------------------------------------------------
+ATRIBUCION
+--------------------------------------------------------------------------
+
+No es obligatoria (CC0). Por cortesia, en CREDITS.md:
+
+    Tiny Dungeon — Kenney (kenney.nl) — CC0
+
+--------------------------------------------------------------------------
+CONTENIDO VERIFICADO (2026-07-29)
+--------------------------------------------------------------------------
+
+  142 archivos, 636 KB. Estructura:
+    Tilemap/   tilemap.png + tilemap_packed.png (hojas completas)
+    Tiles/     132 tiles individuales tile_0000.png .. tile_0131.png
+    Tiled/     sampleMap.tmx + sampleSheet.tsx (proyecto Tiled de muestra)
+    Tilesheet.txt, Preview.png, Sample.png, License.txt
+    2 accesos directos .url (Kenney, Patreon)
+
+  Grid 16 px. Misma paleta y factura que Tiny Town — la transicion
+  Valdepalabra -> Empenadero no cambia de estilo.
+
+  Para Godot: usar `tilemap_packed.png` (sin padding) con un TileSet de
+  16x16 y separacion 0. Los .tmx/.tsx son de Tiled, no de Godot: sirven de
+  referencia de layout, no se importan.

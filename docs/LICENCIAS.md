@@ -43,6 +43,66 @@ del dueño del proyecto, los assets se aceptan en dos niveles:
   sea gratis) es distribución pública, no uso personal. Solo para maquetas privadas.
   También excluido: sin licencia explícita, y NoDerivatives (no permite adaptar).
 
+## Assets adoptados (vendor/assets-adoptados)
+
+Primera tanda de adopción, 2026-07-29 (tres agentes: mundo, UI/cartas, audio). Consolidada y
+verificada archivo por archivo el mismo día. **14 packs adoptados**, todos de **nivel A
+(libres)**: ningún `[NC]` entró en esta tanda.
+
+Cada pack tiene su `LICENSE.txt` en la raíz de su carpeta, con la licencia textual, la URL de
+origen, la fecha de verificación y el inventario del contenido. Donde el pack traía su propio
+archivo upstream (`License.txt` de Kenney, `OFL.txt` de las fuentes, `license.txt` de
+game-icons) ese archivo se conserva sin tocar y es la fuente de verdad; el `LICENSE.txt` del
+proyecto es el resumen operativo.
+
+| Pack | Autor | Licencia | `[NC]` | ¿Atribución requerida? |
+|------|-------|----------|--------|------------------------|
+| **Mundo** (5) | | | | |
+| `mundo/ninja-adventure-godot-v4-github` | Pixel-Boy y AAA (arte); porteador **desconocido** (código) | CC0 1.0 el arte; **código del port sin determinar** | No | No (cortesía sí) |
+| `mundo/kenney-tiny-town` | Kenney (Kenney Vleugels) | CC0 1.0 | No | No (cortesía sí) |
+| `mundo/kenney-tiny-dungeon` | Kenney (Kenney Vleugels) | CC0 1.0 | No | No (cortesía sí) |
+| `mundo/kenney-roguelike-rpg-pack` | Kenney, con ayuda de Lynn Evers | CC0 1.0 | No | No (cortesía sí) |
+| `mundo/george-bailey-16x16-game-assets` | George Bailey (OGA: `George_`) | CC-BY 4.0 | No | **SÍ** — + indicar modificaciones (habrá re-grade) |
+| **UI y cartas** (7) | | | | |
+| `ui-y-cartas/game-icons-net` | Lorc, Delapouite, Skoll, John Colburn y ~32 más | CC-BY 3.0 (algunos autores CC0) | No | **SÍ** — acreditar a los autores de los iconos realmente usados |
+| `ui-y-cartas/rpg-gui-construction-kit-lamoot` | Lamoot (Matjaž Lamut) | CC-BY 3.0 | No | **SÍ** — + indicar modificaciones (reskin a pergamino/lacre) |
+| `ui-y-cartas/tcg-templates-killgorack` | KillGorack | CC0 1.0 | No | No (cortesía sí) |
+| `ui-y-cartas/kenney-boardgame-pack` | Kenney (Kenney Vleugels) | CC0 1.0 | No | No (cortesía sí) |
+| `ui-y-cartas/kenney-fantasy-ui-borders` | Kenney (Kenney Vleugels) | CC0 1.0 | No | No (cortesía sí) |
+| `ui-y-cartas/fuente-alegreya` | Juan Pablo del Peral / Huerta Tipográfica | OFL 1.1 | No | No en el producto, pero **conservar `OFL.txt` junto al TTF** |
+| `ui-y-cartas/fuente-cinzel` | Natanael Gama (NDISCOVER) | OFL 1.1 | No | No en el producto, pero **conservar `OFL.txt` junto al TTF** |
+| **Audio** (2) | | | | |
+| `audio/musica-randommind-medieval` | RandomMind | CC0 1.0 | No | No (cortesía sí) |
+| `audio/musica-cynicmusic-battle-theme-a` | cynicmusic (Pixelsphere) | CC0 1.0 | No | No (cortesía sí) |
+
+Los tres packs con atribución obligatoria son **george-bailey**, **game-icons-net** y
+**rpg-gui-construction-kit-lamoot**; los dos CC-BY exigen además declarar que hubo
+modificaciones, y el plan de arte prevé re-grade y reskin sobre ambos → anotar siempre
+`modified`. El texto listo para pegar está en el `LICENSE.txt` de cada pack.
+
+### Salvedades de esta tanda
+
+1. **`ninja-adventure-godot-v4-github` no es el asset pack.** Lo que se bajó es un proyecto de
+   Godot 4.3 (port de la demo): 98 PNG, 37 `.gd`, 21 `.tscn`, 4 OGG. El pack original de
+   itch.io tiene miles de sprites. El arte presente es CC0 de Pixel-Boy, pero **la licencia del
+   código del port es desconocida** (no vino `LICENSE` ni `README`, y no quedó registrada la URL
+   del repo) → **no copiar código ni escenas de ahí** hasta identificarlo. El pack original
+   sigue pendiente de descarga.
+2. **`musica-randommind-medieval`: procedencia por archivo sin registrar.** Los 20 archivos no
+   salen todos de la misma entrada de OGA (`battle_*`, `victory`, `defeat`, `harvestseason` son
+   entradas aparte). Todo el catálogo del autor es CC0, así que el riesgo es bajo, pero hay que
+   mapear archivo → URL antes del release.
+3. **Peso.** `musica-randommind-medieval` son 243 MB (WAV + MP3 duplicados) y `game-icons-net`
+   son 72 MB / 12.543 archivos. No entran al export (`vendor/` tiene `.gdignore`), pero al
+   integrar conviene convertir el audio a OGG y curar un subset de iconos hacia
+   `assets/third_party/` en vez de importar los sets completos.
+4. **Pendiente:** 6 packs de SFX quedaron en carpeta vacía (cada una con un
+   `PENDIENTE-DESCARGA.txt`). Lista consolidada de descarga manual en
+   `docs/arte/descargas-pendientes.md`.
+
+Al mover cualquiera de estos packs a `assets/third_party/` rige la regla 2 de abajo: `.license`
+por archivo (patrón REUSE) además del `LICENSE.txt` del pack.
+
 ## Reglas operativas
 
 1. `vendor/` nunca entra en un export preset.

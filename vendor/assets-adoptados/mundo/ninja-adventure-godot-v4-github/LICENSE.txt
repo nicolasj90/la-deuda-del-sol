@@ -1,0 +1,75 @@
+PACK: Ninja Adventure — port de demo a Godot 4 (NO es el asset pack original)
+CATEGORIA: Mundo — base de tilesets/sprites/VFX del overworld
+AUTOR DEL ARTE: Pixel-Boy y AAA (Pixel-Boy)
+AUTOR DEL PORT: desconocido — ver "DISCREPANCIA" abajo
+ORIGEN DEL ARTE: https://pixel-boy.itch.io/ninja-adventure-asset-pack
+ORIGEN DE ESTA CARPETA: repositorio de GitHub con un port del proyecto de demo a Godot 4.3
+FECHA DE VERIFICACION: 2026-07-29 (scouting nivel A, docs/arte/scouting-assets.md, fila 1 de "Tilesets y props")
+LICENCIA DEL ARTE: CC0 1.0 (Creative Commons Zero — dominio publico)
+LICENCIA DEL CODIGO DE ESTE PORT: NO DETERMINADA
+[NC]: NO — el arte es CC0, sin restricciones.
+
+--------------------------------------------------------------------------
+LICENCIA DEL ARTE (Ninja Adventure Asset Pack)
+--------------------------------------------------------------------------
+
+Pixel-Boy publica el Ninja Adventure Asset Pack bajo CC0 1.0 en su pagina de
+itch.io.
+
+    Se puede copiar, modificar, distribuir y usar la obra, incluso con fines
+    comerciales, sin pedir permiso ni dar credito.
+
+Texto completo: https://creativecommons.org/publicdomain/zero/1.0/
+
+Esto cubre los 98 PNG y los 4 OGG de musica que hay en esta carpeta.
+
+--------------------------------------------------------------------------
+!! DISCREPANCIA GRAVE — LEER ANTES DE USAR !!
+--------------------------------------------------------------------------
+
+1. ESTO NO ES EL ASSET PACK. Lo que se bajo es un PROYECTO DE GODOT 4.3
+   (un port de la demo jugable), no el pack de arte de itch.io.
+   Contenido real: 98 PNG, 37 scripts .gd, 21 escenas .tscn, 4 pistas OGG.
+   El pack ORIGINAL de itch.io tiene miles de sprites (interiores, cuevas,
+   VFX, espiritus, decenas de monstruos y NPCs).
+
+   Personajes presentes aca: solo ninja_blue, samurai_blue, samurai_green,
+   pig. Entornos: solo `autumn` y `swamp`.
+
+   La direccion de arte (docs/arte/direccion-de-arte.md) apoya en Ninja
+   Adventure la BASE del overworld, los enemigos, los jefes, los VFX y los
+   espiritus (base de los quebrantos). Este subconjunto NO alcanza para eso.
+   -> HAY QUE BAJAR EL PACK ORIGINAL. Anotado en
+      docs/arte/descargas-pendientes.md.
+
+2. LICENCIA DEL CODIGO SIN DETERMINAR. El repo del port no trajo LICENSE ni
+   README, y no quedo registrada la URL del repositorio. El ARTE es CC0 igual
+   (viene de Pixel-Boy), pero los 37 .gd y 21 .tscn del port son obra del
+   porteador y su licencia es desconocida.
+   -> NO COPIAR CODIGO NI ESCENAS DE ESTA CARPETA hasta identificar el repo y
+      su licencia. Usar solo como referencia de lectura, igual que el resto de
+      los cores de vendor/.
+
+3. ARCHIVOS BASURA. La carpeta trae `tes4A3E.tmp`, `wor5D6.tmp` y
+   `wor7648.tmp` (temporales del editor Godot del porteador). Borrables.
+
+--------------------------------------------------------------------------
+ATRIBUCION
+--------------------------------------------------------------------------
+
+No es obligatoria (CC0). Por cortesia, en CREDITS.md:
+
+    Ninja Adventure Asset Pack — Pixel-Boy & AAA
+    https://pixel-boy.itch.io/ninja-adventure-asset-pack — CC0
+
+Si algun dia se usa codigo del port, agregar credito al porteador — pero
+primero hay que identificar quien es y bajo que licencia publico.
+
+--------------------------------------------------------------------------
+CURADURIA REQUERIDA (regla del scouting)
+--------------------------------------------------------------------------
+
+Del pack se usa la GRAMATICA (interiores, cuevas, VFX, espiritus) y se EVITA
+lo de sabor japones explicito: torii, pagodas, ninjas, samurais. Los sprites
+`ninja_blue` / `samurai_blue` / `samurai_green` de esta carpeta caen justo en
+lo que hay que evitar — no son candidatos para el party.

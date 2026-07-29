@@ -1,0 +1,95 @@
+PACK: game-icons.net (descarga masiva, ~4180 iconos x 3 variantes)
+CATEGORIA: UI y cartas — iconos de items, skills y keywords de cartas
+AUTORES: Lorc, Delapouite, Skoll, John Colburn, Felbrigg, Carl Olsen, Sbed y ~30 mas
+ORIGEN: https://game-icons.net
+FECHA DE VERIFICACION: 2026-07-29 (scouting nivel A, docs/arte/scouting-assets.md, fila 1 de "UI, cartas y fuentes")
+LICENCIA: CC-BY 3.0 por defecto; algunos autores liberaron sus iconos como CC0
+[NC]: NO — licencia libre, apta para uso comercial.
+
+--------------------------------------------------------------------------
+LICENCIA
+--------------------------------------------------------------------------
+
+El propio sitio incluye un `license.txt` dentro de cada descarga. Su primera
+linea es explicita:
+
+    Icons provided under the Creative Commons 3.0 BY or CC0 if mentioned below.
+
+    Each sub-folders in this archive correspond to a different contributor :
+
+    - Lorc, http://lorcblog.blogspot.com
+    - Delapouite, https://delapouite.com
+    - John Colburn, http://ninmunanmu.com
+    - Felbrigg, http://blackdogofdoom.blogspot.co.uk
+    - John Redman, http://www.uniquedicetowers.com
+    - Carl Olsen, https://twitter.com/unstoppableCarl
+    - Sbed, http://opengameart.org/content/95-game-icons
+    - PriorBlue
+    - Willdabeast, http://wjbstories.blogspot.com
+    - Viscious Speed, http://viscious-speed.deviantart.com - CC0
+    - Lord Berandas, http://berandas.deviantart.com
+    - Irongamer, http://ecesisllc.wix.com/home
+    - HeavenlyDog, http://www.gnomosygoblins.blogspot.com
+    - Lucas
+    - Faithtoken, http://fungustoken.deviantart.com
+    - Skoll
+    - Andy Meneely, http://www.se.rit.edu/~andy/
+    - Cathelineau
+    - Kier Heyl
+    - Aussiesim
+    - Sparker, http://citizenparker.com
+    - Zeromancer - CC0
+    - Rihlsul
+    - Quoting
+    - Guard13007, https://guard13007.com
+    - DarkZaitzev, http://darkzaitzev.deviantart.com
+    (la lista completa sigue en los license.txt anidados)
+
+El `license.txt` ORIGINAL del sitio se conserva sin tocar en cada variante:
+  png-negro-transparente/icons/license.txt
+  svg-blanco-transparente/icons/license.txt
+  svg-negro-transparente/icons/license.txt
+
+Este LICENSE.txt de raiz es solo un indice; la fuente de verdad son esos tres.
+
+Texto completo CC-BY 3.0: https://creativecommons.org/licenses/by/3.0/
+Texto completo CC0 1.0:   https://creativecommons.org/publicdomain/zero/1.0/
+
+--------------------------------------------------------------------------
+ATRIBUCION OBLIGATORIA (pegar en CREDITS.md al integrar)
+--------------------------------------------------------------------------
+
+Forma generica aceptada por el sitio:
+
+    Icons made by Lorc, Delapouite and contributors.
+    Available on https://game-icons.net — CC-BY 3.0
+
+REGLA OPERATIVA IMPORTANTE: la carpeta de cada icono ES el nombre de su autor
+(p. ej. `.../1x1/delapouite/wax-seal.png`). Al cerrar el set de iconos que el
+juego realmente usa, ajustar la lista de autores acreditados a esos autores
+concretos — no acreditar los ~35 si se usan iconos de 6.
+
+--------------------------------------------------------------------------
+CONTENIDO VERIFICADO (2026-07-29)
+--------------------------------------------------------------------------
+
+  12.543 archivos, 72 MB. Tres variantes completas del mismo set (~4180 c/u):
+    png-negro-transparente/  PNG negro sobre transparente (icons/000000/transparent/1x1/<autor>/)
+    svg-negro-transparente/  SVG negro sobre transparente
+    svg-blanco-transparente/ SVG blanco sobre transparente
+
+  Los SVG son la variante util del proyecto: recoloreables a dorado/lacre sin
+  perder nitidez. Los PNG quedan como fallback.
+
+  Autores presentes como subcarpeta: andymeneely, aussiesim, carl-olsen,
+  caro-asercion, cathelineau, catsu, darkzaitzev, delapouite, faithtoken,
+  felbrigg, generalace135, guard13007, heavenly-dog, irongamer, john-colburn,
+  john-redman, kier-heyl, lorc, lord-berandas, lucasms, pepijn-poolman,
+  pierre-leducq, priorblue, quoting, rihlsul, sbed, seregacthtuf, skoll,
+  sparker, spencerdub, starseeker, various-artists, viscious-speed,
+  willdabeast, zajkonur, zeromancer.
+
+NOTA DE TAMANO: 72 MB / 12.543 archivos es mucho para versionar entero.
+`vendor/` tiene `.gdignore` y no entra al export, pero conviene curar un
+subset (los iconos realmente usados) hacia `assets/third_party/` cuando la
+fase de UI lo necesite, en lugar de importar el set completo en Godot.

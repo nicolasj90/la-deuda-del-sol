@@ -1,0 +1,62 @@
+PACK: Roguelike/RPG Pack
+CATEGORIA: Mundo — cantera de cultivos (proxy de vinedo) + relleno de campina/puerto
+AUTOR: Kenney (Kenney Vleugels), con ayuda de Lynn Evers
+ORIGEN: https://kenney.nl/assets/roguelike-rpg-pack
+FECHA DE VERIFICACION: 2026-07-29 (scouting nivel A, docs/arte/scouting-assets.md, fila 2 de "Tilesets y props")
+LICENCIA: CC0 1.0 (Creative Commons Zero — dominio publico)
+[NC]: NO — CC0, sin restricciones.
+
+--------------------------------------------------------------------------
+LICENCIA TEXTUAL VERIFICADA
+--------------------------------------------------------------------------
+
+El pack trae su propio archivo de licencia upstream, `License.txt`, que se
+conserva sin tocar junto a este archivo. Su texto:
+
+    Roguelike pack
+    by Kenney Vleugels for Kenney (www.kenney.nl)
+    with help by Lynn Evers (Twitter: @EversLynn)
+
+            ------------------------------
+
+    License (Creative Commons Zero, CC0)
+    http://creativecommons.org/publicdomain/zero/1.0/
+
+    You may use these graphics in personal and commercial projects.
+    Credit (Kenney or www.kenney.nl) would be nice but is not mandatory.
+
+Texto completo CC0: https://creativecommons.org/publicdomain/zero/1.0/
+
+`License.txt` (upstream) es la fuente de verdad; este LICENSE.txt es el
+resumen operativo del proyecto y unifica el nombre de archivo en todos los
+packs de vendor/assets-adoptados.
+
+--------------------------------------------------------------------------
+ATRIBUCION
+--------------------------------------------------------------------------
+
+No es obligatoria (CC0). Por cortesia, en CREDITS.md:
+
+    Roguelike/RPG Pack — Kenney (kenney.nl) — CC0
+
+--------------------------------------------------------------------------
+CONTENIDO VERIFICADO (2026-07-29)
+--------------------------------------------------------------------------
+
+  11 archivos, 748 KB. Estructura:
+    Spritesheet/  roguelikeSheet_transparent.png  (hoja principal)
+                  roguelikeSheet_magenta.png      (misma hoja, fondo magenta)
+                  spritesheetInfo.txt
+    Map/          sample_indoor.tmx + sample_map.tmx (proyectos Tiled)
+    Preview.png, Sample1.png, Sample2.png, License.txt
+    Donate.url, Facebook.url
+
+  ATENCION AL GRID: este pack NO viene en tiles individuales, solo en
+  spritesheet, y sus tiles son de 16x16 CON 1 px de separacion. Al armar el
+  TileSet en Godot hay que declarar la separacion o los tiles salen corridos.
+  Ver `spritesheetInfo.txt` para las medidas exactas.
+
+  Rol acotado en el proyecto: de aca sale la CANTERA DE CULTIVOS en hilera
+  (proxy de vinedo, hueco #3 del scouting) y relleno de campina/puerto. NO es
+  la base del mundo — esa es Ninja Adventure + Tiny Town/Tiny Dungeon.
+  Los 4-6 tiles propios de vid/parral se dibujan sobre esta base.

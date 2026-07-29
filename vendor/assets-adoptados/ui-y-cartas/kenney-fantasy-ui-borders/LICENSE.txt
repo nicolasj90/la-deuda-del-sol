@@ -1,0 +1,62 @@
+PACK: Fantasy UI Borders (v1.0)
+CATEGORIA: UI y cartas — marcos ornamentados 9-slice para caja de dialogo y paneles
+AUTOR: Kenney (Kenney Vleugels) — www.kenney.nl
+ORIGEN: https://kenney.nl/assets/fantasy-ui-borders
+ARCHIVO DESCARGADO: https://kenney.nl/media/pages/assets/fantasy-ui-borders/ab29cd0165-1701602367/kenney_fantasy-ui-borders.zip (350 KB)
+FECHA DE VERIFICACION: 2026-07-29
+LICENCIA: CC0 1.0 (Creative Commons Zero — dominio publico)
+[NC]: NO — CC0, sin restricciones.
+
+--------------------------------------------------------------------------
+LICENCIA TEXTUAL VERIFICADA
+--------------------------------------------------------------------------
+
+En la pagina del asset (tabla de metadatos):
+
+    License:  Creative Commons CC0
+              https://creativecommons.org/publicdomain/zero/1.0/
+    Files:    140x
+
+En el archivo `License.txt` incluido dentro del propio ZIP:
+
+    Fantasy UI Borders (1.0)
+
+    Created/distributed by Kenney (www.kenney.nl)
+    Creation date: 03-12-2023
+
+    For the sample image the font 'Aoboshi One' was used, OPL (Open Font License)
+
+            ------------------------------
+
+    License: (Creative Commons Zero, CC0)
+    http://creativecommons.org/publicdomain/zero/1.0/
+
+    You can use this content for personal, educational, and commercial purposes.
+
+    Support by crediting 'Kenney' or 'www.kenney.nl' (this is not a requirement)
+
+NOTA: la fuente 'Aoboshi One' solo se uso en la imagen de muestra del pack;
+no forma parte de los assets ni se descargo.
+
+--------------------------------------------------------------------------
+ATRIBUCION
+--------------------------------------------------------------------------
+
+No es obligatoria (CC0). Por cortesia, en CREDITS.md:
+
+    Fantasy UI Borders — Kenney (kenney.nl) — CC0
+
+--------------------------------------------------------------------------
+CONTENIDO VERIFICADO (descomprimido y revisado 2026-07-29)
+--------------------------------------------------------------------------
+
+  282 PNG + 1 SVG + License.txt + 2 accesos directos (.url)
+  Estructura:
+    PNG/Default/   (Border, Divider, Divider Fade, Panel,
+                    Transparent border, Transparent center)
+    PNG/Double/    (mismas familias, variante doble linea)
+    Vector/        (SVG editable)
+
+Formato: PNG RGBA de alta resolucion (carril pintado, NO 16px) — apto para
+9-slice / NinePatchRect en Godot. Coincide con lo declarado en el scouting
+(140 archivos, CC0). ZIP borrado tras verificar.

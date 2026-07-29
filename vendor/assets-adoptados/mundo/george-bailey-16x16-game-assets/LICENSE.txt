@@ -1,0 +1,50 @@
+PACK: 16x16 Game Assets
+CATEGORIA: Mundo — props de interior (estanterias, escritorios, papeles) + tilesets 16px
+AUTOR: George Bailey (usuario OGA: "George_")
+ORIGEN: https://opengameart.org/content/16x16-game-assets
+FECHA DE VERIFICACION: 2026-07-29 (scouting nivel A, docs/arte/scouting-assets.md, fila 5 de "Tilesets y props")
+LICENCIA: CC-BY 4.0 (Creative Commons Attribution 4.0 International)
+[NC]: NO — licencia libre, apta para uso comercial.
+
+--------------------------------------------------------------------------
+LICENCIA
+--------------------------------------------------------------------------
+
+Declarada en la pagina de OpenGameArt (campo "License(s):"): CC-BY 4.0.
+
+Resumen de obligaciones de CC-BY 4.0:
+
+    Se puede compartir y adaptar el material, para cualquier proposito,
+    incluso comercial, siempre que se de credito apropiado, se provea un
+    link a la licencia y se INDIQUE SI SE HICIERON MODIFICACIONES. No se
+    puede sugerir que el licenciante avala el uso.
+
+Texto completo: https://creativecommons.org/licenses/by/4.0/
+
+NOTA DE PROCEDENCIA: el ZIP original de OpenGameArt no traia archivo de
+licencia propio. Este LICENSE.txt lo escribio la corrida de consolidacion
+(2026-07-29) a partir de la licencia declarada en la pagina del asset y
+registrada en el scouting. Antes del release publico: re-verificar en la
+pagina y, si es posible, guardar captura.
+
+--------------------------------------------------------------------------
+ATRIBUCION OBLIGATORIA (pegar en CREDITS.md al integrar)
+--------------------------------------------------------------------------
+
+    "16x16 Game Assets" by George Bailey
+    https://opengameart.org/content/16x16-game-assets
+    Licensed under CC-BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+    Modified (re-grade calido dorados/lacre)
+
+El plan de arte aplica un re-grade calido global -> anotar SIEMPRE "modified".
+
+--------------------------------------------------------------------------
+CONTENIDO VERIFICADO (2026-07-29)
+--------------------------------------------------------------------------
+
+  12 PNG en dos carpetas:
+    base-and-items/  Items.png (256x32), "Player Base.png" (256x144)
+    tilesets/        1.png .. 10.png (ej. 1.png = 480x768)
+
+  Grid 16 px — compatible con el resto del stack de mundo (Tiny Town,
+  Tiny Dungeon, Ninja Adventure).

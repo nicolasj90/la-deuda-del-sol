@@ -1,0 +1,84 @@
+PACK: Serie "Medieval" (The Bard's Tale, The Old Tower Inn, Minstrel Dance, etc.)
+CATEGORIA: Audio / musica — taberna e interiores (laud), pueblo, campina, victoria/derrota
+AUTOR: RandomMind
+ORIGEN: https://opengameart.org/content/medieval-the-bards-tale
+        (perfil del autor: https://opengameart.org/users/randommind)
+FECHA DE VERIFICACION: 2026-07-29 (scouting nivel A, docs/arte/scouting-assets.md, fila 5 de "Musica y SFX")
+LICENCIA: CC0 1.0 (Creative Commons Zero — dominio publico)
+[NC]: NO — CC0, sin restricciones.
+
+--------------------------------------------------------------------------
+LICENCIA
+--------------------------------------------------------------------------
+
+RandomMind publica su catalogo en OpenGameArt bajo CC0 1.0 Universal
+(Public Domain Dedication), declarado en el campo "License(s):" de cada
+entrada.
+
+    El autor dedico la obra al dominio publico renunciando a todos sus
+    derechos en la medida permitida por la ley. Se puede copiar, modificar,
+    distribuir e interpretar la obra, incluso con fines comerciales, sin
+    pedir permiso ni dar credito.
+
+Texto completo: https://creativecommons.org/publicdomain/zero/1.0/
+
+NOTA DE PROCEDENCIA: las descargas de OpenGameArt son archivos de audio
+sueltos, sin archivo de licencia adjunto. Este LICENSE.txt lo escribio la
+corrida de consolidacion (2026-07-29) a partir de la licencia declarada por
+el autor y registrada en el scouting.
+
+--------------------------------------------------------------------------
+!! PENDIENTE DE VERIFICACION POR ARCHIVO !!
+--------------------------------------------------------------------------
+
+Los 20 archivos de esta carpeta NO provienen todos de la MISMA entrada de
+OpenGameArt: la serie "Medieval" cubre las pistas de taberna/pueblo, pero
+`battle_1`, `battle_8`, `victory`, `defeat` y `harvestseason` son entradas
+distintas del mismo autor. El agente que descargo NO dejo registrada la URL
+de origen archivo por archivo.
+
+Todo el catalogo de RandomMind en OGA es CC0, asi que el riesgo legal es
+bajo, pero ANTES DEL RELEASE PUBLICO hay que:
+
+  1. Mapear cada archivo a su URL de OGA concreta.
+  2. Confirmar CC0 en esa pagina.
+  3. Anotar el mapeo aca abajo.
+
+Registrado como discrepancia en la corrida de consolidacion de 2026-07-29.
+
+--------------------------------------------------------------------------
+ATRIBUCION
+--------------------------------------------------------------------------
+
+No es obligatoria (CC0). Por cortesia, en CREDITS.md:
+
+    Serie "Medieval" — RandomMind
+    https://opengameart.org/users/randommind — CC0
+
+--------------------------------------------------------------------------
+CONTENIDO VERIFICADO (2026-07-29)
+--------------------------------------------------------------------------
+
+  20 archivos, 243 MB. Cada pista viene DUPLICADA en WAV y en MP3:
+
+    Pista                  WAV                        MP3
+    The Bard's Tale        Loop_The_Bards_Tale.wav     The_Bards_Tale.mp3
+    The Old Tower Inn      Loop_The_Old_Tower_Inn.wav  The_Old_Tower_Inn.mp3
+    Minstrel Dance         Loop_Minstrel_Dance_0.wav   Minstrel_Dance_0.mp3
+    Market Day             Loop_Market_Day.wav         Market_Day.mp3
+    Rejoicing              Loop_Rejoicing.wav          Rejoicing_0.mp3
+    Exploration            Exploration.wav             Exploration_0.mp3
+    Harvest Season         harvestseason.wav           harvestseason_2.mp3
+    Battle                 battle_1.wav                battle_8.mp3
+    Victory                victory.wav                 victory_0.mp3
+    Defeat                 defeat.wav                  defeat_0.mp3
+
+NOTA DE PESO: 243 MB es el pack mas pesado de todo vendor/. Los WAV solos
+son ~215 MB (Exploration.wav = 62 MB, harvestseason.wav = 38 MB). `vendor/`
+tiene `.gdignore` y no entra al export, pero versionar esto en git es caro.
+Al integrar: convertir a OGG Vorbis (loop nativo en Godot), mover solo los
+OGG a assets/, y considerar borrar los WAV de vendor/ una vez convertidos.
+
+NOTA DE NOMBRES: los prefijos `Loop_` marcan las versiones loopeables y los
+sufijos `_0` / `_2` / `_8` son artefactos del nombre de archivo de OGA, no
+numeros de variacion. Verificar al oido cual version conviene por escena.

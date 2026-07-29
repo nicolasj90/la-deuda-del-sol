@@ -1,0 +1,19 @@
+*** CARPETA VACIA — NADA ADOPTADO TODAVIA ***
+
+No hay LICENSE.txt porque no hay ningun asset acá: la descarga NO se completó.
+El agente de audio creó la carpeta pero no bajó los archivos.
+
+PACK ESPERADO:  Various Paper Sound Effects
+AUTOR:          Luckius
+URL:            https://opengameart.org/content/various-paper-sound-effects
+LICENCIA:       CC0 1.0 (verificada en el scouting, 2026-07-29)
+QUE SE USA:     papel: arrugar, rasgar, mapas — el foley de los pagarés
+
+CRITICO PARA LA FIRMA SONORA: el SFX del sello de lacre (hueco #4 del scouting) se
+fabrica por capas y la capa base es el arrugado de papel de este pack
+(papel + impacto sordo Kenney + campana BigSoundBank pitcheada -3/-7 st con reverb).
+
+Al bajarlo: descomprimir acá y escribir el LICENSE.txt del proyecto (OGA no adjunta
+archivo de licencia; usar el formato de los otros packs de vendor/assets-adoptados).
+
+Ver docs/arte/descargas-pendientes.md

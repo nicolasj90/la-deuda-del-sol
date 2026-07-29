@@ -1,0 +1,58 @@
+PACK: Tiny Town (v1.1)
+CATEGORIA: Mundo — pueblo 16px (Valdepalabra / Lacrevieja / Villarrubrica)
+AUTOR: Kenney (Kenney Vleugels) — www.kenney.nl
+ORIGEN: https://kenney.nl/assets/tiny-town
+FECHA DE VERIFICACION: 2026-07-29 (scouting nivel A, docs/arte/scouting-assets.md, fila 3 de "Tilesets y props")
+LICENCIA: CC0 1.0 (Creative Commons Zero — dominio publico)
+[NC]: NO — CC0, sin restricciones.
+
+--------------------------------------------------------------------------
+LICENCIA TEXTUAL VERIFICADA
+--------------------------------------------------------------------------
+
+El pack trae su propio archivo de licencia upstream, `License.txt`, que se
+conserva sin tocar junto a este archivo. Su texto:
+
+    Tiny Town (1.1)
+
+    Created/distributed by Kenney (www.kenney.nl)
+    Creation date: 11-01-2023
+
+            ------------------------------
+
+    License: (Creative Commons Zero, CC0)
+    http://creativecommons.org/publicdomain/zero/1.0/
+
+    This content is free to use in personal, educational and commercial projects.
+    Support us by crediting Kenney or www.kenney.nl (this is not mandatory)
+
+Texto completo CC0: https://creativecommons.org/publicdomain/zero/1.0/
+
+`License.txt` (upstream) es la fuente de verdad; este LICENSE.txt es el
+resumen operativo del proyecto y unifica el nombre de archivo en todos los
+packs de vendor/assets-adoptados.
+
+--------------------------------------------------------------------------
+ATRIBUCION
+--------------------------------------------------------------------------
+
+No es obligatoria (CC0). Por cortesia, en CREDITS.md:
+
+    Tiny Town — Kenney (kenney.nl) — CC0
+
+--------------------------------------------------------------------------
+CONTENIDO VERIFICADO (2026-07-29)
+--------------------------------------------------------------------------
+
+  141 archivos, 708 KB. Estructura:
+    Tilemap/   tilemap.png + tilemap_packed.png (hojas completas)
+    Tiles/     132 tiles individuales tile_0000.png .. tile_0131.png
+    Tilesheet.txt, Preview.png, Sample.png, License.txt
+    3 accesos directos .url (Kenney, Patreon, Tiny Dungeon base pack)
+
+  Grid 16 px. Hace juego EXACTO con Tiny Dungeon (misma paleta y factura):
+  ese es el motivo de adoptar los dos — la transicion pueblo -> mazmorra
+  (Valdepalabra -> Empenadero) no cambia de estilo.
+
+  Para Godot: usar `tilemap_packed.png` (sin padding) con un TileSet de
+  16x16 y separacion 0, o `tilemap.png` si se prefiere margen.

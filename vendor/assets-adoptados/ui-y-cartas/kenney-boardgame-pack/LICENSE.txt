@@ -1,0 +1,67 @@
+PACK: Boardgame Pack (v2)
+CATEGORIA: UI y cartas — tablero de duelo, dorsos de carta, fichas/gemas de coste, dados
+AUTOR: Kenney (Kenney Vleugels) — www.kenney.nl
+ORIGEN: https://kenney.nl/assets/boardgame-pack
+ARCHIVO DESCARGADO: https://kenney.nl/media/pages/assets/boardgame-pack/a1656828d2-1677667644/kenney_boardgame-pack.zip (2,2 MB)
+FECHA DE VERIFICACION: 2026-07-29
+LICENCIA: CC0 1.0 (Creative Commons Zero — dominio publico)
+[NC]: NO — CC0, sin restricciones.
+
+--------------------------------------------------------------------------
+LICENCIA TEXTUAL VERIFICADA
+--------------------------------------------------------------------------
+
+En la pagina del asset (tabla de metadatos):
+
+    License:  Creative Commons CC0
+              https://creativecommons.org/publicdomain/zero/1.0/
+    Files:    490x
+
+En el archivo `license.txt` incluido dentro del propio ZIP:
+
+    Boardgame pack v2 by Kenney Vleugels (www.kenney.nl)
+
+    ------------------------------
+
+    CC0 License (Creative Commons Zero)
+    http://creativecommons.org/publicdomain/zero/1.0/
+
+    You may use these graphics in personal and commercial projects.
+    Credit (Kenney or www.kenney.nl) would be nice but is not mandatory.
+
+    ------------------------------
+
+    More information:
+    www.kenney.nl
+
+--------------------------------------------------------------------------
+ATRIBUCION
+--------------------------------------------------------------------------
+
+No es obligatoria (CC0). Por cortesia, en CREDITS.md:
+
+    Boardgame Pack — Kenney (kenney.nl) — CC0
+
+--------------------------------------------------------------------------
+CONTENIDO VERIFICADO (descomprimido y revisado 2026-07-29)
+--------------------------------------------------------------------------
+
+  539 PNG + 12 SVG + 12 OGG + 7 XML (atlas) + 12 SWF (legado Flash) + license.txt
+  Estructura:
+    PNG/Cards/          68 archivos — dorsos (cardBack_*) y caras de baraja
+                        francesa; 140 x 190 px por carta
+    PNG/Chips/          fichas de casino de varios colores (proxy de gemas de coste)
+    PNG/Dice/           dados
+    PNG/Pieces (Black|Blue|Green|Purple|Red|White|Yellow)/  piezas por color
+    Spritesheets/       atlas PNG + XML (chips, diceRed, diceWhite, ...)
+    Vector/             SVG editables
+    Bonus/              12 SFX OGG: cardPlace1-3, cardSlide1-3,
+                        chipsCollide1-3, dieShuffle1-3
+    preview.png, sample.png
+
+BONUS UTIL: los 12 OGG de Bonus/ son foley de cartas y fichas CC0 — cubren
+parte del hueco "foley de cartas" que el scouting NC mandaba a Freesound.
+
+Nota de densidad: las cartas son 140x190 px (baja resolucion). Sirven como
+dorsos/fichas y prototipo del tablero; los MARCOS de carta finales salen de
+TCG Templates (1500x2100). ZIP borrado tras verificar.

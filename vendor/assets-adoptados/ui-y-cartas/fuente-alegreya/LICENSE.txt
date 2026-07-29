@@ -1,0 +1,63 @@
+PACK: Alegreya (+ Alegreya SC)
+CATEGORIA: UI y cartas — fuente de dialogo y texto largo (soporte completo de espanol)
+AUTOR: Juan Pablo del Peral / Huerta Tipografica
+ORIGEN: https://github.com/huertatipografica/Alegreya
+FECHA DE VERIFICACION: 2026-07-29 (scouting nivel A, docs/arte/scouting-assets.md, fila 2 de "UI, cartas y fuentes")
+LICENCIA: SIL Open Font License 1.1 (OFL 1.1)
+[NC]: NO — licencia libre, apta para uso comercial.
+
+--------------------------------------------------------------------------
+LICENCIA
+--------------------------------------------------------------------------
+
+El texto COMPLETO y original de la licencia esta en `OFL.txt`, junto a este
+archivo, tal como lo distribuye el repositorio upstream. Ese archivo es la
+fuente de verdad; este LICENSE.txt es solo el resumen operativo.
+
+Obligaciones de la OFL 1.1 relevantes para el proyecto:
+
+  1. Se puede usar, estudiar, modificar y redistribuir la fuente, incluso en
+     proyectos comerciales, y embeberla en el juego.
+  2. NO se puede vender la fuente por si sola (si embebida en software, si).
+  3. El aviso de copyright y el texto de la OFL deben conservarse y
+     distribuirse con cualquier copia -> MANTENER `OFL.txt` en el repo junto
+     al TTF. No borrarlo al mover la fuente a assets/.
+  4. Si se modifica la fuente, la version modificada NO puede usar el
+     Reserved Font Name ("Alegreya"): habria que renombrarla.
+  5. La fuente modificada o no debe seguir bajo OFL.
+
+Texto de referencia: https://openfontlicense.org/
+
+--------------------------------------------------------------------------
+ATRIBUCION
+--------------------------------------------------------------------------
+
+La OFL no exige credito en el producto, pero si conservar el aviso de
+licencia. Se acredita igual, en CREDITS.md:
+
+    Alegreya, by Juan Pablo del Peral / Huerta Tipografica
+    https://github.com/huertatipografica/Alegreya — SIL OFL 1.1
+
+--------------------------------------------------------------------------
+CONTENIDO VERIFICADO (2026-07-29)
+--------------------------------------------------------------------------
+
+  11 archivos:
+    OFL.txt                    licencia completa upstream (NO BORRAR)
+    FONTLOG.txt                historial de la familia
+    DESCRIPTION.en_us.html     descripcion upstream
+    ttf/  Alegreya[wght].ttf         variable, romana
+          Alegreya-Italic[wght].ttf  variable, italica
+          AlegreyaSC-Regular.ttf     small caps: Regular, Medium, Bold,
+          AlegreyaSC-Medium.ttf      BoldItalic, Italic, Black
+          AlegreyaSC-Bold.ttf
+          AlegreyaSC-BoldItalic.ttf
+          AlegreyaSC-Italic.ttf
+          AlegreyaSC-Black.ttf
+
+  Los dos TTF variables (`[wght]`) son los que conviene usar en Godot: un
+  archivo cubre todos los pesos. Alegreya SC (small caps) sirve para nombres
+  propios y encabezados de pagare sin recurrir a Cinzel.
+
+  Cobertura de espanol verificada por el scout: acentos, enie y signos de
+  apertura (¿ ¡) presentes.

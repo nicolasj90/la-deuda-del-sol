@@ -38,3 +38,10 @@ __MACOSX
 .backstitch_version
 /.backstitch/
 backstitch.cfg
+
+# Staging de assets adoptados: blobs locales (re-descargables via
+# docs/arte/descargas-pendientes.md y LICENCIAS.md); solo se versiona el metadata.
+vendor/assets-adoptados/**
+!vendor/assets-adoptados/**/
+!vendor/assets-adoptados/**/LICENSE.txt
+!vendor/assets-adoptados/**/PENDIENTE-DESCARGA.txt

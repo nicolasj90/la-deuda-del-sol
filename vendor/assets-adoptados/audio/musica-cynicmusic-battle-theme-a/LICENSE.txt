@@ -1,0 +1,48 @@
+PACK: Battle Theme A
+CATEGORIA: Audio / musica — tema de batalla estandar
+AUTOR: cynicmusic (Pixelsphere / pixelsphere.org)
+ORIGEN: https://opengameart.org/content/battle-theme-a
+FECHA DE VERIFICACION: 2026-07-29 (scouting nivel A, docs/arte/scouting-assets.md, fila 6 de "Musica y SFX")
+LICENCIA: CC0 1.0 (Creative Commons Zero — dominio publico)
+[NC]: NO — CC0, sin restricciones.
+
+--------------------------------------------------------------------------
+LICENCIA
+--------------------------------------------------------------------------
+
+Declarada en la pagina de OpenGameArt (campo "License(s):"): CC0 1.0
+Universal (Public Domain Dedication).
+
+    El autor dedico la obra al dominio publico renunciando a todos sus
+    derechos en la medida permitida por la ley. Se puede copiar, modificar,
+    distribuir e interpretar la obra, incluso con fines comerciales, sin
+    pedir permiso ni dar credito.
+
+Texto completo: https://creativecommons.org/publicdomain/zero/1.0/
+
+NOTA DE PROCEDENCIA: la descarga de OpenGameArt es el archivo de audio suelto,
+sin archivo de licencia adjunto. Este LICENSE.txt lo escribio la corrida de
+consolidacion (2026-07-29) a partir de la licencia declarada en la pagina del
+asset y registrada en el scouting.
+
+--------------------------------------------------------------------------
+ATRIBUCION
+--------------------------------------------------------------------------
+
+No es obligatoria (CC0). Por cortesia, en CREDITS.md:
+
+    "Battle Theme A" — cynicmusic (pixelsphere.org)
+    https://opengameart.org/content/battle-theme-a — CC0
+
+--------------------------------------------------------------------------
+CONTENIDO VERIFICADO (2026-07-29)
+--------------------------------------------------------------------------
+
+  battleThemeA.mp3   3,2 MB — unica pista del pack
+
+NOTA DE FORMATO: viene en MP3. Para Godot conviene OGG Vorbis (soporte de
+loop nativo via metadatos de import). Al integrar: convertir a OGG y definir
+el punto de loop, o usar AudioStreamMP3 con loop manual.
+
+NOTA DE ALCANCE: es UNA pista. El resto de la paleta de batalla (jefes,
+duelos de cartas) sale de otras fuentes — ver docs/arte/direccion-de-arte.md.

@@ -1,0 +1,18 @@
+*** CARPETA VACIA — NADA ADOPTADO TODAVIA ***
+
+No hay LICENSE.txt porque no hay ningun asset acá: la descarga NO se completó.
+El agente de audio creó la carpeta pero no bajó los archivos.
+
+PACK ESPERADO:  Casino Audio
+AUTOR:          Kenney (Kenney Vleugels) — www.kenney.nl
+URL:            https://kenney.nl/assets/casino-audio
+LICENCIA:       CC0 1.0 (verificada en el scouting, 2026-07-29)
+QUE SE USA:     foley de cartas sobre mesa y de fichas para los duelos «De Palabra»
+
+Descarga MANUAL: kenney.nl sirve el ZIP detrás de un enlace con hash que cambia;
+hay que entrar a la página y apretar "Download".
+
+Al bajarlo: descomprimir acá, conservar el `License.txt` del ZIP y escribir el
+LICENSE.txt del proyecto (mismo formato que los otros packs de vendor/assets-adoptados).
+
+Ver docs/arte/descargas-pendientes.md

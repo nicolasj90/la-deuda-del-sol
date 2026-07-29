@@ -1,0 +1,62 @@
+PACK: Cinzel (+ Cinzel Decorative)
+CATEGORIA: UI y cartas — titulos, logo, nombres de carta (caps romanas)
+AUTOR: Natanael Gama (NDISCOVER)
+ORIGEN: https://github.com/NDISCOVER/Cinzel
+FECHA DE VERIFICACION: 2026-07-29 (scouting nivel A, docs/arte/scouting-assets.md, fila 4 de "UI, cartas y fuentes")
+LICENCIA: SIL Open Font License 1.1 (OFL 1.1)
+[NC]: NO — licencia libre, apta para uso comercial.
+
+--------------------------------------------------------------------------
+LICENCIA
+--------------------------------------------------------------------------
+
+El texto COMPLETO y original de la licencia esta en `OFL.txt`, junto a este
+archivo, tal como lo distribuye el repositorio upstream. Ese archivo es la
+fuente de verdad; este LICENSE.txt es solo el resumen operativo.
+
+Obligaciones de la OFL 1.1 relevantes para el proyecto:
+
+  1. Se puede usar, estudiar, modificar y redistribuir la fuente, incluso en
+     proyectos comerciales, y embeberla en el juego.
+  2. NO se puede vender la fuente por si sola (si embebida en software, si).
+  3. El aviso de copyright y el texto de la OFL deben conservarse y
+     distribuirse con cualquier copia -> MANTENER `OFL.txt` en el repo junto
+     al TTF. No borrarlo al mover la fuente a assets/.
+  4. Si se modifica la fuente, la version modificada NO puede usar el
+     Reserved Font Name ("Cinzel"): habria que renombrarla.
+  5. La fuente modificada o no debe seguir bajo OFL.
+
+Texto de referencia: https://openfontlicense.org/
+
+--------------------------------------------------------------------------
+ATRIBUCION
+--------------------------------------------------------------------------
+
+La OFL no exige credito en el producto, pero si conservar el aviso de
+licencia. Se acredita igual, en CREDITS.md:
+
+    Cinzel, by Natanael Gama
+    https://github.com/NDISCOVER/Cinzel — SIL OFL 1.1
+
+--------------------------------------------------------------------------
+CONTENIDO VERIFICADO (2026-07-29)
+--------------------------------------------------------------------------
+
+  10 archivos:
+    OFL.txt        licencia completa upstream (NO BORRAR)
+    FONTLOG.txt    historial de la familia
+    ttf/  Cinzel[wght].ttf              variable
+          Cinzel-Regular.ttf
+          Cinzel-Bold.ttf
+          Cinzel-Black.ttf
+          CinzelDecorative[wght].ttf    variable, variante ornamentada
+          CinzelDecorative-Regular.ttf
+          CinzelDecorative-Bold.ttf
+          CinzelDecorative-Black.ttf
+
+  Cinzel es una romana en capitales inspirada en inscripciones latinas: es la
+  fuente del logo y de los titulos de region. Cinzel Decorative queda para el
+  logo y encabezados de pagare/carta legendaria.
+
+  Cinzel es solo mayusculas por diseno (las minusculas son small caps): NO
+  usarla para texto corrido — ese carril es Alegreya.

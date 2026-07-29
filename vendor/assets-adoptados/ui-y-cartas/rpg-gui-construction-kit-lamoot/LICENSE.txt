@@ -1,0 +1,68 @@
+PACK: RPG GUI Construction Kit v1.0
+CATEGORIA: UI y cartas — paneles / marcos base (reskineable a pergamino+lacre vía el XCF)
+AUTOR: Lamoot (Matjaž Lamut)
+ORIGEN: https://opengameart.org/content/rpg-gui-construction-kit-v10
+ARCHIVO DESCARGADO: https://opengameart.org/sites/default/files/rpg_gui_v1.zip (2,9 MB)
+FECHA DE VERIFICACION: 2026-07-29
+LICENCIA: CC-BY 3.0 (Creative Commons Attribution 3.0 Unported)
+[NC]: NO — licencia libre, apta para uso comercial.
+
+--------------------------------------------------------------------------
+LICENCIA TEXTUAL VERIFICADA
+--------------------------------------------------------------------------
+
+En la pagina de OpenGameArt (campo "License(s):"):
+
+    License(s):  CC-BY 3.0
+    Author:      Lamoot
+    Thursday, September 30, 2010 - 11:33
+
+Texto de la licencia tal como lo reproduce la propia pagina:
+
+    You are free to:
+    Share — copy and redistribute the material in any medium or format
+    Adapt — remix, transform, and build upon the material
+    for any purpose, even commercially.
+    Attribution — You must give appropriate credit, provide a link to the
+    license, and indicate if changes were made. You may do so in any
+    reasonable manner, but not in any way that suggests the licensor
+    endorses you or your use.
+    No additional restrictions — You may not apply legal terms or
+    technological measures that legally restrict others from doing anything
+    the license permits.
+
+Ademas, el archivo `ReadMe` incluido dentro del propio ZIP confirma la licencia:
+
+    ----- RPG GUI contruction kit v1.0 -----
+    Made by Lamoot, released under CC-BY 3.0, all images used in the process
+    are self made or from public domain sources.
+
+Texto completo de CC-BY 3.0: https://creativecommons.org/licenses/by/3.0/
+
+--------------------------------------------------------------------------
+ATRIBUCION OBLIGATORIA (pegar en CREDITS.md al integrar)
+--------------------------------------------------------------------------
+
+    "RPG GUI Construction Kit v1.0" by Lamoot (Matjaž Lamut)
+    https://opengameart.org/content/rpg-gui-construction-kit-v10
+    Licensed under CC-BY 3.0 — https://creativecommons.org/licenses/by/3.0/
+    Modified (reskin a pergamino/lacre + re-grade calido)
+
+NOTA: la CC-BY 3.0 exige indicar si hubo modificaciones. El plan de arte
+prevee reskin sobre el XCF -> anotar SIEMPRE "modified".
+
+--------------------------------------------------------------------------
+CONTENIDO VERIFICADO (descomprimido y revisado 2026-07-29)
+--------------------------------------------------------------------------
+
+  RPG_GUI_v1.png          1024 x 666  — hoja de widgets/ornamentos
+  RPG_GUI_v1_source.xcf   2,8 MB      — fuente GIMP por capas (clave para el reskin)
+  paper background.png    512 x 512   — textura papel (tileable)
+  wood background.png     512 x 512   — textura madera (tileable)
+  gradients.png            602 x 358  — gradientes de apoyo
+  ReadMe                              — nota de licencia del autor
+
+Formato: PNG RGBA de alta resolucion (carril pintado, NO pixel art 16px).
+Coincide con lo que declara el scouting (docs/arte/scouting-assets.md, fila 3
+de "UI, cartas y fuentes"): paneles papel/pergamino reskineables via XCF.
+ZIP borrado tras verificar.
