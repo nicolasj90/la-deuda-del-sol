@@ -10,12 +10,12 @@ func resolve(engine: BattleEngine):
 	for target in targets:
 		if target.is_alive():
 			if not engine.is_attack_missed(actor, target):
-				engine.battle_signals.message_emitted.emit(actor.name + " attacks " + target.name)
+				engine.battle_signals.message_emitted.emit("%s ataca a %s" % [actor.name, target.name])
 				take_damage(engine, target)
 				engine.battle_signals.battler_damaged.emit(target)
 				await engine.battle_signals.damage_finished
 			else:
-				engine.battle_signals.message_emitted.emit(actor.name + " missed the attack")
+				engine.battle_signals.message_emitted.emit("%s falló el ataque" % actor.name)
 				print("[BattleActionAttack] ", actor.name, " missed the attack to ", target.name)
 
 func take_damage(engine: BattleEngine, target: Battler):

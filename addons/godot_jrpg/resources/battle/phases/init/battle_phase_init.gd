@@ -110,7 +110,7 @@ func drop_enemies_focus(ui: BattleUI):
 	ui.battle_signals.enemies_focus_mode_changed.emit(Control.FOCUS_NONE)
 
 func show_enemies_appeared_message(ui: BattleUI):
-	ui.battle_signals.message_emitted.emit("Enemies appeared!")
+	ui.battle_signals.message_emitted.emit("¡Aparecieron enemigos!")
 
 func connect_signals(engine: BattleEngine):
 	engine.battle_signals.enemy_selected.connect(engine._on_enemy_selected)

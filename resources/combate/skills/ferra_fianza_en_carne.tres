@@ -28,7 +28,7 @@ metadata/_custom_type_script = "uid://b4bobc0pjnhrd"
 [resource]
 script = ExtResource("1_skill")
 display_name = "Fianza en carne"
-description = "Ferra se planta como garantía viviente: el que quiera cobrar, que pase por ella. Sube mucho su Defensa por 3 turnos. (La provocación real de Garante llega con el rework de aggro.)"
+description = "Ferra se planta como garantía viviente: el que quiera cobrar, que pase por ella. Sube mucho su Defensa por 3 turnos."
 used_on = 1
 effects = SubResource("Effects")
 targets = SubResource("Target")

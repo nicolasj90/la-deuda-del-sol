@@ -10,10 +10,10 @@ func resolve(engine: BattleEngine):
 	engine.battle_signals.toggle_messenger_emitted.emit(true)
 	skill.pay_cost(actor)
 	var is_aoe: bool = skill.targets != null and BattleTarget.is_target_scope_all(skill.targets.scope)
-	var verb: String = skill.message if not skill.message.is_empty() else "uses"
+	var verb: String = skill.message if not skill.message.is_empty() else "usa"
 	if is_aoe:
 		engine.battle_signals.message_emitted.emit(
-			actor.name + " " + verb + " " + skill.display_name + " on " + BattleTarget.all_label(skill.targets.side))
+			"%s %s %s en %s" % [actor.name, verb, skill.display_name, BattleTarget.all_label(skill.targets.side)])
 		for target in targets:
 			skill.apply_effects(target, actor, engine)
 			if skill.vfx:
@@ -22,7 +22,7 @@ func resolve(engine: BattleEngine):
 	else:
 		for target in targets:
 			engine.battle_signals.message_emitted.emit(
-				actor.name + " " + verb + " " + skill.display_name + " on " + target.name)
+				"%s %s %s en %s" % [actor.name, verb, skill.display_name, target.name])
 			skill.apply_effects(target, actor, engine)
 			if skill.vfx:
 				engine.battle_signals.vfx_requested_at_battler.emit(skill.vfx, target)

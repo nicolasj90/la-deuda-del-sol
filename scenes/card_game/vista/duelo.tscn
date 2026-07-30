@@ -583,6 +583,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+z_index = 50
 
 [node name="FirmaRival" type="Panel" parent="HUD"]
 layout_mode = 1
@@ -759,6 +760,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+z_index = 100
 
 [node name="Aviso" type="Label" parent="CapaObjetivo"]
 layout_mode = 1
@@ -774,6 +776,7 @@ horizontal_alignment = 1
 theme_override_colors/font_color = Color(1, 0.87, 0.3, 1)
 
 [node name="DialogoDePalabra" type="Control" parent="."]
+visible = false
 script = ExtResource("7_dialogo")
 layout_mode = 1
 anchors_preset = 15
@@ -782,6 +785,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+z_index = 110
 
 [node name="Velo" type="ColorRect" parent="DialogoDePalabra"]
 layout_mode = 1
@@ -796,13 +800,14 @@ color = Color(0, 0, 0, 0.55)
 [node name="Panel" type="PanelContainer" parent="DialogoDePalabra"]
 layout_mode = 1
 anchors_preset = 0
-offset_left = 340.0
-offset_top = 60.0
-offset_right = 940.0
-offset_bottom = 660.0
+offset_left = 190.0
+offset_top = 40.0
+offset_right = 1090.0
+offset_bottom = 680.0
 
 [node name="Caja" type="VBoxContainer" parent="DialogoDePalabra/Panel"]
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="Titulo" type="Label" parent="DialogoDePalabra/Panel/Caja"]
 layout_mode = 2
@@ -819,11 +824,14 @@ autowrap_mode = 2
 [node name="Scroll" type="ScrollContainer" parent="DialogoDePalabra/Panel/Caja"]
 layout_mode = 2
 size_flags_vertical = 3
+horizontal_scroll_mode = 0
 
 [node name="Opciones" type="VBoxContainer" parent="DialogoDePalabra/Panel/Caja/Scroll"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 4
 
 [node name="Cancelar" type="Button" parent="DialogoDePalabra/Panel/Caja"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 13
 text = "Cancelar"

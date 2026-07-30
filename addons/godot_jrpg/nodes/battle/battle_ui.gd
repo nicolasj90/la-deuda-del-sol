@@ -339,8 +339,14 @@ func _on_toggle_menu_skills_emitted(on: bool):
 		menu_skills.show()
 		await menu_skills.rebuild_menu()
 		menu_skills.focus_first()
+		# LA DEUDA PATCH: ver la nota de _on_toggle_menu_items_emitted (misma
+		# historia con las descripciones de las destrezas).
+		battle_signals.toggle_messenger_emitted.emit(true)
 	else:
+		var estaba_abierto: bool = menu_skills.visible
 		menu_skills.hide()
+		if estaba_abierto:
+			battle_signals.toggle_messenger_emitted.emit(false)
 
 ## Used to toggle items menu on or off.
 func _on_toggle_menu_items_emitted(on: bool):
@@ -348,10 +354,34 @@ func _on_toggle_menu_items_emitted(on: bool):
 	if on:
 		menu_items.show()
 		menu_items.refresh_item_list()
+		# LA DEUDA PATCH (encontrado jugando «Objetos» y «Destrezas» con teclado):
+		# BattleMenuItems escribe la descripción del objeto con foco en
+		# [code]%MessengerLabel[/code], que por unique_name_in_owner es el cartel de
+		# ARRIBA de la batalla... que en el turno del jugador está ESCONDIDO. O sea:
+		# las descripciones (escritas y traducidas: «Tinta notarial
+		# reconstituyente... Restaura 45 PV») no se veían NUNCA y el jugador elegía
+		# objetos y destrezas a ciegas. Se muestra el cartel mientras el menú esté
+		# abierto.
+		battle_signals.toggle_messenger_emitted.emit(true)
 	else:
+		# Ojo: esto también lo emite BattlePhaseInit.hide_menus() al arrancar la
+		# batalla, cuando el cartel dice «¡Aparecieron enemigos!» y TIENE que
+		# quedar visible; por eso el cartel se esconde solo si el menú venía
+		# realmente abierto (init lo emite con el menú ya oculto).
+		var estaba_abierto: bool = menu_items.visible
 		menu_items.hide()
+		if estaba_abierto:
+			battle_signals.toggle_messenger_emitted.emit(false)
 		var first_button: Button = menu_fight_options.get_child(0)
-		first_button.grab_focus()
+		# LA DEUDA PATCH (ruido de consola): BattleEngine.go_to_fight_menu() emite
+		# primero toggle_menu_items(false) y RECIÉN DESPUÉS pone en FOCUS_ALL las
+		# opciones del menú Pelear, así que este grab_focus() se come un
+		# "This control can't grab focus" del motor cada vez que se abre el menú
+		# (10 líneas de error por batalla en la consola del build web). El foco
+		# real lo da select_menu_fight_option_emitted(0), dos líneas más abajo en
+		# go_to_fight_menu(); acá alcanza con no pedirlo cuando no se puede.
+		if first_button.focus_mode != Control.FOCUS_NONE:
+			first_button.grab_focus()
 
 ## Used to toggle bottom menu on or off.
 func _on_toggle_menu_bottom_emitted(on: bool):

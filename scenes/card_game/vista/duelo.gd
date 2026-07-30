@@ -28,6 +28,14 @@ extends Control
 ## Las Promesas se firman en un diálogo de confirmación ([DialogoDePalabra]): son
 ## un compromiso con plazo y no puede pasar que se firmen de arrastre.
 ##
+## [b]Capas de dibujo[/b]: el addon le pone a cada naipe un [member
+## CanvasItem.z_index] creciente (el índice en la mano o en el Estrado), y al
+## dibujar el z_index le gana al orden del árbol. Sin contramedida la mano se
+## dibuja **encima** del diálogo de Promesas y del cartel del final. Por eso
+## `HUD` va en z 50, `CapaObjetivo` en 100 y `DialogoDePalabra` en 110 en
+## `duelo.tscn`. (El ruteo de input sí usa el orden del árbol, así que los clics
+## siempre llegaron bien: el problema era solo visual.)
+##
 ## Lo que todavía es placeholder visual: no hay arte de carta (las 42 caras del
 ## § 9.4 son el cuello de botella real), así que el naipe se dibuja con marco,
 ## labels y nada más; el Mazo es un rótulo con el contador, sin pila de dorsos; y
@@ -682,29 +690,49 @@ func _al_apretar_en_pila(naipe: Card, contenedor: CardContainer) -> void:
 		_pedir_denuncia(ec)
 
 
-func _al_soltar_para_jugar(naipe: Card, _contenedor_naipe: CardContainer) -> void:
-	_intentar_jugar(naipe as NaipeDePalabra, false)
+func _al_soltar_para_jugar(naipe: Card, contenedor: CardContainer) -> void:
+	var np: NaipeDePalabra = naipe as NaipeDePalabra
+	var ec: EstadoCarta = _estado_de(np)
+	if ec == null:
+		return
+	var es_propio: bool = contenedor == _contenedor(lado_jugador, Palabra.Zona.ESTRADO)
+	var mal_lado: String = _motivo_de_lado(ec, es_propio)
+	if not mal_lado.is_empty():
+		_seleccionado = np
+		_mostrar_detalle(ec)
+		_avisar("%s: %s." % [ec.def.nombre, mal_lado])
+		_refrescar_hud()
+		return
+	_intentar_jugar(np, false)
 
 
 func _al_soltar_para_empenar(naipe: Card, _contenedor_naipe: CardContainer) -> void:
 	_intentar_empenar(naipe as NaipeDePalabra)
 
 
-## Afordancia del drop: el contenedor pregunta y el que contesta es el motor.
-func _puede_soltar_en_estrado(naipe: Card, es_propio: bool) -> String:
+## Afordancia del drop. **Solo rechaza en seco lo que no es una carta de tu mano**:
+## una carta tuya que no se puede jugar se acepta igual como *intención* y el
+## motivo lo dice la vista al resolverla ([method _intentar_jugar]). Antes se
+## rechazaba acá, y un drop que ningún contenedor acepta vuelve a la mano en
+## silencio: el jugador soltaba la carta, la veía volver y no se enteraba de por
+## qué (§ 1.3 pide que el rechazo diga el motivo).
+func _puede_soltar_en_estrado(naipe: Card, _es_propio: bool) -> String:
 	var ec: EstadoCarta = _estado_de(naipe as NaipeDePalabra)
 	if ec == null or motor == null:
 		return "esa carta no es de este duelo"
 	if ec.dueno != lado_jugador or ec.zona != Palabra.Zona.MANO:
 		return "esa carta no está en tu mano"
+	return ""
+
+
+## De qué lado de la mesa se suelta cada cosa: un Fiador sube a tu Estrado; una
+## Cláusula, al lado al que le pega. El objetivo fino lo valida el motor después.
+func _motivo_de_lado(ec: EstadoCarta, es_propio: bool) -> String:
 	if ec.es_cuerpo():
-		if not es_propio:
-			return "un Fiador sube a tu Estrado, no al del rival"
-	elif _clausula_apunta_al_rival(ec) == es_propio:
-		# Una Cláusula que pega del otro lado se suelta en el Estrado rival; una
-		# que toca lo tuyo, en el propio. El objetivo lo valida el motor después.
+		return "" if es_propio else "un Fiador sube a tu Estrado, no al del rival"
+	if _clausula_apunta_al_rival(ec) == es_propio:
 		return "esta Cláusula se juega del otro lado de la mesa"
-	return _motivo_de_jugar(ec)
+	return ""
 
 
 func _clausula_apunta_al_rival(ec: EstadoCarta) -> bool:
@@ -713,11 +741,15 @@ func _clausula_apunta_al_rival(ec: EstadoCarta) -> bool:
 	return ec.def.objetivos[0] == MotorDePalabra.OBJ_ENEMIGO_O_FIRMA
 
 
+## Mismo criterio que el Estrado: el Empeñadero acepta cualquier carta de tu mano
+## y el motivo del rechazo lo muestra [method _intentar_empenar].
 func _puede_empenar(naipe: Card) -> String:
 	var ec: EstadoCarta = _estado_de(naipe as NaipeDePalabra)
-	if ec == null:
+	if ec == null or motor == null:
 		return "esa carta no es de este duelo"
-	return motor.motivo_ilegal(JugadaDePalabra.empenar(lado_jugador, ec.uid))
+	if ec.dueno != lado_jugador or ec.zona != Palabra.Zona.MANO:
+		return "esa carta no está en tu mano"
+	return ""
 
 
 func _intentar_jugar(naipe: NaipeDePalabra, al_fiado: bool) -> void:
@@ -752,6 +784,8 @@ func _intentar_empenar(naipe: NaipeDePalabra) -> void:
 	var ec: EstadoCarta = _estado_de(naipe)
 	if ec == null:
 		return
+	_seleccionado = naipe
+	_mostrar_detalle(ec)
 	_ejecutar(JugadaDePalabra.empenar(lado_jugador, ec.uid))
 
 
@@ -865,10 +899,15 @@ func _pedir_objetivo(objetivos: Array[Dictionary], texto: String) -> void:
 
 
 ## Todas las cartas se apagan mientras hay una decisión abierta (§ 6.2.2).
+##
+## Antes de apagarlas hay que soltar la que esté agarrada: el camino de atacar se
+## abre **apretando** un Fiador, o sea con el botón del mouse todavía apretado, y
+## una carta apagada ya no escucha el «mouse up» (queda pegada al cursor).
 func _apagar_naipes() -> void:
 	for uid: int in _naipes.keys():
 		var naipe: NaipeDePalabra = _naipes[uid] as NaipeDePalabra
 		if naipe != null:
+			naipe.soltar_ya()
 			naipe.can_be_interacted_with = false
 
 
@@ -952,6 +991,9 @@ func _ejecutar(j: JugadaDePalabra) -> bool:
 		_sucio = true
 		return false
 	_seleccionado = null
+	# El aviso es del pedido anterior: si la jugada salió, ya no aplica y quedaba
+	# colgado en pantalla turnos enteros («Elegí un objetivo» después de elegirlo).
+	_avisar("")
 	var salio: bool = motor.ejecutar(j)
 	_sucio = true
 	return salio

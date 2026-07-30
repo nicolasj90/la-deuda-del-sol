@@ -88,6 +88,12 @@ func start_encounter(settings: BattleSettings) -> StringName:
 	if map_scene:
 		map_scene.process_mode = Node.PROCESS_MODE_DISABLED
 
+	# El HUD de teclas del mapa (autoload InputHud, capa 36) queda POR ENCIMA de
+	# la batalla y tapaba el menú «Pelear / Huir» con los hints de caminar/correr,
+	# que además no aplican en combate. Se esconde mientras dura el encuentro.
+	var hud_visible: bool = InputHud.visible
+	InputHud.visible = false
+
 	var layer := CanvasLayer.new()
 	layer.layer = BATTLE_CANVAS_LAYER
 	get_tree().root.add_child(layer)
@@ -133,8 +139,10 @@ func start_encounter(settings: BattleSettings) -> StringName:
 
 	battle.queue_free()
 	layer.queue_free()
+	InputHud.visible = hud_visible
 	if map_scene:
 		map_scene.process_mode = Node.PROCESS_MODE_INHERIT
+	resincronizar_caminata_del_jugador()
 
 	# Recompensas: el addon ya las aplicó sobre la party (BattlePhaseVictory);
 	# acá solo se resume el delta para quien escuche.
@@ -156,3 +164,35 @@ func start_encounter(settings: BattleSettings) -> StringName:
 		victory_rewards_applied.emit(summary)
 	encounter_finished.emit(result[0], summary)
 	return result[0]
+
+
+## Resincroniza la caminata del jugador con el estado REAL del teclado al volver
+## de un overlay que pausó el mapa (batalla o duelo de cartas).
+##
+## [b]Bug encontrado jugando (F2)[/b]: [InputWalkBehavior] solo actualiza su
+## [code]input_vector[/code] dentro de [code]_unhandled_input[/code]. Con el mapa
+## en [constant Node.PROCESS_MODE_DISABLED] el jugador NO recibe input, así que
+## si el encuentro se disparó mientras el jugador caminaba, el «keyup» de la
+## flecha llega con el mapa apagado y se pierde: el vector de movimiento queda
+## congelado apuntando a donde el jugador iba. Al desmontar la batalla el jugador
+## arrancaba a correr solo, sin tocar ninguna tecla, hasta el borde del mapa
+## (visto en el Camino del Diezmo: tras ganar, Ciro cruzaba solo el teleporter
+## este y aparecía en El Fiado).
+##
+## Es público porque el mismo overlay-con-mapa-pausado lo usa
+## [code]DueloLauncher[/code] (mesa de cartas), con el mismo problema.
+func resincronizar_caminata_del_jugador() -> void:
+	for jugador: Node in get_tree().get_nodes_in_group(&"player"):
+		if jugador is CharacterBody2D:
+			(jugador as CharacterBody2D).velocity = Vector2.ZERO
+		for nodo: Node in jugador.find_children("*", "InputWalkBehavior", true, false):
+			var caminata: InputWalkBehavior = nodo as InputWalkBehavior
+			var eje: Vector2 = Input.get_vector(
+				&"move_left", &"move_right", &"move_up", &"move_down"
+			)
+			var velocidad: float = (
+				caminata.speeds.run_speed
+				if Input.is_action_pressed(&"running")
+				else caminata.speeds.walk_speed
+			)
+			caminata.input_vector = eje * velocidad

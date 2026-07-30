@@ -8,39 +8,45 @@
 [ext_resource type="Resource" path="res://resources/combate/enemigos/alguacil_de_refresco.tres" id="6_alguacil"]
 [ext_resource type="Resource" path="res://resources/combate/enemigos/ferra_escolta.tres" id="7_ferra"]
 
+; PUESTOS DE LA FASE 1 (encontrado jugando el boss con teclado, corrida v2):
+; la fila entraba en 1280 px por los pelos y Ferra quedaba en x=1200..1500, o sea
+; el 90 % de su sprite AFUERA de la pantalla — y Ferra es la que canta los barks
+; del cambio de bando, así que el jugador no veía de quién eran. Ahora los cinco
+; puestos entran enteros en 1280 x 420 (abajo de 420 arranca el menú de batalla):
+;   decano 5..295 | atril 300..505 | alguacil 510..760 | alguacil 765..1015 | Ferra 1020..1275
 [sub_resource type="Resource" id="Puesto_decano"]
 script = ExtResource("1_esettings")
 enemy = ExtResource("4_decano")
-position = Vector2(160, 60)
-size = Vector2(300, 300)
+position = Vector2(5, 35)
+size = Vector2(290, 290)
 metadata/_custom_type_script = "uid://dwf8a545xaiwc"
 
 [sub_resource type="Resource" id="Puesto_atril"]
 script = ExtResource("1_esettings")
 enemy = ExtResource("5_atril")
-position = Vector2(460, 60)
-size = Vector2(240, 240)
+position = Vector2(300, 115)
+size = Vector2(205, 205)
 metadata/_custom_type_script = "uid://dwf8a545xaiwc"
 
 [sub_resource type="Resource" id="Puesto_alguacil_1"]
 script = ExtResource("1_esettings")
 enemy = ExtResource("6_alguacil")
-position = Vector2(700, 180)
-size = Vector2(280, 280)
+position = Vector2(510, 155)
+size = Vector2(250, 250)
 metadata/_custom_type_script = "uid://dwf8a545xaiwc"
 
 [sub_resource type="Resource" id="Puesto_alguacil_2"]
 script = ExtResource("1_esettings")
 enemy = ExtResource("6_alguacil")
-position = Vector2(960, 180)
-size = Vector2(280, 280)
+position = Vector2(765, 155)
+size = Vector2(250, 250)
 metadata/_custom_type_script = "uid://dwf8a545xaiwc"
 
 [sub_resource type="Resource" id="Puesto_ferra"]
 script = ExtResource("1_esettings")
 enemy = ExtResource("7_ferra")
-position = Vector2(1200, 120)
-size = Vector2(300, 300)
+position = Vector2(1020, 125)
+size = Vector2(255, 255)
 metadata/_custom_type_script = "uid://dwf8a545xaiwc"
 
 [resource]

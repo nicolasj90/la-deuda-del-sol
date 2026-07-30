@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/dev/duelo_dev.gd" id="1_dev"]
+[ext_resource type="Script" path="res://scenes/dev/sonda_de_mesa.gd" id="2_sonda"]
+
+[node name="DueloDev" type="Node"]
+script = ExtResource("1_dev")
+
+[node name="SondaDeMesa" type="Node" parent="."]
+script = ExtResource("2_sonda")

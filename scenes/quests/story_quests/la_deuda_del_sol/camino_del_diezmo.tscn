@@ -123,7 +123,7 @@ script = ExtResource("10_spawn")
 metadata/_custom_type_script = "uid://0enyu5v4ra34"
 
 [node name="Cartel" parent="OnTheGround" instance=ExtResource("9_sign")]
-position = Vector2(768, 344)
+position = Vector2(768, 280)
 text = "Camino del Diezmo — ruta de peaje hacia El Fiado. De noche rondan los quebrantos."
 
 [node name="SpawnVinedo" type="Marker2D" parent="OnTheGround" groups=["spawn_point"]]

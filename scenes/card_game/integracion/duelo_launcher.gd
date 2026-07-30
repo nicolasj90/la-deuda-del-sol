@@ -140,6 +140,10 @@ func duelo(perfil_id: String, opciones: Dictionary = {}) -> bool:
 	var pausar: bool = bool(opciones.get("pausar_mapa", true))
 	if pausar and mapa != null:
 		mapa.process_mode = Node.PROCESS_MODE_DISABLED
+	# El HUD de teclas del mapa (autoload InputHud, capa 36) va por encima de la
+	# mesa; en un duelo no aplica y tapa la mano de abajo.
+	var hud_visible: bool = InputHud.visible
+	InputHud.visible = false
 	var capa: CanvasLayer = CanvasLayer.new()
 	capa.layer = CAPA_DUELO
 	var escena: PackedScene = load(ESCENA_DUELO) as PackedScene
@@ -161,6 +165,7 @@ func duelo(perfil_id: String, opciones: Dictionary = {}) -> bool:
 	if not capa.is_inside_tree():
 		push_error("[DueloLauncher] no se pudo montar la mesa en el árbol.")
 		capa.free()
+		InputHud.visible = hud_visible
 		if pausar and mapa != null:
 			mapa.process_mode = Node.PROCESS_MODE_INHERIT
 		en_curso = false
@@ -225,8 +230,12 @@ func duelo(perfil_id: String, opciones: Dictionary = {}) -> bool:
 		capa.get_parent().remove_child(capa)
 	vista.queue_free()
 	capa.queue_free()
+	InputHud.visible = hud_visible
 	if pausar and mapa != null and is_instance_valid(mapa):
 		mapa.process_mode = Node.PROCESS_MODE_INHERIT
+	# Mismo bug que en el bridge de encuentros: con el mapa pausado el jugador no
+	# recibe el «keyup» de la flecha y al cerrar la mesa salía caminando solo.
+	Encounters.resincronizar_caminata_del_jugador()
 	en_curso = false
 
 	if gano:

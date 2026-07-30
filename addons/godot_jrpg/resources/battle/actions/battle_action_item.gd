@@ -11,7 +11,7 @@ func resolve(engine: BattleEngine):
 	var is_aoe: bool = item.targets != null and BattleTarget.is_target_scope_all(item.targets.scope)
 	if is_aoe:
 		engine.battle_signals.message_emitted.emit(
-			actor.name + " uses " + item.display_name + " on " + BattleTarget.all_label(item.targets.side))
+			"%s usa %s en %s" % [actor.name, item.display_name, BattleTarget.all_label(item.targets.side)])
 		for target in targets:
 			item.apply_effects(target, actor, engine)
 			if item.vfx:
@@ -20,7 +20,7 @@ func resolve(engine: BattleEngine):
 	else:
 		for target in targets:
 			engine.battle_signals.message_emitted.emit(
-				actor.name + " uses " + item.display_name + " on " + target.name)
+				"%s usa %s en %s" % [actor.name, item.display_name, target.name])
 			item.apply_effects(target, actor, engine)
 			if item.vfx:
 				engine.battle_signals.vfx_requested_at_battler.emit(item.vfx, target)

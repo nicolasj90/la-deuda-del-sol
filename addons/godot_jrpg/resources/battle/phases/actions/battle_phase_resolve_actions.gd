@@ -15,6 +15,14 @@ func _init() -> void:
 ## iterates by the actions in the action pool and resolve one by one.
 func resolve(engine: BattleEngine):
 	engine.clear_focus()
+	# LA DEUDA PATCH (visto jugando con teclado, corridas v1/v2): el upstream solo
+	# saca el FOCO al resolver el turno, así que la columna «Atacar / Defender /
+	# Objetos / Destrezas» se quedaba en pantalla mientras se resolvían los golpes
+	# Y durante todo el canto de victoria («¡Victoria!», PE, botín): el jugador ve
+	# botones que parecen elegibles cuando ya no hay nada que elegir. Se esconde
+	# acá; la fase Selection la vuelve a mostrar sola en el turno siguiente
+	# (BattleEngine.go_to_players_menu -> toggle_menu_fight_emitted(true)).
+	battle_signals.toggle_menu_fight_emitted.emit(false)
 	engine.manage_enemies_decisions()
 	engine.calc_action_order()	
 	

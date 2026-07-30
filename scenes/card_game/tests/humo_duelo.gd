@@ -200,9 +200,32 @@ func _turno_por_la_vista(motor: MotorDePalabra) -> void:
 		var atacante: EstadoCarta = mios[_rng.randi_range(0, mios.size() - 1)]
 		var naipe: NaipeDePalabra = _vista.naipe_de(atacante.uid)
 		if naipe != null:
+			# Atacar se pide **apretando** el naipe, o sea con el botón del mouse
+			# todavía apretado: para el addon la carta está agarrada justo cuando la
+			# vista abre la capa de objetivos y apaga todas las cartas. Una carta
+			# apagada ya no escucha el «mouse up», así que si nadie la suelta queda
+			# pegada al cursor para siempre — y el contador **estático** de arrastres
+			# del addon no vuelve a cero, con lo cual ninguna carta se puede volver a
+			# agarrar (ni en esta mesa ni en la del duelo siguiente).
+			naipe.change_state(DraggableObject.DraggableState.HOLDING)
 			estrado.on_card_pressed(naipe)
 			await get_tree().process_frame
+			if _decidiendo() and naipe.current_state == DraggableObject.DraggableState.HOLDING:
+				_fallar(
+					(
+						"el naipe de %s quedó agarrado al abrirse una decisión (§ 6.2.2)"
+						% atacante.id()
+					)
+				)
+			naipe.soltar_ya()
 			await _resolver_decisiones()
+
+
+## ¿La vista está esperando una decisión del jugador?
+func _decidiendo() -> bool:
+	var capa: CapaObjetivo = _vista.get_node_or_null("CapaObjetivo") as CapaObjetivo
+	var dialogo: DialogoDePalabra = _vista.get_node_or_null("DialogoDePalabra") as DialogoDePalabra
+	return (capa != null and capa.activa) or (dialogo != null and dialogo.abierto())
 
 
 ## Cierra lo que la vista haya abierto: la capa de objetivos y el diálogo. Sin
@@ -358,6 +381,16 @@ func _fallar(mensaje: String) -> void:
 
 
 func _terminar() -> void:
+	# [Card] lleva los contadores de hover y de arrastre en variables estáticas y
+	# los usa para decidir si una carta se puede agarrar: si quedan en alto, la
+	# mesa siguiente no responde al mouse aunque todo lo demás esté bien.
+	if Card.hovering_card_count != 0 or Card.holding_card_count != 0:
+		_fallar(
+			(
+				"los contadores del addon quedaron en hover=%d hold=%d: la mesa siguiente no acepta el mouse"
+				% [Card.hovering_card_count, Card.holding_card_count]
+			)
+		)
 	if _fallos.is_empty():
 		print("OK — humo de la vista del duelo")
 		get_tree().quit(0)

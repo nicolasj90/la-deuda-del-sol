@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bderrotajugada1"]
+
+[ext_resource type="Script" path="res://scenes/dev/derrota_jugada.gd" id="1_derrota"]
+
+[node name="DerrotaJugada" type="Node"]
+script = ExtResource("1_derrota")

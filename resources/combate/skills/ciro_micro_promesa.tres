@@ -36,7 +36,7 @@ metadata/_custom_type_script = "uid://b4bobc0pjnhrd"
 [resource]
 script = ExtResource("1_skill")
 display_name = "Micro-promesa"
-description = "Ciro empeña su guardia por un rato de ímpetu: promete no cubrirse y el sello le presta fuerza. Sube el Ataque y baja la Defensa por 3 turnos. (Prototipo: la mecánica real de promesas llega en F2b.)"
+description = "Ciro empeña su guardia por un rato de ímpetu: promete no cubrirse y el sello le presta fuerza. Sube el Ataque y baja la Defensa por 3 turnos."
 used_on = 1
 effects = SubResource("Effects")
 targets = SubResource("Target")

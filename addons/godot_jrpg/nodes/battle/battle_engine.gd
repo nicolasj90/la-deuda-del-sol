@@ -75,6 +75,24 @@ func _ready() -> void:
 func _emit_engine_initialized() -> void:
 	battle_signals.engine_initialized.emit(self)
 
+
+# LA DEUDA PATCH (deuda «Signal already connected», arreglada de verdad): los
+# [PlayerManualController] son Resources de vida larga colgados del .tres de cada
+# personaje y se conectan a [code]battle_signals.tres[/code] (otro Resource único)
+# en cada batalla, sin desconectar nunca. Al desmontar la batalla, este engine se
+# libera pero las conexiones sobreviven: el controller de un personaje que NO esté
+# en la party de la batalla siguiente queda atendiendo los botones con un engine
+# liberado (39 SCRIPT ERROR «previously freed» por batalla en
+# scenes/dev/party_encogida_test.tscn, jugado con teclado). Acá se cierra el ciclo
+# de vida: la batalla que abrió las conexiones las cierra al salir del árbol.
+func _exit_tree() -> void:
+	for player: BattlerPlayer in players:
+		var ctrl: BattlerController = player.controller
+		if ctrl != null and ctrl.has_method(&"teardown"):
+			# El engine se pasa a propósito: si el controller ya fue re-conectado
+			# por una batalla nueva (fases encadenadas), este desmonte no la toca.
+			ctrl.teardown(self)
+
 ## Initialize essential objects ([BattleSettings] and [BattleUI]). Called by
 ## [Battle].
 func initialize(settings: BattleSettings, ui: BattleUI):
@@ -267,7 +285,7 @@ func process_battler_death(targets: Array[Battler]):
 		clear_focus()
 		battle_signals.toggle_messenger_emitted.emit(true)
 
-		var death_text = "%s defeated!" % battler.name
+		var death_text = "¡%s cayó!" % battler.name
 		battle_signals.message_emitted.emit(death_text)
 		await battler.die()
 		battle_signals.battler_died.emit(battler)
@@ -310,6 +328,15 @@ func go_to_players_menu():
 	battle_signals.toggle_menu_fight_emitted.emit(true)
 	battle_signals.menu_fight_focus_mode_changed.emit(Control.FOCUS_NONE)
 	battle_signals.players_focus_mode_changed.emit(Control.FOCUS_ALL)
+	# LA DEUDA PATCH (encontrado jugando Objetos y Destrezas con teclado): el
+	# cartel de arriba muestra la descripción del objeto/destreza con foco
+	# mientras el menú está abierto, y al ENCOLAR la acción el menú se cierra por
+	# un camino que no pasa por go_to_fight_menu(), así que la descripción queda
+	# pegada arriba durante el turno del jugador SIGUIENTE ("Tinta notarial
+	# reconstituyente..." encima del menú de Ferra). change_turn() ya limpia el
+	# cartel en el borde de turno; acá se hace lo simétrico en el borde de
+	# jugador, que es cuando se vuelve a elegir de la party.
+	battle_signals.toggle_messenger_emitted.emit(false)
 	change_to_player(current_player)
 
 ## It shall go to the fight menu.

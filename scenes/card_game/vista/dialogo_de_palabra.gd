@@ -19,6 +19,10 @@ extends Control
 signal elegido(valor: Variant)
 signal cancelado
 
+## Cuerpo de las opciones. El tema del juego usa 27, que en un botón con una
+## cláusula entera adentro se sale del panel.
+const TAMANO_FUENTE_OPCION: int = 13
+
 var _titulo: Label = null
 var _detalle: Label = null
 var _opciones: VBoxContainer = null
@@ -56,6 +60,15 @@ func preguntar(titulo: String, detalle: String, opciones: Array[Dictionary]) -> 
 		var boton: Button = Button.new()
 		boton.text = String(opcion.get("texto", "?"))
 		boton.tooltip_text = String(opcion.get("ayuda", ""))
+		# El tema del juego trae botones de 27px pensados para menús de tres
+		# opciones; una cláusula con plazo («No atacar con este Fiador por 2
+		# turno(s)») no entra en el ancho del panel y salía cortada. Van más
+		# chicas y con corte de línea, que es lo que hace falta acá: son quince
+		# variantes de Promesa y hay que poder leerlas.
+		boton.add_theme_font_size_override("font_size", TAMANO_FUENTE_OPCION)
+		boton.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		boton.clip_text = false
+		boton.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		boton.pressed.connect(_al_elegir.bind(i))
 		_opciones.add_child(boton)
 		_valores.append(opcion.get("valor", null))

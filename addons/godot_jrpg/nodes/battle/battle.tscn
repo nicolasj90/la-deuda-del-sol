@@ -214,7 +214,7 @@ focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath(".")
 focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../Run")
-text = "Fight"
+text = "Pelear"
 script = ExtResource("12_3ra5b")
 
 [node name="Run" type="Button" parent="BattleUI/MenuBottom/HBoxContainer/MenuSelection/ScrollContainer/MarginContainer/MenuSelectionOptions" unique_id=2002751662]
@@ -223,7 +223,7 @@ focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../Fight")
 focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath(".")
-text = "Run"
+text = "Huir"
 script = ExtResource("16_cpmal")
 
 [node name="MenuFight" type="PanelContainer" parent="BattleUI/MenuBottom/HBoxContainer" unique_id=1175953099]
@@ -257,7 +257,7 @@ focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath(".")
 focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../Defend")
-text = "Attack"
+text = "Atacar"
 script = ExtResource("13_3r1vh")
 
 [node name="Defend" type="Button" parent="BattleUI/MenuBottom/HBoxContainer/MenuFight/ScrollContainer/MarginContainer/MenuFightOptions" unique_id=858169178]
@@ -266,7 +266,7 @@ focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../Attack")
 focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../Items")
-text = "Defend"
+text = "Defender"
 script = ExtResource("17_kynrm")
 
 [node name="Items" type="Button" parent="BattleUI/MenuBottom/HBoxContainer/MenuFight/ScrollContainer/MarginContainer/MenuFightOptions" unique_id=945015329]
@@ -275,7 +275,7 @@ focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../Defend")
 focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../Skills")
-text = "Items"
+text = "Objetos"
 script = SubResource("GDScript_grijr")
 
 [node name="Skills" type="Button" parent="BattleUI/MenuBottom/HBoxContainer/MenuFight/ScrollContainer/MarginContainer/MenuFightOptions" unique_id=1249186778]
@@ -284,7 +284,7 @@ focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../Items")
 focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath(".")
-text = "Skills"
+text = "Destrezas"
 script = ExtResource("22_tihi7")
 
 [node name="MenuPlayers" type="PanelContainer" parent="BattleUI/MenuBottom/HBoxContainer" unique_id=669055748]

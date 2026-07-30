@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bpartyencogida1"]
+
+[ext_resource type="Script" path="res://scenes/dev/party_encogida_test.gd" id="1_encogida"]
+
+[node name="PartyEncogidaTest" type="Node"]
+script = ExtResource("1_encogida")

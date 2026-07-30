@@ -155,6 +155,53 @@ func pintar_numeros(coste: int, ataque: int, aguante: int, dano: int = -1) -> vo
 		etiqueta_aguante.visible = aguante >= 0 and not es_clausula
 
 
+## Corta un arrastre o un hover en curso y devuelve el naipe a su lugar.
+##
+## La vista apaga todas las cartas cuando abre una decisión (capa de objetivos o
+## diálogo, § 6.2.2), y el addon deja de escuchar el mouse en cuanto
+## [member DraggableObject.can_be_interacted_with] es false: si el naipe estaba
+## agarrado, el «mouse up» ya no llega nunca y la carta queda pegada al cursor
+## para siempre. Eso pasaba en el camino de atacar, que se abre **apretando** un
+## Fiador del Estrado (el botón todavía está apretado cuando se abre la capa).
+func soltar_ya() -> void:
+	if current_state != DraggableState.HOLDING and current_state != DraggableState.HOVERING:
+		return
+	var contenedor: CardContainer = card_container
+	change_state(DraggableState.IDLE)
+	# El contenedor se guarda los naipes agarrados para resolverlos en el «mouse
+	# up»; si no se lo saca de esa lista, el próximo soltar de cualquier carta lo
+	# arrastraría de prepo a la zona donde esté el mouse.
+	if contenedor != null:
+		contenedor._holding_cards.erase(self)
+	return_card()
+
+
+## [Card] lleva los contadores de hover y de arrastre en variables **estáticas**
+## (`Card.hovering_card_count` / `holding_card_count`) y los baja en el `_exit_state`
+## del addon. Un naipe que se libera en medio de un hover nunca los baja, y desde
+## ahí [method Card._can_start_hovering] devuelve false para siempre: la mesa
+## entera deja de responder al mouse, y también la mesa del duelo siguiente
+## (E03 son dos duelos). La vista libera naipes cuando el motor lo dice —una carta
+## que vuelve al mazo, el cierre del duelo—, así que se corrige acá.
+## Se hace a mano y no con [method DraggableObject.change_state] porque el salir
+## de HOVERING crea un tween de vuelta, y un nodo que está saliendo del árbol no
+## puede crear tweens.
+func _exit_tree() -> void:
+	if current_state == DraggableState.HOVERING:
+		hovering_card_count -= 1
+	elif current_state == DraggableState.HOLDING:
+		holding_card_count -= 1
+	else:
+		return
+	current_state = DraggableState.IDLE
+	if hover_tween != null and hover_tween.is_valid():
+		hover_tween.kill()
+		hover_tween = null
+	scale = original_scale
+	rotation = original_hover_rotation
+	z_index = stored_z_index
+
+
 ## Afordancia visual del § 1.3: una carta que no puede producir ningún efecto
 ## legal se muestra apagada, con el motivo al hover. **La legalidad la decide el
 ## motor**, no este nodo.
