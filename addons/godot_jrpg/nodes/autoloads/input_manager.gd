@@ -4,18 +4,26 @@ signal input_setup_complete
 
 var assignments: Array[InputAssignment] = []
 
+## LA DEUDA PATCH: [signal input_setup_complete] se emite una sola vez, en el
+## boot del juego (este es un autoload). Cualquiera que se monte después y haga
+## `await InputManager.input_setup_complete` se cuelga para siempre. Con esta
+## bandera el await se puede hacer condicional (ver [method Battle.initialize]).
+var setup_complete: bool = false
+
 func _ready() -> void:
 	configure()
 
 func configure() -> void:
 	assignments.clear()
-	
+	setup_complete = false
+
 	if DisplayServer.get_name() == "headless":
 		setup_headless()
 	else:
 		setup_hardware()
 		
 	print("[InputManager] Setup finished.")
+	setup_complete = true
 	input_setup_complete.emit()
 
 func setup_hardware() -> void:

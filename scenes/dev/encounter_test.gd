@@ -1,13 +1,21 @@
 # SPDX-FileCopyrightText: The Threadbare Authors
 # SPDX-License-Identifier: MPL-2.0
 extends Node
-## Prueba headless del puente overworld<->batalla (EncounterArea + Encounters).
+## Prueba del puente overworld<->batalla (EncounterArea + Encounters).
 ##
 ## Flujo: monta camino_del_diezmo como current_scene (este nodo queda colgado
 ## de root como driver, así no lo pausa el bridge), dispara EncuentroOeste por
-## código, corre la batalla completa sin UI (visuals_enabled=false, misma
-## técnica que battle_test.gd) y verifica el retorno al mapa en la misma
+## código, corre la batalla completa y verifica el retorno al mapa en la misma
 ## posición, con el mapa despausado.
+##
+## Dos modos, según haya pantalla o no:
+## [br]· [b]headless[/b]: la batalla corre sin UI ([code]visuals_enabled = false[/code],
+##   misma técnica que battle_test.gd) y a 20x; al terminar sale del proceso.
+## [br]· [b]con pantalla[/b] (el build web de depuración): la batalla corre
+##   [b]CON UI[/b], para poder auditar cómo se ve la pantalla de combate, y al
+##   terminar NO se llama [method SceneTree.quit] — cerrar el motor a mano desde
+##   un script dispara errores de teardown en el runtime web y además borraría de
+##   la pantalla lo que queremos mirar.
 ##
 ## Correr headless:
 ## [codeblock]
@@ -28,10 +36,13 @@ var _turns: int = 0
 var _finished: bool = false
 var _defeat_mode: bool = false
 var _summary: Dictionary = {}
+## Con pantalla la batalla se juega con UI; en headless, sin UI y a 20x.
+var _con_pantalla: bool = false
 
 
 func _ready() -> void:
-	if DisplayServer.get_name() == "headless":
+	_con_pantalla = DisplayServer.get_name() != "headless"
+	if not _con_pantalla:
 		Engine.time_scale = 20.0
 	_defeat_mode = OS.get_environment("ENCOUNTER_TEST_MODE") == "defeat"
 	Encounters.battle_mounting.connect(_on_battle_mounting)
@@ -44,6 +55,10 @@ func _ready() -> void:
 func _run() -> void:
 	# El mapa pasa a ser current_scene; este nodo queda como hermano en root
 	# (Encounters pausa current_scene, no al driver).
+	# GameState.scene lo inicializa normalmente SceneSwitcher; acá el mapa se
+	# monta a mano, así que hay que sembrarlo o los props del mapa revientan en
+	# su _ready() contra un GameState.scene nulo (luces, spawn points).
+	GameState.set_scene(ResourceUID.ensure_path(CAMINO_UID))
 	_map = (load(CAMINO_UID) as PackedScene).instantiate()
 	get_tree().root.add_child(_map)
 	get_tree().current_scene = _map
@@ -92,7 +107,7 @@ func _check_victory(result: StringName, player: Node2D, pos_before: Vector2) -> 
 		_summary.get("xp_gained", 0),
 		(_summary.get("level_ups", []) as Array).size(),
 	])
-	get_tree().quit(0)
+	_salir(0)
 
 
 func _check_defeat(result: StringName) -> void:
@@ -121,16 +136,20 @@ func _check_defeat(result: StringName) -> void:
 	_finished = true
 	print("== ENCOUNTER_TEST RESULT: defeat ==")
 	print("== vuelta a home_scene (%s) | party revivida a >=1 HP ==" % home_path)
-	get_tree().quit(0)
+	_salir(0)
 
 
-## Punto de extensión del bridge: acá el test apaga la UI de batalla y se
+## Punto de extensión del bridge: acá el test decide si la batalla lleva UI y se
 ## engancha para manejarla por señales (split lógica/UI del addon).
 func _on_battle_mounting(engine: BattleEngine) -> void:
 	_engine = engine
-	_engine.visuals_enabled = false
+	# OJO: esto se corre ANTES del add_child, o sea antes de BattlePhaseInit, que
+	# es la fase que arma la UI. Apagar los visuals después no alcanza (y dejarlos
+	# apagados con pantalla deja la UI cruda de battle.tscn tirada sobre el mapa).
+	_engine.visuals_enabled = _con_pantalla
 	_signals = engine.battle_signals
-	_signals.battler_damaged.connect(_on_battler_damaged)
+	if not _con_pantalla:
+		_signals.battler_damaged.connect(_on_battler_damaged)
 
 
 func _process(_delta: float) -> void:
@@ -155,7 +174,7 @@ func _process(_delta: float) -> void:
 
 ## Con visuals apagados nadie emite damage_finished (lo emite la UI al final
 ## de la animación de daño); lo emitimos diferido para destrabar el await de
-## BattleActionAttack.resolve().
+## BattleActionAttack.resolve(). Con pantalla no se conecta: la emite la UI.
 func _on_battler_damaged(_battler: Battler) -> void:
 	_signals.damage_finished.emit.call_deferred()
 
@@ -178,4 +197,16 @@ func _choose_turn_actions(phase: BattlePhase) -> void:
 func _fail(reason: String) -> void:
 	_finished = true
 	push_error("[EncounterTest] FALLÓ: %s" % reason)
-	get_tree().quit(1)
+	_salir(1)
+
+
+## Cerrar el motor a mano solo tiene sentido headless (es lo que le da el código
+## de salida al CI). Con pantalla se deja la escena como quedó: en el runtime web
+## un quit() por script tira un error de teardown en el JS del motor
+## («Cannot read properties of null (reading 'currentTime')», el AudioContext ya
+## desarmado) y encima borra de la pantalla lo que se quiere auditar.
+func _salir(codigo: int) -> void:
+	if _con_pantalla:
+		print("== [EncounterTest] fin (código %d); con pantalla no se cierra el motor ==" % codigo)
+		return
+	get_tree().quit(codigo)

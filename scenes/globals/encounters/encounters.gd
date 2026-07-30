@@ -94,10 +94,21 @@ func start_encounter(settings: BattleSettings) -> StringName:
 
 	var battle: Node = load(BATTLE_SCENE_UID).instantiate()
 	var engine: BattleEngine = battle.get_node("BattleEngine")
-	# Ojo: BattleEngine._ready() arranca BattlePhaseInit apenas entra al árbol,
-	# así que los settings van seteados ANTES de add_child (battle.initialize()
-	# upstream llega tarde y además espera una señal que ya se emitió al boot).
-	engine.battle_settings = settings
+	# Ojo: BattleEngine._ready() arranca BattlePhaseInit apenas entra al árbol, y
+	# esa fase es la que arma TODA la UI (fondo, battlers, menús). Así que la
+	# inicialización va ANTES de add_child, no después.
+	#
+	# battle.initialize() hace justo eso (settings + battle_ui + el puente de
+	# battle_finished) y ya no se cuelga: el await de InputManager quedó
+	# condicionado a InputManager.setup_complete (parche en battle.gd), así que
+	# con el input ya listo termina de forma síncrona. No se hace await acá a
+	# propósito: tiene que completar en este mismo cuadro.
+	battle.initialize(settings)
+	if engine.battle_settings != settings:
+		# Red de seguridad: si algún día el input NO estuviera listo, initialize()
+		# quedaría suspendido y la batalla arrancaría sin settings.
+		push_warning("[Encounters] initialize() quedó suspendido; se cablean los settings a mano.")
+		engine.battle_settings = settings
 	var signals: BattleSignals = engine.battle_signals
 
 	var result: Array[StringName] = []

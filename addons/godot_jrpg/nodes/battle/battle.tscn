@@ -74,6 +74,8 @@ _data = {
 &"damage": ExtResource("19_uoapb")
 }
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_players"]
+
 [node name="Battle" type="Node" unique_id=1635175538]
 script = ExtResource("1_waeis")
 
@@ -88,8 +90,9 @@ critical_chance_formula = SubResource("Resource_fxdbb")
 damage_calculator = SubResource("Resource_7kyfu")
 
 [node name="BattleUI" type="Control" parent="." unique_id=689135276]
-layout_mode = 3
-anchors_preset = 0
+layout_mode = 0
+offset_right = 2560.0
+offset_bottom = 1440.0
 scale = Vector2(0.5, 0.5)
 script = ExtResource("6_ai006")
 battle_signals = ExtResource("4_nterj")
@@ -99,23 +102,27 @@ status_icon = ExtResource("12_5nw2l")
 
 [node name="Background" type="TextureRect" parent="BattleUI" unique_id=1870404302]
 unique_name_in_owner = true
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 704.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 expand_mode = 1
 
 [node name="Enemies" type="Control" parent="BattleUI" unique_id=807974783]
 unique_name_in_owner = true
 anchors_preset = 0
+scale = Vector2(2, 2)
 
 [node name="MenuItems" type="PanelContainer" parent="BattleUI" unique_id=12032347]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
-offset_left = 256.0
-offset_top = 218.0
-offset_right = 1024.0
-offset_bottom = 512.0
+offset_left = 512.0
+offset_top = 436.0
+offset_right = 2048.0
+offset_bottom = 1024.0
 script = ExtResource("10_et2ga")
 battle_signals = ExtResource("4_nterj")
 item_button = ExtResource("15_l0f1s")
@@ -138,10 +145,10 @@ columns = 2
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
-offset_left = 256.0
-offset_top = 218.0
-offset_right = 1024.0
-offset_bottom = 512.0
+offset_left = 512.0
+offset_top = 436.0
+offset_right = 2048.0
+offset_bottom = 1024.0
 script = ExtResource("11_3ra5b")
 battle_signals = ExtResource("4_nterj")
 skill_button = ExtResource("17_i0o3d")
@@ -161,19 +168,25 @@ columns = 2
 
 [node name="MenuBottom" type="PanelContainer" parent="BattleUI" unique_id=953539049]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 256.0
-offset_top = 512.0
-offset_right = 1024.0
-offset_bottom = 702.0
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -600.0
+offset_right = -64.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BattleUI/MenuBottom" unique_id=1167888038]
-custom_minimum_size = Vector2(0, 170)
+custom_minimum_size = Vector2(0, 340)
 layout_mode = 2
 
 [node name="MenuSelection" type="PanelContainer" parent="BattleUI/MenuBottom/HBoxContainer" unique_id=264605814]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 0)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="BattleUI/MenuBottom/HBoxContainer/MenuSelection" unique_id=952128496]
@@ -216,7 +229,7 @@ script = ExtResource("16_cpmal")
 [node name="MenuFight" type="PanelContainer" parent="BattleUI/MenuBottom/HBoxContainer" unique_id=1175953099]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(120, 0)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="BattleUI/MenuBottom/HBoxContainer/MenuFight" unique_id=1774659175]
@@ -277,6 +290,7 @@ script = ExtResource("22_tihi7")
 [node name="MenuPlayers" type="PanelContainer" parent="BattleUI/MenuBottom/HBoxContainer" unique_id=669055748]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_players")
 script = ExtResource("21_l0f1s")
 
 [node name="MarginContainer" type="MarginContainer" parent="BattleUI/MenuBottom/HBoxContainer/MenuPlayers" unique_id=467431801]
@@ -289,10 +303,11 @@ theme_override_constants/margin_bottom = 4
 [node name="Players" type="VBoxContainer" parent="BattleUI/MenuBottom/HBoxContainer/MenuPlayers/MarginContainer" unique_id=1733770711]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/separation = 8
 alignment = 1
 
 [node name="Faces" type="PanelContainer" parent="BattleUI/MenuBottom/HBoxContainer" unique_id=1012302201]
-custom_minimum_size = Vector2(170, 0)
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 
 [node name="Face" type="TextureRect" parent="BattleUI/MenuBottom/HBoxContainer/Faces" unique_id=467451471]
@@ -311,14 +326,16 @@ libraries/biblioteca = SubResource("AnimationLibrary_56x7e")
 [node name="Messenger" type="PanelContainer" parent="BattleUI" unique_id=1565607411]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 256.0
-offset_top = 16.0
-offset_right = 1024.0
-offset_bottom = 72.0
+offset_left = 512.0
+offset_top = 32.0
+offset_right = 2048.0
+offset_bottom = 208.0
 
 [node name="MessengerLabel" type="RichTextLabel" parent="BattleUI/Messenger" unique_id=1485600197]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
+fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 

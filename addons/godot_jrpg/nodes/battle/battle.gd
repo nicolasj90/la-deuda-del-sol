@@ -14,8 +14,17 @@ func _enter_tree() -> void:
 ## It receives [BattleSettings] from a [CommandStartBattle]; await for [InputManager] 
 ## to setup; reference [BattleEngine] and [BattleUI] and initialize the battle engine 
 ## with battle settings and battle UI.
+## [b]LA DEUDA PATCH[/b]: el await es condicional. [InputManager] es un autoload
+## que emite [signal InputManager.input_setup_complete] una sola vez, en el boot;
+## si la batalla se monta después (nuestro bridge de encuentros la monta como
+## overlay sobre el mapa) el await no vuelve nunca. Con la bandera
+## [member InputManager.setup_complete] la función termina de forma síncrona
+## cuando el input ya está listo, así se puede llamar ANTES de
+## [method Node.add_child] (que es cuando [BattleEngine] arranca
+## [BattlePhaseInit] y necesita los settings puestos).
 func initialize(settings: BattleSettings):
-	await InputManager.input_setup_complete
+	if not InputManager.setup_complete:
+		await InputManager.input_setup_complete
 	var engine: BattleEngine = $BattleEngine
 	var ui: BattleUI = $BattleUI
 	engine.initialize(settings, ui)

@@ -38,9 +38,12 @@ static func cargar(forzar: bool = false) -> Dictionary:
 		if not nombre.ends_with(".tres"):
 			continue
 		var ruta: String = "%s/%s" % [RUTA_TRES, nombre]
-		var res: Resource = ResourceLoader.load(
-			ruta, "CartaDePalabra", ResourceLoader.CACHE_MODE_REUSE
-		)
+		# SIN type_hint a propósito: en un build exportado los .tres se convierten
+		# a .res binarios y el loader no reconoce el nombre de una clase custom de
+		# GDScript, así que pedirle "CartaDePalabra" hace fallar el load con
+		# «No loader found for resource ... (expected type: CartaDePalabra)» y el
+		# set de cartas queda vacío. El tipo se valida abajo con el cast.
+		var res: Resource = ResourceLoader.load(ruta, "", ResourceLoader.CACHE_MODE_REUSE)
 		var carta: CartaDePalabra = res as CartaDePalabra
 		if carta == null:
 			_errores.append("%s: no es una CartaDePalabra" % ruta)

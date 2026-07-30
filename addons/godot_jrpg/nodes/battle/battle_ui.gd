@@ -158,10 +158,15 @@ func refresh_status():
 # === CONNECTED METHODS ===
 # --- Background ---
 ## Used to set background.
+##
+## LA DEUDA PATCH: ya no se pisa el tamaño con
+## [member BattleSettings.background_size]. En battle.tscn el Background está
+## anclado al rect completo de [BattleUI], así que el fondo tapa TODA la pantalla
+## sea cual sea la resolución; escribirle size acá lo dejaba del tamaño que
+## dijera el .tres (y con el mapa asomando por los costados).
 func _on_set_background_emitted(settings: BattleSettings):
 	await wait_ready()
 	background.texture = settings.background
-	background.size = settings.background_size
 
 # --- Actors ---
 ## Used to instantiate enemies.

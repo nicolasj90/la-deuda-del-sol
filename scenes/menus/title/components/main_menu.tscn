@@ -27,6 +27,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Logo" type="TextureRect" parent="LogoButtonSplit/LogoContainer" unique_id=253230428]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

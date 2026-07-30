@@ -47,7 +47,12 @@ static func cargar(forzar: bool = false) -> Dictionary:
 		if not nombre.ends_with(".tres"):
 			continue
 		var ruta: String = "%s/%s" % [RUTA_TRES, nombre]
-		var res: Resource = ResourceLoader.load(ruta, "PerfilIA", ResourceLoader.CACHE_MODE_REUSE)
+		# SIN type_hint a propósito: en un build exportado los .tres se convierten
+		# a .res binarios y el loader no reconoce el nombre de una clase custom de
+		# GDScript, así que pedirle "PerfilIA" hace fallar el load con
+		# «No loader found for resource ... (expected type: PerfilIA)».
+		# El tipo se valida abajo con el cast.
+		var res: Resource = ResourceLoader.load(ruta, "", ResourceLoader.CACHE_MODE_REUSE)
 		var perfil: PerfilIA = res as PerfilIA
 		if perfil == null:
 			_errores.append("%s: no es un PerfilIA" % ruta)

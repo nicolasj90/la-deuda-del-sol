@@ -83,7 +83,12 @@ func cargar_tablas(forzar: bool = false) -> int:
 	nombres.sort()
 	for nombre: String in nombres:
 		var ruta: String = "%s/%s" % [RUTA_TABLAS, nombre]
-		var res: Resource = ResourceLoader.load(ruta, "TablaDeDrops", ResourceLoader.CACHE_MODE_REUSE)
+		# SIN type_hint a propósito: en un build exportado los .tres se convierten
+		# a .res binarios y el loader no reconoce el nombre de una clase custom de
+		# GDScript, así que pedirle "TablaDeDrops" hace fallar el load con
+		# «No loader found for resource ... (expected type: TablaDeDrops)».
+		# El tipo se valida abajo con el cast.
+		var res: Resource = ResourceLoader.load(ruta, "", ResourceLoader.CACHE_MODE_REUSE)
 		var tabla: TablaDeDrops = res as TablaDeDrops
 		if tabla == null:
 			_errores.append("%s: no es una TablaDeDrops" % ruta)
