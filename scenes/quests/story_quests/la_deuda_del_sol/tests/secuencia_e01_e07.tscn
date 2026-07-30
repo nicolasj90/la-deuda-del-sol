@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bsecuenciaf5a1"]
+
+[ext_resource type="Script" path="res://scenes/quests/story_quests/la_deuda_del_sol/tests/secuencia_e01_e07.gd" id="1_secuencia"]
+
+[node name="SecuenciaE01E07" type="Node2D"]
+editor_description = "Revisión adversarial de F5a: la secuencia E01→E07 completa en un solo proceso, con save/load real a mitad de camino."
+script = ExtResource("1_secuencia")

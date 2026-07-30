@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bspqflbkfi5v4"
+path="res://.godot/imported/vecinos.dialogue-517f43203c8bf287087fcfc51e5996f6.tres"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/vecinos.dialogue"
+dest_files=["res://.godot/imported/vecinos.dialogue-517f43203c8bf287087fcfc51e5996f6.tres"]
+
+[params]
+
+defaults=true

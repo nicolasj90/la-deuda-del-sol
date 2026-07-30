@@ -44,6 +44,10 @@ func _ready() -> void:
 	if settings_path.is_empty():
 		settings_path = DEFAULT_SETTINGS_PATH
 	_engine.battle_settings = load(settings_path)
+	# Los encuentros del juego llevan party vacía (la inyecta Encounters con la
+	# party viva); acá corremos el engine pelado, así que inyectamos la de cinco.
+	if _engine.battle_settings.party == null:
+		_engine.battle_settings.party = load("res://resources/combate/party_deuda.tres")
 	_signals = _engine.battle_signals
 	_signals.battler_damaged.connect(_on_battler_damaged)
 	_signals.inner_battle_ended.connect(_on_battle_won)

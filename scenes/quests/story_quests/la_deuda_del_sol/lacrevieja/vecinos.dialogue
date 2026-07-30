@@ -1,0 +1,60 @@
+# SPDX-FileCopyrightText: La Deuda del Sol Authors
+# SPDX-License-Identifier: MPL-2.0
+#
+# Vecinos de color de Lacrevieja (fiesta de la Mayoría de Palabra).
+#
+# ATENCIÓN, SALA: TODO este archivo es PLACEHOLDER. El guion de E01–E07 no
+# escribe líneas para vecinos ambientales: sólo Rosaura, la Maestra, Cosme, el
+# Fedatario, el Decano y Ferra tienen texto. Estas líneas están para poblar la
+# plaza y respetan el registro de Valdepalabra (prenda, promesita, en mora,
+# lámpara de palabra, consta) y las reglas de la biblia:
+#   — ni una palabra de lunfardo del Fiado antes de E16 (§ 4f.6);
+#   — nadie comenta la campanada (la oye SÓLO Ciro en E04, § 5b);
+#   — nadie nombra al Acreedor, a la Cámara ni a la madre de Ciro.
+# Pase de calidad del guion pendiente: reemplazar por texto de sala.
+#
+# Un solo archivo para los tres vecinos: el router se ramifica por `npc_name`,
+# que llega como estado de juego (el NPC es el padre del TalkBehavior).
+
+~ start
+if npc_name == "vecino de las mesas":
+	=> mesas
+elif npc_name == "vecino de las gallinas":
+	=> gallinas
+else:
+	=> vecina
+
+
+~ vecina
+if Lacrevieja.ceremonia_hecha():
+	=> vecina_despues
+else:
+	=> vecina_antes
+
+~ vecina_antes
+VECINA: Diecisiete. Y todavía barre la vereda por adelantado.
+=> END
+
+~ vecina_despues
+VECINA: Mayoría de palabra. Que le pese liviano, pobre.
+=> END
+
+
+~ mesas
+if Lacrevieja.plaza_lista():
+	=> mesas_luz
+else:
+	=> mesas_frio
+
+~ mesas_frio
+VECINO: Tres lámparas frías el día de una mayoría. Mal empieza la costumbre.
+=> END
+
+~ mesas_luz
+VECINO: Tres lámparas a pleno sol. Gasto, pero queda bien.
+=> END
+
+
+~ gallinas
+VECINO: Cuidado con las gallinas, que hoy andan con derecho adquirido.
+=> END

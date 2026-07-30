@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://0enyu5v4ra34" path="res://scenes/game_elements/props/spawn_point/components/spawn_point.gd" id="10_spawn"]
 [ext_resource type="PackedScene" uid="uid://bencareascn001" path="res://scenes/game_elements/props/encounter_area/encounter_area.tscn" id="11_encarea"]
 [ext_resource type="Resource" uid="uid://bencdiezmo0001" path="res://resources/combate/encuentros/camino_del_diezmo_encuentro.tres" id="12_encset"]
+[ext_resource type="PackedScene" uid="uid://bcampamentoe07" path="res://scenes/quests/story_quests/la_deuda_del_sol/vencimiento/componentes/campamento.tscn" id="13_campamento"]
+[ext_resource type="Script" path="res://scenes/quests/story_quests/la_deuda_del_sol/componentes/restaurador_del_acto.gd" id="99_restaurador"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tele"]
 size = Vector2(32, 448)
@@ -132,3 +134,14 @@ metadata/_custom_type_script = "uid://0enyu5v4ra34"
 [node name="CartelVinedo" parent="OnTheGround" instance=ExtResource("9_sign")]
 position = Vector2(1312, 288)
 text = "Viñedo en Prenda — propiedad de Vidal, viñatero. Embargada por promesa incumplida. No se pasa: se cumple."
+
+[node name="SpawnCampamento" type="Marker2D" parent="OnTheGround" groups=["spawn_point"]]
+position = Vector2(832, 560)
+script = ExtResource("10_spawn")
+metadata/_custom_type_script = "uid://0enyu5v4ra34"
+
+[node name="Campamento" parent="OnTheGround" instance=ExtResource("13_campamento")]
+position = Vector2(832, 448)
+
+[node name="RestauradorDelActo" type="Node" parent="."]
+script = ExtResource("99_restaurador")

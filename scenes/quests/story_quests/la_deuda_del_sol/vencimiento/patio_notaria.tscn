@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bpationotaria6"]
+
+[ext_resource type="Script" path="res://scenes/quests/story_quests/la_deuda_del_sol/vencimiento/componentes/patio_notaria.gd" id="1_director"]
+[ext_resource type="Script" uid="uid://c8405c212rbn6" path="res://scenes/game_elements/props/background_music/components/background_music.gd" id="2_bgm"]
+[ext_resource type="AudioStream" uid="uid://bbamdm6wtjjcn" path="res://assets/first_party/music/Threadbare_Bed.ogg" id="3_music"]
+[ext_resource type="PackedScene" uid="uid://iu2q66clupc6" path="res://scenes/game_elements/characters/player/player.tscn" id="4_player"]
+[ext_resource type="SpriteFrames" uid="uid://dtoylirwywk0j" path="res://scenes/game_elements/characters/components/sprite_frames/storyweaver_blue.tres" id="5_frames"]
+[ext_resource type="Script" uid="uid://0enyu5v4ra34" path="res://scenes/game_elements/props/spawn_point/components/spawn_point.gd" id="6_spawn"]
+[ext_resource type="PackedScene" uid="uid://covsdqqsd6rsy" path="res://scenes/game_elements/props/sign/sign.tscn" id="7_sign"]
+[ext_resource type="PackedScene" uid="uid://bencareascn001" path="res://scenes/game_elements/props/encounter_area/encounter_area.tscn" id="8_encarea"]
+[ext_resource type="Resource" uid="uid://be06decanof1x" path="res://resources/combate/encuentros/e06_decano_fase1.tres" id="9_fase1"]
+[ext_resource type="Resource" uid="uid://be06decanof2x" path="res://resources/combate/encuentros/e06_decano_fase2.tres" id="10_fase2"]
+
+[node name="PatioNotaria" type="Node2D" node_paths=PackedStringArray("area_fase1", "area_fase2")]
+editor_description = "E06 — «Contrato roto, contrato nulo». Patio de la notaría de Lacrevieja, madrugada: boss 1 en dos fases (Ferra enemiga → Ferra Garante) y firma-carta del Tasador Decano. Arte placeholder (fondo de noche plano): pendiente de tileset propio."
+script = ExtResource("1_director")
+titulo_de_escena = "E06"
+area_fase1 = NodePath("Encuentros/EncuentroFase1")
+area_fase2 = NodePath("Encuentros/EncuentroFase2")
+
+[node name="Fondo" type="ColorRect" parent="."]
+z_index = -100
+offset_left = -320.0
+offset_top = -320.0
+offset_right = 1600.0
+offset_bottom = 1040.0
+color = Color(0.0784314, 0.0705882, 0.0980392, 1)
+
+[node name="BackgroundMusic" type="Node" parent="."]
+script = ExtResource("2_bgm")
+stream = ExtResource("3_music")
+metadata/_custom_type_script = "uid://c8405c212rbn6"
+
+[node name="Encuentros" type="Node2D" parent="."]
+
+[node name="EncuentroFase1" parent="Encuentros" instance=ExtResource("8_encarea")]
+editor_description = "Fase 1 del boss: el Decano leyendo, el atril destruible, dos alguaciles y Ferra del lado enemigo. Sin CollisionShape2D: lo dispara el director."
+position = Vector2(640, 300)
+battle_settings = ExtResource("9_fase1")
+one_shot = true
+
+[node name="EncuentroFase2" parent="Encuentros" instance=ExtResource("8_encarea")]
+editor_description = "Fase 2 del boss: el Decano sin atril, con Ferra ya en la party. Deja la firma-carta garantizada. Sin CollisionShape2D: lo dispara el director."
+position = Vector2(640, 420)
+battle_settings = ExtResource("10_fase2")
+one_shot = true
+
+[node name="OnTheGround" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="OnTheGround" instance=ExtResource("4_player")]
+position = Vector2(520, 400)
+player_name = "Ciro"
+sprite_frames = ExtResource("5_frames")
+
+[node name="Camera2D" type="Camera2D" parent="OnTheGround/Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 720
+
+[node name="SpawnPatio" type="Marker2D" parent="OnTheGround" groups=["spawn_point"]]
+position = Vector2(520, 400)
+script = ExtResource("6_spawn")
+metadata/_custom_type_script = "uid://0enyu5v4ra34"
+
+[node name="Cartel" parent="OnTheGround" instance=ExtResource("7_sign")]
+position = Vector2(760, 344)
+text = "Notaría de Lacrevieja — portón cerrado. Horario de atención: el vencimiento."

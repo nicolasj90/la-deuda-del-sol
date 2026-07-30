@@ -1,0 +1,151 @@
+# SPDX-FileCopyrightText: La Deuda del Sol Authors
+# SPDX-License-Identifier: MPL-2.0
+#
+# Rosaura, panadera de Lacrevieja. E02 (promesita 1 + cierre de la plaza) y E03
+# (duelo tutorial de «De Palabra»). Texto TEXTUAL de
+# docs/guion/acto1/01-lacrevieja-y-vencimiento.md — no reescribir líneas.
+#
+# Títulos:
+#   ~ start          — router por estado (es el que abre el botón de interacción)
+#   ~ apertura       — lo corre el prólogo (E02: la Ley del Empeño explicada)
+#   ~ promesita      — promesita 1: la leña del horno grande
+#   ~ recordatorio   — PLACEHOLDER (el guion no escribe línea de recordatorio)
+#   ~ esperando      — PLACEHOLDER (leña entrada, faltan lámparas)
+#   ~ cumplida       — la promesita se disuelve y prende una lámpara
+#   ~ plaza_encendida— cierre de E02, y de ahí al horno
+#   ~ duelo          — E03: duelo tutorial contra el mazo puro Garante
+#   ~ despues        — línea repetible de después de E03
+
+~ start
+if Lacrevieja.duelo_rosaura_ganado():
+	=> despues
+elif Lacrevieja.plaza_lista():
+	=> plaza_encendida
+elif Lacrevieja.promesa_cumplida_ya("rosaura"):
+	=> esperando
+elif Lacrevieja.promesa_hecha_ya("rosaura"):
+	=> recordatorio
+else:
+	=> promesita
+
+
+~ apertura
+Plaza de Lacrevieja, mañana. Guirnaldas, mesas largas, tres lámparas de palabra apagadas en sus postes de hierro.
+Gallinas por todos lados, con la soberbia de quien es mayoría. ROSAURA, harina hasta los codos, cuelga un cartel\: «MAYORÍA DE PALABRA DE CIRO ALBAR — HOY».
+ROSAURA: ¡Ahí está! El hombre del día.
+CIRO: Todavía no. La ceremonia es al atardecer. Hasta entonces soy el menor del día.
+ROSAURA: Vos siempre tan exacto. Vení, que hay trabajo\: las tres lámparas de la plaza amanecieron frías. Y ya sabés cómo se encienden.
+CIRO: Con palabra cumplida.
+ROSAURA: Fresquita y del festejado, como manda la costumbre\: tres vecinos, tres promesitas, tres lámparas. Elegí a quién le prometés primero.
+CIRO: ¿Puedo prometerles a los tres primero y cumplir después en orden de vencimiento?
+ROSAURA: ...Podés, sí. Nadie lo había preguntado nunca, pero podés.
+=> END
+
+
+~ promesita
+ROSAURA: A mí me faltan brazos\: la leña del horno grande sigue en el galpón, y hoy se hornea para todo el pueblo.
+CIRO: Prometo entrar la leña antes del mediodía.
+do Lacrevieja.prometer("rosaura")
+Chasquido de lacre. Una promesita nueva, tibia, aparece colgada del cinto de Ciro. Rosaura la mira con cariño profesional, como a una masa que levó bien.
+ROSAURA: Mirá qué linda. Bien dicha, sin apuro, con intención. Se nota la escuela.
+CIRO: La intención es el requisito. Lo demás es dicción.
+=> END
+
+
+# PLACEHOLDER de sala: el guion no escribe recordatorio para la promesita pendiente.
+~ recordatorio
+ROSAURA: La leña sigue en el galpón, querido. Y el horno grande no se enciende solo.
+=> END
+
+
+# PLACEHOLDER de sala: el guion no escribe la espera entre la primera lámpara y las tres.
+~ esperando
+ROSAURA: Una lámpara ya está pagando. Faltan dos vecinos, querido, y falta el atardecer.
+=> END
+
+
+~ cumplida
+Última brazada. La promesita del cinto tiembla, brilla y se disuelve en una bocanada de calor. En la plaza, la {{Lacrevieja.ordinal_lampara()}} lámpara se enciende sola.
+ROSAURA: Eso que sentiste es una palabra volviendo a casa. No hay estufa que le gane.
+=> END
+
+
+~ plaza_encendida
+Mediodía. Tres lámparas encendidas a pleno sol, pálidas y orgullosas. Ciro cruza la plaza y las gallinas lo siguen en fila india, como una procesión de plumas.
+ROSAURA: Mirá cómo te siguen. La gallina de Lacrevieja es el animal más desconfiado del mundo civilizado. No le come de la mano a cualquiera\: sabe quién cumple.
+CIRO: Entonces esto es un certificado.
+ROSAURA: Con patas. Vení al horno cuando termines de dar vueltas\: te doy de almorzar y te muestro una cosa.
+CIRO: ¿Qué cosa?
+ROSAURA: Un juego. Del que no pesa.
+=> duelo
+
+
+~ duelo
+Horno de Rosaura, mediodía. Olor a pan y a lacre frío. Sobre la mesa enharinada, un mantel bordado con casillas\: un Estrado de tela.
+Rosaura baraja cartas selladas en un lacre gris, apagado, sin brillo. Le desliza a Ciro un mazo de la casa, gastado de manos ajenas\: el de enseñar.
+ROSAURA: Sentate. ¿Jugaste alguna vez a De Palabra?
+CIRO: Lo vi jugar. Nunca entendí por qué la gente grita.
+ROSAURA: Hoy vas a gritar. Primero\: mirá el lacre de las cartas.
+CIRO: Está gris. Parece... muerto.
+ROSAURA: Lacre muerto, exacto. Lo que se promete sobre esta mesa no ata, no pesa, no nace. Podés jurar disparates toda la tarde y levantarte tan liviano como te sentaste.
+CIRO: ¿Y eso es divertido?
+ROSAURA: Es el vértigo de los cumplidores, querido. Probá y después me contás.
+ROSAURA: Vos y yo somos Firmas\: mi palabra contra la tuya. La que se queda sin respaldo, perdió.
+CIRO: ¿Y esta señora con el pan?
+ROSAURA: Un Fiador. Gente que pone el cuerpo por tu Firma. Se pagan con Crédito. La mesa te fía de a uno por turno.
+CIRO: ¿Por qué de a uno?
+ROSAURA: Porque así se hace la confianza, querido. Despacito y viendo cómo venís pagando.
+CIRO: Esta gallina brilla.
+ROSAURA: Porque la podés jugar bajo promesa\: "prometo que no ataca por dos turnos". Cumplís, y se te vuelve Gallina Cumplidora — y esa ya pesa en serio. Rompés...
+CIRO: ¿Si rompo?
+ROSAURA: Nace un Quebranto de tu lado y te muerde el Aval a vos. Como en la vida, pero en chiquito y sin velorio.
+CIRO: No pienso romper.
+ROSAURA: Todos dicen eso hasta que les conviene. Por eso el juego es bueno.
+ROSAURA: Miga Mayor, al Estrado. Garante\: mientras ella esté en pie, a mi Firma no la toca nadie. De mi mesa nadie se levanta con hambre... ni llega a la cocinera sin pasar por el pan.
+CIRO: Entiendo. Tu mazo es una fila para comprar pan.
+ROSAURA: Mi mazo es un abrazo, querido. Con contragolpe.
+Ciro estudia su mano. Largo. La apoya en la mesa sin darla vuelta. Da lo mismo\: la canta entera.
+CIRO: Tengo dos Gallinas, un Peón de Viña y la Lámpara de Palabra. Pienso jugar la Lámpara y una Gallina bajo promesa.
+ROSAURA: ...¿Por qué me decís lo que tenés?
+CIRO: Me preguntaste si entendía la mano. La forma más corta de responder era decírtela.
+ROSAURA: Nadie te preguntó la mano, Ciro.
+CIRO: Ah. Bueno, ya está dicha. No la voy a desdecir\: sería peor.
+ROSAURA: ...Es una táctica. Del seminario de fedatarios. Me querés llenar la cabeza con tus cartas para que juegue contra fantasmas.
+CIRO: Te estoy diciendo la verdad.
+ROSAURA: ¡ESO! Eso es exactamente lo que haría un tramposo finísimo.
+do balloon.hide()
+do Lacrevieja.duelo_con_rosaura()
+do balloon.show()
+if DueloLauncher.gano:
+	=> duelo_ganado
+else:
+	=> duelo_perdido
+
+
+~ duelo_ganado
+La Gallina de Lacrevieja se sacude, brilla, y en su lugar queda una Gallina Cumplidora 2/3, con sello, con pechera. Ciro se para de golpe, tirando la silla.
+CIRO: ¡CUMPLIÓ!
+CIRO: Perdón. Perdón. Me salió.
+ROSAURA: ¿Viste que ibas a gritar?
+Turnos finales. El Aval de Rosaura llega a cero. Ella mira la mesa, mira a Ciro, y se saca la harina de las manos como quien se saca el delantal después de una jornada digna.
+ROSAURA: Me ganó anunciando la mano. Cuarenta años en esta mesa y me gana un debutante a lacre abierto.
+CIRO: ¿Estás enojada?
+ROSAURA: Estoy orgullosa, que es peor. Tomá.
+Junta el mazo de la casa — ese enseña y se queda en el horno — y le empuja por la mesa otro, atado con piolín de panadería, y una carta suelta encima\: la Gallina.
+do Coleccion.entregar_mazo_inicial()
+ROSAURA: Tu primer mazo propio. Y la Gallina va de regalo\: es de acá, sabe cumplir. Jugala siempre bajo promesa.
+CIRO: Gracias. Me gustó. Es raro\: prometí todo el rato y no pesó nada. Debe ser el único lugar del mundo donde la palabra sale gratis.
+ROSAURA: Por eso lo jugamos los que pagamos siempre, querido.
+=> END
+
+
+# PLACEHOLDER de sala: el guion da E03 por ganado (es el duelo tutorial). Esta
+# rama existe para que perder no trabe la zona.
+~ duelo_perdido
+ROSAURA: Se te levantó la mesa y todavía te queda la palabra. Sentate de nuevo cuando quieras, querido.
+=> END
+
+
+~ despues
+ROSAURA: Por eso lo jugamos los que pagamos siempre, querido.
+=> END

@@ -1,0 +1,58 @@
+# SPDX-FileCopyrightText: La Deuda del Sol Authors
+# SPDX-License-Identifier: MPL-2.0
+#
+# El Fedatario del pueblo. E04 — «Mayoría de palabra»: la ceremonia y la
+# PRIMERA CAMPANADA de la curva del § 5b (E04 → E07 → E15 → E19 → E27).
+# Texto TEXTUAL de docs/guion/acto1/01-lacrevieja-y-vencimiento.md.
+#
+# La campanada la dispara `do Lacrevieja.campanada()`: SFX de campana grave
+# (placeholder) + shake suave de cámara. Nunca como remate de chiste (§ 4f.2).
+
+~ start
+if Lacrevieja.ceremonia_hecha():
+	=> despues
+elif Lacrevieja.listo_para_ceremonia():
+	=> ceremonia
+else:
+	=> antes
+
+
+# PLACEHOLDER de sala: el guion no escribe al fedatario antes de la ceremonia.
+~ antes
+FEDATARIO: Todavía no, Ciro. La ceremonia es al atardecer, y el atardecer llega cuando la plaza está encendida.
+=> END
+
+
+~ ceremonia
+Plaza mayor, atardecer dorado. Las tres lámparas encendidas. El pueblo entero en semicírculo.
+Sobre el estrado de madera, el FEDATARIO, mayor, solemne, con el sello refrendario de Lacrevieja en las dos manos. Ciro sube los tres escalones con la prenda al hombro. El silencio se hace solo.
+FEDATARIO: Vecinos. Da fe este estrado de que Ciro Albar, criado a palabra vista de todos, cumple hoy diecisiete años y alcanza la Mayoría de Palabra.
+FEDATARIO: Ciro. Hasta hoy, tus promesas pesaban a medias, como pesa lo de los chicos\: con red. Desde esta tarde, lo que prometas pesa entero, se hereda entero y se cobra entero. ¿Entendés lo que eso significa?
+CIRO: Sí.
+FEDATARIO: Repetí conmigo\: "Doy mi palabra de dar mi palabra a sabiendas, y de cuyo peso dará fe el cielo y el vecindario."
+CIRO: Doy mi palabra de dar mi palabra a sabiendas... y de cuyo peso darán fe el cielo y el vecindario.
+FEDATARIO: ..."Dará".
+CIRO: Son dos sujetos. El cielo y el vecindario. Perdón. ¿Lo juro de vuelta?
+FEDATARIO: Vale la enmienda. Que conste en acta que el jurante corrigió la fórmula del pueblo a mitad del juramento.
+CIRO: Gracias. Juro.
+El fedatario alza el sello refrendario y lo baja sobre el aire, frente al pecho de Ciro. Luz de lacre rojo. Aplauso cerrado —
+— y debajo del aplauso, otro sonido. No viene del estrado. Grave, largo, como una campana muy lejos, en un campanario que no existe. Viene del hombro de Ciro.
+do Lacrevieja.campanada()
+El fedatario se queda con el sello en el aire. Lo baja despacio, con más cuidado del necesario. Mira el hombro de Ciro. En seguida mira otra cosa. Cualquier otra cosa.
+CIRO: ¿Escuchó eso?
+FEDATARIO: El bronce del estrado. Resuena cuando refrenda.
+CIRO: El estrado es de madera.
+FEDATARIO: ...Felicidades, Ciro. Andá con los tuyos, que la fiesta es tuya.
+Lo dice sin mirarlo. Abajo estalla la música. Rosaura levanta un vaso; Cosme baila mejor de lo que nadie hubiera querido saber; las gallinas evacúan la pista con dignidad.
+Ciro baja los escalones, recibe abrazos, sonríe donde hay que sonreír — y va quedando un paso afuera del círculo de luz, la mano sobre el sello heredado.
+Está tibio. Nunca antes estuvo tibio.
+CIRO: Diecisiete años prometiendo a la nada. Hoy sonó.
+Mira la plaza\: su pueblo, sus lámparas, su vida entera encendida a palabra cumplida.
+CIRO: ¿Quién escucha cuando yo prometo?
+do Lacrevieja.cerrar_ceremonia()
+=> END
+
+
+~ despues
+FEDATARIO: ...Felicidades, Ciro. Andá con los tuyos, que la fiesta es tuya.
+=> END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://pat86rmxcg2h"
+path="res://.godot/imported/cosme.dialogue-a3dfb019de54b6a58d730e76174cc59d.tres"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/cosme.dialogue"
+dest_files=["res://.godot/imported/cosme.dialogue-a3dfb019de54b6a58d730e76174cc59d.tres"]
+
+[params]
+
+defaults=true

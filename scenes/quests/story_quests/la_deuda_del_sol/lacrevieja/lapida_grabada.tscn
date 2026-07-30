@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://blapidagrabada01"]
+
+[ext_resource type="Script" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/components/lapida_grabada.gd" id="1_lapida"]
+[ext_resource type="Script" uid="uid://du8wfijr35r35" path="res://scenes/game_elements/props/interact_area/interact_area.gd" id="2_interact"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_piedra"]
+size = Vector2(44, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_interact"]
+radius = 48.0
+
+[node name="LapidaGrabada" type="Node2D"]
+script = ExtResource("1_lapida")
+
+[node name="Piedra" type="Polygon2D" parent="."]
+color = Color(0.53, 0.53, 0.5, 1)
+polygon = PackedVector2Array(-24, -52, 24, -52, 24, 0, -24, 0)
+
+[node name="Sombra" type="Polygon2D" parent="."]
+color = Color(0.36, 0.36, 0.34, 1)
+polygon = PackedVector2Array(-20, -46, 20, -46, 20, -8, -20, -8)
+
+[node name="Enmienda" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+visible = false
+color = Color(1, 0.92, 0.7, 0.85)
+polygon = PackedVector2Array(-6, -30, 6, -30, 6, -20, -6, -20)
+
+[node name="Grabado" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -96.0
+offset_top = -44.0
+offset_right = 96.0
+offset_bottom = -6.0
+theme_override_colors/font_color = Color(0.17, 0.16, 0.15, 1)
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Estado" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -96.0
+offset_top = -80.0
+offset_right = 96.0
+offset_bottom = -54.0
+theme_override_colors/font_color = Color(1, 0.9, 0.72, 1)
+theme_override_colors/font_outline_color = Color(0.1, 0.07, 0.06, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 12
+text = "piedra sin leer"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Cuerpo" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="FormaCuerpo" type="CollisionShape2D" parent="Cuerpo"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_piedra")
+
+[node name="InteractArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("2_interact")
+action = "Leer en voz alta"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, -22)
+shape = SubResource("CircleShape2D_interact")

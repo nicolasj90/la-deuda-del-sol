@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://btrigvenc0e05"]
+
+[ext_resource type="Script" path="res://scenes/quests/story_quests/la_deuda_del_sol/vencimiento/componentes/trigger_de_vencimiento.gd" id="1_trigger"]
+[ext_resource type="PackedScene" uid="uid://covsdqqsd6rsy" path="res://scenes/game_elements/props/sign/sign.tscn" id="2_sign"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trigger"]
+size = Vector2(96, 96)
+
+[node name="TriggerDeVencimiento" type="Node2D" node_paths=PackedStringArray("zona")]
+editor_description = "Puerta de entrada a E05: la casa de Ciro. Con la ceremonia de E04 hecha (o asumida, mientras E04 no exista) entrar acá pasa a la madrugada del embargo."
+script = ExtResource("1_trigger")
+zona = NodePath("Zona")
+
+[node name="Zona" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zona"]
+shape = SubResource("RectangleShape2D_trigger")
+
+[node name="Cartel" parent="." instance=ExtResource("2_sign")]
+position = Vector2(0, -72)
+text = "Casa de los Albar. La puerta queda abierta un segundo sobre la casa vacía."

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cfoe4oth73k0r"
+path="res://.godot/imported/maestra.dialogue-eb1a9693cbecef277cb8d19efe9514ec.tres"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/maestra.dialogue"
+dest_files=["res://.godot/imported/maestra.dialogue-eb1a9693cbecef277cb8d19efe9514ec.tres"]
+
+[params]
+
+defaults=true

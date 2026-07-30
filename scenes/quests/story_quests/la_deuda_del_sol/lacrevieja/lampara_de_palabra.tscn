@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://blamparapalabra01"]
+
+[ext_resource type="Script" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/components/lampara_de_palabra.gd" id="1_lampara"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_poste"]
+size = Vector2(14, 20)
+
+[node name="LamparaDePalabra" type="Node2D"]
+script = ExtResource("1_lampara")
+
+[node name="Halo" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+visible = false
+color = Color(1, 0.87, 0.5, 0.16)
+polygon = PackedVector2Array(-56, -128, 56, -128, 56, 8, -56, 8)
+
+[node name="Poste" type="Polygon2D" parent="."]
+color = Color(0.17, 0.16, 0.18, 1)
+polygon = PackedVector2Array(-5, -72, 5, -72, 5, 0, -5, 0)
+
+[node name="Base" type="Polygon2D" parent="."]
+color = Color(0.22, 0.21, 0.22, 1)
+polygon = PackedVector2Array(-14, -6, 14, -6, 14, 2, -14, 2)
+
+[node name="Farol" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+color = Color(0.26, 0.24, 0.24, 1)
+polygon = PackedVector2Array(-13, -96, 13, -96, 13, -72, -13, -72)
+
+[node name="Luz" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+visible = false
+color = Color(1, 0.93, 0.68, 0.72)
+polygon = PackedVector2Array(-26, -108, 26, -108, 26, -64, -26, -64)
+
+[node name="Estado" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -84.0
+offset_top = -132.0
+offset_right = 84.0
+offset_bottom = -106.0
+theme_override_colors/font_color = Color(1, 0.9, 0.72, 1)
+theme_override_colors/font_outline_color = Color(0.1, 0.07, 0.06, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 13
+text = "lámpara de palabra — fría"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Cuerpo" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="FormaCuerpo" type="CollisionShape2D" parent="Cuerpo"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_poste")

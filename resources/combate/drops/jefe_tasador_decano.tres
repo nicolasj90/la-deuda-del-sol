@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TablaDeDrops" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/integracion/tabla_de_drops.gd" id="1_tabla"]
+
+[resource]
+resource_name = "drops_jefe_tasador_decano"
+script = ExtResource("1_tabla")
+familia = "jefe_tasador_decano"
+enemigos = Array[String](["tasador_decano", "el Tasador Decano"])
+garantizadas = Array[String](["tasador_decano"])
+metadata/_custom_type_script = "res://scenes/card_game/integracion/tabla_de_drops.gd"

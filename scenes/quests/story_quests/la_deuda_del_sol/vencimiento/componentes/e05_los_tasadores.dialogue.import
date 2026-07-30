@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dk6v8pnf0d0tr"
+path="res://.godot/imported/e05_los_tasadores.dialogue-ba1e99de6ca36cb29bc90fb191f5f610.tres"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/la_deuda_del_sol/vencimiento/componentes/e05_los_tasadores.dialogue"
+dest_files=["res://.godot/imported/e05_los_tasadores.dialogue-ba1e99de6ca36cb29bc90fb191f5f610.tres"]
+
+[params]
+
+defaults=true

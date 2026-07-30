@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bwvckv2k8bbbt"
+path="res://.godot/imported/ejemplo_duelo.dialogue-a15f74bcd3c3591a0fce59af525039c3.tres"
+
+[deps]
+
+source_file="res://scenes/card_game/integracion/ejemplo_duelo.dialogue"
+dest_files=["res://.godot/imported/ejemplo_duelo.dialogue-a15f74bcd3c3591a0fce59af525039c3.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Party" format=3 uid="uid://bpartyacto1x1"]
+
+[ext_resource type="Script" uid="uid://bolkcf4dvwgu5" path="res://addons/godot_jrpg/resources/actors/party.gd" id="1_party"]
+[ext_resource type="Script" uid="uid://dtd4ygp60xnpt" path="res://addons/godot_jrpg/resources/actors/battlers/players/player.gd" id="2_player"]
+[ext_resource type="Resource" path="res://resources/combate/inventario_deuda.tres" id="3_inventario"]
+[ext_resource type="Resource" path="res://resources/combate/personajes/ciro.tres" id="4_ciro"]
+
+[resource]
+resource_name = "party_acto1"
+script = ExtResource("1_party")
+players = Array[ExtResource("2_player")]([ExtResource("4_ciro")])
+inventory = ExtResource("3_inventario")
+money = 20
+metadata/_custom_type_script = "uid://bolkcf4dvwgu5"

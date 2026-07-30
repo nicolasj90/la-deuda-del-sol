@@ -1,0 +1,86 @@
+# SPDX-FileCopyrightText: The Threadbare Authors
+# SPDX-License-Identifier: MPL-2.0
+#
+# E07 — «El primer campamento». Diálogo TEXTUAL de
+# docs/guion/acto1/01-lacrevieja-y-vencimiento.md.
+#
+# Lo corre el director campamento.gd cuando el jugador pisa el claro del camino,
+# ya con la bandera de E06 puesta. Al terminar, el director marca E07 y deja a
+# Ferra confirmada en la party global.
+# Nace acá el farol humano (cobra de noche, nunca de día), la sección «Ferra» de la
+# libreta y la SEGUNDA CAMPANADA (la primera que Ferra escucha).
+
+~ e07_campamento
+[i]Bosque a la vera del camino real, noche cerrada, sin luna. Un claro. Ciro apila ramitas con técnica de manual. Ferra vuelve de revisar el perímetro.[/i]
+Ferra: Ni un alma. Somos oficialmente fugitivos aburridos.
+Ciro: No hay yesca. Y el pedernal quedó en casa. Anotado en "cosas que perdí"\: pedernal, casa.
+Ferra: ¿En ese orden?
+Ciro: De menor a mayor.
+[i]Ferra decide no contestar eso.[/i]
+Ferra: Dejá el fuego. Comemos frío y listo.
+[i]Ciro intenta leer la libreta a oscuras. Nada. La acerca. Nada. La aleja con dignidad.[/i]
+Ciro: Ferra... cumplí algo, que no veo.
+Ferra: ¿Que cumpla...? ¿Qué te pensás que soy, una lámpara?
+Ciro: Anoche, en el patio, te tintineaba el cinto. Eso es un llavero de prendas pendientes. Alguna se podrá cumplir acá.
+Ferra: [i](agarrándose el llavero, ofendida)[/i] Esto es DECORATIVO.
+[i]Silencio de Ciro. Tintineo acusador.[/i]
+Ferra: ...Bueno. A ver.
+[i]Se sienta, desengancha el llavero, y va pasando promesitas como cuentas de un rosario del que se arrepiente. Lee los términos de memoria, al tacto.[/i]
+Ferra: "Pintar el techo del cuartel." No hay techo. "Devolver la mula." No hay mula. "Ir al casamiento de la sobrina del sargento"... ojalá nunca. "Cien flexiones antes de que muera el día."
+Ciro: Ese.
+Ferra: Lo dije en una taberna. Hace meses. Para ganar una discusión.
+Ciro: El término dice "el día", no dice cuál. Y este todavía no murió\: mientras no amanezca, es hoy.
+Ferra: ¿Vos me estás buscando un vacío legal para que YO haga flexiones?
+Ciro: Te estoy buscando luz.
+[i]Ferra bufa. Se saca el escudo. Apoya las palmas. Empieza. Uno. Dos. Tres...[/i]
+Ferra: [i](por la mitad, resoplando)[/i] ¿Cuánto... falta?
+Ciro: Cincuenta y tres.
+Ferra: ¡Decime "la mitad"!
+Ciro: La mitad era en cincuenta. Vas en cuarenta y siete. Faltan cincuenta y tres.
+Ferra: ¡ODIO que no redondees!
+[i]Sigue. Resopla. Ciro lleva la cuenta en voz alta\: exacta, implacable, sin perdonarle una.[/i]
+Ciro: Noventa y nueve. Cien. Consta.
+[i]La promesita del llavero tiembla, se enciende y se disuelve en una lumbre tibia y dorada que queda flotando sobre el campamento, como un farolito sin farol. Las ramitas de Ciro prenden solas.[/i]
+Ferra: [i](de espaldas en el pasto, agitando los brazos)[/i] ...Mirá vos. Mirá. Vos. Soy una lámpara.
+Ciro: Sos un farol humano. Es más luz que lámpara.
+Ferra: Ferra Cardal. Mercenaria y alumbrado público.
+[i]Ciro, ya con luz, abre la libreta. Pasa hojas hasta una en blanco. Alisa la página con ceremonia.[/i]
+Ciro: Con permiso. Abro sección nueva.
+Ferra: ¿Sección de qué?
+Ciro: "Ferra." Subtítulo\: "pendientes con valor lumínico". Techo del cuartel. Mula. Casamiento de la sobrina...
+Ferra: ¡Eso no es asunto tuyo!
+Ciro: Tintineás cuando caminás. Es asunto de cualquiera con oídos. Yo por lo menos lo ordeno alfabéticamente.
+Ferra: ...¿La mula va antes que el techo?
+Ciro: Casamiento, mula, techo.
+Ferra: [i](resignada, acomodándose contra el escudo)[/i] Por lo menos que la vergüenza tenga índice.
+[i]El fuego chico. Comen. Silencio de campamento nuevo, de dos que todavía no se conocen.[/i]
+Ciro: ¿Puedo preguntarte por qué viniste?
+Ferra: Uf. Ahí va el pibe con las preguntas con lacre.
+Ciro: Es una pregunta sin lacre. Contestar no te compromete.
+Ferra: Todo compromete, si lo contestás bien. A ver... yo... escolta... eventualmente destino.
+Ciro: Eso no tiene verbo.
+Ferra: ¡Exacto! Sin verbo no hay promesa. Sin promesa no hay peso. Sistema propio. Patentado.
+Ciro: [i](anotando)[/i] "Ferra habla un idioma nuevo. Gramática pendiente."
+[i]El fuego baja. Ferra mira la prenda, enorme junto a Ciro, brillando apenas con la lumbre. Se pone seria de golpe. Señala con el mentón.[/i]
+Ferra: ¿Y eso? ¿Qué debés vos, que te mandan decano y todo?
+Ciro: No sé. Está sellada desde que tengo seis años. Los términos no se pueden leer. Y ayer... venció. Dicen. Desde entonces pesa distinto.
+Ferra: ¿Distinto cuánto?
+Ciro: Como si ya no cargara la piedra. Como si empezara a cargar lo que dice adentro.
+Ferra: ...¿Y no te da miedo?
+Ciro: Me da algo peor. Me da que no sé qué prometí. Yo cumplo todo, Ferra. Todo. Siempre. ¿Cómo se cumple esto?
+[i]Pausa. Ciro apoya la mano abierta sobre el sello. Y lo dice — no a Ferra\: a la prenda.[/i]
+Ciro: Te prometo que vamos a entender qué sos.
+[i]La prenda suena. Grave, larga\: una campana debajo del mundo. Los bichos del bosque se callan todos a la vez.[/i]
+do campanada()
+[i]Ferra queda inmóvil, el mate a medio camino de la boca.[/i]
+Ferra: [i](bajito)[/i] ...¿Qué fue eso?
+Ciro: Empezó en mi ceremonia. Suena cuando prometo con intención.
+Ferra: Las prendas no suenan, Ciro. Las prendas pesan. Yo tengo veinte encima y ninguna dijo ni pío en su vida.
+Ciro: Ya sé.
+Ferra: ¿Y entonces?
+Ciro: Entonces alguien escucha.
+Ciro: Dormí. Hago la primera guardia. Total, ahora tengo luz... y lectura.
+[i]Ferra se acuesta contra el escudo, de cara al fuego. Antes de cerrar los ojos lo mira un rato largo\: al pibe doblado bajo su piedra, anotando pendientes ajenos con letra prolija. Aprieta el llavero con el puño para que no tintinee.[/i]
+[i]No sirve. Tintinea igual.[/i]
+[i]El fuego chico aguanta hasta el alba. El alba, como siempre, cumple.[/i]
+=> END

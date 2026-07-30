@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bcampamentoe07"]
+
+[ext_resource type="Script" path="res://scenes/quests/story_quests/la_deuda_del_sol/vencimiento/componentes/campamento.gd" id="1_campamento"]
+[ext_resource type="PackedScene" uid="uid://covsdqqsd6rsy" path="res://scenes/game_elements/props/sign/sign.tscn" id="2_sign"]
+[ext_resource type="AudioStream" uid="uid://dhvit65nmsp7h" path="res://assets/third_party/nepalese_hand_bells/handBells-g3.ogg" id="3_campana"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_campamento"]
+size = Vector2(128, 128)
+
+[node name="Campamento" type="Node2D" node_paths=PackedStringArray("zona", "campana")]
+editor_description = "E07 — «El primer campamento». Trigger de campamento para un mapa de ruta: al entrar al claro (con E06 ya cumplida) corre el diálogo del primer campamento, nace el farol humano de Ferra y suena la SEGUNDA CAMPANADA."
+script = ExtResource("1_campamento")
+titulo_de_escena = "E07"
+zona = NodePath("Zona")
+campana = NodePath("Campana")
+
+[node name="Zona" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zona"]
+shape = SubResource("RectangleShape2D_campamento")
+
+[node name="Campana" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_campana")
+volume_db = -4.0
+pitch_scale = 0.5
+
+[node name="Cartel" parent="." instance=ExtResource("2_sign")]
+position = Vector2(0, -80)
+text = "Claro a la vera del camino real. Ramitas apiladas con técnica de manual. Falta yesca."

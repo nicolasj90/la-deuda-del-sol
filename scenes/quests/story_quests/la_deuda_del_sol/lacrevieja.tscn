@@ -10,12 +10,42 @@
 [ext_resource type="SpriteFrames" uid="uid://dtoylirwywk0j" path="res://scenes/game_elements/characters/components/sprite_frames/storyweaver_blue.tres" id="8_frames"]
 [ext_resource type="PackedScene" uid="uid://covsdqqsd6rsy" path="res://scenes/game_elements/props/sign/sign.tscn" id="9_sign"]
 [ext_resource type="Script" uid="uid://0enyu5v4ra34" path="res://scenes/game_elements/props/spawn_point/components/spawn_point.gd" id="10_spawn"]
+[ext_resource type="PackedScene" uid="uid://btrigvenc0e05" path="res://scenes/quests/story_quests/la_deuda_del_sol/vencimiento/componentes/trigger_de_vencimiento.tscn" id="11_trigvenc"]
+[ext_resource type="Script" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/components/lacrevieja.gd" id="11_lacrevieja"]
+[ext_resource type="PackedScene" uid="uid://ipvcfv2g0oi1" path="res://scenes/game_elements/characters/npcs/talker/talker.tscn" id="12_talker"]
+[ext_resource type="PackedScene" uid="uid://blamparapalabra01" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/lampara_de_palabra.tscn" id="13_lampara"]
+[ext_resource type="PackedScene" uid="uid://bpuntodecarga01" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/punto_de_carga.tscn" id="14_carga"]
+[ext_resource type="PackedScene" uid="uid://bmacetacantero01" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/maceta_del_cantero.tscn" id="15_maceta"]
+[ext_resource type="PackedScene" uid="uid://blapidagrabada01" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/lapida_grabada.tscn" id="16_lapida"]
+[ext_resource type="PackedScene" uid="uid://djmdhrse34vgq" path="res://scenes/game_elements/props/decoration/bunny/bunny.tscn" id="17_bunny"]
+[ext_resource type="Resource" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/e01_prologo.dialogue" id="18_dlg_prologo"]
+[ext_resource type="Resource" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/rosaura.dialogue" id="19_dlg_rosaura"]
+[ext_resource type="Resource" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/maestra.dialogue" id="20_dlg_maestra"]
+[ext_resource type="Resource" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/cosme.dialogue" id="21_dlg_cosme"]
+[ext_resource type="Resource" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/fedatario.dialogue" id="22_dlg_fedatario"]
+[ext_resource type="Resource" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/vecinos.dialogue" id="23_dlg_vecinos"]
+[ext_resource type="SpriteFrames" uid="uid://cxjwwgm86d6it" path="res://scenes/game_elements/characters/components/sprite_frames/storyweaver_red.tres" id="24_sf_rosaura"]
+[ext_resource type="SpriteFrames" uid="uid://c11381gwu87k4" path="res://scenes/game_elements/characters/components/sprite_frames/storyweaver_green.tres" id="25_sf_maestra"]
+[ext_resource type="SpriteFrames" uid="uid://bfkd5s4fn0uw0" path="res://scenes/game_elements/characters/components/sprite_frames/monk.tres" id="26_sf_cosme"]
+[ext_resource type="SpriteFrames" uid="uid://bpfnbr7ig4s5g" path="res://scenes/game_elements/characters/components/sprite_frames/elder.tres" id="27_sf_fedatario"]
+[ext_resource type="SpriteFrames" uid="uid://07di3updrwh0" path="res://scenes/game_elements/characters/components/sprite_frames/storyweaver_purple.tres" id="28_sf_vecina"]
+[ext_resource type="SpriteFrames" uid="uid://0m3xjnws7y4y" path="res://scenes/game_elements/characters/components/sprite_frames/storyweaver_yellow.tres" id="29_sf_vecino"]
+[ext_resource type="SpriteFrames" uid="uid://cqe47tmqq3mu4" path="res://scenes/game_elements/characters/components/sprite_frames/elder2.tres" id="30_sf_vecino2"]
+[ext_resource type="SpriteFrames" uid="uid://bsjdohkkb776w" path="res://scenes/game_elements/characters/components/sprite_frames/bunny_yellow.tres" id="31_sf_gallina"]
+[ext_resource type="AudioStream" uid="uid://dhvit65nmsp7h" path="res://assets/third_party/nepalese_hand_bells/handBells-g3.ogg" id="32_campana"]
+[ext_resource type="Script" path="res://scenes/quests/story_quests/la_deuda_del_sol/componentes/restaurador_del_acto.gd" id="99_restaurador"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tele"]
 size = Vector2(32, 448)
 
 [node name="Lacrevieja" type="Node2D"]
-editor_description = "Mapa stub del Acto 1 de La Deuda del Sol. Tilemap placeholder copiado de mythical_meadows (quest_004); pendiente de arte y contenido propios."
+editor_description = "Lacrevieja el día de la Mayoría de Palabra: E01–E04 del Acto 1. Tilemap todavía placeholder (copiado de mythical_meadows); NPCs, promesitas, lámparas y ceremonia ya cableados. Diálogo textual del guion en lacrevieja/*.dialogue."
+script = ExtResource("11_lacrevieja")
+dialogo_prologo = ExtResource("18_dlg_prologo")
+dialogo_rosaura = ExtResource("19_dlg_rosaura")
+dialogo_maestra = ExtResource("20_dlg_maestra")
+dialogo_cosme = ExtResource("21_dlg_cosme")
+dialogo_fedatario = ExtResource("22_dlg_fedatario")
 
 [node name="BackgroundMusic" type="Node" parent="."]
 script = ExtResource("1_bgm")
@@ -82,3 +112,162 @@ metadata/_custom_type_script = "uid://0enyu5v4ra34"
 [node name="Cartel" parent="OnTheGround" instance=ExtResource("9_sign")]
 position = Vector2(768, 344)
 text = "Lacrevieja — pueblo natal de Ciro. La fiesta de la Mayoría de Palabra es hoy."
+
+[node name="Estrado" type="Polygon2D" parent="OnTheGround"]
+position = Vector2(1060, 256)
+color = Color(0.42, 0.28, 0.19, 1)
+polygon = PackedVector2Array(-64, -24, 64, -24, 64, 16, -64, 16)
+
+[node name="EstradoTabla" type="Polygon2D" parent="OnTheGround/Estrado"]
+color = Color(0.55, 0.38, 0.25, 1)
+polygon = PackedVector2Array(-58, -20, 58, -20, 58, -6, -58, -6)
+
+[node name="Lampara1" parent="OnTheGround" instance=ExtResource("13_lampara")]
+unique_name_in_owner = true
+position = Vector2(880, 448)
+etiqueta = "lámpara del poniente"
+
+[node name="Lampara2" parent="OnTheGround" instance=ExtResource("13_lampara")]
+unique_name_in_owner = true
+position = Vector2(1060, 448)
+etiqueta = "lámpara del centro"
+
+[node name="Lampara3" parent="OnTheGround" instance=ExtResource("13_lampara")]
+unique_name_in_owner = true
+position = Vector2(1240, 448)
+etiqueta = "lámpara del levante"
+
+[node name="PilaDeLena" parent="OnTheGround" node_paths=PackedStringArray("enlace") instance=ExtResource("14_carga")]
+unique_name_in_owner = true
+position = Vector2(416, 472)
+enlace = NodePath("../HornoGrande")
+etiqueta = "leña del galpón"
+accion = "Cargar un atado"
+
+[node name="HornoGrande" parent="OnTheGround" node_paths=PackedStringArray("enlace") instance=ExtResource("14_carga")]
+unique_name_in_owner = true
+position = Vector2(620, 256)
+modo = 1
+enlace = NodePath("../PilaDeLena")
+cupo = 3
+etiqueta = "horno grande de Rosaura"
+accion = "Entrar la leña"
+
+[node name="Cantero" type="Node2D" parent="OnTheGround"]
+
+[node name="Maceta1" parent="OnTheGround/Cantero" instance=ExtResource("15_maceta")]
+position = Vector2(1420, 208)
+
+[node name="Maceta2" parent="OnTheGround/Cantero" instance=ExtResource("15_maceta")]
+position = Vector2(1490, 208)
+
+[node name="Maceta3" parent="OnTheGround/Cantero" instance=ExtResource("15_maceta")]
+position = Vector2(1560, 208)
+
+[node name="Maceta4" parent="OnTheGround/Cantero" instance=ExtResource("15_maceta")]
+position = Vector2(1630, 208)
+
+[node name="Maceta5" parent="OnTheGround/Cantero" instance=ExtResource("15_maceta")]
+position = Vector2(1700, 208)
+
+[node name="Maceta6" parent="OnTheGround/Cantero" instance=ExtResource("15_maceta")]
+position = Vector2(1770, 208)
+rota = true
+
+[node name="Cementerio" type="Node2D" parent="OnTheGround"]
+
+[node name="Lapida1" parent="OnTheGround/Cementerio" instance=ExtResource("16_lapida")]
+position = Vector2(1840, 480)
+inscripcion = "Aquí descansa, en regla y sin mora, Simón Vergara."
+
+[node name="Lapida2" parent="OnTheGround/Cementerio" instance=ExtResource("16_lapida")]
+position = Vector2(1920, 480)
+inscripcion = "Aquí descansa, en regla y sin mora, Erminia del Soto."
+errata = "H"
+
+[node name="Rosaura" parent="OnTheGround" instance=ExtResource("12_talker")]
+unique_name_in_owner = true
+position = Vector2(704, 264)
+npc_name = "Rosaura"
+sprite_frames = ExtResource("24_sf_rosaura")
+dialogue = ExtResource("19_dlg_rosaura")
+
+[node name="Maestra" parent="OnTheGround" instance=ExtResource("12_talker")]
+unique_name_in_owner = true
+position = Vector2(1336, 240)
+npc_name = "la Maestra jardinera"
+sprite_frames = ExtResource("25_sf_maestra")
+dialogue = ExtResource("20_dlg_maestra")
+
+[node name="Cosme" parent="OnTheGround" instance=ExtResource("12_talker")]
+unique_name_in_owner = true
+position = Vector2(1760, 472)
+npc_name = "Cosme"
+sprite_frames = ExtResource("26_sf_cosme")
+dialogue = ExtResource("21_dlg_cosme")
+
+[node name="Fedatario" parent="OnTheGround" instance=ExtResource("12_talker")]
+unique_name_in_owner = true
+position = Vector2(1060, 224)
+npc_name = "el Fedatario"
+sprite_frames = ExtResource("27_sf_fedatario")
+dialogue = ExtResource("22_dlg_fedatario")
+
+[node name="VecinaDeLaEsquina" parent="OnTheGround" instance=ExtResource("12_talker")]
+unique_name_in_owner = true
+position = Vector2(520, 320)
+npc_name = "vecina de la esquina"
+sprite_frames = ExtResource("28_sf_vecina")
+dialogue = ExtResource("23_dlg_vecinos")
+
+[node name="VecinoDeLasMesas" parent="OnTheGround" instance=ExtResource("12_talker")]
+unique_name_in_owner = true
+position = Vector2(968, 304)
+npc_name = "vecino de las mesas"
+sprite_frames = ExtResource("29_sf_vecino")
+dialogue = ExtResource("23_dlg_vecinos")
+
+[node name="VecinoDeLasGallinas" parent="OnTheGround" instance=ExtResource("12_talker")]
+unique_name_in_owner = true
+position = Vector2(1496, 464)
+npc_name = "vecino de las gallinas"
+sprite_frames = ExtResource("30_sf_vecino2")
+dialogue = ExtResource("23_dlg_vecinos")
+
+[node name="Gallina1" parent="OnTheGround" instance=ExtResource("17_bunny")]
+position = Vector2(908, 496)
+sprite_frames = ExtResource("31_sf_gallina")
+
+[node name="Gallina2" parent="OnTheGround" instance=ExtResource("17_bunny")]
+position = Vector2(956, 512)
+sprite_frames = ExtResource("31_sf_gallina")
+
+[node name="Gallina3" parent="OnTheGround" instance=ExtResource("17_bunny")]
+position = Vector2(1012, 488)
+sprite_frames = ExtResource("31_sf_gallina")
+
+[node name="Campana" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("32_campana")
+volume_db = -4.0
+pitch_scale = 0.5
+
+[node name="Fundido" type="CanvasLayer" parent="."]
+layer = 50
+
+[node name="Negro" type="ColorRect" parent="Fundido"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="TriggerDeVencimiento" parent="OnTheGround" instance=ExtResource("11_trigvenc")]
+position = Vector2(640, 592)
+asumir_e04 = false
+
+[node name="RestauradorDelActo" type="Node" parent="."]
+script = ExtResource("99_restaurador")

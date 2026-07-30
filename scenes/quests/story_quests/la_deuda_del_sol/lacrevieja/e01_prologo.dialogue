@@ -1,0 +1,46 @@
+# SPDX-FileCopyrightText: La Deuda del Sol Authors
+# SPDX-License-Identifier: MPL-2.0
+#
+# E01 — «El peso de siempre». Texto TEXTUAL de
+# docs/guion/acto1/01-lacrevieja-y-vencimiento.md (E01). No reescribir líneas.
+#
+# Lo corre MapaLacrevieja.correr_prologo() al entrar por primera vez:
+#   ~ sueno     — a oscuras (fundido a negro)
+#   ~ despertar — ya con la luz del amanecer
+# El [GAMEPLAY] del guion (mantener el botón para sostener el peso, el tutorial de
+# movimiento con la prenda) es de la capa de movimiento del jugador: pendiente.
+
+~ sueno
+Ruido de lacre derritiéndose, cerca, como pan en horno. Luz roja y baja.
+Unas manos de mujer — solo las manos — trabajan un sello sobre el hombro de un chico de seis años. Los términos grabados pasan siempre fuera de foco.
+MADRE: Quedate quieto, mi amor. Ya casi está.
+CIRO (6): Pesa.
+MADRE: Ya sé.
+CIRO (6): ¿Es tuya?
+MADRE: Era. Ahora es nuestra. Después va a ser tuya sola, un tiempito.
+CIRO (6): ¿Y después?
+MADRE: Después vas a entender el peso. Y ojalá me perdones el orden.
+CIRO (6): ¿Qué orden?
+MADRE: Primero el peso. Después el porqué.
+Las manos aprietan el sello. El lacre toma. El chico no llora\: hace fuerza para quedarse derecho.
+MADRE: Así. Derechito. Pase lo que pase, vos derechito.
+=> END
+
+
+~ despertar
+Cuarto de Ciro, once años después. Amanecer. La primera luz entra por la ventana.
+Afuera, dicen, algo se afloja en el pecho de todo el pueblo — el alivio del alba, físico, breve.
+En esta casa la luz entra y nada más\: Ciro despierta igual de cargado que se acostó. La casa está en silencio. Hace once años que está en silencio.
+CIRO: Buen día.
+Nadie contesta. No esperaba que nadie conteste. Abre la libreta en la mesa de luz. Repasa con el dedo.
+CIRO: "Barrer la vereda." Hecha ayer, por adelantado. Por si hoy no llegaba.
+CIRO: "Regar el malvón." Hecho.
+CIRO: "Despertarme a la primera campana." ...Fue a la segunda.
+Lo piensa. Anota.
+CIRO: "En mora\: una campana." Se compensa mañana madrugando dos.
+Junto a la cama, en su soporte de madera gastada, la prenda\: un sello de lacre y piedra del tamaño de una rueda de molino chica, con una correa lustrada por diecisiete años de hombro.
+Ciro se la carga con un movimiento aprendido de toda la vida. Las rodillas se le doblan apenas. Después, nada\: el peso de siempre.
+En la puerta, un espejo chico. Ciro se mira el hombro, no la cara.
+CIRO: Todos cargan algo. Lo mío por lo menos viene con manija.
+Sale. La puerta queda abierta un segundo sobre la casa vacía, como esperando que alguien la cierre desde adentro.
+=> END

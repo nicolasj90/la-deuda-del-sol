@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bpruebavenc001"]
+
+[ext_resource type="Script" path="res://scenes/quests/story_quests/la_deuda_del_sol/vencimiento/tests/prueba_vencimiento.gd" id="1_prueba"]
+
+[node name="PruebaVencimiento" type="Node"]
+editor_description = "Prueba headless del bloque del Vencimiento (E05→E07): secuencia por banderas, las dos fases del boss, balance y drop garantizado de la firma-carta."
+script = ExtResource("1_prueba")

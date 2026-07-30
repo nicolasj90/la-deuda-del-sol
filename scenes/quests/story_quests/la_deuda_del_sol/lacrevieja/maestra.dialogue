@@ -1,0 +1,50 @@
+# SPDX-FileCopyrightText: La Deuda del Sol Authors
+# SPDX-License-Identifier: MPL-2.0
+#
+# La Maestra jardinera. E02, promesita 2: las macetas del cantero norte (la sexta
+# está rota y vacía, y se riega igual\: «estaba en los términos»).
+# Texto TEXTUAL de docs/guion/acto1/01-lacrevieja-y-vencimiento.md.
+#
+# Nota de sala: la biblia la lista como rival-personalidad de arquetipo «De
+# palabra» y el acto no le da duelo (pendiente 7 del INDICE). Acá sólo da su
+# promesita.
+
+~ start
+if Lacrevieja.promesa_cumplida_ya("maestra"):
+	=> despues
+elif Lacrevieja.promesa_hecha_ya("maestra"):
+	=> recordatorio
+else:
+	=> promesita
+
+
+~ promesita
+Cantero norte de la plaza. LA MAESTRA jardinera, pañuelo en la cabeza, señala una fila de macetas.
+MAESTRA: Las macetas del cantero norte, Ciro. Con la fiesta hoy no las riega nadie.
+CIRO: Prometo regar todas las macetas del cantero norte.
+do Lacrevieja.prometer("maestra")
+MAESTRA: Con "las del cantero" alcanzaba, querido.
+CIRO: Dije "todas". Ya está sellado.
+=> END
+
+
+# PLACEHOLDER de sala: el guion no escribe línea de recordatorio.
+~ recordatorio
+MAESTRA: Son seis, Ciro. Dijiste "todas", y "todas" son seis.
+=> END
+
+
+~ cumplida
+Ciro riega con el mismo cuidado la maceta rota, vacía, rajada al medio. La Maestra lo mira hacer.
+MAESTRA: Esa no tiene nada adentro.
+CIRO: Está en el cantero norte. Estaba en los términos.
+MAESTRA: El agua se le va por la rajadura.
+CIRO: Adónde va el agua no es problema de los términos.
+La promesita se disuelve. {{Lacrevieja.ordinal_lampara_titulo()}} lámpara encendida. La Maestra se ríe sola un rato largo.
+MAESTRA: Diecisiete años y ya regás macetas rotas por contrato. Este pueblo no te merece.
+=> END
+
+
+~ despues
+MAESTRA: Diecisiete años y ya regás macetas rotas por contrato. Este pueblo no te merece.
+=> END

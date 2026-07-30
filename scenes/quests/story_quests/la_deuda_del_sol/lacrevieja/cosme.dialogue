@@ -1,0 +1,78 @@
+# SPDX-FileCopyrightText: La Deuda del Sol Authors
+# SPDX-License-Identifier: MPL-2.0
+#
+# Cosme, sepulturero. E02, promesita 3 (leer las dos piedras nuevas y dar fe de
+# erratas) y el duelo OPCIONAL de E03 contra su mazo puro Letra chica.
+# Texto TEXTUAL de docs/guion/acto1/01-lacrevieja-y-vencimiento.md.
+
+~ start
+if Lacrevieja.duelo_cosme_jugado():
+	=> despues
+elif Lacrevieja.promesa_cumplida_ya("cosme"):
+	=> duelo
+elif Lacrevieja.promesa_hecha_ya("cosme"):
+	=> recordatorio
+else:
+	=> promesita
+
+
+~ promesita
+Cementerio chico detrás de la capilla del lacre. COSME, sepulturero, lustra una lápida recién grabada con la manga.
+COSME: Justo te esperaba. Tengo dos piedras nuevas y la vista vieja.
+CIRO: ¿Querés que las lea?
+COSME: En voz alta y despacio. Un nombre mal grabado es una deuda con alguien que ya no puede reclamar. Y esas son las peores\: no vencen nunca.
+CIRO: Prometo leer los nombres nuevos y darte fe de erratas.
+do Lacrevieja.prometer("cosme")
+COSME: "Fe de erratas." Me gusta. Esa me la anoto para la mía. Uno va juntando frases. Lo bueno pasa al final, pibe.
+=> END
+
+
+# PLACEHOLDER de sala: el guion no escribe línea de recordatorio.
+~ recordatorio
+COSME: Dos piedras, pibe. En voz alta y despacio, como quedamos.
+=> END
+
+
+~ cumplida
+CIRO: "Aquí descansa, en regla y sin mora, Erminia del Soto." ...Herminia va con hache.
+COSME: ¿Ves? La vista. Le estaba debiendo una letra a la finada.
+CIRO: Una hache no es cualquier letra. Es de las que no suenan. Se deben más fácil.
+Cosme saca gubia y martillo. Talla la hache con pulso de misa.
+La promesita de Ciro se disuelve\: allá lejos, en la plaza, la {{Lacrevieja.ordinal_lampara()}} lámpara se enciende sola.
+COSME: Andá, que tu luz ya está pagando. Y guardame un baile, que a los sepultureros nadie nos saca.
+=> END
+
+
+# Duelo OPCIONAL de E03. Premia cartas de difunto que no salen por otro canal
+# (data/cartas/fuente/canales.json, canal opcional de E03).
+~ duelo
+Cementerio, primera hora de la tarde. Cosme despliega su mantel de Estrado sobre una lápida horizontal.
+COSME: Ella no se ofende. En vida era timbera.
+CIRO: ¿Le pediste permiso?
+COSME: Se lo pedí en su momento, por escrito. Sentate. ¿Rosaura te enseñó con sus panes guardianes?
+CIRO: Con Garantes, sí.
+COSME: Bien. Ahora aprendé lo contrario. Mis cartas no valen por lo que hacen en vida. Valen por lo que dejan al morirse. Letra chica, le dicen.
+CIRO: ¿Todo tu mazo es gente que mejora muerta?
+COSME: Todo mi mazo es gente que deja algo. Que no es lo mismo, pero se le parece de lejos.
+do balloon.hide()
+do Lacrevieja.duelo_con_cosme()
+do balloon.show()
+# TODO(sala): estas cuatro líneas son barks de MITAD de partida en el guion.
+# Cuando haya overlay de barks van por DueloLauncher.duelo_montado, no acá.
+COSME: Dale nomás, matámelo.
+CIRO: Al morir robás dos cartas. Lo dice el sello.
+COSME: Por eso te digo que me lo mates. Te espero.
+CIRO: Todo lo tuyo empeora cuando lo saco de la mesa.
+COSME: ¿Y ahora entendés mi oficio? Lo bueno pasa al final, pibe. Siempre.
+Termina el duelo — gane quien gane, Cosme junta las cartas con la misma serenidad.
+COSME: Lindo funeral de partida. Llevate estas\: cartas de difunto. No las va a querer nadie hasta el día que las necesites. Como el oficio.
+do Lacrevieja.entregar_cartas_de_cosme()
+CIRO: Gracias, Cosme.
+COSME: Y andá yendo, que el fedatario ya debe estar puliendo el sello grande. Hoy tu palabra cumple la mayoría.
+COSME: Aprovechala liviana mientras dure.
+=> END
+
+
+~ despues
+COSME: Aprovechala liviana mientras dure.
+=> END

@@ -44,6 +44,19 @@ func _ready() -> void:
 	# TODO(F2b): confirmar el nombre canon de la moneda en el concepto
 	# (por ahora "reales"; solo aparece en mensajes de victoria).
 	GameManager.money_name = "reales"
+	# Al cargar partida este _ready() dejó la party default (los cinco); la
+	# progresiva del acto se reconstruye de las banderas en cada cambio de
+	# escena (idempotente y barato: chequeo de bandera + resource_path).
+	get_tree().root.child_entered_tree.connect(_on_escena_entrante)
+
+
+func _on_escena_entrante(_nodo: Node) -> void:
+	# Diferido: current_scene recién apunta a la escena nueva al final del frame.
+	_restaurar_party_diferido.call_deferred()
+
+
+func _restaurar_party_diferido() -> void:
+	BanderasDeuda.restaurar_party_si_corresponde()
 
 
 ## Corre un encuentro completo y devuelve el resultado (&"victory" | &"defeat" | &"fled").
@@ -53,6 +66,10 @@ func start_encounter(settings: BattleSettings) -> StringName:
 		push_warning("[Encounters] Ya hay una batalla corriendo; se ignora el encuentro.")
 		return &"ignored"
 	_battle_running = true
+
+	# Tras cargar partida, _ready() dejó montada la party default (los cinco);
+	# si el acto ya arrancó, la party progresiva se reconstruye de las banderas.
+	BanderasDeuda.restaurar_party_si_corresponde()
 
 	if settings.party == null:
 		settings.party = GameManager.party

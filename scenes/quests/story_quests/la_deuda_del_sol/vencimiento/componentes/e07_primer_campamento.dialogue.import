@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bg1d8kx52isf"
+path="res://.godot/imported/e07_primer_campamento.dialogue-27173c2c9a152e33dbaa1e7021c44935.tres"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/la_deuda_del_sol/vencimiento/componentes/e07_primer_campamento.dialogue"
+dest_files=["res://.godot/imported/e07_primer_campamento.dialogue-27173c2c9a152e33dbaa1e7021c44935.tres"]
+
+[params]
+
+defaults=true

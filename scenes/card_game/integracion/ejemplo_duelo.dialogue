@@ -1,0 +1,45 @@
+# SPDX-FileCopyrightText: The Threadbare Authors
+# SPDX-License-Identifier: MPL-2.0
+
+# Referencia de sintaxis para los agentes de contenido: cómo se lanza un duelo de
+# «De Palabra» desde un diálogo y cómo se ramifica por el resultado.
+# NO es guion: las líneas son de relleno a propósito. El diálogo de cada escena va
+# junto a su escena, con el texto TEXTUAL de docs/guion/.
+#
+# Lo importante:
+#  - `do DueloLauncher.duelo(...)` es una corrutina y Dialogue Manager la espera:
+#    la línea siguiente ya corre con el duelo cerrado.
+#  - `DueloLauncher.gano` es el resultado; también hay `motivo`, `ganador`, `turnos`.
+#  - el globo se esconde antes de montar la mesa y se muestra después.
+#  - los premios de cartas van por la opción `premio` (los entrega Coleccion al
+#    ganar) o a mano con `do Coleccion.agregar("id")`.
+#  - `mano_jugador` + `anuncio_jugador` son la regla no negociable del § 4f.1:
+#    la mano que Ciro canta tiene que ser la mano que le tocó.
+
+~ start
+Rival: Sentate, que te muestro una cosa.
+do balloon.hide()
+do DueloLauncher.duelo("garante", {"mazo_jugador": {"gallina_lacrevieja": 2, "peon_de_vina": 2, "hornera_de_rosaura": 2, "tranquera_cerrada": 2, "porteador_empenadero": 2, "sereno_del_archivo": 2, "de_mi_mesa_nadie": 2}, "mano_jugador": ["gallina_lacrevieja", "gallina_lacrevieja", "peon_de_vina", "lampara_de_palabra"], "anuncio_jugador": ["gallina_lacrevieja", "gallina_lacrevieja", "peon_de_vina", "lampara_de_palabra"], "premio": {"gallina_lacrevieja": 1, "porteador_empenadero": 1}})
+do balloon.show()
+if DueloLauncher.gano:
+	Rival: Perdí. Y encima anunciando la mano.
+	do Coleccion.entregar_mazo_inicial()
+else:
+	Rival: Otra mano. Y esta vez callate lo que tenés.
+Rival: El duelo cerró por [{{DueloLauncher.motivo}}] en {{DueloLauncher.turnos}} turnos.
+=> END
+
+# Misma mesa, pero la IA juega también el lado del jugador: sirve para grabar una
+# demo y es el camino que corre el test headless (`auto` + `ritmo` en 0).
+~ demo_auto
+Rival: Sentate, que juego yo por los dos.
+do balloon.hide()
+do DueloLauncher.duelo("garante", {"auto": true, "ritmo": 0, "pausa_cierre": 0, "semilla": 8123, "mazo_jugador": {"gallina_lacrevieja": 2, "peon_de_vina": 2, "hornera_de_rosaura": 2, "tranquera_cerrada": 2, "porteador_empenadero": 2, "sereno_del_archivo": 2, "de_mi_mesa_nadie": 2}, "premio": {"gallina_lacrevieja": 1, "porteador_empenadero": 1}})
+do balloon.show()
+if DueloLauncher.gano:
+	Rival: Perdí. Y encima anunciando la mano.
+	do Coleccion.entregar_mazo_inicial()
+else:
+	Rival: Otra mano. Y esta vez callate lo que tenés.
+Rival: El duelo cerró por [{{DueloLauncher.motivo}}] en {{DueloLauncher.turnos}} turnos.
+=> END

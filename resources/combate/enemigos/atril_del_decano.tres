@@ -1,0 +1,152 @@
+[gd_resource type="Resource" script_class="Enemy" format=3]
+
+[ext_resource type="Script" uid="uid://fonb13nkm4yv" path="res://addons/godot_jrpg/resources/actors/battlers/enemies/enemy.gd" id="1_enemy"]
+[ext_resource type="Script" uid="uid://bpmohnsv7yfs6" path="res://addons/godot_jrpg/resources/actors/battlers/controllers/enemy_ai_controller.gd" id="2_enemy_ai"]
+[ext_resource type="Script" uid="uid://c0cnc6567nkft" path="res://addons/godot_jrpg/resources/actors/battlers/controllers/brains/brain_dumb.gd" id="3_brain_dumb"]
+[ext_resource type="Texture2D" uid="uid://ck4la48vgpefh" path="res://addons/godot_jrpg/assets/sprites/actors/enemies/enemy-ghost.png" id="4_spr"]
+[ext_resource type="Script" uid="uid://whk3qgx1yqyp" path="res://addons/godot_jrpg/resources/actors/battlers/stats/stat.gd" id="7_stat"]
+[ext_resource type="Script" uid="uid://bgy4kuc1fk1nh" path="res://addons/godot_jrpg/resources/actors/battlers/stats/stats.gd" id="8_stats"]
+
+[sub_resource type="Resource" id="Brain"]
+script = ExtResource("3_brain_dumb")
+metadata/_custom_type_script = "uid://c0cnc6567nkft"
+
+[sub_resource type="Resource" id="Controller"]
+script = ExtResource("2_enemy_ai")
+brain = SubResource("Brain")
+metadata/_custom_type_script = "uid://bpmohnsv7yfs6"
+
+[sub_resource type="Resource" id="Stat_hp"]
+script = ExtResource("7_stat")
+display_name = "PV"
+base_value = 60
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_mp"]
+script = ExtResource("7_stat")
+display_name = "PM"
+id = 1
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_attack"]
+script = ExtResource("7_stat")
+display_name = "Ataque"
+id = 2
+base_value = 1
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_defense"]
+script = ExtResource("7_stat")
+display_name = "Defensa"
+id = 3
+base_value = 8
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_intelligence"]
+script = ExtResource("7_stat")
+display_name = "Inteligencia"
+id = 4
+base_value = 2
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_speed"]
+script = ExtResource("7_stat")
+display_name = "Velocidad"
+id = 5
+base_value = 1
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_accuracy"]
+script = ExtResource("7_stat")
+display_name = "Precisión"
+id = 6
+base_value = 50
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_evasion"]
+script = ExtResource("7_stat")
+display_name = "Evasión"
+id = 7
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_luck"]
+script = ExtResource("7_stat")
+display_name = "Suerte"
+id = 8
+base_value = 1
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_hp_regen"]
+script = ExtResource("7_stat")
+display_name = "Regen. PV"
+id = 9
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_mp_regen"]
+script = ExtResource("7_stat")
+display_name = "Regen. PM"
+id = 10
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_critical"]
+script = ExtResource("7_stat")
+display_name = "Crítico"
+id = 11
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_critical_dodge"]
+script = ExtResource("7_stat")
+display_name = "Anticrítico"
+id = 12
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_effect_dodge"]
+script = ExtResource("7_stat")
+display_name = "Esquiva de efectos"
+id = 13
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_reflection"]
+script = ExtResource("7_stat")
+display_name = "Reflejo"
+id = 14
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_counter_attack"]
+script = ExtResource("7_stat")
+display_name = "Contraataque"
+id = 15
+metadata/_custom_type_script = "uid://whk3qgx1yqyp"
+
+[sub_resource type="Resource" id="Stat_stats"]
+script = ExtResource("8_stats")
+hp = SubResource("Stat_hp")
+mp = SubResource("Stat_mp")
+attack = SubResource("Stat_attack")
+defense = SubResource("Stat_defense")
+intelligence = SubResource("Stat_intelligence")
+speed = SubResource("Stat_speed")
+accuracy = SubResource("Stat_accuracy")
+evasion = SubResource("Stat_evasion")
+luck = SubResource("Stat_luck")
+hp_regen = SubResource("Stat_hp_regen")
+mp_regen = SubResource("Stat_mp_regen")
+critical = SubResource("Stat_critical")
+critical_dodge = SubResource("Stat_critical_dodge")
+effect_dodge = SubResource("Stat_effect_dodge")
+reflection = SubResource("Stat_reflection")
+counter_attack = SubResource("Stat_counter_attack")
+metadata/_custom_type_script = "uid://bgy4kuc1fk1nh"
+
+[resource]
+script = ExtResource("1_enemy")
+sprite = ExtResource("4_spr")
+money = 0
+xp = 4
+stats = SubResource("Stat_stats")
+controller = SubResource("Controller")
+current_hp = 60
+current_mp = 0
+name = "El atril del Decano"
+description = "Atril portátil de tres patas, desplegado clac-clac. Objeto destruible: mientras está en pie el Decano lee cláusulas; voltearlo interrumpe la lectura y frustra la diligencia (E06, fase 1)."
+metadata/_custom_type_script = "uid://fonb13nkm4yv"

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="BattleSettings" format=3 uid="uid://be05alguaciles"]
+
+[ext_resource type="Script" uid="uid://dwf8a545xaiwc" path="res://addons/godot_jrpg/resources/battle/settings/enemy_settings.gd" id="1_esettings"]
+[ext_resource type="Script" uid="uid://bslf8ke3u3ub5" path="res://addons/godot_jrpg/resources/battle/settings/battle_settings.gd" id="2_bsettings"]
+[ext_resource type="Texture2D" uid="uid://dko3xg5khtcnr" path="res://addons/godot_jrpg/assets/sprites/battle/backgrounds/back-knights-002.jpg" id="3_fondo"]
+[ext_resource type="Resource" path="res://resources/combate/enemigos/alguacil_de_notificacion.tres" id="4_alguacil"]
+
+[sub_resource type="Resource" id="Puesto_1"]
+script = ExtResource("1_esettings")
+enemy = ExtResource("4_alguacil")
+position = Vector2(220, 120)
+size = Vector2(300, 300)
+metadata/_custom_type_script = "uid://dwf8a545xaiwc"
+
+[sub_resource type="Resource" id="Puesto_2"]
+script = ExtResource("1_esettings")
+enemy = ExtResource("4_alguacil")
+position = Vector2(660, 120)
+size = Vector2(300, 300)
+metadata/_custom_type_script = "uid://dwf8a545xaiwc"
+
+[resource]
+resource_name = "e05_alguaciles"
+script = ExtResource("2_bsettings")
+background = ExtResource("3_fondo")
+background_size = Vector2(1281, 732)
+enemies = Array[ExtResource("1_esettings")]([SubResource("Puesto_1"), SubResource("Puesto_2")])
+metadata/_custom_type_script = "uid://bslf8ke3u3ub5"

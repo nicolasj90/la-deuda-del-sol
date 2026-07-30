@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpuntodecarga01"]
+
+[ext_resource type="Script" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/components/punto_de_carga.gd" id="1_punto"]
+[ext_resource type="Script" uid="uid://du8wfijr35r35" path="res://scenes/game_elements/props/interact_area/interact_area.gd" id="2_interact"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bulto"]
+size = Vector2(48, 26)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_interact"]
+radius = 54.0
+
+[node name="PuntoDeCarga" type="Node2D"]
+script = ExtResource("1_punto")
+
+[node name="Bulto" type="Polygon2D" parent="."]
+color = Color(0.29, 0.22, 0.16, 1)
+polygon = PackedVector2Array(-26, -30, 26, -30, 26, 4, -26, 4)
+
+[node name="Atado" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+color = Color(0.55, 0.4, 0.22, 1)
+polygon = PackedVector2Array(-20, -44, 20, -44, 20, -30, -20, -30)
+
+[node name="Estado" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -92.0
+offset_top = -80.0
+offset_right = 92.0
+offset_bottom = -50.0
+theme_override_colors/font_color = Color(1, 0.9, 0.72, 1)
+theme_override_colors/font_outline_color = Color(0.1, 0.07, 0.06, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 13
+text = "pila de leña"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Cuerpo" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="FormaCuerpo" type="CollisionShape2D" parent="Cuerpo"]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_bulto")
+
+[node name="InteractArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("2_interact")
+action = "Cargar"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_interact")

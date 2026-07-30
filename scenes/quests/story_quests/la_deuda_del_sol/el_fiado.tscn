@@ -10,6 +10,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dtoylirwywk0j" path="res://scenes/game_elements/characters/components/sprite_frames/storyweaver_blue.tres" id="8_frames"]
 [ext_resource type="PackedScene" uid="uid://covsdqqsd6rsy" path="res://scenes/game_elements/props/sign/sign.tscn" id="9_sign"]
 [ext_resource type="Script" uid="uid://0enyu5v4ra34" path="res://scenes/game_elements/props/spawn_point/components/spawn_point.gd" id="10_spawn"]
+[ext_resource type="Script" path="res://scenes/quests/story_quests/la_deuda_del_sol/componentes/restaurador_del_acto.gd" id="99_restaurador"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tele"]
 size = Vector2(32, 448)
@@ -82,3 +83,6 @@ metadata/_custom_type_script = "uid://0enyu5v4ra34"
 [node name="Cartel" parent="OnTheGround" instance=ExtResource("9_sign")]
 position = Vector2(768, 344)
 text = "El Fiado — ciudad puerto. Acá la palabra no ata: todo se paga, se empeña o se fía."
+
+[node name="RestauradorDelActo" type="Node" parent="."]
+script = ExtResource("99_restaurador")

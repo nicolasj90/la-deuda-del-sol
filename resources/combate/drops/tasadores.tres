@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="TablaDeDrops" format=3]
+
+[ext_resource type="Script" path="res://scenes/card_game/integracion/tabla_de_drops.gd" id="1_tabla"]
+[ext_resource type="Script" path="res://scenes/card_game/integracion/entrada_de_drop.gd" id="2_entrada"]
+
+[sub_resource type="Resource" id="PagareALaVista"]
+script = ExtResource("2_entrada")
+carta_id = "pagare_a_la_vista"
+chance = 0.3
+cantidad = 1
+metadata/_custom_type_script = "res://scenes/card_game/integracion/entrada_de_drop.gd"
+
+[sub_resource type="Resource" id="CobradorDeLaCamara"]
+script = ExtResource("2_entrada")
+carta_id = "cobrador_de_la_camara"
+chance = 0.12
+cantidad = 1
+metadata/_custom_type_script = "res://scenes/card_game/integracion/entrada_de_drop.gd"
+
+[resource]
+resource_name = "drops_tasadores"
+script = ExtResource("1_tabla")
+familia = "tasadores"
+enemigos = Array[String](["tasador_alguacil", "Tasador alguacil"])
+garantizadas = Array[String]([])
+entradas = Array[ExtResource("2_entrada")]([SubResource("PagareALaVista"), SubResource("CobradorDeLaCamara")])
+metadata/_custom_type_script = "res://scenes/card_game/integracion/tabla_de_drops.gd"

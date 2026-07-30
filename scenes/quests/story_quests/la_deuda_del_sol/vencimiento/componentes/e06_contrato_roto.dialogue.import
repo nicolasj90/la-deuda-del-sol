@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://uvhdqrkc3tlg"
+path="res://.godot/imported/e06_contrato_roto.dialogue-906db636cc5175f457beb1d09ea2b610.tres"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/la_deuda_del_sol/vencimiento/componentes/e06_contrato_roto.dialogue"
+dest_files=["res://.godot/imported/e06_contrato_roto.dialogue-906db636cc5175f457beb1d09ea2b610.tres"]
+
+[params]
+
+defaults=true

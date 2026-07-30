@@ -47,6 +47,9 @@ EventRunner="*res://addons/godot_jrpg/nodes/autoloads/event_runner.tscn"
 UI="*res://addons/godot_jrpg/nodes/autoloads/ui.tscn"
 MenuManager="*res://addons/godot_jrpg/nodes/autoloads/menu_manager.tscn"
 Encounters="*res://scenes/globals/encounters/encounters.gd"
+Coleccion="*res://scenes/card_game/integracion/coleccion.gd"
+DropsDeCartas="*res://scenes/card_game/integracion/drops_de_cartas.gd"
+DueloLauncher="*res://scenes/card_game/integracion/duelo_launcher.gd"
 
 [debug]
 

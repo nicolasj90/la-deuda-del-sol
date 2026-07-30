@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="BattleSettings" format=3 uid="uid://be06decanof1x"]
+
+[ext_resource type="Script" uid="uid://dwf8a545xaiwc" path="res://addons/godot_jrpg/resources/battle/settings/enemy_settings.gd" id="1_esettings"]
+[ext_resource type="Script" uid="uid://bslf8ke3u3ub5" path="res://addons/godot_jrpg/resources/battle/settings/battle_settings.gd" id="2_bsettings"]
+[ext_resource type="Texture2D" uid="uid://dko3xg5khtcnr" path="res://addons/godot_jrpg/assets/sprites/battle/backgrounds/back-knights-002.jpg" id="3_fondo"]
+[ext_resource type="Resource" path="res://resources/combate/enemigos/tasador_decano_lector.tres" id="4_decano"]
+[ext_resource type="Resource" path="res://resources/combate/enemigos/atril_del_decano.tres" id="5_atril"]
+[ext_resource type="Resource" path="res://resources/combate/enemigos/alguacil_de_refresco.tres" id="6_alguacil"]
+[ext_resource type="Resource" path="res://resources/combate/enemigos/ferra_escolta.tres" id="7_ferra"]
+
+[sub_resource type="Resource" id="Puesto_decano"]
+script = ExtResource("1_esettings")
+enemy = ExtResource("4_decano")
+position = Vector2(160, 60)
+size = Vector2(300, 300)
+metadata/_custom_type_script = "uid://dwf8a545xaiwc"
+
+[sub_resource type="Resource" id="Puesto_atril"]
+script = ExtResource("1_esettings")
+enemy = ExtResource("5_atril")
+position = Vector2(460, 60)
+size = Vector2(240, 240)
+metadata/_custom_type_script = "uid://dwf8a545xaiwc"
+
+[sub_resource type="Resource" id="Puesto_alguacil_1"]
+script = ExtResource("1_esettings")
+enemy = ExtResource("6_alguacil")
+position = Vector2(700, 180)
+size = Vector2(280, 280)
+metadata/_custom_type_script = "uid://dwf8a545xaiwc"
+
+[sub_resource type="Resource" id="Puesto_alguacil_2"]
+script = ExtResource("1_esettings")
+enemy = ExtResource("6_alguacil")
+position = Vector2(960, 180)
+size = Vector2(280, 280)
+metadata/_custom_type_script = "uid://dwf8a545xaiwc"
+
+[sub_resource type="Resource" id="Puesto_ferra"]
+script = ExtResource("1_esettings")
+enemy = ExtResource("7_ferra")
+position = Vector2(1200, 120)
+size = Vector2(300, 300)
+metadata/_custom_type_script = "uid://dwf8a545xaiwc"
+
+[resource]
+resource_name = "e06_decano_fase1"
+script = ExtResource("2_bsettings")
+background = ExtResource("3_fondo")
+background_size = Vector2(1281, 732)
+enemies = Array[ExtResource("1_esettings")]([SubResource("Puesto_decano"), SubResource("Puesto_atril"), SubResource("Puesto_alguacil_1"), SubResource("Puesto_alguacil_2"), SubResource("Puesto_ferra")])
+metadata/_custom_type_script = "uid://bslf8ke3u3ub5"

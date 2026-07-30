@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bebwb3pho5xtt"
+path="res://.godot/imported/rosaura.dialogue-be9521c66b197684d7b0e0880d69716d.tres"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/rosaura.dialogue"
+dest_files=["res://.godot/imported/rosaura.dialogue-be9521c66b197684d7b0e0880d69716d.tres"]
+
+[params]
+
+defaults=true

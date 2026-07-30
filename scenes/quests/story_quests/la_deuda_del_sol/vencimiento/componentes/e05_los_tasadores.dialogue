@@ -1,0 +1,49 @@
+# SPDX-FileCopyrightText: The Threadbare Authors
+# SPDX-License-Identifier: MPL-2.0
+#
+# E05 — «Los tasadores». Diálogo TEXTUAL de
+# docs/guion/acto1/01-lacrevieja-y-vencimiento.md (fuente de verdad: no reescribir
+# líneas acá; si hay que cambiar una línea, se cambia en el guion primero).
+#
+# Lo corre el director casa_de_ciro.gd en dos tramos, con el combate tutorial en el
+# medio: e05_notificacion → combate obligatorio vs dos alguaciles → e05_fuga.
+#
+# PRODUCCIÓN (pendiente 6 del INDICE del guion): a la puerta llegan TRES alguaciles,
+# pero el encuentro tiene DOS. El tercero es el alguacil pagador, que no pelea: es el
+# que le ofrece el pagaré a Ferra. Arte y encuentros no deben poner tres enemigos.
+# Los barks de combate («Empeño palabra: ¡prometo no defenderme este turno!» y la
+# respuesta del Decano) los emite el director sobre la mesa de batalla.
+
+~ e05_notificacion
+[i]Cuarto de Ciro, madrugada cerrada. Ciro duerme abrazado a la libreta. En su soporte, la prenda se ve igual... y no\: más honda, como si la piedra hubiera aprendido a caer sin moverse.[/i]
+[i]Ciro despierta, se la carga — y el hombro se le hunde. El cuerpo entero se le tuerce. Camina inclinado. Eso es nuevo.[/i]
+Ciro: [i](a la prenda)[/i] ...¿Qué comiste anoche vos?
+[i]Golpes en la puerta. Tres. Exactos. Del mismo peso cada uno. Golpes con protocolo.[/i]
+Decano: [i](desde afuera)[/i] Cámara del Empeño. Diligencia de tasación y embargo. Se ruega abrir. La puerta también es tasable.
+[i]Ciro abre. El Tasador Decano, anteojos de media luna, balanza de mano colgada del cuello como un crucifijo, carpeta de tapas grises. Detrás, tres alguaciles de capa gris.[/i]
+[i]Y más atrás, apoyada en el marco del portón, una mujer alta con lanza y escudo\: Ferra. No mira a Ciro. Mira al alguacil pagador, con la mano abierta, esperando.[/i]
+Alguacil pagador: [i](a Ferra, bajo)[/i] A término, se le dijo. La escolta cobra a término.
+[i]Le ofrece un papel\: un pagaré. Ferra lo mira sin agarrarlo, como se mira una fruta pasada. Cruza los brazos. En su cinto, un llavero cargado de promesitas tintinea, brevísimo.[/i]
+Decano: Ciro Albar. Portador por herencia de prenda innominada, folio reservado, términos ilegibles. ¿Confirma?
+Ciro: Confirmo. ¿Usted sabe qué dice mi—?
+Decano: La Cámara no lee, señor Albar\: la Cámara pesa.
+[i]Consulta la balanza de mano. El fiel se inclina solo hacia Ciro.[/i]
+Decano: Su prenda entró en vencimiento a las cero horas de ayer y devenga interés a un ritmo... francamente inusual. Procedo a notificar.
+[i]Despliega un acta de tres folios. La lee entera. Monocorde. Preciosa. Ciro, doblado bajo el peso, escucha con atención de oficio, asintiendo en las comas.[/i]
+Decano: "...y siendo los términos ilegibles y el deudor incierto, procédase conforme al artículo del ramo\: trábese embargo sobre la garantía viviente, a saber, el portador." ¿Preguntas?
+Ciro: Una. El folio tres está foliado "cuatro".
+[i]Silencio. El Decano revisa. Palidece un grado exacto. Saca pluma, tacha, enmienda, sella la enmienda y la refrenda, todo en cuatro segundos de furia perfectamente administrada.[/i]
+Decano: Se agradece la diligencia del embargado. Consta la enmienda. Continúo embargándolo.
+Ciro: Gracias. Perdón\: ¿"garantía viviente" quiere decir lo que creo?
+Decano: Quiere decir usted. Alguaciles.
+=> END
+
+~ e05_fuga
+[i]Los dos alguaciles en el piso. El Decano cierra la carpeta sin apuro, como quien cierra un paraguas porque paró de llover.[/i]
+Decano: Acta de fuga en preparación. Sepa esto, señor Albar\: huir no interrumpe el interés. Adonde vaya, el peso lo acompaña. Y donde hay peso, la Cámara pesa.
+Ciro: No estoy huyendo. Voy a presentar una oposición.
+[i]Y salta por la ventana del fondo. El Decano mira la ventana, mira a los alguaciles caídos, mira a Ferra.[/i]
+Decano: Escolta. Trabaje.
+[i]Ferra se despega del portón sin apuro. Antes de arrancar pasa otra vez la mano abierta frente al pagador. Nada. Chasquea la lengua y sale al trote, tintineando.[/i]
+[i]Ciro corre por las calles dormidas de su pueblo, doblado por el peso, hacia el único lugar que se le ocurre\: la notaría. Huye de un trámite. Hacia otro trámite. Primera vez en su vida, en las dos cosas.[/i]
+=> END

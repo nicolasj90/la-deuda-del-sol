@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cndflnpq6sxhn"
+path="res://.godot/imported/fedatario.dialogue-f76708d1c9d82cd1ed16c3377da40403.tres"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/fedatario.dialogue"
+dest_files=["res://.godot/imported/fedatario.dialogue-f76708d1c9d82cd1ed16c3377da40403.tres"]
+
+[params]
+
+defaults=true

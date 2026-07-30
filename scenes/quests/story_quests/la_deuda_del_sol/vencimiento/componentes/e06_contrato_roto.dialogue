@@ -1,0 +1,64 @@
+# SPDX-FileCopyrightText: The Threadbare Authors
+# SPDX-License-Identifier: MPL-2.0
+#
+# E06 — «Contrato roto, contrato nulo» (boss 1, dos fases). Diálogo TEXTUAL de
+# docs/guion/acto1/01-lacrevieja-y-vencimiento.md.
+#
+# Lo corre el director patio_notaria.gd en tres tramos:
+#   e06_patio        → fase 1 (Ferra DEL LADO ENEMIGO, atril destruible)
+#   e06_interrupcion → Ferra rescinde y entra a la party  → fase 2
+#   e06_cierre       → acta del Decano, firma-carta y salida del pueblo
+# Los barks de las dos fases los emite el director sobre la mesa de batalla.
+
+~ e06_patio
+[i]Patio de la notaría de Lacrevieja, oscuro, con olor a tinta dormida. Ciro golpea el portón con la palma abierta.[/i]
+Ciro: ¡Oposición al embargo! ¡Sé que no es horario de atención! ¡Puedo dejar cédula!
+[i]Nadie contesta. A su espalda, pasos exactos.[/i]
+Decano: El horario de la Cámara es el vencimiento, señor Albar. Y usted venció ayer.
+[i]El Decano entra al patio con dos alguaciles de refresco. Detrás, Ferra, lanza al hombro, cara de empleada en conflicto gremial. Los alguaciles cierran las salidas.[/i]
+[i]El Decano despliega — clac, clac — un atril portátil. Acomoda papeles. Carraspea.[/i]
+Decano: Procedo a dar lectura a la orden de aprehensión de la garantía viviente.
+[i]Los alguaciles avanzan. Ferra, un paso atrás, al trote mínimo reglamentario.[/i]
+=> END
+
+~ e06_interrupcion
+[i]A mitad del combate, el Decano levanta la vista de la foja y señala a Ciro con la pluma.[/i]
+Decano: Suficiente registro. Escolta\: proceda al remate de la garantía.
+[i]Ferra no procede. Ferra levanta la mano.[/i]
+Ferra: Pregunta administrativa.
+Decano: La escolta no formula preguntas administrativas.
+Ferra: Mi adelanto.
+Decano: Su paga consta en pagaré a término, ejecutable al cierre de la comisión, conforme al contrato de escolta que—
+Ferra: Yo cobro por adelantado. Está en MI contrato. Cláusula uno. La escribí yo. Es la única cláusula.
+Decano: La Cámara no adelanta fondos a personal jornalizado.
+Ferra: Entonces la Cámara rompió la cláusula uno.
+Decano: La Cámara no rompe\: la Cámara difiere.
+Ferra: Y yo no deserto.
+[i]Gira sobre los talones — y el llavero la delata con un tintineo de aplauso chiquito. Se planta al lado de Ciro. Levanta el escudo.[/i]
+Ferra: Rescindo. Contrato roto...
+Ferra: ...contrato nulo.
+Decano: Que conste en actas que la escolta abandona la comisión.
+Ferra: Que conste en actas que la escolta cobra por adelantado. Para la próxima.
+Ciro: [i](bajo, a Ferra)[/i] ¿Vos quién sos?
+Ferra: Tu problema nuevo. Vos pegá, que aguanto yo.
+=> END
+
+~ e06_cierre
+[i]Fin del combate. El Decano, sentado en el piso entre sus folios desparramados, se acomoda los anteojos con dos dedos. Los alguaciles, apilados con cierto orden, porque hasta caídos son de la Cámara. Ciro y Ferra, jadeando.[/i]
+Decano: ...Diligencia frustrada. Procede acta.
+[i]Saca una foja limpia. Escribe sin apuro, ahí sentado, con caligrafía hermosa. Firma con una rúbrica de tres vueltas. Deja la foja en el piso, sujeta con una piedrita.[/i]
+Decano: Copia para el interesado. La Cámara documenta también sus derrotas, señor Albar. Es lo que la vuelve eterna. Lo va a alcanzar otro. Con mejor foliado.
+[i]Se levanta, pliega el atril roto con dignidad de viudo, y se va por donde vino. Ciro recoge el acta.[/i]
+Ciro: ...Qué firma linda.
+Ferra: ¿Le estás elogiando la firma al que te vino a embargar?
+Ciro: La firma no tiene la culpa del contenido.
+[i]Primera insinuación de gris en el cielo, todavía noche en el patio. Ferra mira el pueblo dormido, después a Ciro, doblado bajo su piedra.[/i]
+Ferra: ¿Tenés adónde ir?
+Ciro: Villarrúbrica. La Notaría del Alba. Si alguien puede leer esto, es la Notaría.
+Ferra: ¿Y yo qué gano yendo?
+Ciro: No tengo con qué pagarte.
+Ferra: No te pedí plata. Pregunté qué gano.
+Ciro: ...¿Compañía puntual?
+Ferra: [i](colgándose el escudo a la espalda)[/i] Arrancá. Me debés una comida caliente. Y no me hagas decir en calidad de qué voy, porque no sé.
+[i]Salen por la puerta chica del corral, entre gallinas dormidas. Ferra, por si acaso, les hace un gesto de silencio con el dedo. Una gallina abre un ojo. Lo piensa. Lo deja pasar.[/i]
+=> END
