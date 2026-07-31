@@ -10,15 +10,38 @@ size = Vector2(44, 20)
 radius = 48.0
 
 [node name="LapidaGrabada" type="Node2D"]
+editor_description = "Piedra nueva de Cosme. Sin leer, los renglones del grabado están en bruto; leída se le marca la cinta de constancia y, si le faltaba una letra, Cosme talla la enmienda. El texto del grabado y el rótulo de estado sólo aparecen cuando el jugador está frente a la piedra: si no, los «Aquí descansa…» de dos piedras vecinas se pisan entre sí."
 script = ExtResource("1_lapida")
+
+[node name="Sombra" type="Polygon2D" parent="."]
+color = Color(0.09, 0.08, 0.11, 0.28)
+polygon = PackedVector2Array(-24, -3, 24, -3, 24, 4, -24, 4)
 
 [node name="Piedra" type="Polygon2D" parent="."]
 color = Color(0.53, 0.53, 0.5, 1)
-polygon = PackedVector2Array(-24, -52, 24, -52, 24, 0, -24, 0)
+polygon = PackedVector2Array(-24, -44, -17, -52, 17, -52, 24, -44, 24, 0, -24, 0)
 
-[node name="Sombra" type="Polygon2D" parent="."]
+[node name="PiedraHueco" type="Polygon2D" parent="."]
 color = Color(0.36, 0.36, 0.34, 1)
-polygon = PackedVector2Array(-20, -46, 20, -46, 20, -8, -20, -8)
+polygon = PackedVector2Array(-19, -40, -14, -46, 14, -46, 19, -40, 19, -8, -19, -8)
+
+[node name="Renglon1" type="Polygon2D" parent="."]
+color = Color(0.27, 0.27, 0.25, 1)
+polygon = PackedVector2Array(-14, -38, 14, -38, 14, -35, -14, -35)
+
+[node name="Renglon2" type="Polygon2D" parent="."]
+color = Color(0.27, 0.27, 0.25, 1)
+polygon = PackedVector2Array(-14, -31, 8, -31, 8, -28, -14, -28)
+
+[node name="Renglon3" type="Polygon2D" parent="."]
+color = Color(0.27, 0.27, 0.25, 1)
+polygon = PackedVector2Array(-14, -24, 11, -24, 11, -21, -14, -21)
+
+[node name="Constancia" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+visible = false
+color = Color(0.74, 0.24, 0.22, 1)
+polygon = PackedVector2Array(-6, -16, 6, -16, 6, -10, -6, -10)
 
 [node name="Enmienda" type="Polygon2D" parent="."]
 unique_name_in_owner = true
@@ -28,11 +51,14 @@ polygon = PackedVector2Array(-6, -30, 6, -30, 6, -20, -6, -20)
 
 [node name="Grabado" type="Label" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = -96.0
 offset_top = -44.0
 offset_right = 96.0
 offset_bottom = -6.0
-theme_override_colors/font_color = Color(0.17, 0.16, 0.15, 1)
+theme_override_colors/font_color = Color(0.14, 0.13, 0.12, 1)
+theme_override_colors/font_outline_color = Color(0.86, 0.86, 0.82, 1)
+theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 11
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -40,6 +66,7 @@ autowrap_mode = 2
 
 [node name="Estado" type="Label" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = -96.0
 offset_top = -80.0
 offset_right = 96.0

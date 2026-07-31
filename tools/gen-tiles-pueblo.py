@@ -140,6 +140,9 @@ rl(rect(5, 9, 0, 1))                                # pasto / tierra / piedra / 
 rl(rect(5, 9, 2, 5))                                # empedrados y ladrillos
 rl(rect(5, 9, 6, 10))                               # parches de tierra
 rl(rect(0, 4, 6, 14))                               # canteros de flores sobre pasto
+# Las columnas 2/3/4 son el autotile 3x3 del cantero con brocal (izq/medio/der) en
+# tres colores: filas 6-8 naranja, 9-11 blanco, 12-14 azul. Las columnas 0/1 son
+# «flores sobre pasto» con su propio verde y un resto de piedra: no se usan.
 # puesto de feria
 rl(rect(10, 11, 0, 3))                              # toldos a rayas (sin colision)
 rl(rect(10, 13, 4, 6), solid(BH))                   # MOSTRADORES de feria con mercaderia
@@ -154,12 +157,20 @@ rl(rect(54, 55, 6, 7), solid(BH))                   # fogones / braseros
 rl([(51, 9), (52, 9)], solid(BH))                   # LAPIDAS de piedra
 rl([(53, 9)], solid(BH))                            # cruz de madera
 rl([(51, 10), (52, 10), (53, 10)], solid(BH))       # cruces de piedra
+rl([(51, 11), (52, 11), (53, 11)], solid(BH))       # LAPIDAS grabadas (con renglones)
 # banderas y gallardetes (fiesta)
 rl(rect(49, 53, 0, 8))
-# cerco de tranquera de madera
-rl(rect(46, 49, 23, 24), solid(HB))
+# Cerco de madera. OJO con la geometría del atlas, que es la que hacía que el cerco
+# del cementerio se leyera como postes sueltos:
+#   (45,23) remate izquierdo      (46,23) HOJA DE TRANQUERA (no es tramo de cerco)
+#   (47..49,23) tramos con poste  (50,23) VACÍA
+#   (51,23) tramo VERTICAL continuo (dos postes de arriba abajo)
+#   (52,23) tramo HORIZONTAL continuo (sólo travesaños)
+#   (53,23) tramo horizontal con poste al medio
+# La fila 24 repite el juego con postes más cortos.
+rl(rect(45, 49, 23, 24), solid(HB))
 rl(rect(50, 51, 23, 24), solid(VB))
-rl(rect(52, 53, 23, 24), solid(FULL))
+rl(rect(52, 53, 23, 24), solid(HB))
 # arboles y arbustos (vinedos)
 rl(rect(13, 18, 9, 11), solid(BH))
 rl(rect(19, 28, 9, 11))
@@ -169,6 +180,24 @@ for c in [(19, 9), (20, 9), (21, 9), (22, 9), (23, 9), (24, 9), (25, 9), (26, 9)
     rl_phys[c] = solid(BH)
 # flores sueltas
 rl(rect(41, 44, 23, 24))
+# setos bajos de patio (banda verde continua: cerco vivo de las manzanas)
+rl(rect(19, 21, 10, 11), solid(HB))
+# ---------------------------------------------------------------- fachadas
+# Estas baldosas se estampan en la capa Techos ENCIMA de la pared de la casa, para
+# darle oficio a un edificio sin cambiarle el cuerpo (la colisión la sigue
+# poniendo la pared de abajo). Van sin física propia a propósito.
+rl([(44, 7), (45, 7)])                              # portón doble de madera
+rl([(44, 6), (45, 6)])                              # ventana con vidrio cálido
+rl([(44, 8), (47, 8), (40, 8)])                     # ventana en cruz / ojival / en arco
+rl([(45, 0), (46, 0)])                              # rosetón
+rl([(41, 15), (42, 15), (44, 15), (45, 15), (50, 15)])  # pergamino, lacre, pluma, libro
+# postes de cartel de oficio
+rl([(19, 0), (20, 0), (21, 0)], solid(BH))
+# tendederos con ropa
+rl(rect(51, 52, 12, 13))
+# Parches de piso: charcos, huellas y adoquines sueltos. Van en Decoracion, encima
+# de la calzada, para que las calles no sean tres celdas de tierra plana.
+rl(rect(5, 9, 11, 15))
 
 import re
 

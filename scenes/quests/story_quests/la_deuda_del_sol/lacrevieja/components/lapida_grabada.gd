@@ -56,6 +56,10 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 	interact_area.interaction_started.connect(_on_interaction_started)
+	# El grabado y el rótulo sólo se leen con el jugador frente a la piedra: dos
+	# piedras vecinas con el «Aquí descansa…» siempre encendido se pisaban entre sí.
+	interact_area.observers_changed.connect(_on_observers_changed)
+	_on_observers_changed()
 
 
 ## ¿Esta piedra le está debiendo una letra a un finado?
@@ -87,6 +91,14 @@ func _on_interaction_started(_jugador: Player, _desde_la_derecha: bool) -> void:
 	interact_area.end_interaction()
 
 
+func _on_observers_changed() -> void:
+	var cerca: bool = interact_area.is_being_observed
+	for nombre: NodePath in [^"%Grabado", ^"%Estado"]:
+		var rotulo := get_node_or_null(nombre)
+		if rotulo is CanvasItem:
+			(rotulo as CanvasItem).visible = cerca
+
+
 func _actualizar_apariencia() -> void:
 	if not is_node_ready():
 		return
@@ -106,3 +118,7 @@ func _actualizar_apariencia() -> void:
 	var sello := get_node_or_null(^"%Enmienda")
 	if sello is CanvasItem:
 		(sello as CanvasItem).visible = enmendada
+	# La cinta de constancia: es lo que se ve de lejos cuando la piedra ya se leyó.
+	var constancia := get_node_or_null(^"%Constancia")
+	if constancia is CanvasItem:
+		(constancia as CanvasItem).visible = leida

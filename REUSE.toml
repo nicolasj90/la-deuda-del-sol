@@ -83,3 +83,11 @@ path = [
 ]
 SPDX-FileCopyrightText = "The Threadbare Authors"
 SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+# Dibujo propio de La Deuda del Sol: la gallina de Lacrevieja (16px, cuatro
+# cuadros), generada por tools/gen-sprite-gallina.py. Va después del bloque de
+# assets/first_party para que gane esta anotación y no la de Threadbare.
+[[annotations]]
+path = "assets/first_party/wildlife/gallina/*.png"
+SPDX-FileCopyrightText = "La Deuda del Sol Authors"
+SPDX-License-Identifier = "CC-BY-SA-4.0"

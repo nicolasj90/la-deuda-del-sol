@@ -21,6 +21,8 @@ if npc_name == "vecino de las mesas":
 	=> mesas
 elif npc_name == "vecino de las gallinas":
 	=> gallinas
+elif npc_name == "el ayudante del Fedatario":
+	=> ayudante
 else:
 	=> vecina
 
@@ -57,4 +59,21 @@ VECINO: Tres lámparas a pleno sol. Gasto, pero queda bien.
 
 ~ gallinas
 VECINO: Cuidado con las gallinas, que hoy andan con derecho adquirido.
+=> END
+
+
+# El ayudante queda en el patio de la notaría mientras el Fedatario refrenda en la
+# plaza: el oficio tiene que leerse en el edificio, no sólo en el estrado.
+~ ayudante
+if Lacrevieja.ceremonia_hecha():
+	=> ayudante_despues
+else:
+	=> ayudante_antes
+
+~ ayudante_antes
+AYUDANTE: El Fedatario refrenda en la plaza. Acá queda el libro abierto, por si alguien viene a que le conste algo.
+=> END
+
+~ ayudante_despues
+AYUDANTE: Ya está asentado. Renglón, fecha y firma: eso es todo lo que hace una mayoría.
 => END

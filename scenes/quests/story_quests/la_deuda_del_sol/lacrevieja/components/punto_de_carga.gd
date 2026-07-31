@@ -84,6 +84,11 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 	interact_area.interaction_started.connect(_on_interaction_started)
+	# La cuenta de atados sólo se rotula con el jugador a tiro de mano: el «horno
+	# grande de Rosaura — 0/3 atados» flotando siempre sobre el mapa era una etiqueta
+	# de depuración, no información de juego. Lo que se lee de lejos es el atado.
+	interact_area.observers_changed.connect(_on_observers_changed)
+	_on_observers_changed()
 
 
 ## ¿La tarea ya está cumplida? La cuenta vive en el punto de destino.
@@ -140,20 +145,27 @@ func _on_interaction_started(_jugador: Player, _desde_la_derecha: bool) -> void:
 	interact_area.end_interaction()
 
 
+func _on_observers_changed() -> void:
+	var estado := get_node_or_null(^"%Estado")
+	if estado is CanvasItem:
+		(estado as CanvasItem).visible = interact_area.is_being_observed
+
+
 func _actualizar_apariencia() -> void:
 	if not is_node_ready():
 		return
 	var estado := get_node_or_null(^"%Estado")
 	if estado is Label:
 		(estado as Label).text = _texto_de_estado()
-	var atado := get_node_or_null(^"%Atado")
-	if atado is CanvasItem:
-		# En el origen el atado visible es el que falta llevarse; en el destino,
-		# la leña ya entrada.
-		if modo == Modo.TOMAR:
-			(atado as CanvasItem).visible = not cargando and not cumplido()
-		else:
-			(atado as CanvasItem).visible = entregados > 0
+	# En el origen el atado visible es el que falta llevarse; en el destino, la leña
+	# ya entrada. Es el estado que se lee de lejos, sin rótulo.
+	var hay_atado: bool = (
+		(not cargando and not cumplido()) if modo == Modo.TOMAR else entregados > 0
+	)
+	for nombre: NodePath in [^"%Atado", ^"%AtadoCuerda"]:
+		var bulto := get_node_or_null(nombre)
+		if bulto is CanvasItem:
+			(bulto as CanvasItem).visible = hay_atado
 
 
 func _texto_de_estado() -> String:

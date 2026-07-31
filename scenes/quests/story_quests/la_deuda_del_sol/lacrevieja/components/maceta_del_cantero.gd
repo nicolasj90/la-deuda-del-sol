@@ -41,6 +41,11 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 	interact_area.interaction_started.connect(_on_interaction_started)
+	# El rótulo sólo aparece cuando el jugador tiene la maceta a tiro de mano. Antes
+	# estaba siempre encendido y el anillo norte de la plaza era una fila de carteles
+	# «maceta — seca» pisándose entre sí.
+	interact_area.observers_changed.connect(_on_observers_changed)
+	_on_observers_changed()
 
 
 ## Vuelca la regadera. Devuelve [code]true[/code] si esta maceta pasó a regada.
@@ -58,6 +63,12 @@ func _on_interaction_started(_jugador: Player, _desde_la_derecha: bool) -> void:
 	interact_area.end_interaction()
 
 
+func _on_observers_changed() -> void:
+	var estado := get_node_or_null(^"%Estado")
+	if estado is CanvasItem:
+		(estado as CanvasItem).visible = interact_area.is_being_observed
+
+
 func _actualizar_apariencia() -> void:
 	if not is_node_ready():
 		return
@@ -66,6 +77,16 @@ func _actualizar_apariencia() -> void:
 		var hojas := planta as Polygon2D
 		hojas.visible = not rota
 		hojas.color = Color(0.36, 0.62, 0.33) if regada else Color(0.5, 0.52, 0.3)
+	var tallo := get_node_or_null(^"%Tallo")
+	if tallo is Polygon2D:
+		var caña := tallo as Polygon2D
+		caña.visible = not rota
+		caña.color = Color(0.3, 0.55, 0.28) if regada else Color(0.45, 0.45, 0.28)
+	# La maceta cumplida saca flor: es el estado que E02 tiene que mostrar SIN texto.
+	for nombre: NodePath in [^"%Flor", ^"%FlorCentro"]:
+		var petalos := get_node_or_null(nombre)
+		if petalos is CanvasItem:
+			(petalos as CanvasItem).visible = regada and not rota
 	var rajadura := get_node_or_null(^"%Rajadura")
 	if rajadura is CanvasItem:
 		(rajadura as CanvasItem).visible = rota

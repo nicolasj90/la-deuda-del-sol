@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bgallinaprop01"]
+
+[ext_resource type="Script" uid="uid://jllabtpjc46i" path="res://scenes/game_elements/props/decoration/animated_decoration.gd" id="1_deco"]
+[ext_resource type="SpriteFrames" uid="uid://bgallinaldds1" path="res://scenes/game_elements/characters/components/sprite_frames/gallina.tres" id="2_gallina"]
+[ext_resource type="Script" uid="uid://cms2wqtbxjl1h" path="res://scenes/game_logic/sprite_behaviors/random_frame_sprite_behavior.gd" id="3_random"]
+
+[node name="Gallina" type="Node2D"]
+editor_description = "Gallina de corral de Lacrevieja. Dibujo propio de 16px a escala 4, la misma grilla que los tiles del pueblo (tools/gen-sprite-gallina.py). Antes de esto las «gallinas» del pueblo eran los conejos de Threadbare."
+script = ExtResource("1_deco")
+sprite_frames = ExtResource("2_gallina")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("2_gallina")
+animation = &"idle"
+offset = Vector2(0, -8)
+
+[node name="RandomFrameSpriteBehavior" type="Node2D" parent="AnimatedSprite2D" node_paths=PackedStringArray("sprite")]
+script = ExtResource("3_random")
+sprite = NodePath("..")
+metadata/_custom_type_script = "uid://cms2wqtbxjl1h"

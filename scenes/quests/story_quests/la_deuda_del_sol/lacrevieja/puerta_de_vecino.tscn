@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpuertavecino01"]
+
+[ext_resource type="Script" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/components/puerta_de_vecino.gd" id="1_puerta"]
+[ext_resource type="Script" uid="uid://du8wfijr35r35" path="res://scenes/game_elements/props/interact_area/interact_area.gd" id="2_interact"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_puerta"]
+radius = 44.0
+
+[node name="PuertaDeVecino" type="Node2D"]
+editor_description = "Vano de puerta de una casa de Lacrevieja: se golpea y contesta quién vive ahí y por qué hoy no atiende. NO pone física propia (la pone la pared de la casa, que es sólida): sólo el rótulo y el botón de interacción."
+script = ExtResource("1_puerta")
+
+[node name="Rotulo" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = -104.0
+offset_top = -104.0
+offset_right = 104.0
+offset_bottom = -60.0
+theme_override_colors/font_color = Color(1, 0.9, 0.72, 1)
+theme_override_colors/font_outline_color = Color(0.1, 0.07, 0.06, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 12
+text = "casa del pueblo"
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 2
+
+[node name="InteractArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("2_interact")
+action = "Golpear"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_puerta")

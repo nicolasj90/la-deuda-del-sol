@@ -13,6 +13,11 @@ extends Node2D
 ## Es un prop de placeholder gráfico —polígonos, como el resto del Acto 1— pensado
 ## para que arte lo reemplace sin tocar la lógica: lo único que mira el juego es
 ## [member encendida].
+##
+## [b]El estado se lee por el dibujo, no por texto[/b]: fría, el vidrio está apagado
+## y el farol no proyecta nada; encendida, se prende la llama, el resplandor del
+## vidrio y el halo del piso. El rótulo ([member mostrar_etiqueta]) arranca APAGADO:
+## era una etiqueta de depuración flotando sobre el mundo en cada encuadre.
 
 ## Emitida cuando la lámpara pasa de fría a encendida.
 signal encendio
@@ -29,8 +34,9 @@ signal encendio
 		etiqueta = nueva
 		_actualizar_apariencia()
 
-## Si es [code]false[/code], no se dibuja el rótulo (plaza ya aprendida).
-@export var mostrar_etiqueta: bool = true:
+## Si es [code]true[/code], se dibuja el rótulo de depuración sobre la lámpara.
+## Por defecto NO: el estado se lee por el sprite.
+@export var mostrar_etiqueta: bool = false:
 	set(nueva):
 		mostrar_etiqueta = nueva
 		_actualizar_apariencia()
@@ -58,10 +64,15 @@ func _actualizar_apariencia() -> void:
 	var halo := get_node_or_null(^"%Halo")
 	if halo is CanvasItem:
 		(halo as CanvasItem).visible = encendida
+	var llama := get_node_or_null(^"%Llama")
+	if llama is CanvasItem:
+		(llama as CanvasItem).visible = encendida
+	# El vidrio del farol: ámbar cálido encendido, vidrio frío apagado. Antes el
+	# apagado era casi negro y sobre el empedrado gris el farol desaparecía.
 	var farol := get_node_or_null(^"%Farol")
 	if farol is Polygon2D:
 		(farol as Polygon2D).color = (
-			Color(1.0, 0.88, 0.55) if encendida else Color(0.26, 0.24, 0.24)
+			Color(1.0, 0.85, 0.45) if encendida else Color(0.44, 0.5, 0.56)
 		)
 	var estado := get_node_or_null(^"%Estado")
 	if estado is Label:

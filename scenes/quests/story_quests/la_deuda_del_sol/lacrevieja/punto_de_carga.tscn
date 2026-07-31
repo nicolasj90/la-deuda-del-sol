@@ -10,23 +10,38 @@ size = Vector2(48, 26)
 radius = 54.0
 
 [node name="PuntoDeCarga" type="Node2D"]
+editor_description = "Los dos extremos del acarreo de E02. El estado se lee por el atado que está o no está encima del bulto; el rótulo con la cuenta de atados sólo aparece con el jugador a tiro de mano."
 script = ExtResource("1_punto")
+
+[node name="Sombra" type="Polygon2D" parent="."]
+color = Color(0.09, 0.08, 0.11, 0.28)
+polygon = PackedVector2Array(-26, 0, 26, 0, 26, 6, -26, 6)
 
 [node name="Bulto" type="Polygon2D" parent="."]
 color = Color(0.29, 0.22, 0.16, 1)
 polygon = PackedVector2Array(-26, -30, 26, -30, 26, 4, -26, 4)
+
+[node name="BultoVeta" type="Polygon2D" parent="."]
+color = Color(0.4, 0.31, 0.21, 1)
+polygon = PackedVector2Array(-26, -22, 26, -22, 26, -17, -26, -17)
 
 [node name="Atado" type="Polygon2D" parent="."]
 unique_name_in_owner = true
 color = Color(0.55, 0.4, 0.22, 1)
 polygon = PackedVector2Array(-20, -44, 20, -44, 20, -30, -20, -30)
 
+[node name="AtadoCuerda" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+color = Color(0.28, 0.2, 0.13, 1)
+polygon = PackedVector2Array(-3, -45, 3, -45, 3, -29, -3, -29)
+
 [node name="Estado" type="Label" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = -92.0
-offset_top = -80.0
+offset_top = -86.0
 offset_right = 92.0
-offset_bottom = -50.0
+offset_bottom = -56.0
 theme_override_colors/font_color = Color(1, 0.9, 0.72, 1)
 theme_override_colors/font_outline_color = Color(0.1, 0.07, 0.06, 1)
 theme_override_constants/outline_size = 6

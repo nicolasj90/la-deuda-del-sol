@@ -1,0 +1,40 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://bgallinaldds1"]
+
+[ext_resource type="Texture2D" path="res://assets/first_party/wildlife/gallina/gallina_idle.png" id="1_gallina"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gal0"]
+atlas = ExtResource("1_gallina")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gal1"]
+atlas = ExtResource("1_gallina")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gal2"]
+atlas = ExtResource("1_gallina")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gal3"]
+atlas = ExtResource("1_gallina")
+region = Rect2(48, 0, 16, 16)
+
+[resource]
+resource_name = "gallina"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gal0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gal1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gal2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gal3")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]

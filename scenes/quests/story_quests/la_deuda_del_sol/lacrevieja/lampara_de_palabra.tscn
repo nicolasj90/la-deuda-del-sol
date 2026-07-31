@@ -3,42 +3,94 @@
 [ext_resource type="Script" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/components/lampara_de_palabra.gd" id="1_lampara"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_poste"]
-size = Vector2(14, 20)
+size = Vector2(16, 22)
 
 [node name="LamparaDePalabra" type="Node2D"]
+editor_description = "Farol de palabra: base de piedra, poste de hierro, farol de cuatro vidrios con capucha y veleta, y sombra en el piso. Fría se lee por el vidrio apagado; encendida, por la llama, el resplandor y el halo. El estado NO se lee por texto: el rótulo arranca apagado."
 script = ExtResource("1_lampara")
 
 [node name="Halo" type="Polygon2D" parent="."]
 unique_name_in_owner = true
 visible = false
-color = Color(1, 0.87, 0.5, 0.16)
-polygon = PackedVector2Array(-56, -128, 56, -128, 56, 8, -56, 8)
+color = Color(1, 0.85, 0.48, 0.13)
+polygon = PackedVector2Array(-72, -88, -51, -139, 0, -160, 51, -139, 72, -88, 51, -37, 0, -16, -51, -37)
 
-[node name="Poste" type="Polygon2D" parent="."]
-color = Color(0.17, 0.16, 0.18, 1)
-polygon = PackedVector2Array(-5, -72, 5, -72, 5, 0, -5, 0)
+[node name="Sombra" type="Polygon2D" parent="."]
+color = Color(0.09, 0.08, 0.11, 0.32)
+polygon = PackedVector2Array(-20, -2, -8, -7, 8, -7, 20, -2, 20, 3, 8, 8, -8, 8, -20, 3)
 
 [node name="Base" type="Polygon2D" parent="."]
-color = Color(0.22, 0.21, 0.22, 1)
-polygon = PackedVector2Array(-14, -6, 14, -6, 14, 2, -14, 2)
+color = Color(0.34, 0.32, 0.31, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 15, 2, -15, 2)
 
-[node name="Farol" type="Polygon2D" parent="."]
-unique_name_in_owner = true
-color = Color(0.26, 0.24, 0.24, 1)
-polygon = PackedVector2Array(-13, -96, 13, -96, 13, -72, -13, -72)
+[node name="BaseSombra" type="Polygon2D" parent="."]
+color = Color(0.21, 0.2, 0.2, 1)
+polygon = PackedVector2Array(-15, -2, 15, -2, 15, 2, -15, 2)
+
+[node name="Poste" type="Polygon2D" parent="."]
+color = Color(0.15, 0.14, 0.17, 1)
+polygon = PackedVector2Array(-4, -78, 4, -78, 6, -10, -6, -10)
+
+[node name="PosteBrillo" type="Polygon2D" parent="."]
+color = Color(0.3, 0.29, 0.33, 1)
+polygon = PackedVector2Array(-3, -76, -1, -76, -1, -12, -3, -12)
+
+[node name="Collar" type="Polygon2D" parent="."]
+color = Color(0.22, 0.2, 0.23, 1)
+polygon = PackedVector2Array(-9, -48, 9, -48, 9, -42, -9, -42)
 
 [node name="Luz" type="Polygon2D" parent="."]
 unique_name_in_owner = true
 visible = false
-color = Color(1, 0.93, 0.68, 0.72)
-polygon = PackedVector2Array(-26, -108, 26, -108, 26, -64, -26, -64)
+color = Color(1, 0.9, 0.6, 0.5)
+polygon = PackedVector2Array(-30, -110, 30, -110, 34, -86, 30, -62, -30, -62, -34, -86)
+
+[node name="Farol" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+color = Color(0.44, 0.5, 0.56, 1)
+polygon = PackedVector2Array(-14, -102, 14, -102, 14, -76, -14, -76)
+
+[node name="Llama" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+visible = false
+color = Color(1, 0.97, 0.78, 1)
+polygon = PackedVector2Array(0, -98, 5, -88, 4, -80, -4, -80, -5, -88)
+
+[node name="MarcoIzquierdo" type="Polygon2D" parent="."]
+color = Color(0.17, 0.15, 0.18, 1)
+polygon = PackedVector2Array(-16, -104, -11, -104, -11, -74, -16, -74)
+
+[node name="MarcoDerecho" type="Polygon2D" parent="."]
+color = Color(0.17, 0.15, 0.18, 1)
+polygon = PackedVector2Array(11, -104, 16, -104, 16, -74, 11, -74)
+
+[node name="MarcoMedio" type="Polygon2D" parent="."]
+color = Color(0.17, 0.15, 0.18, 1)
+polygon = PackedVector2Array(-1, -102, 1, -102, 1, -76, -1, -76)
+
+[node name="MarcoBase" type="Polygon2D" parent="."]
+color = Color(0.2, 0.18, 0.2, 1)
+polygon = PackedVector2Array(-17, -80, 17, -80, 17, -73, -17, -73)
+
+[node name="MarcoTapa" type="Polygon2D" parent="."]
+color = Color(0.2, 0.18, 0.2, 1)
+polygon = PackedVector2Array(-17, -106, 17, -106, 17, -100, -17, -100)
+
+[node name="Capucha" type="Polygon2D" parent="."]
+color = Color(0.25, 0.22, 0.21, 1)
+polygon = PackedVector2Array(0, -126, 21, -105, -21, -105)
+
+[node name="Veleta" type="Polygon2D" parent="."]
+color = Color(0.25, 0.22, 0.21, 1)
+polygon = PackedVector2Array(-2, -134, 2, -134, 2, -124, -2, -124)
 
 [node name="Estado" type="Label" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = -84.0
-offset_top = -132.0
+offset_top = -172.0
 offset_right = 84.0
-offset_bottom = -106.0
+offset_bottom = -146.0
 theme_override_colors/font_color = Color(1, 0.9, 0.72, 1)
 theme_override_colors/font_outline_color = Color(0.1, 0.07, 0.06, 1)
 theme_override_constants/outline_size = 6

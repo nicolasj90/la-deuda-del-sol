@@ -10,16 +10,42 @@ size = Vector2(28, 18)
 radius = 40.0
 
 [node name="MacetaDelCantero" type="Node2D"]
+editor_description = "Maceta del cantero norte. El estado se lee por el dibujo: seca la planta va mustia y sin flor, regada se pone verde, saca flor y le queda agua en el tiesto. El rótulo sólo aparece cuando el jugador la tiene a tiro de mano."
 script = ExtResource("1_maceta")
+
+[node name="Sombra" type="Polygon2D" parent="."]
+color = Color(0.09, 0.08, 0.11, 0.28)
+polygon = PackedVector2Array(-12, -2, 12, -2, 12, 3, -12, 3)
+
+[node name="Tallo" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+color = Color(0.32, 0.5, 0.28, 1)
+polygon = PackedVector2Array(-2, -34, 2, -34, 2, -20, -2, -20)
 
 [node name="Planta" type="Polygon2D" parent="."]
 unique_name_in_owner = true
 color = Color(0.5, 0.52, 0.3, 1)
 polygon = PackedVector2Array(-10, -40, 10, -40, 4, -20, -4, -20)
 
+[node name="Flor" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+visible = false
+color = Color(0.94, 0.5, 0.25, 1)
+polygon = PackedVector2Array(0, -52, 7, -46, 5, -38, -5, -38, -7, -46)
+
+[node name="FlorCentro" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+visible = false
+color = Color(1, 0.87, 0.42, 1)
+polygon = PackedVector2Array(-2, -47, 2, -47, 2, -43, -2, -43)
+
 [node name="Tiesto" type="Polygon2D" parent="."]
 color = Color(0.55, 0.32, 0.24, 1)
 polygon = PackedVector2Array(-14, -20, 14, -20, 10, 0, -10, 0)
+
+[node name="TiestoBrocal" type="Polygon2D" parent="."]
+color = Color(0.68, 0.41, 0.3, 1)
+polygon = PackedVector2Array(-15, -22, 15, -22, 15, -18, -15, -18)
 
 [node name="Rajadura" type="Polygon2D" parent="."]
 unique_name_in_owner = true
@@ -35,10 +61,11 @@ polygon = PackedVector2Array(-12, -18, 12, -18, 12, -14, -12, -14)
 
 [node name="Estado" type="Label" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = -70.0
-offset_top = -66.0
+offset_top = -80.0
 offset_right = 70.0
-offset_bottom = -42.0
+offset_bottom = -56.0
 theme_override_colors/font_color = Color(1, 0.9, 0.72, 1)
 theme_override_colors/font_outline_color = Color(0.1, 0.07, 0.06, 1)
 theme_override_constants/outline_size = 6

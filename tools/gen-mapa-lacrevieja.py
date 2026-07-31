@@ -22,6 +22,23 @@ Geografía, según docs/guion/acto1/01-lacrevieja-y-vencimiento.md (E01-E06):
   - capilla del lacre al noreste y, detrás, el cementerio chico de Cosme;
   - viñedos en todo el borde oeste; salida este por la calle mayor a Villarrúbrica.
 
+Identidad de los edificios (ronda 2 del juez visual): la NOTARÍA se lee por sus
+pilastras de tapia, el portón doble, la placa de lacre, las ventanas encendidas y
+el cartel de oficio con pluma y tintero en la calle norte; la CAPILLA, por el
+portón en arco de piedra de dos celdas, el rosetón, los ventanales ojivales, el
+campanario y la cruz del techo; la CASA DE CIRO, por el cartel con el apellido, la
+ropa tendida, el banco, la leña y el hacha del galpón. Las manzanas de pasto
+llevan cerco vivo con portillo, trastos de patio y sendas peatonales, y las
+calzadas llevan charcos, huellas y adoquines sueltos en los cruces.
+
+Ninguna casa se puede atravesar: el tejado y la pared son sólidos, y el único hueco
+es el vano de la puerta, que se puede pisar pero no cruzar. Cada vano lleva su
+PuertaDeVecino (nodo mudo, sin física propia) para que golpear conteste quién vive
+ahí y por qué hoy no atiende. Los carteles van sólo donde hacen falta — plaza,
+panadería, notaría, camposanto, salida a Villarrúbrica — y nunca sobre la calzada.
+Todo esto lo verifica scenes/.../lacrevieja/tests/sonda_muros.tscn, que camina el
+pueblo con el cuerpo del jugador.
+
 Todo el contenido de F5a (NPCs con su .dialogue, promesitas, lámparas, triggers de
 E01-E05, spawns, teleporter, RestauradorDelActo) se conserva con el mismo nombre y
 el mismo path: solo cambia de lugar. Los scripts y los tests los buscan por
@@ -62,7 +79,15 @@ TIERRA_LLANA = [T(TT, 3, 3), T(TT, 4, 3), T(TT, 5, 3)]
 # propósito — las otras baldosas de esa fila del atlas son de otro color y mezcladas
 # dan un camuflaje manchado, no un piso.
 EMPEDRADO = [T(RL, 6, 2), T(RL, 6, 2), T(RL, 6, 2), T(RL, 6, 3)]
-AGUA = {(dx, dy): T(RL, 2 + dx, 0 + dy, True) for dx in range(3) for dy in range(3)}
+# Pileta de la huerta: brocal de piedra 3x3. La «laguna 3x3 con orilla» del pack
+# trae SU PROPIO verde saturado en las cuatro esquinas y sobre el pasto de Tiny
+# Town se ve como un parche cuadrado (el juez lo marcó en la huerta del sur). El
+# brocal de piedra no tiene fondo verde: se apoya en cualquier suelo.
+PILETA = {(dx, dy): T(RL, 2 + dx, 3 + dy, True) for dx in range(3) for dy in range(3)}
+# Parches de piso para que las calzadas no sean tierra plana uniforme.
+CHARCOS = [T(RL, 5, 11), T(RL, 6, 11), T(RL, 7, 11), T(RL, 8, 12), T(RL, 9, 12)]
+HUELLAS = [T(RL, 5, 7), T(RL, 6, 8), T(RL, 7, 7), T(RL, 8, 9), T(RL, 9, 8)]
+ADOQUIN_SUELTO = [T(RL, 5, 14), T(RL, 6, 14), T(RL, 7, 13), T(RL, 8, 14), T(RL, 9, 13)]
 
 # árboles: copa (sella el borde) + tronco
 COPA_VERDE, TRONCO_VERDE = T(TT, 4, 0, True), T(TT, 4, 1, True)
@@ -75,9 +100,19 @@ BROTES = T(TT, 5, 1)
 PARRA = [T(RL, 24, 11, True), T(RL, 24, 10, True)]
 FRUTAL = [T(RL, 23, 9, True), T(RL, 23, 10, True), T(RL, 23, 11, True)]
 
-# canteros de flores
-CANTEROS = [T(RL, 2, 7), T(RL, 3, 7), T(RL, 2, 10), T(RL, 3, 10), T(RL, 2, 13), T(RL, 3, 13)]
-FLORCITAS = [T(RL, 0, 6), T(RL, 1, 6), T(RL, 0, 9), T(RL, 1, 12)]
+# Canteros de flores del pack roguelike: son un autotile 3x3 con brocal de piedra
+# (columnas 2=izq / 3=medio / 4=der; filas 6-8 naranja, 9-11 blanco, 12-14 azul).
+# Hay que estamparlos como rectángulo: una baldosa suelta del medio queda como un
+# parche verde con el brocal cortado.
+CANTERO_FILA = {"naranja": 6, "blanco": 9, "azul": 12}
+# Florcitas sueltas: SIEMPRE de Tiny Town, que es el atlas del pasto. Las «flores
+# sobre pasto» del pack roguelike traen su propio verde (más oscuro) y un pedazo de
+# piedra blanca cortado, así que sobre este pasto se leen como parches sucios.
+FLORCITAS = [T(TT, 2, 0), T(TT, 2, 0), T(TT, 7, 3), T(TT, 5, 1)]
+# Matas de flores del pack roguelike: éstas SÍ vienen sin fondo (sólo la mata), así
+# que sobre el pasto de Tiny Town no dejan parche.
+FLORES_SUELTAS = [T(RL, 41, 23), T(RL, 42, 23), T(RL, 43, 23), T(RL, 44, 23),
+                  T(RL, 41, 24), T(RL, 42, 24), T(RL, 43, 24), T(RL, 44, 24)]
 
 # props
 POZO_ALTO, POZO_BAJO = T(TT, 8, 7, True), T(TT, 8, 8, True)
@@ -87,19 +122,46 @@ MOSTRADOR = [T(RL, 12, 4, True), T(RL, 13, 4, True)]
 PUESTOS = [T(RL, 11, 4, True), T(RL, 12, 4, True), T(RL, 13, 4, True),
            T(RL, 11, 6, True), T(RL, 13, 6, True)]
 CORDON = T(RL, 7, 4)                 # cordón de ladrillo del borde de la plaza
-LAPIDAS_DECO = [T(RL, 51, 9, True), T(RL, 52, 9, True), T(RL, 51, 10, True),
-                T(RL, 52, 10, True), T(RL, 53, 10, True)]
+LAPIDAS_DECO = [T(RL, 51, 11, True), T(RL, 52, 11, True), T(RL, 53, 11, True),
+                T(RL, 51, 9, True), T(RL, 52, 9, True)]
 CRUZ_MADERA = T(RL, 53, 9, True)
 CRUZ_PIEDRA = T(RL, 51, 10)          # sobre el techo de la capilla: no necesita física
 BANDERINES = [T(RL, 51, 0), T(RL, 52, 0), T(RL, 51, 3),
               T(RL, 52, 3), T(RL, 51, 6), T(RL, 52, 6)]
 CARTEL_MADERA = T(TT, 11, 6, True)   # tabla de oficio colgada
+POSTE_CARTEL = [T(RL, 19, 0, True), T(RL, 20, 0, True), T(RL, 21, 0, True)]
+BARRIL = [T(TT, 10, 10, True), T(TT, 11, 10, True)]
+CAJON = T(TT, 10, 8, True)           # cajón de madera / leña estibada
+HACHA = T(TT, 11, 9)                 # hacha apoyada (deco, no frena)
+PAN = T(TT, 9, 7)                    # hogaza: el emblema de la panadería
+BANCO = T(RL, 16, 0, True)           # tablón de banco
+TENDEDERO = [T(RL, 51, 13), T(RL, 52, 13)]   # cuerda con ropa colgada
 
-# cercos
-CERCO_H = [T(RL, 46, 23, True), T(RL, 47, 23, True), T(RL, 48, 23, True)]
-CERCO_V = [T(RL, 50, 23, True), T(RL, 51, 23, True)]
-CERCO_ESQ = T(RL, 52, 23, True)
+# Cercos. La geometría del atlas importa: (46,23) es una HOJA DE TRANQUERA y
+# (50,23) está VACÍA, y por usarlas como «tramo de cerco» el recinto del
+# cementerio se leía como postes sueltos con huecos. Los tramos continuos son
+# (52,23)/(52,24) en horizontal y (51,23)/(51,24) en vertical.
+CERCO_H = [T(RL, 52, 23, True), T(RL, 52, 24, True), T(RL, 53, 23, True)]
+CERCO_V = [T(RL, 51, 23, True), T(RL, 51, 24, True)]
+CERCO_ESQ = T(RL, 53, 24, True)
+HOJA_TRANQUERA = [T(RL, 46, 23, True), T(RL, 46, 24, True)]
+SETO = [T(RL, 19, 10, True), T(RL, 20, 10, True), T(RL, 21, 10, True)]
+SETO_OSCURO = [T(RL, 19, 11, True), T(RL, 20, 11, True), T(RL, 21, 11, True)]
 TAPIA = [T(TD, 9, 4, True), T(TD, 10, 4, True), T(TD, 11, 4, True)]
+
+# Fachadas de oficio. Van en la capa Techos, ENCIMA de la pared de la casa: le dan
+# identidad al edificio sin tocarle el cuerpo ni la colisión (la pone la pared).
+PORTON_DOBLE = [T(RL, 44, 7), T(RL, 45, 7)]
+VENTANA_CALIDA = [T(RL, 44, 6), T(RL, 45, 6)]
+VITRAL = T(RL, 47, 8)                # ventanal ojival
+ROSETON = T(RL, 46, 0)               # rosetón de la capilla
+ARCO_IZQ, ARCO_DER = T(TT, 3, 9), T(TT, 4, 9)   # portón en arco de piedra (2 celdas)
+ALMENA = [T(TT, 3, 8, True), T(TT, 4, 8, True)]  # coronamiento del campanario
+SELLO_DE_LACRE = T(RL, 42, 15)       # el emblema del Fedatario
+PLUMA_Y_TINTERO = T(RL, 45, 15)
+PERGAMINO = T(RL, 41, 15)
+LIBRO_DE_PALABRA = T(RL, 50, 15)
+ATRIL = T(RL, 16, 0, True)
 
 # casas: (techo_izq, techo_med, techo_der) x2 filas, pared, y frente
 ESTILOS = {
@@ -169,11 +231,24 @@ VINEDO = rect(2, 4, 8, 36)
 CEMENTERIO = rect(49, 4, 55, 9)
 PORTON_CEMENTERIO = rect(51, 10, 53, 10)
 PATIO_NOTARIA = rect(33, 8, 35, 10)      # E06: el patio de tinta dormida
+# Plazoleta de tierra frente al portón del cementerio: viniendo por la calle norte
+# el portón tiene que verse desde lejos y el camino tiene que señalarlo. Sin esto
+# el jugador topaba contra el cerco y no encontraba la entrada.
+ATRIO_CEMENTERIO = rect(50, 11, 54, 12)
+# Sendas peatonales de dos celdas que cruzan las manzanas de pasto: sin ellas las
+# manzanas son campos vacíos y la única forma de moverse son las tres calzadas.
+SENDA_NE = rect(49, 13, 50, 18)
+SENDA_SO = rect(23, 26, 24, 28)
+SENDA_SE = rect(37, 26, 38, 28)
+CALLEJON_HUERTA = rect(24, 31, 38, 31)   # servicio de la huerta del sur
+ERA_PILETA = rect(50, 32, 54, 36)        # era de tierra alrededor de la pileta
 
 tierra = set()
 for zona in (CALLE_MAYOR, CALLE_NORTE, CALLE_SUR, CONECTOR_NO, CONECTOR_SO,
              CONECTOR_NE, CONECTOR_SE, BAJADA_OESTE, BAJADA_ESTE, PLAZA,
-             VINEDO, CEMENTERIO, PORTON_CEMENTERIO, PATIO_NOTARIA):
+             VINEDO, CEMENTERIO, PORTON_CEMENTERIO, PATIO_NOTARIA,
+             ATRIO_CEMENTERIO, SENDA_NE, SENDA_SO, SENDA_SE, CALLEJON_HUERTA,
+             ERA_PILETA):
     tierra.update(zona)
 
 for (x, y) in sorted(tierra):
@@ -183,7 +258,7 @@ for (x, y) in sorted(tierra):
     aba = (x, y + 1) not in tierra
     ax = 0 if izq else (2 if der else 1)
     ay = 1 if arr else (3 if aba else 2)
-    if (ax, ay) == (1, 2) and azar(7) == 0:
+    if (ax, ay) == (1, 2) and azar(10) < 4:
         put("Caminos", x, y, TIERRA_LLANA[azar(len(TIERRA_LLANA))])
     else:
         put("Caminos", x, y, T(TT, ax, ay + 0))
@@ -193,6 +268,33 @@ EMPEDRADO_PLAZA = rect(25, 15, 36, 24)
 for (x, y) in EMPEDRADO_PLAZA:
     borde = x in (25, 36) or y in (15, 24)
     put("Caminos", x, y, CORDON if borde else EMPEDRADO[azar(len(EMPEDRADO))])
+
+# ---------------------------------------------------------------------------
+# 2b. Uso de la calzada: charcos, huellas y adoquines sueltos. Tres celdas de
+# tierra plana uniforme se leen como una pista de aterrizaje, no como una calle.
+# ---------------------------------------------------------------------------
+_plaza = set(EMPEDRADO_PLAZA)
+for (x, y) in sorted(tierra):
+    if (x, y) in _plaza:
+        continue
+    d = azar(9)
+    if d == 0:
+        put("Decoracion", x, y, CHARCOS[azar(len(CHARCOS))])
+    elif d == 1:
+        put("Decoracion", x, y, HUELLAS[azar(len(HUELLAS))])
+
+# Adoquines sueltos en los cruces: la piedra aparece justo donde más se pisa.
+# OJO con el orden de los argumentos: acá rect() es rect(x0, y0, x1, y1) (en
+# tools/gen-tiles-pueblo.py es rect(x0, x1, y0, y1), que no es lo mismo). Escrito
+# con la otra convención, rect(20, 21, 29, 30) tapaba diez por diez celdas y
+# desparramaba adoquín por medio cuadrante sudoeste — el «arroyo de piedra» que
+# cruzaba la plaza y bajaba por el conector.
+CRUCES = (rect(20, 11, 21, 12) + rect(40, 11, 41, 12) + rect(20, 19, 21, 21)
+          + rect(40, 19, 41, 21) + rect(20, 29, 21, 30) + rect(40, 29, 41, 30)
+          + rect(24, 19, 25, 21) + rect(36, 19, 37, 21))
+for (x, y) in CRUCES:
+    if (x, y) in tierra and (x, y) not in _plaza and azar(3) < 2:
+        put("Decoracion", x, y, ADOQUIN_SUELTO[azar(len(ADOQUIN_SUELTO))])
 
 # ---------------------------------------------------------------------------
 # 3. Bordes cerrados: dos filas/columnas de árboles (copa sólida + tronco)
@@ -248,25 +350,78 @@ def casa(x0, y0, ancho, alto, estilo, puerta_x):
         put("Paredes", x, y0 + alto - 1, e["puerta"] if x == puerta_x else e["frente"])
 
 
+# Cada casa lleva su PuertaDeVecino sobre el vano: ninguna se puede atravesar (el
+# tejado y la pared son sólidos), así que el vano tiene que contestar algo cuando
+# Ciro golpea. Los campos son: nodo, etiqueta que se lee al acercarse, y la línea
+# de la casa cerrada. Registro Valdepalabra, líneas cortas.
 CASAS = [
-    #  x0, y0, ancho, alto, estilo, puerta_x, nombre
-    (13, 8, 4, 3, "roja", 14, "casa de la vecina de la esquina"),
-    (18, 8, 4, 3, "gris", 19, "casa vecina norte"),
-    (25, 7, 7, 4, "gris", 28, "NOTARÍA del fedatario"),
-    (41, 7, 5, 4, "gris", 43, "CAPILLA DEL LACRE"),
-    (13, 15, 6, 4, "roja", 15, "PANADERÍA DE ROSAURA"),
-    (44, 16, 4, 3, "roja", 45, "casa vecina del levante"),
-    (15, 25, 5, 4, "roja", 17, "CASA DE CIRO"),
-    (10, 26, 3, 3, "gris", 11, "GALPÓN DE LA LEÑA"),
-    (26, 26, 4, 3, "gris", 27, "casa vecina del sur"),
-    (33, 26, 4, 3, "roja", 34, "casa de las gallinas"),
-    (44, 26, 4, 3, "gris", 45, "casa vecina del sudeste"),
+    #  x0, y0, ancho, alto, estilo, puerta_x, nombre, (nodo, etiqueta, aviso)
+    (13, 8, 4, 3, "roja", 14, "casa de la vecina de la esquina",
+     ("PuertaVecinaEsquina", "casa de la vecina de la esquina",
+      "Trabada por dentro. Bajó a la plaza a guardar sitio y a mirar quién cumple.")),
+    (18, 8, 4, 3, "gris", 19, "casa vecina norte",
+     ("PuertaVecinaNorte", "casa del vecino del norte",
+      "Cerrada. Un papel en la hoja: «Vuelvo después de la campanada».")),
+    (25, 7, 7, 4, "gris", 28, "NOTARÍA del fedatario",
+     ("PuertaNotaria", "notaría de Lacrevieja",
+      "Portón cerrado con lacre fresco. El fedatario refrenda hoy en el estrado, no acá.")),
+    (41, 7, 5, 4, "gris", 43, "CAPILLA DEL LACRE",
+     ("PuertaCapilla", "capilla del lacre",
+      "Abierta de par en par y vacía. Adentro huele a cera y a nadie.")),
+    (13, 15, 6, 4, "roja", 15, "PANADERÍA DE ROSAURA",
+     ("PuertaPanaderia", "panadería de Rosaura",
+      "La puerta está para el pan, no para la leña: el horno grande da a la calle.")),
+    (44, 16, 4, 3, "roja", 45, "casa vecina del levante",
+     ("PuertaVecinaLevante", "casa del levante",
+      "Cerrada. Adentro no contesta nadie: hoy nadie se queda adentro.")),
+    (15, 25, 5, 4, "roja", 17, "CASA DE CIRO",
+     ("PuertaCasaDeCiro", "casa de los Albar",
+      "Tu casa. La puerta queda abierta un segundo sobre la casa vacía, y se cierra sola.")),
+    (10, 26, 3, 3, "gris", 11, "GALPÓN DE LA LEÑA",
+     ("PuertaGalpon", "galpón de la leña",
+      "El galpón está vacío por dentro: la leña quedó estibada afuera, contra la pared.")),
+    (26, 26, 4, 3, "gris", 27, "casa vecina del sur",
+     ("PuertaVecinaSur", "casa del vecino del sur",
+      "Cerrada. Se oye la fiesta desde acá, que es donde está el dueño.")),
+    (33, 26, 4, 3, "roja", 34, "casa de las gallinas",
+     ("PuertaCasaGallinas", "casa de las gallinas",
+      "Cerrada, y el gallinero abierto. Las gallinas andan sueltas por la plaza.")),
+    (44, 26, 4, 3, "gris", 45, "casa vecina del sudeste",
+     ("PuertaVecinaSudeste", "casa del sudeste",
+      "Cerrada con tranca. En la hoja, marcado a cuchillo: «en regla».")),
 ]
-for (x0, y0, an, al, es, px, _n) in CASAS:
+for (x0, y0, an, al, es, px, _n, _p) in CASAS:
     casa(x0, y0, an, al, es, px)
 
-# cruz de piedra sobre el techo de la capilla: se lee capilla, no casa
-put("Techos", 43, 7, CRUZ_PIEDRA)
+# ---------------------------------------------------------------------------
+# 5a. CAPILLA DEL LACRE (41,7): portón en arco, rosetón, vitrales y campanario.
+# Con sólo la cruz en el techo era la misma casa gris de cuatro filas.
+# ---------------------------------------------------------------------------
+# La cruz va en la fila de ARRIBA del tejado, no encima de una teja: la capa
+# Techos es la última, así que estampada en (43,7) no se superponía al tejado —
+# lo REEMPLAZABA, y el caballete de la capilla quedaba con un hueco de pasto.
+put("Techos", 43, 6, CRUZ_PIEDRA)                 # cruz de piedra sobre el caballete
+put("Paredes", 42, 10, ESTILOS["gris"]["puerta"])  # el vano se agranda a dos celdas
+put("Techos", 42, 10, ARCO_IZQ)                    # portón en arco de piedra
+put("Techos", 43, 10, ARCO_DER)
+put("Techos", 43, 9, ROSETON)                      # rosetón sobre el portón
+put("Techos", 41, 9, VITRAL)                       # ventanales ojivales
+put("Techos", 45, 9, VITRAL)
+put("Techos", 41, 6, ALMENA[0])                    # campanario asomando del tejado
+put("Techos", 42, 6, ALMENA[1])
+
+# ---------------------------------------------------------------------------
+# 5b. NOTARÍA DEL FEDATARIO (25,7): pilastras de tapia, portón doble, ventanas
+# encendidas, placa de lacre y cartel de oficio con pluma y tintero en la calle.
+# ---------------------------------------------------------------------------
+for y in range(7, 10):                             # pilastra de piedra al poniente
+    put("Paredes", 24, y, TAPIA[y % len(TAPIA)])
+put("Techos", 28, 10, PORTON_DOBLE[0])             # portón doble de madera
+put("Techos", 28, 9, SELLO_DE_LACRE)               # placa de lacre sobre el portón
+put("Techos", 26, 9, VENTANA_CALIDA[0])            # despacho con la luz prendida
+put("Techos", 30, 9, VENTANA_CALIDA[1])
+put("Paredes", 24, 10, POSTE_CARTEL[0])            # cartel de oficio, desde la calle
+put("Techos", 24, 10, PLUMA_Y_TINTERO)
 
 # patio de tapia de la notaría (E06): al este del edificio, abierto a la calle
 for y in range(7, 11):
@@ -274,7 +429,36 @@ for y in range(7, 11):
     put("Paredes", 36, y, TAPIA[(y + 1) % len(TAPIA)])
 for x in range(33, 36):
     put("Paredes", x, 7, TAPIA[x % len(TAPIA)])
-put("Decoracion", 34, 9, T(RL, 16, 0, True))      # atril / mesa del patio
+put("Paredes", 34, 9, ATRIL)                       # atril del patio
+put("Techos", 34, 9, LIBRO_DE_PALABRA)             # con el libro de palabra abierto
+put("Paredes", 33, 8, BARRIL[0])
+put("Techos", 35, 8, PERGAMINO)
+put("Paredes", 35, 8, CAJON)
+
+# ---------------------------------------------------------------------------
+# 5c. CASA DE CIRO (15,25): cartel con el apellido, ropa tendida, banco, leña y
+# el hacha junto al galpón. En el spawn tiene que distinguirse de cualquier otra.
+# ---------------------------------------------------------------------------
+# El patio de la leña es el callejón de dos celdas (13-14) entre el galpón y la
+# casa, y tiene que quedar ABIERTO a la calle del sur: ahí adentro está la pila que
+# arranca el acarreo de E02. Antes el cartel tapaba (14,28) y el cajón con el banco
+# tapaban la fila 27, así que el callejón entero era un bolsón sellado y la sonda de
+# muros no llegaba a la leña. Ahora los trastos se corren contra el cerco del fondo
+# y el cartel de los Albar va colgado del seto, no en la boca del callejón.
+put("Paredes", 13, 25, CAJON)                      # leña estibada, contra el fondo
+put("Paredes", 14, 25, BANCO)                      # banco contra la pared de la casa
+put("Decoracion", 13, 26, TENDEDERO[0])            # ropa tendida en el patio
+put("Decoracion", 14, 26, TENDEDERO[1])
+put("Decoracion", 13, 28, HACHA)                   # el hacha del galpón
+put("Paredes", 19, 24, BARRIL[1])
+for x in range(13, 20):                            # cerco vivo del fondo del patio
+    if x != 16:                                    # portillo
+        put("Paredes", x, 24, SETO[x % len(SETO)])
+put("Paredes", 14, 24, CARTEL_MADERA)              # cartel de los Albar, sobre el seto
+put("Techos", 14, 24, PERGAMINO)
+
+# la panadería se anuncia con la hogaza sobre su tabla de oficio
+put("Techos", 19, 18, PAN)
 
 # horno grande de Rosaura, pegado al costado de la panadería
 put("Paredes", 12, 17, HORNO_ALTO)
@@ -294,9 +478,8 @@ for i, x in enumerate(range(29, 34)):             # mostradores con comida de la
 for i, x in enumerate(range(28, 34)):
     put("Paredes", x, 24, MESA_LARGA[i % len(MESA_LARGA)])
 
-# tablas de oficio: la panadería y la notaría se anuncian desde la calle
+# tabla de oficio de la panadería (la de la notaría es el poste de la calle norte)
 put("Paredes", 19, 18, CARTEL_MADERA)
-put("Paredes", 24, 10, CARTEL_MADERA)
 
 # guirnaldas: banderines sobre el anillo norte de la plaza
 for i, x in enumerate(range(24, 38)):
@@ -305,42 +488,128 @@ for i, x in enumerate(range(24, 38)):
 # ---------------------------------------------------------------------------
 # 6. Cementerio chico, detrás de la capilla: cerco, cruces y lápidas de piedra
 # ---------------------------------------------------------------------------
+# El recinto tiene que leerse CERRADO: tramos continuos celda por celda, sin
+# alternar con la baldosa vacía del atlas ni con la hoja de tranquera.
 for x in range(48, 57):
     put("Paredes", x, 3, CERCO_H[x % len(CERCO_H)])
-    if x not in (51, 52, 53):
+    if x not in (51, 52, 53):                      # el portón: tres celdas abiertas
         put("Paredes", x, 10, CERCO_H[(x + 1) % len(CERCO_H)])
 for y in range(4, 10):
     put("Paredes", 48, y, CERCO_V[y % len(CERCO_V)])
     put("Paredes", 56, y, CERCO_V[(y + 1) % len(CERCO_V)])
-put("Paredes", 48, 3, CERCO_ESQ)
-put("Paredes", 56, 3, CERCO_ESQ)
-put("Paredes", 48, 10, CERCO_ESQ)
-put("Paredes", 56, 10, CERCO_ESQ)
-for i, (x, y) in enumerate([(50, 5), (54, 5), (50, 8), (55, 8), (53, 4), (49, 7)]):
+for (x, y) in [(48, 3), (56, 3), (48, 10), (56, 10)]:
+    put("Paredes", x, y, CERCO_ESQ)
+# Las dos hojas de la tranquera, abiertas contra el cerco: marcan la boca sin
+# taparla, y el atrio de tierra de abajo la señala desde la calle norte.
+put("Paredes", 50, 10, HOJA_TRANQUERA[0])
+put("Paredes", 54, 10, HOJA_TRANQUERA[1])
+put("Paredes", 54, 11, POSTE_CARTEL[2])            # cartel del camposanto
+put("Techos", 54, 11, CRUZ_PIEDRA)
+for i, (x, y) in enumerate([(50, 5), (54, 5), (50, 8), (55, 8), (53, 4), (49, 7),
+                            (49, 5), (55, 6)]):
     put("Paredes", x, y, LAPIDAS_DECO[i % len(LAPIDAS_DECO)])
 put("Paredes", 55, 4, CRUZ_MADERA)
+put("Paredes", 49, 9, CRUZ_MADERA)
 
 # ---------------------------------------------------------------------------
 # 7. Huerta y arboledas: relleno decorativo, siempre fuera de calles y casas
 # ---------------------------------------------------------------------------
 ocupado = set(capa["Paredes"]) | set(capa["Techos"]) | tierra
 
-HUERTA = rect(25, 32, 36, 36)
-for (x, y) in HUERTA:
-    if (x, y) in ocupado:
-        continue
-    if y % 2 == 0:
-        put("Decoracion", x, y, CANTEROS[(x + y) % len(CANTEROS)])
+def cantero(x0, y0, ancho, alto, color):
+    """Estampa un cantero rectangular con su brocal (autotile 3x3 del pack)."""
+    fila = CANTERO_FILA[color]
+    for j in range(alto):
+        for i in range(ancho):
+            cx = 2 if i == 0 else (4 if i == ancho - 1 else 3)
+            cy = fila + (0 if j == 0 else (2 if j == alto - 1 else 1))
+            put("Decoracion", x0 + i, y0 + j, T(RL, cx, cy))
 
-LAGUNA = rect(51, 33, 53, 35)
-for (x, y) in LAGUNA:
-    put("Caminos", x, y, AGUA[(x - 51, y - 33)])
+
+# Huerta del sur: cuatro canteros de verdad, con brocal, entre la calle del sur y
+# la arboleda del borde. Sin baldosas sueltas.
+for (hx, hy, hw, hh, hc) in [(25, 32, 4, 3, "naranja"), (31, 32, 4, 3, "blanco"),
+                             (25, 35, 5, 2, "azul"), (32, 35, 5, 2, "naranja")]:
+    cantero(hx, hy, hw, hh, hc)
+
+# Pileta de la huerta, con su brocal de piedra sobre la era de tierra: el estanque
+# anterior era un cuadrado de pasto saturado del otro pack que no empalmaba con el
+# pasto del mapa.
+PILETA_HUERTA = rect(51, 33, 53, 35)
+for (x, y) in PILETA_HUERTA:
+    put("Paredes", x, y, PILETA[(x - 51, y - 33)])
     ocupado.add((x, y))
+put("Paredes", 50, 33, BARRIL[1])                 # balde junto a la pileta
+put("Paredes", 54, 35, CAJON)
+
+# ---------------------------------------------------------------------------
+# 7b. Patios de las manzanas: cerco vivo con portillo, leña, barriles y ropa
+# tendida. Sin esto las manzanas quedan de pasto pelado de punta a punta.
+# ---------------------------------------------------------------------------
+def _libre(x, y):
+    """Nunca se pinta cerco sobre la calzada: el paso tiene que quedar abierto."""
+    return (x, y) not in tierra
+
+
+def seto_h(x0, x1, y, hueco=None, oscuro=False):
+    juego = SETO_OSCURO if oscuro else SETO
+    for x in range(x0, x1 + 1):
+        if x != hueco and _libre(x, y):
+            put("Paredes", x, y, juego[x % len(juego)])
+
+
+def cerco_h(x0, x1, y, hueco=None):
+    for x in range(x0, x1 + 1):
+        if x != hueco and _libre(x, y):
+            put("Paredes", x, y, CERCO_H[x % len(CERCO_H)])
+
+
+def cerco_v(x, y0, y1, hueco=None):
+    for y in range(y0, y1 + 1):
+        if y != hueco and _libre(x, y):
+            put("Paredes", x, y, CERCO_V[y % len(CERCO_V)])
+
+
+# fondo de las dos casas del noroeste
+seto_h(13, 21, 6, hueco=17)
+put("Decoracion", 13, 7, TENDEDERO[0])
+put("Decoracion", 14, 7, TENDEDERO[1])
+put("Paredes", 20, 7, BARRIL[0])
+put("Paredes", 22, 9, CAJON)
+
+# manzana del levante: patio de la casa vecina del levante + leñera
+cerco_h(43, 48, 14, hueco=46)
+cerco_v(43, 15, 18, hueco=17)
+put("Paredes", 48, 16, CAJON)
+put("Paredes", 47, 13, BARRIL[1])
+put("Decoracion", 44, 14, TENDEDERO[0])
+put("Decoracion", 45, 14, TENDEDERO[1])
+
+# manzana del sur: el cerco que separa los dos patios y sus trastos
+cerco_v(30, 26, 28, hueco=27)
+put("Paredes", 31, 27, CAJON)
+put("Paredes", 32, 28, BARRIL[0])
+put("Decoracion", 31, 26, TENDEDERO[0])
+put("Decoracion", 32, 26, TENDEDERO[1])
+seto_h(39, 43, 27, hueco=41, oscuro=True)
+
+# manzana del sudeste
+cerco_v(43, 22, 25, hueco=24)
+put("Paredes", 48, 28, CAJON)
+put("Paredes", 49, 24, BARRIL[1])
 
 RELLENO = (rect(3, 2, 56, 3) + rect(10, 4, 24, 7) + rect(33, 2, 47, 6)
            + rect(10, 13, 12, 14) + rect(9, 22, 19, 24) + rect(38, 13, 39, 18)
            + rect(42, 22, 57, 27) + rect(3, 37, 56, 37) + rect(10, 32, 22, 36)
-           + rect(38, 31, 50, 36) + rect(22, 6, 24, 12) + rect(46, 11, 47, 14))
+           + rect(38, 31, 50, 36) + rect(22, 6, 24, 12) + rect(46, 11, 47, 14)
+           + rect(42, 13, 52, 18) + rect(22, 26, 24, 28) + rect(31, 31, 49, 31)
+           + rect(53, 13, 57, 18) + rect(9, 25, 12, 25))
+# Celdas reservadas: acá van nodos de escena que ponen su propio cuerpo (el cartel
+# de la salida a Villarrúbrica), así que el relleno no puede plantarles un árbol
+# encima ni dejarles un arbusto sólido al lado que tape la vereda.
+for (x, y) in [(57, 18), (56, 18)]:
+    ocupado.add((x, y))
+
 for (x, y) in RELLENO:
     if (x, y) in ocupado or (x, y) in tierra:
         continue
@@ -356,6 +625,11 @@ for (x, y) in RELLENO:
         put("Decoracion", x, y, FLORCITAS[azar(len(FLORCITAS))])
     elif d == 5:
         put("Decoracion", x, y, HONGOS if azar(2) else BROTES)
+    elif d == 6:                                   # trastos de patio: leña y barriles
+        put("Paredes", x, y, BARRIL[azar(len(BARRIL))] if azar(2) else CAJON)
+        ocupado.add((x, y))
+    elif d == 7:                                   # mata de flores del pack roguelike
+        put("Decoracion", x, y, FLORES_SUELTAS[azar(len(FLORES_SUELTAS))])
 
 # ---------------------------------------------------------------------------
 # 8. Chequeo de caminabilidad: todo lo que el jugador tiene que alcanzar
@@ -368,23 +642,32 @@ def solida(x, y):
     return False
 
 
-SPAWN = (17, 31)
+# El spawn arrancaba en (17,31): un descampado con la casa de Ciro FUERA DE CUADRO
+# y media pantalla de arbustos de relleno. Desde (18,30) —la calzada de la calle del
+# sur, contra la vereda de su casa— el primer frame entra la casa, el galpón de la
+# leña y la boca del conector hacia la plaza.
+SPAWN = (18, 30)
 DESTINOS = {
     "puerta de la casa de Ciro": (17, 29),
     "horno grande": (12, 19),
     "pila de leña": (13, 28),
     "puerta de la panadería": (15, 19),
-    "cantero norte": (28, 16),
-    "estrado": (35, 18),
-    "lámpara del poniente": (27, 22),
-    "lámpara del levante": (35, 22),
+    "cantero norte": (28, 17),
+    "estrado": (34, 17),
+    "lámpara del poniente": (27, 19),
+    "lámpara del centro": (30, 21),
+    "lámpara del levante": (34, 18),
     "puerta de la notaría": (28, 11),
     "patio de la notaría": (34, 10),
     "puerta de la capilla": (43, 11),
+    "atrio del cementerio": (52, 11),
     "cementerio (lápidas)": (52, 6),
     "salida este a Villarrúbrica": (58, 20),
     "viñedo del oeste": (4, 20),
     "mesas de la fiesta": (30, 23),
+    "senda del levante": (49, 15),
+    "huerta del sur": (30, 31),
+    "pileta de la huerta": (52, 32),
 }
 alcanzado = {SPAWN}
 cola = deque([SPAWN])
@@ -437,9 +720,10 @@ CAB = '''[gd_scene format=3 uid="uid://blacrevieja01"]
 [ext_resource type="PackedScene" uid="uid://ipvcfv2g0oi1" path="res://scenes/game_elements/characters/npcs/talker/talker.tscn" id="12_talker"]
 [ext_resource type="PackedScene" uid="uid://blamparapalabra01" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/lampara_de_palabra.tscn" id="13_lampara"]
 [ext_resource type="PackedScene" uid="uid://bpuntodecarga01" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/punto_de_carga.tscn" id="14_carga"]
+[ext_resource type="PackedScene" uid="uid://bpuertavecino01" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/puerta_de_vecino.tscn" id="33_puerta"]
 [ext_resource type="PackedScene" uid="uid://bmacetacantero01" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/maceta_del_cantero.tscn" id="15_maceta"]
 [ext_resource type="PackedScene" uid="uid://blapidagrabada01" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/lapida_grabada.tscn" id="16_lapida"]
-[ext_resource type="PackedScene" uid="uid://djmdhrse34vgq" path="res://scenes/game_elements/props/decoration/bunny/bunny.tscn" id="17_bunny"]
+[ext_resource type="PackedScene" uid="uid://bgallinaprop01" path="res://scenes/game_elements/props/decoration/gallina/gallina.tscn" id="17_gallina"]
 [ext_resource type="Resource" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/e01_prologo.dialogue" id="18_dlg_prologo"]
 [ext_resource type="Resource" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/rosaura.dialogue" id="19_dlg_rosaura"]
 [ext_resource type="Resource" path="res://scenes/quests/story_quests/la_deuda_del_sol/lacrevieja/maestra.dialogue" id="20_dlg_maestra"]
@@ -452,8 +736,8 @@ CAB = '''[gd_scene format=3 uid="uid://blacrevieja01"]
 [ext_resource type="SpriteFrames" uid="uid://bpfnbr7ig4s5g" path="res://scenes/game_elements/characters/components/sprite_frames/elder.tres" id="27_sf_fedatario"]
 [ext_resource type="SpriteFrames" uid="uid://07di3updrwh0" path="res://scenes/game_elements/characters/components/sprite_frames/storyweaver_purple.tres" id="28_sf_vecina"]
 [ext_resource type="SpriteFrames" uid="uid://0m3xjnws7y4y" path="res://scenes/game_elements/characters/components/sprite_frames/storyweaver_yellow.tres" id="29_sf_vecino"]
-[ext_resource type="SpriteFrames" uid="uid://cqe47tmqq3mu4" path="res://scenes/game_elements/characters/components/sprite_frames/elder2.tres" id="30_sf_vecino2"]
-[ext_resource type="SpriteFrames" uid="uid://bsjdohkkb776w" path="res://scenes/game_elements/characters/components/sprite_frames/bunny_yellow.tres" id="31_sf_gallina"]
+[ext_resource type="SpriteFrames" uid="uid://cqe47tmqq3mu4" path="res://scenes/game_elements/characters/components/sprite_frames/elder2.tres" id="30_sf_ayudante"]
+[ext_resource type="SpriteFrames" uid="uid://cy47injh7y40w" path="res://scenes/game_elements/characters/npcs/npc_prop/sprite_frames/fray_idle_yellow.tres" id="31_sf_vecino2"]
 [ext_resource type="AudioStream" uid="uid://dhvit65nmsp7h" path="res://assets/third_party/nepalese_hand_bells/handBells-g3.ogg" id="32_campana"]
 [ext_resource type="Script" path="res://scenes/quests/story_quests/la_deuda_del_sol/componentes/restaurador_del_acto.gd" id="99_restaurador"]
 
@@ -461,7 +745,7 @@ CAB = '''[gd_scene format=3 uid="uid://blacrevieja01"]
 size = Vector2(64, 192)
 
 [node name="Lacrevieja" type="Node2D"]
-editor_description = "Lacrevieja el día de la Mayoría de Palabra: E01–E04 del Acto 1. Pueblo de 60x40 celdas sobre tiles_pueblo.tres (Kenney CC0), generado por tools/gen-mapa-lacrevieja.py: plaza empedrada con las tres lámparas, panadería de Rosaura y su horno, galpón de la leña, casa de Ciro al sur, notaría con patio, capilla y cementerio de Cosme al noreste, viñedos en el borde oeste y salida este a Villarrúbrica. Diálogo textual del guion en lacrevieja/*.dialogue."
+editor_description = "Lacrevieja el día de la Mayoría de Palabra: E01–E04 del Acto 1. Pueblo de 60x40 celdas sobre tiles_pueblo.tres (Kenney CC0), generado por tools/gen-mapa-lacrevieja.py: plaza empedrada con las tres lámparas repartidas, panadería de Rosaura y su horno, galpón de la leña, casa de Ciro con su patio al sur, notaría con portón doble y patio de tinta, capilla con portón en arco y cementerio cercado de Cosme al noreste, viñedos en el borde oeste y salida este a Villarrúbrica. NO se edita a mano: se edita el generador y se vuelve a correr. Diálogo textual del guion en lacrevieja/*.dialogue."
 script = ExtResource("11_lacrevieja")
 dialogo_prologo = ExtResource("18_dlg_prologo")
 dialogo_rosaura = ExtResource("19_dlg_rosaura")
@@ -525,6 +809,10 @@ metadata/_custom_type_script = "uid://0enyu5v4ra34"
 position = %(cartel)s
 text = "Lacrevieja — pueblo natal de Ciro. La fiesta de la Mayoría de Palabra es hoy."
 
+[node name="CartelSalida" parent="OnTheGround" instance=ExtResource("9_sign")]
+position = %(cartel_salida)s
+text = "Camino del Diezmo → Villarrúbrica. Se sale del pueblo por la calle mayor."
+
 [node name="Estrado" type="Polygon2D" parent="OnTheGround"]
 position = %(estrado)s
 color = Color(0.42, 0.28, 0.19, 1)
@@ -574,19 +862,29 @@ accion = "Entrar la leña"
     "spawn_o": w(4, 20),
     "spawn_e": w(56, 20),
     "cartel": w(23, 18),
-    "estrado": "Vector2(2272, 1064)",
-    "lamp1": w(27, 23),
-    "lamp2": w(31, 23),
-    "lamp3": w(35, 23),
+    # Los carteles van sólo donde hacen falta y NUNCA sobre la calzada: éste, en el
+    # pasto de la vereda norte, a un paso del portal de árboles por donde se sale a
+    # Villarrúbrica. La calle mayor (y 19-21) queda entera libre.
+    "cartel_salida": w(57, 18),
+    "estrado": w(35, 16),
+    # Las tres lámparas repartidas por la plaza, separadas en X y en Y: las tres en
+    # la misma fila de abajo se leían como tres palos en fila, no como alumbrado.
+    "lamp1": w(26, 19),
+    "lamp2": w(30, 22),
+    "lamp3": w(35, 18),
     "pila": w(13, 28),
     "horno": "Vector2(800, 1212)",
 })
 
+# Las seis macetas, una por celda, en el cantero del borde norte de la plaza. Ya no
+# hace falta espaciarlas de dos en dos: el rótulo «maceta — seca» dejó de estar
+# siempre encendido (ahora sólo aparece cuando el jugador tiene la maceta a tiro) y
+# el estado se lee por el sprite — planta mustia o verde, y agua en el tiesto.
 for i in range(6):
     partes.append('''
 [node name="Maceta%d" parent="OnTheGround/Cantero" instance=ExtResource("15_maceta")]
 position = %s%s
-''' % (i + 1, w(26 + i, 15), "\nrota = true" if i == 5 else ""))
+''' % (i + 1, w(26 + i, 16), "\nrota = true" if i == 5 else ""))
 
 partes.append('''
 [node name="Cementerio" type="Node2D" parent="OnTheGround"]
@@ -646,20 +944,24 @@ dialogue = ExtResource("23_dlg_vecinos")
 unique_name_in_owner = true
 position = %(gallinas)s
 npc_name = "vecino de las gallinas"
-sprite_frames = ExtResource("30_sf_vecino2")
+sprite_frames = ExtResource("31_sf_vecino2")
 dialogue = ExtResource("23_dlg_vecinos")
 
-[node name="Gallina1" parent="OnTheGround" instance=ExtResource("17_bunny")]
+[node name="AyudanteDelFedatario" parent="OnTheGround" instance=ExtResource("12_talker")]
+unique_name_in_owner = true
+position = %(ayudante)s
+npc_name = "el ayudante del Fedatario"
+sprite_frames = ExtResource("30_sf_ayudante")
+dialogue = ExtResource("23_dlg_vecinos")
+
+[node name="Gallina1" parent="OnTheGround" instance=ExtResource("17_gallina")]
 position = %(g1)s
-sprite_frames = ExtResource("31_sf_gallina")
 
-[node name="Gallina2" parent="OnTheGround" instance=ExtResource("17_bunny")]
+[node name="Gallina2" parent="OnTheGround" instance=ExtResource("17_gallina")]
 position = %(g2)s
-sprite_frames = ExtResource("31_sf_gallina")
 
-[node name="Gallina3" parent="OnTheGround" instance=ExtResource("17_bunny")]
+[node name="Gallina3" parent="OnTheGround" instance=ExtResource("17_gallina")]
 position = %(g3)s
-sprite_frames = ExtResource("31_sf_gallina")
 
 [node name="Campana" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
@@ -690,17 +992,33 @@ script = ExtResource("99_restaurador")
     "lap1": w(51, 6),
     "lap2": w(53, 6),
     "rosaura": w(16, 19),
-    "maestra": w(28, 16),
+    # La Maestra jardinera, delante de su cantero de macetas y no sobre empedrado
+    # pelado; y a siete celdas del Fedatario, para que no se lean como el mismo NPC.
+    "maestra": w(27, 17),
     "cosme": w(52, 7),
-    "fedatario": "Vector2(2272, 1032)",
-    "vecina": w(21, 22),
+    "fedatario": w(35, 16),
+    "ayudante": w(34, 10),
+    # La esquina del conector con la calle mayor, pero SOBRE EL PASTO: parada en
+    # (21,22) tapaba media calzada del conector (2 celdas de ancho) y el jugador
+    # quedaba trabado contra ella al subir de la casa de Ciro a la plaza.
+    "vecina": w(22, 22),
     "mesas": w(29, 25),
-    "gallinas": w(33, 23),
-    "g1": w(30, 25),
-    "g2": "Vector2(1968, 1648)",
-    "g3": "Vector2(2088, 1584)",
+    "gallinas": w(34, 23),
+    "g1": w(33, 25),
+    "g2": "Vector2(2208, 1616)",
+    "g3": "Vector2(2288, 1640)",
     "trigger": w(17, 29),
 })
+
+# Las once puertas, una por casa, sobre su vano.
+partes.append('\n[node name="Puertas" type="Node2D" parent="OnTheGround"]\n')
+for (_x0, y0, _an, al, _es, px, _n, (nodo, etiqueta, aviso)) in CASAS:
+    partes.append('''
+[node name="%s" parent="OnTheGround/Puertas" instance=ExtResource("33_puerta")]
+position = %s
+etiqueta = "%s"
+aviso = "%s"
+''' % (nodo, w(px, y0 + al - 1), etiqueta, aviso))
 
 open(OUT, "w").write("".join(partes))
 
